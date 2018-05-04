@@ -28,13 +28,12 @@ body a
 .contentwrapper
 {
 	margin-left: 256px;
-	float: left;
 }
 
 .content
 {
 	margin: 0 auto;
-	max-width: 860px;
+	max-width: 768px;
 	background-color: #000;
 }
 
