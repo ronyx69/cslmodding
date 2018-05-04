@@ -31,13 +31,19 @@ body a
 	background-color: #2b3033;
 }
 
-.content
+.contentwrapper
 {
 	width: 100%;
 	margin-left: -256px;
-	float: left;
+	float: right;
 }
 
+.content
+{
+	margin: 0 auto;
+	max-width: 860px;
+	background-color: #000;
+}
 
 
 
