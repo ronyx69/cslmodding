@@ -32,13 +32,29 @@
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
+
+
+
+
+
 
 <h2 id="pre-import">Pre-import</h2>
 
+
+
 <h3 id="main-mesh">Main Mesh</h3>
 
-<p>This is a 3D model of the building, which will be visible when the camera is close to it.<br />It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br />The actual mesh file contains vertices(their coordinates, UV mapping, normals and colors) and triangles.</p>
+<p>This is a 3D model of the building, which will be visible when the camera is close to it.</p>
+
+<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.</p>
+
+<p>The actual mesh file contains vertices(their coordinates, UV mapping, normals and colors) and triangles.</p>
+
 
 <h4 id="formats">Formats</h4>
 
@@ -51,13 +67,16 @@
 
 </ul>
 
+
 <h4 id="pivot-origin">Pivot / Origin</h4>
 
 <p>The pivot point or origin represents the center point on the ground of the lot.<br />It's usually represented using a red/green/blue axis gizmo.</p>
 
+
 <h4 id="transform">Transform</h4>
 
-<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using &quot;apply rotation &amp; scale&quot; in Blender,<br />or &quot;reset xform&quot; in 3ds Max and exporting only the selected object.</p>
+<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using &quot;apply rotation &amp; scale&quot; in Blender, or &quot;reset xform&quot; in 3ds Max, and exporting only the selected object.</p>
+
 
 <h4 id="vertex-paint">Vertex Paint</h4>
 
@@ -70,13 +89,15 @@
 
 </ul>
 
+
 <h4 id="uv-mapping">UV Mapping</h4>
 
 <p>You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
+
 <h4 id="model-complexity">Model Complexity</h4>
 
-<p>It's recommended to stay within reasonable triangle counts based on the size and detail of your model.<br />You may look at examples of vanilla buildings or assets by other creators for reference.</p>
+<p>It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla buildings or assets by other creators for reference.</p>
 
 <p>The absolute limit for a mesh is 65536 vertices.<br />[image showing some vanilla, from good to bad]</p>
 
@@ -88,27 +109,28 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 
 
+
+
 <h3 id="main-textures">Main Textures</h3>
 
 <p>These determine the color and material properties of your building.</p>
+
 
 <h4 id="types">Types</h4>
 
 
 <ul>
 
-<li>_d
-<p>Diffuse - the main color and texture of your asset.</p>
+<li><strong>Diffuse</strong> (_d) the main color and texture of your asset.</p>
 
-<p>It will look very bright, contrasty, and saturated in the game,<br /> so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
+<p>It will look very bright, contrasty, and saturated in the game,so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
 
 <p>If you don't import a diffuse map, it will default to white.</p>
 
 </li>
 
 
-<li>_a
-<p>Alpha - transparency, white means opaque or visible, black means transparent or invisible.<br /> Gray values may affect how it looks from a distance or at an angle.</p>
+<li>Alpha (_a) transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.</p>
 
 <p>Semi-transparency is not supported, you need to use the rotors shader(LINK) for that.</p>
 
@@ -117,10 +139,7 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 </li>
 
 
-<li>_c
-
-
-<p>Color - determines which parts will be affected by color variations.<br /> White means fully affected and black means not at all.</p>
+<li>Color (_c) determines which parts will be affected by color variations.<br /> White means fully affected and black means not at all.</p>
 
 <p>The diffuse will get multiplied by the color variation,<br /> that means the resulting color will look darker than the original diffuse.</p>
 
@@ -129,11 +148,7 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 </li>
 
 <ul>
-<li>_i
-
-
-
-<p>Illumination - allows for randomly changing lighting for windows at night.<br /> 192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 128-192 (inverted) and 192-255</p>
+<li>Illumination (_i) allows for randomly changing lighting for windows at night.<br /> 192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 128-192 (inverted) and 192-255</p>
 
 <p>Simply create a black and white illumination texture and then use a levels adjustment<br /> to set the output colors so that black becomes 192 and white becomes 128 for one set of windows<br /> and black becomes 192 and white becomes 255 for the other set.</p>
 
@@ -142,11 +157,7 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <p>If you don't import an illumination map, it will default to no illumination.</p>
 </li>
 
-<li>_s
-
-
-
-<p>Specular - reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.</p>
+<li>Specular (_s) reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.</p>
 
 <p>The specular highlight from the sun is very big and bright,<br /> so you might want to use very low (0-10%) specularity for surfaces facing upwards, like roofs.</p>
 
@@ -168,13 +179,17 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 </li>
 
 
+
 <h4 id="format">Format</h4>
 
-<p>Use a lossless format like .PNG.<br />The game supports other formats as well, but there is no reason to use another one,<br />it doesn't matter how much your texture is compressed or even if it's completely solid or complicated,<br />the game will convert it to a DXT format<br />so the final size won't be affected by anything other than resolution.</p>
+<p>Use a lossless format like .PNG.</p>
 
-<p>Make sure that your texture is 8 bit, because a 16 bit image can't be imported.</p>
+<p>The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.</p>
+
+<p>Make sure that texture is 8 bit, because a 16 bit image can't be imported.</p>
 
 <p>[image showing all example textures]</p>
+
 
 <h4 id="resolution">Resolution</h4>
 
@@ -182,7 +197,15 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>[image showing different vanilla textures]</p>
 
-<h5 id="make-sure-texture-quality-is-set-to-high-in-the-games-graphics-settings.-otherwise-your-imported-textures-will-be-downscaled-to-a-lower-resolution.">(!) <em>Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.</em></h5>
+<img src="https://ronyx69.github.io/cslmodding/icons/icon_warning.svg" height="32px" width="32px" class="icon1">
+<div class="content-warning-text">
+Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.
+</div>
+
+
+
+
+
 
 <h3 id="lod-mesh">LOD Mesh</h3>
 
@@ -190,19 +213,25 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>If you don't provide an LOD mesh, the game will try to generate one automatically, which can look bad, so it's highly recommended that you make your own.</p>
 
+
 <h4 id="uv-mapping-1">UV Mapping</h4>
 
 <p>The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed.<br />This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
 
 <p>[image showing different vanilla lods]</p>
 
+
+
 <h3 id="lod-textures">LOD Textures</h3>
 
 <p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has.<br />It's recommended that your create your own LOD textures using baking.</p>
 
+
 <h4 id="resolution-1">Resolution</h4>
 
 <p>The size for LOD textures must be powers of 2 such as 128x128, 64x32 etc., this is required for the LOD texture atlas generation.</p>
+
+
 
 <h3 id="naming">Naming</h3>
 
@@ -210,7 +239,11 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>The textures must have the same name as the mesh, but with the texture type identifier after it,<br />so the result will be names like meshname_d.png and meshname_lod_d.png</p>
 
+
+
 <h3 id="downloadable-example-asset-which-uses-all-possible-textures">[downloadable example asset which uses all possible textures]</h3>
+
+
 
 <h3 id="import-folder">Import Folder</h3>
 
@@ -220,9 +253,20 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
 
+
+
+
+
+
 <h2 id="import">Import</h2>
+
+
 
 <h3 id="template">Template</h3>
 
@@ -247,6 +291,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <h5 id="i-all-of-those-things-can-be-changed-later-in-the-editor-itself-or-using-modtools-or-other-mods.">(i) <em>All of those things can be changed later in the editor itself or using ModTools or other mods.</em></h5>
 
+
+
 <h3 id="import-1">Import</h3>
 
 <p>After you choose your mesh, depending on how it was exported,<br />you might need to set the correct scale and rotation,<br />scale 100 and rotating 3 times around x axis are common necessities.</p>
@@ -259,9 +305,20 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
 
+
+
+
+
+
 <h2 id="editor">Editor</h2>
+
+
 
 <h3 id="lot-size">Lot Size</h3>
 
@@ -272,6 +329,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <p>For other buildings, the max sizes are 16x8, 15x9, 14x11, 13x12, 12x13, 11x14, 9x15 and 8x16.</p>
 
 <p>Make sure your building doesn't overhang the lot too much,<br />as the overhanging parts will disappear when the building inside the lot isn't visible.</p>
+
+
 
 <h3 id="general-properties">General Properties</h3>
 
@@ -290,17 +349,25 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 </ul>
 
+
+
 <h3 id="stats">Stats</h3>
 
 <p>Based on which AI the building has, it can have different stats like electricity consumption, worker amount, police car count for a police station etc.</p>
+
+
 
 <h3 id="material-properties">Material properties</h3>
 
 <p>You can change the 4 color variations, and also floor parameters which are used for the fake interior for 100% specular windows.</p>
 
+
+
 <h3 id="networks">Networks</h3>
 
 <p>You can place networks such as roads, train/tram tracks and pedestrian paths.</p>
+
+
 
 <h3 id="props-trees">Props &amp; Trees</h3>
 
@@ -309,6 +376,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <p>If you place a prop on the ground, it will follow the terrain if the building is placed on uneven terrain.<br />But if you place it on the building, it becomes fixed height, so it will always be at that height relative to the building.</p>
 
 <h5 id="you-must-use-either-vanilla-or-custom-workshop-published-props-and-networks-not-local-custom-ones-otherwise-they-wont-show-up-for-the-subscribers-of-your-asset.">(!) <em>You must use either vanilla or custom workshop published props and networks, not local custom ones, otherwise they won't show up for the subscribers of your asset.</em></h5>
+
+
 
 <h3 id="surface">Surface</h3>
 
@@ -327,9 +396,13 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 </ul>
 
+
+
 <h3 id="markers">Markers</h3>
 
 <p>These are invisible props which have functionality such as building entry points, parking spaces or smoke particle effects.</p>
+
+
 
 <h3 id="sub-buildings">Sub buildings</h3>
 
@@ -341,6 +414,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>If you just imported a building for it to be used as a sub building, you need to reload the game for it to be properly loaded and available as a sub building.</p>
 
+
+
 <h3 id="sub-meshes">Sub meshes</h3>
 
 <p>TBD</p>
@@ -349,7 +424,16 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
+
+
+
+
+
 
 <h2 id="editor-advanced">Editor Advanced</h2>
 
@@ -373,6 +457,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 </ul>
 
+
+
 <h3 id="shader">Shader</h3>
 
 <p>When using the default building shader, parts that are under 0(ground) will get the map theme building base texture.</p>
@@ -390,9 +476,13 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 </ul>
 
+
+
 <h3 id="shader-properties">Shader Properties</h3>
 
 <p>Some shaders have specific hidden properties, such as the WindTurbine shader(LINK TO SCRIPT)<br />and AnimUV building shader(LINK TO SCRIPT).</p>
+
+
 
 <h3 id="placement-mode">Placement Mode</h3>
 
@@ -417,6 +507,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>It can be changed with ModTools scene explorer [Ctrl+E] and going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode.</p>
 
+
+
 <h3 id="zoning-mode">Zoning Mode</h3>
 
 <p>This is used only for growables to make them grow only on corners:</p>
@@ -436,17 +528,32 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
 
+
+
+
+
+
 <h2 id="save">Save</h2>
+
+
 
 <h3 id="filename">Filename</h3>
 
 <p>The filename input is on the bottom right, this is what the actual file will be called.<br />It's not recommended to use spaces or dots.</p>
 
+
+
 <h3 id="asset-name">Asset Name</h3>
 
 <p>The asset name visible ingame, the name people should search for.</p>
+
+
 
 <h3 id="snapshot-thumbnail-tooltip">Snapshot, Thumbnail, Tooltip</h3>
 
@@ -466,6 +573,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>Use this one to change the thumbnail(109x100) and tooltip(492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p>
 
+
+
 <h3 id="local-asset-folder">Local Asset Folder</h3>
 
 <p>Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets<br />The AppData folder is hidden by default, you can access it by pressing [Windows+R] and typing in appdata.</p>
@@ -474,7 +583,16 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
+
+
+
+
+
 
 <h2 id="publish">Publish</h2>
 
@@ -482,9 +600,13 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>Go to the content manager &gt; assets and find your asset, then click share.</p>
 
+
+
 <h3 id="title-and-description">Title and Description</h3>
 
 <p>You can change these on the steam workshop later.</p>
+
+
 
 <h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
 
@@ -493,6 +615,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <p>There is also the content folder, which is where the actual asset is.</p>
 
 <p>You can paste multiple .crp files here if you would like to upload a pack of assets.</p>
+
+
 
 <h3 id="steam-workshop">Steam Workshop</h3>
 
@@ -515,7 +639,16 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
+
+
+
+
+
 
 <h2 id="update">Update</h2>
 
@@ -531,7 +664,16 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <div style="clear:both;"></div>
 
 
+
+
+
+
 <hr>
+
+
+
+
+
 
 <h2 id="prefab-name">Prefab Name</h2>
 
