@@ -47,7 +47,9 @@ body {
 
 .toc {
 	position: fixed;
-	margin: 32px;
+	padding: 32px;
+	background-color: #212426
+	height: 100%;
 }
 
 .toc a:hover {
