@@ -131,7 +131,8 @@ p {
 }
 
 .content-photo-box img {
-	width: 100%;
+	max-width: 100%;
+	max-height: 128px;
 	border: solid 1px black;
 	outline: 1px solid #2b3033;
 }
