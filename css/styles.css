@@ -157,6 +157,7 @@ p {
 
 .content li {
 	margin-left: 16px;
+	overflow: auto;
 }
 
 .content ul li::before {
