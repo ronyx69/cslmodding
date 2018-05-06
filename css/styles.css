@@ -99,6 +99,10 @@ h4 {
 	margin-top: 48px;
 }
 
+h1 a, h2 a, h3 a, h4 a {
+	text-decoration: none;
+}
+
 strong {
 	font-weight: 400;
 	color: #98a7b3;
