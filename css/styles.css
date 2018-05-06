@@ -100,7 +100,8 @@ h4 {
 }
 
 strong {
-	font-weight: 700;
+	font-weight: 400;
+	color: #98a7b3;
 }
 
 .content hr {
