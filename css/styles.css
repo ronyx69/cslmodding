@@ -149,7 +149,8 @@ p {
 }
 
 .content-tip {
-	clear:both;
+	clear: both;
+	margin-top: 32px;
 }
 
 .content-tip em {
