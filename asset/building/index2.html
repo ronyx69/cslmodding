@@ -89,8 +89,15 @@
 
 
 <h4 id="uv-mapping">UV Mapping</h4>
+<p>
+<div class="content-photo-box">
+<a href="https://i.imgur.com/GfAYY35.jpg" target="null">
+<img src="https://i.imgur.com/GfAYY35.jpg"></a>
+<div class="content-photo-desc">
+Example UV mapping using visible horizontal tiling on the bottom.
+</div></div>
 
-<p>You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
+You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
 
 <h4 id="model-complexity">Model Complexity</h4>
@@ -212,7 +219,18 @@ Example specular map showing high values for windows and very low values for the
 <p>If you don't import a specular map, it will default to no specularity.</p>
 
 </li>
-<li><strong>Normal (_n)</strong><br>Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
+<li><strong>Normal (_n)</strong><br>
+
+
+<div class="content-photo-box">
+<a href="https://i.imgur.com/6TKBZZW.jpg" target="null">
+<img src="https://i.imgur.com/6TKBZZW.jpg"></a>
+<div class="content-photo-desc">
+Example normal map showing flat windows.
+</div></div>
+
+
+	Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
 
 <p>This can be made from the diffuse or a heightmap(brighter colors will look extruded out more) using a normal map generator online, a photoshop plugin like xNormal, or standalone software such as CrazyBump.(LINKS)</p>
 <p>Make sure the generator is set to -y or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
