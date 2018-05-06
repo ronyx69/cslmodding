@@ -77,17 +77,18 @@ h1 {
 h2 {
 	font-weight: 400;
 	font-size: 30px;
-	margin-bottom: 32px;
+	color: #98a7b3;
 }
 
 h3 {
 	font-weight: 400;
-	font-size: 25px;
+	font-size: 23px;
 	margin-bottom: 16px;
 	margin-top: 96px;
 	border-top: solid 1px #2b3033;
     box-sizing: border-box;
     display: inline-block;
+    color: #98a7b3;
 }
 
 h4 {
