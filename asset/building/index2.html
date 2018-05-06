@@ -80,7 +80,7 @@
 
 <p>The absolute limit for a mesh is 65536 vertices.<br />[image showing some vanilla, from good to bad]</p>
 
-<img src="https://ronyx69.github.io/cslmodding/icons/icon_warning.svg" height="32px" width="32px" class="icon1">
+<img src="https://ronyx69.github.io/cslmodding/icons/icon_info.svg" height="32px" width="32px" class="icon1">
 <div class="content-warning-text">
 You can use Mesh Info by SamsamTS to check triangle counts of assets. You can use Mesh Info by SamsamTS to check triangle counts of assets.
 </div>
@@ -117,9 +117,8 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 </li>
 
 
-<li>_c</li>
+<li>_c
 
-</ul>
 
 <p>Color - determines which parts will be affected by color variations.<br /> White means fully affected and black means not at all.</p>
 
@@ -127,10 +126,12 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>If you don't import a color map, it will default to full color,<br /> but the &quot;use color variations&quot; setting must be enabled for the colors to appear.</p>
 
-<ul>
-<li>_i</li>
+</li>
 
-</ul>
+<ul>
+<li>_i
+
+
 
 <p>Illumination - allows for randomly changing lighting for windows at night.<br /> 192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 128-192 (inverted) and 192-255</p>
 
@@ -139,11 +140,11 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <p>0-120 is always visible illumination based on the diffuse, not recommended<br /> as it can create problems.</p>
 
 <p>If you don't import an illumination map, it will default to no illumination.</p>
+</li>
 
-<ul>
-<li>_s</li>
+<li>_s
 
-</ul>
+
 
 <p>Specular - reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.</p>
 
@@ -151,10 +152,10 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <p>If you don't import a specular map, it will default to no specularity.</p>
 
-<ul>
-<li>_n</li>
+</li>
+<li>_n
 
-</ul>
+
 
 <p>Normal - also sometimes called a bump map, adds fake depth or form<br /> by affecting how the lighting appears.</p>
 
@@ -163,6 +164,9 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <p>High specularity and normal map don't work well together because of the compression,<br /> so you might want to paint over your windows and other shiny parts with a solid color<br /> before generating a normal map, or paint these parts 127,127,255 on the final normal map.</p>
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
+
+</li>
+
 
 <h4 id="format">Format</h4>
 
