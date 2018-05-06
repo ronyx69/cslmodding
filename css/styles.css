@@ -148,11 +148,11 @@ p {
 	margin-top: 16px;
 }
 
-.content-warning {
+.content-tip {
 	clear:both;
 }
 
-.content-warning em {
+.content-tip em {
 	display: block;
     margin-top: -32px;
     padding: 0 48px;
