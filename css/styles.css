@@ -24,7 +24,7 @@ body {
 }
 
 .menu {
-	width: auto;
+	width: 256px;
 	background-color: #2b3033;
 	float: left;
     bottom: 0;
@@ -50,6 +50,7 @@ body {
 	padding: 32px;
 	background-color: #212426;
 	height: 100%;
+	width: 192px;
 }
 
 .toc a:hover {
