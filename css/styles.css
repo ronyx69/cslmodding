@@ -151,8 +151,9 @@ p {
 }
 
 .content ul {
-	margin-top: 16px;
+	padding-top: 16px;
 	margin-bottom: 16px;
+	display: table-cell;
 }
 
 .content li {
