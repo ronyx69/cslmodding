@@ -24,7 +24,7 @@ body {
 }
 
 .menu {
-	width: 256px;
+	width: auto;
 	background-color: #2b3033;
 	float: left;
     bottom: 0;
