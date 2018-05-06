@@ -22,7 +22,7 @@
 <div class="page">
 
 <div class="toc">
-<h1>Asset Creation<br>Building</h1>
+<h1><a href="#">Building Asset Creation</a></h1>
 
 </div>
 
@@ -800,38 +800,30 @@ $(function(){
 
 
 <script>
-
 var ToC =
   "<nav role='navigation' class='table-of-contents'>" +
     "<ul>";
-
 var newLine, el, title, link;
-
 $(".content h2").each(function() {
-
   el = $(this);
   title = el.text();
   link = "#" + el.attr("id");
-
   newLine =
     "<li>" +
       "<a href='" + link + "'>" +
         title +
       "</a>" +
     "</li>";
-
   ToC += newLine;
-
 });
-
 ToC +=
    "</ul>" +
   "</nav>";
-
 $(".toc").append(ToC);
+</script>
 
-
-
+<script type="text/javascript">
+    document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities Skylines Modding';
 </script>
 
 </body>
