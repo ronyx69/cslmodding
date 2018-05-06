@@ -4,16 +4,20 @@
 
 <title></title>
 
+
 <link rel="stylesheet" href="https://ronyx69.github.io/cslmodding/css/styles.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
 
 </head>
 
+
 <body>
 
 <div class="menu" id="menu-file"></div>
+
 
 <div class="page">
 
@@ -24,285 +28,511 @@
 
 <h1 id="asset-creation---building">Asset Creation - Building</h1>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="pre-import">Pre-import</h2>
+
 <h3 id="main-mesh">Main Mesh</h3>
+
 <p>This is a 3D model of the building, which will be visible when the camera is close to it.<br />It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br />The actual mesh file contains vertices(their coordinates, UV mapping, normals and colors) and triangles.</p>
+
 <h4 id="formats">Formats</h4>
-<ul>
-<li>FBX (most commonly used)<br /></li>
-<li>OBJ (doesn't support vertex colors)<br /></li>
-<li>DAE</li>
-</ul>
-<h4 id="pivot-origin">Pivot / Origin</h4>
-<p>The pivot point or origin represents the center point on the ground of the lot.<br />It's usually represented using a red/green/blue axis gizmo.</p>
-<h4 id="transform">Transform</h4>
-<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using &quot;apply rotation &amp; scale&quot; in Blender,<br />or &quot;reset xform&quot; in 3ds Max and exporting only the selected object.</p>
-<h4 id="vertex-paint">Vertex Paint</h4>
-<p>The vertex color blue channel determines snow behavior on winter maps:</p>
-<ul>
-<li>128 means 3D snow will not be generated<br /></li>
-<li>0 means no snow will be visible at all</li>
-</ul>
-<h4 id="uv-mapping">UV Mapping</h4>
-<p>You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
-<h4 id="model-complexity">Model Complexity</h4>
-<p>It's recommended to stay within reasonable triangle counts based on the size and detail of your model.<br />You may look at examples of vanilla buildings or assets by other creators for reference.</p>
-<p>The absolute limit for a mesh is 65536 vertices.<br />[image showing some vanilla, from good to bad]</p>
-<h5 id="i-you-can-use-mesh-info-by-samsamts-to-check-triangle-counts-of-assets.">(i) <em>You can use Mesh Info by SamsamTS to check triangle counts of assets.</em></h5>
-<h3 id="main-textures">Main Textures</h3>
-<p>These determine the color and material properties of your building.</p>
-<h4 id="types">Types</h4>
 
 <ul>
-	
+<li>FBX (most commonly used)<br /></li>
+
+<li>OBJ (doesn't support vertex colors)<br /></li>
+
+<li>DAE</li>
+
+</ul>
+
+<h4 id="pivot-origin">Pivot / Origin</h4>
+
+<p>The pivot point or origin represents the center point on the ground of the lot.<br />It's usually represented using a red/green/blue axis gizmo.</p>
+
+<h4 id="transform">Transform</h4>
+
+<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using &quot;apply rotation &amp; scale&quot; in Blender,<br />or &quot;reset xform&quot; in 3ds Max and exporting only the selected object.</p>
+
+<h4 id="vertex-paint">Vertex Paint</h4>
+
+<p>The vertex color blue channel determines snow behavior on winter maps:</p>
+
+<ul>
+<li>128 means 3D snow will not be generated<br /></li>
+
+<li>0 means no snow will be visible at all</li>
+
+</ul>
+
+<h4 id="uv-mapping">UV Mapping</h4>
+
+<p>You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
+
+<h4 id="model-complexity">Model Complexity</h4>
+
+<p>It's recommended to stay within reasonable triangle counts based on the size and detail of your model.<br />You may look at examples of vanilla buildings or assets by other creators for reference.</p>
+
+<p>The absolute limit for a mesh is 65536 vertices.<br />[image showing some vanilla, from good to bad]</p>
+
+<h5 id="i-you-can-use-mesh-info-by-samsamts-to-check-triangle-counts-of-assets.">(i) <em>You can use Mesh Info by SamsamTS to check triangle counts of assets.</em></h5>
+
+<h3 id="main-textures">Main Textures</h3>
+
+<p>These determine the color and material properties of your building.</p>
+
+<h4 id="types">Types</h4>
+
+
+<ul>
+
 <li>_d
 <p>Diffuse - the main color and texture of your asset.</p>
+
 <p>It will look very bright, contrasty, and saturated in the game,<br /> so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
+
 <p>If you don't import a diffuse map, it will default to white.</p>
+
 </li>
+
 
 <li>_a
 <p>Alpha - transparency, white means opaque or visible, black means transparent or invisible.<br /> Gray values may affect how it looks from a distance or at an angle.</p>
+
 <p>Semi-transparency is not supported, you need to use the rotors shader(LINK) for that.</p>
+
 <p>If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
+
 </li>
 
+
 <li>_c</li>
+
 </ul>
+
 <p>Color - determines which parts will be affected by color variations.<br /> White means fully affected and black means not at all.</p>
+
 <p>The diffuse will get multiplied by the color variation,<br /> that means the resulting color will look darker than the original diffuse.</p>
+
 <p>If you don't import a color map, it will default to full color,<br /> but the &quot;use color variations&quot; setting must be enabled for the colors to appear.</p>
+
 <ul>
 <li>_i</li>
+
 </ul>
+
 <p>Illumination - allows for randomly changing lighting for windows at night.<br /> 192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 128-192 (inverted) and 192-255</p>
+
 <p>Simply create a black and white illumination texture and then use a levels adjustment<br /> to set the output colors so that black becomes 192 and white becomes 128 for one set of windows<br /> and black becomes 192 and white becomes 255 for the other set.</p>
+
 <p>0-120 is always visible illumination based on the diffuse, not recommended<br /> as it can create problems.</p>
+
 <p>If you don't import an illumination map, it will default to no illumination.</p>
+
 <ul>
 <li>_s</li>
+
 </ul>
+
 <p>Specular - reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.</p>
+
 <p>The specular highlight from the sun is very big and bright,<br /> so you might want to use very low (0-10%) specularity for surfaces facing upwards, like roofs.</p>
+
 <p>If you don't import a specular map, it will default to no specularity.</p>
+
 <ul>
 <li>_n</li>
+
 </ul>
+
 <p>Normal - also sometimes called a bump map, adds fake depth or form<br /> by affecting how the lighting appears.</p>
+
 <p>This can be made from the diffuse or a heightmap(brighter colors will look extruded out more)<br /> using a normal map generator online, a photoshop plugin like xNormal,<br /> or standalone software such as CrazyBump.(LINKS)<br /> Make sure the generator is set to -y or simply invert the red channel<br /> of the normal map after generation, otherwise it won't behave correctly ingame.</p>
+
 <p>High specularity and normal map don't work well together because of the compression,<br /> so you might want to paint over your windows and other shiny parts with a solid color<br /> before generating a normal map, or paint these parts 127,127,255 on the final normal map.</p>
+
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
+
 <h4 id="format">Format</h4>
+
 <p>Use a lossless format like .PNG.<br />The game supports other formats as well, but there is no reason to use another one,<br />it doesn't matter how much your texture is compressed or even if it's completely solid or complicated,<br />the game will convert it to a DXT format<br />so the final size won't be affected by anything other than resolution.</p>
+
 <p>Make sure that your texture is 8 bit, because a 16 bit image can't be imported.</p>
+
 <p>[image showing all example textures]</p>
+
 <h4 id="resolution">Resolution</h4>
+
 <p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as<br />1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard,<br />but the most important thing is that your width and height must be divisible by 4,<br />otherwise your texture will be corrupted by the compression.</p>
+
 <p>[image showing different vanilla textures]</p>
+
 <h5 id="make-sure-texture-quality-is-set-to-high-in-the-games-graphics-settings.-otherwise-your-imported-textures-will-be-downscaled-to-a-lower-resolution.">(!) <em>Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.</em></h5>
+
 <h3 id="lod-mesh">LOD Mesh</h3>
+
 <p>LOD stands for level of detail.<br />This is the mesh visible from a distance.<br />It must be as simple as possible.</p>
+
 <p>If you don't provide an LOD mesh, the game will try to generate one automatically, which can look bad, so it's highly recommended that you make your own.</p>
+
 <h4 id="uv-mapping-1">UV Mapping</h4>
+
 <p>The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed.<br />This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
+
 <p>[image showing different vanilla lods]</p>
+
 <h3 id="lod-textures">LOD Textures</h3>
+
 <p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has.<br />It's recommended that your create your own LOD textures using baking.</p>
+
 <h4 id="resolution-1">Resolution</h4>
+
 <p>The size for LOD textures must be powers of 2 such as 128x128, 64x32 etc., this is required for the LOD texture atlas generation.</p>
+
 <h3 id="naming">Naming</h3>
+
 <p>The mesh can have any name, but it's not recommended to use spaces or underscores,<br />as the name for the lod mesh name will be meshname_lod.</p>
+
 <p>The textures must have the same name as the mesh, but with the texture type identifier after it,<br />so the result will be names like meshname_d.png and meshname_lod_d.png</p>
+
 <h3 id="downloadable-example-asset-which-uses-all-possible-textures">[downloadable example asset which uses all possible textures]</h3>
+
 <h3 id="import-folder">Import Folder</h3>
+
 <p>You should place the mesh and texture files in the import folder located here:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import<br />The AppData folder is hidden by default, you can access it by pressing [Windows+R] and typing in appdata.</p>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="import">Import</h2>
+
 <h3 id="template">Template</h3>
+
 <p>The template you choose will determine many things about your building:</p>
+
 <ul>
 <li>AI and corresponding stats (school with students, fire station with fire trucks etc.)<br /></li>
+
 <li>milestone at which it is unlocked<br /></li>
+
 <li>UI category<br /></li>
+
 <li>item class (UI sub-category)<br /></li>
+
 <li>general settings (flatten terrain, use color variations etc.)<br /></li>
+
 <li>shader, material properties (color variations)</li>
+
 </ul>
+
 <p>There is a &quot;load existing props and decorations&quot; toggle on the bottom left, this will load props and networks like roads/tracks/paths from your chosen template as well, useful when you need to reimport an already imported asset but don't want to place those things again.</p>
+
 <h5 id="i-all-of-those-things-can-be-changed-later-in-the-editor-itself-or-using-modtools-or-other-mods.">(i) <em>All of those things can be changed later in the editor itself or using ModTools or other mods.</em></h5>
+
 <h3 id="import-1">Import</h3>
+
 <p>After you choose your mesh, depending on how it was exported,<br />you might need to set the correct scale and rotation,<br />scale 100 and rotating 3 times around x axis are common necessities.</p>
+
 <h5 id="if-you-get-an-unsupported-color-error-one-of-your-textures-might-be-a-16-bit-file-you-need-to-change-it-to-8-bit-in-photoshop-image-mode-8-bits.">(!) <em>If you get an unsupported color error, one of your textures might be a 16 bit file, you need to change it to 8 bit, in Photoshop: Image &gt; Mode &gt; 8 Bits.</em></h5>
+
 <h5 id="if-the-mesh-preview-doesnt-display-or-you-cant-continue-you-may-have-a-problem-with-it-such-as-multiple-mesh-objects-other-entities-like-dummies-or-layers-in-the-exported-file.">(!) <em>If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like dummies, or layers in the exported file.</em></h5>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="editor">Editor</h2>
+
 <h3 id="lot-size">Lot Size</h3>
+
 <p>Size of the building area in cells, each cell is 8x8m.</p>
+
 <p>For growables, the size is limited to 4x4.</p>
+
 <p>For other buildings, the max sizes are 16x8, 15x9, 14x11, 13x12, 12x13, 11x14, 9x15 and 8x16.</p>
+
 <p>Make sure your building doesn't overhang the lot too much,<br />as the overhanging parts will disappear when the building inside the lot isn't visible.</p>
+
 <h3 id="general-properties">General Properties</h3>
+
 <ul>
 <li>use color variations (may require save/load for toggle to take effect)<br /></li>
+
 <li>availability (ingame, map editor etc.)<br /></li>
+
 <li>circular lot (used for vanilla wind turbine, water tower)<br /></li>
+
 <li>expand front yard (puts optional yard for props in front instead of back)<br /></li>
+
 <li>flatten full area (makes sure the terrain is flat up to the lot edges)<br /></li>
+
 <li>flatten terrain (tries to flatten terrain in a softer way)</li>
+
 </ul>
+
 <h3 id="stats">Stats</h3>
+
 <p>Based on which AI the building has, it can have different stats like electricity consumption, worker amount, police car count for a police station etc.</p>
+
 <h3 id="material-properties">Material properties</h3>
+
 <p>You can change the 4 color variations, and also floor parameters which are used for the fake interior for 100% specular windows.</p>
+
 <h3 id="networks">Networks</h3>
+
 <p>You can place networks such as roads, train/tram tracks and pedestrian paths.</p>
+
 <h3 id="props-trees">Props &amp; Trees</h3>
+
 <p>You can place props such as benches, lights and antennas.</p>
+
 <p>If you place a prop on the ground, it will follow the terrain if the building is placed on uneven terrain.<br />But if you place it on the building, it becomes fixed height, so it will always be at that height relative to the building.</p>
+
 <h5 id="you-must-use-either-vanilla-or-custom-workshop-published-props-and-networks-not-local-custom-ones-otherwise-they-wont-show-up-for-the-subscribers-of-your-asset.">(!) <em>You must use either vanilla or custom workshop published props and networks, not local custom ones, otherwise they won't show up for the subscribers of your asset.</em></h5>
+
 <h3 id="surface">Surface</h3>
+
 <p>Each cell can have it's own surface:</p>
+
 <ul>
 <li>Pavement (map theme texture)<br /></li>
+
 <li>Gravel (map theme texture)<br /></li>
+
 <li>Ruined (map theme texture)<br /></li>
+
 <li>Field (map theme color)<br /></li>
+
 <li>Clip (hole in the ground)</li>
+
 </ul>
+
 <h3 id="markers">Markers</h3>
+
 <p>These are invisible props which have functionality such as building entry points, parking spaces or smoke particle effects.</p>
+
 <h3 id="sub-buildings">Sub buildings</h3>
+
 <p>You can add other buildings as sub buildings to your main building. Unlike props, they are not references to another asset, they actually get embedded and saved into the main building asset.</p>
+
 <p>This is useful for multi-function buildings or adding a part using a different shader.</p>
+
 <p>Sub buildings don't grow on growables, they are only visible if the growable is plopped manually.</p>
+
 <p>If you just imported a building for it to be used as a sub building, you need to reload the game for it to be properly loaded and available as a sub building.</p>
+
 <h3 id="sub-meshes">Sub meshes</h3>
+
 <p>TBD</p>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="editor-advanced">Editor Advanced</h2>
+
 <p>Various things can be changed with the use of ModTools scene explorer [Ctrl+E] or running scripts in the console [F7], or other mods:</p>
+
 <ul>
 <li>AI - Asset AI Changer by Snow_Cat &amp; cerebellum(LINK)</li>
+
 </ul>
+
 <p>If you want a functionless decorative building, DecorationBuildingAI is a good choice.</p>
+
 <p>But if you want your building to be sinkable into the ground without lowering terrain, use BuildingAI, however a side effect is it won't get wet in the rain, or get snow on it on winter maps.</p>
+
 <ul>
 <li><p>UI category - Asset UI Category Changer by Snow_Cat(LINK)</p></li>
+
 <li><p>Item Class (UI sub-category) - Asset ItemClass Changer by Snow_Cat(LINK)</p></li>
+
 <li><p>UIPriority (determines item order in menu) - Asset UI Priority Changer by Snow_Cat(LINK) or script(LINK)<br /> It is recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like here.(LINK TO SHEET)</p></li>
+
 </ul>
+
 <h3 id="shader">Shader</h3>
+
 <p>When using the default building shader, parts that are under 0(ground) will get the map theme building base texture.</p>
+
 <p>Scripts for commonly used building shaders:</p>
+
 <ul>
 <li><p>Default(LINK) extends the base mesh into the ground and applies the building base texture to it.</p></li>
+
 <li><p>NoBase(LINK) doesn't replace underground texture with building base texture.<br /> The base mesh may still be visible, it's generated on import for edges closer than 5cm to 0(ground).<br /> Side-effect is increased reflectivity for high specularity areas.</p></li>
+
 <li><p>Fence(LINK) conforms to the terrain. (used for vanilla cemetary and japanese garden)</p></li>
+
 <li><p>Floating(LINK) waves in water. (used for Mass Transit DLC boat museum steam boat)</p></li>
+
 </ul>
+
 <h3 id="shader-properties">Shader Properties</h3>
+
 <p>Some shaders have specific hidden properties, such as the WindTurbine shader(LINK TO SCRIPT)<br />and AnimUV building shader(LINK TO SCRIPT).</p>
+
 <h3 id="placement-mode">Placement Mode</h3>
+
 <p>This determines how your asset must be placed:</p>
+
 <ul>
 <li>Roadside<br /></li>
+
 <li>Shoreline<br /></li>
+
 <li>OnWater (also disables water collision)<br /></li>
+
 <li>OnGround (can't be placed on water)<br /></li>
+
 <li>OnSurface (same as OnGround but can be placed on water)<br /></li>
+
 <li>OnTerrain (same as OnSurface but in water, not on it)<br /></li>
+
 <li>ShorelineOrGround</li>
+
 </ul>
+
 <p>It can be changed with ModTools scene explorer [Ctrl+E] and going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode.</p>
+
 <h3 id="zoning-mode">Zoning Mode</h3>
+
 <p>This is used only for growables to make them grow only on corners:</p>
+
 <ul>
 <li>Straight (default)<br /></li>
+
 <li>CornerLeft<br /></li>
+
 <li>CornerRight</li>
+
 </ul>
+
 <p>It can be changed with ModTools scene explorer [Ctrl+E] and going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode.</p>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="save">Save</h2>
+
 <h3 id="filename">Filename</h3>
+
 <p>The filename input is on the bottom right, this is what the actual file will be called.<br />It's not recommended to use spaces or dots.</p>
+
 <h3 id="asset-name">Asset Name</h3>
+
 <p>The asset name visible ingame, the name people should search for.</p>
+
 <h3 id="snapshot-thumbnail-tooltip">Snapshot, Thumbnail, Tooltip</h3>
+
 <p>There are 2 different folders you can open by clicking the folder icons:</p>
+
 <ol>
 <li>On the snapshot image, bottom right corner.</li>
+
 </ol>
+
 <p>Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the steam preview image, but you can change that seperately when publishing.</p>
+
 <ol>
 <li>Below thumbnail, on the right side.</li>
+
 </ol>
+
 <p>Use this one to change the thumbnail(109x100) and tooltip(492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p>
+
 <h3 id="local-asset-folder">Local Asset Folder</h3>
+
 <p>Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets<br />The AppData folder is hidden by default, you can access it by pressing [Windows+R] and typing in appdata.</p>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="publish">Publish</h2>
+
 <p>Once you have saved the asset and reloaded the game, you can publish the asset.</p>
+
 <p>Go to the content manager &gt; assets and find your asset, then click share.</p>
+
 <h3 id="title-and-description">Title and Description</h3>
+
 <p>You can change these on the steam workshop later.</p>
+
 <h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
+
 <p>There is a folder icon again on the snapshot image, bottom right corner.<br />Here you can change the steam preview image, which is the thumbnail visible on steam.<br />The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by steam so that's the size you should use.</p>
+
 <p>There is also the content folder, which is where the actual asset is.</p>
+
 <p>You can paste multiple .crp files here if you would like to upload a pack of assets.</p>
+
 <h3 id="steam-workshop">Steam Workshop</h3>
+
 <p>On the steam workshop page for your asset, you can:</p>
+
 <ul>
 <li>add it to a collection<br /></li>
+
 <li>add images and videos<br /></li>
+
 <li>add contributors and links<br /></li>
+
 <li>add required items and DLC<br /></li>
+
 <li>change visibility to friends only or private</li>
+
 </ul>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="update">Update</h2>
+
 <p>To update your own item, you must subscribe to it first, then it will show up in the content manager. It won't be the same as a local asset, as it will show an &quot;update&quot; button.</p>
+
 <p>When you click update, click the folder icon, and now you can change the steam preview image and put your new asset in the content folder. If updating a pack, remember to put all the assets inside the content folder.</p>
+
 <p>You can also add more assets to make it a bigger pack.</p>
+
 <h5 id="make-sure-your-updated-assets-are-saved-with-exactly-the-same-name-as-before-otherwise-it-will-disappear-from-your-subscribers-saves-as-the-game-uses-the-internal-prefab-name-to-refer-to-it.-in-the-case-of-networks-roads-tracks-etc.-it-may-completely-break-a-save.">(!) <em>Make sure your updated assets are saved with exactly the same name as before, otherwise it will disappear from your subscribers' saves, as the game uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.</em></h5>
 
+
 <div style="clear:both;"></div>
+
 
 <hr>
 
 <h2 id="prefab-name">Prefab Name</h2>
+
 <p>This is not something you can change.</p>
+
 <p>It's the hidden internal name used to refer to your asset in savefiles.</p>
+
 <p>It's the reason why a local asset is not the same as a workshop published asset.</p>
+
 <p>For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
+
 
 
 
@@ -311,12 +541,15 @@
 
 </div>
 
+
 <script>
 $(function(){
   $("#menu-file").load("../../menu.html");
 });
 </script>
 
+
 </body>
+
 
 </html>

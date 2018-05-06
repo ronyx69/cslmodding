@@ -151,6 +151,10 @@ p {
 	content: " · ";
 }
 
+.content li p:last-of-type {
+    margin-bottom: 32px;
+}
+
 .content a {
 	text-decoration: underline;
 }
