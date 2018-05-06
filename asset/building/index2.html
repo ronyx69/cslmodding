@@ -26,7 +26,7 @@
 
 
 
-<h1 id="asset-creation---building">Asset Creation - Building</h1>
+<h1>Asset Creation - Building</h1>
 
 
 <div style="clear:both;"></div>
@@ -767,6 +767,16 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 <script>
 $(function(){
   $("#menu-file").load("../../menu.html");
+});
+</script>
+
+<script>
+$(document).ready(function() {
+$(".content h1, .content h2, .content h3, .content h4, .content h5, .content h5").each(function(i) {
+ var heading = $(this);
+ var headingtext = heading.text().toLowerCase().trim().replace(/[\.,-\/#!?$%\^&\*;:{}=\-_`~()]/g,"");
+ heading.attr("id",headingtext );
+ });
 });
 </script>
 
