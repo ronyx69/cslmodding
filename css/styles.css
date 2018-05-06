@@ -84,11 +84,13 @@ h3 {
 	font-weight: 400;
 	font-size: 20px;
 	margin-bottom: 16px;
+	margin-top: 48px;
 }
 
 h4 {
 	font-weight: 700;
 	font-size: 16px;
+	margin-top: 32px;
 }
 
 .content hr {
@@ -96,13 +98,15 @@ h4 {
     height: 0px;
     border: 0;
     border-top: 1px solid #2b3033;
-	margin-top: 64px;
+	margin-top: 96px;
 	margin-bottom: 15px;
 }
 
 p {
-	margin-bottom: 32px;
-	//overflow: auto;
+	margin-top: 16px;
+}
+
+.content#h1 > p:last-of-type {
 }
 
 .content-warning-text {
@@ -135,9 +139,12 @@ p {
 	margin-bottom: 15px;
 }
 
+.content li {
+	margin-left: 16px;
+}
+
 .content ul li::before {
 	content: " · ";
-	margin-left: 16px;
 }
 
 .content a {
