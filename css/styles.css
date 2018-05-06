@@ -45,6 +45,16 @@ body {
 	padding: 0 32px;
 }
 
+.toc {
+	position: fixed;
+	margin: 32px;
+}
+
+.toc a:hover {
+	color: #45a3e6;
+}
+	
+
 a {
     text-decoration: none;
 	color: inherit;
@@ -119,9 +129,6 @@ strong {
 
 p {
 	margin-top: 16px;
-}
-
-.content#h1 > p:last-of-type {
 }
 
 .content-warning-text {
