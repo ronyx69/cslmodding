@@ -89,6 +89,10 @@ a {
 
 /* Content */
 
+h1, h2, h3, h4 {
+	clear:both;
+}
+
 h1 {
 	font-weight: 400;
 	margin-bottom: 32px;
