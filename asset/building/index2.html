@@ -121,16 +121,17 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 
 <ul>
 
-<li><strong>Diffuse (_d)</strong><br>the main color and texture of your asset.</p>
+<li><strong>Diffuse (_d)</strong><br>
+	The main color and texture of your asset.
 
-<p>It will look very bright, contrasty, and saturated in the game,so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
+<p>It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
 
 <p>If you don't import a diffuse map, it will default to white.</p>
 
 </li>
 
 
-<li>Alpha (_a) transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.</p>
+<li><strong>Alpha (_a)</strong><br>transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
 
 <p>Semi-transparency is not supported, you need to use the rotors shader(LINK) for that.</p>
 
@@ -139,36 +140,48 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 </li>
 
 
-<li>Color (_c) determines which parts will be affected by color variations.<br /> White means fully affected and black means not at all.</p>
+<li><strong>Color (_c)</strong><br>
+	Determines which parts will be affected by color variations. White means fully affected and black means not at all.
 
-<p>The diffuse will get multiplied by the color variation,<br /> that means the resulting color will look darker than the original diffuse.</p>
+<p>The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.</p>
 
-<p>If you don't import a color map, it will default to full color,<br /> but the &quot;use color variations&quot; setting must be enabled for the colors to appear.</p>
+<p>If you don't import a color map, it will default to full color, but the &quot;use color variations&quot; setting must be enabled for the colors to appear.</p>
 
 </li>
 
-<ul>
-<li>Illumination (_i) allows for randomly changing lighting for windows at night.<br /> 192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 128-192 (inverted) and 192-255</p>
 
-<p>Simply create a black and white illumination texture and then use a levels adjustment<br /> to set the output colors so that black becomes 192 and white becomes 128 for one set of windows<br /> and black becomes 192 and white becomes 255 for the other set.</p>
+<li>
 
-<p>0-120 is always visible illumination based on the diffuse, not recommended<br /> as it can create problems.</p>
+
+
+	<strong>Illumination (_i)</strong><br>
+
+<div class="content-photo-box">
+<a href="https://i.imgur.com/ojssLXp.jpg" target="null"><img src="https://i.imgur.com/ojssLXp.jpg"></a>
+<div class="content-photo-desc">
+Example illumination map showing both gradients.<br>
+192-128 inverted (bottom)<br>
+192-255 (top).
+</div></div>
+
+Allows for randomly changing lighting for windows at night.<br /> 192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 192-128 (inverted) and 192-255.
+
+<p>Simply create a black and white illumination texture and then use a levels adjustment to set the output colors so that black becomes 192 and white becomes 128 for one set of windows and black becomes 192 and white becomes 255 for the other set.</p>
+
+<p>0-120 is always visible illumination based on the diffuse, not recommended as it can create problems.</p>
 
 <p>If you don't import an illumination map, it will default to no illumination.</p>
 </li>
 
-<li>Specular (_s) reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.</p>
+<li><strong>Specular (_s)</strong><br>
+	Reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.
 
 <p>The specular highlight from the sun is very big and bright,<br /> so you might want to use very low (0-10%) specularity for surfaces facing upwards, like roofs.</p>
 
 <p>If you don't import a specular map, it will default to no specularity.</p>
 
 </li>
-<li>_n
-
-
-
-<p>Normal - also sometimes called a bump map, adds fake depth or form<br /> by affecting how the lighting appears.</p>
+<li><strong>Normal (_n)</strong><br>Also sometimes called a bump map, adds fake depth or form<br /> by affecting how the lighting appears.
 
 <p>This can be made from the diffuse or a heightmap(brighter colors will look extruded out more)<br /> using a normal map generator online, a photoshop plugin like xNormal,<br /> or standalone software such as CrazyBump.(LINKS)<br /> Make sure the generator is set to -y or simply invert the red channel<br /> of the normal map after generation, otherwise it won't behave correctly ingame.</p>
 
@@ -177,7 +190,7 @@ You can use Mesh Info by SamsamTS to check triangle counts of assets. You can us
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
 </li>
-
+</ul>
 
 
 <h4 id="format">Format</h4>
