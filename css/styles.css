@@ -116,6 +116,10 @@ p {
 	font-style: italic;
 }
 
+.icon1 {
+	margin-top: 32px;
+}
+
 .content-photo-box {
 	width: 25%;
 	float: right;
