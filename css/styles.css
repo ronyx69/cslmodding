@@ -40,7 +40,7 @@ body {
 	width: 768px;
 	margin: 0 auto;
 	display: block;
-	font-size: 17px;;
+	font-size: 18px;;
 	margin-bottom: 64px;
 }
 
@@ -58,7 +58,7 @@ a {
 
 .menu-category-title {
 	margin-top: 32px;
-	font-size: 14px;
+	font-size: 15px;
 	color: #77838c;
 }
 
@@ -70,26 +70,26 @@ a {
 
 h1 {
 	font-weight: 400;
-	font-size: 17px;
+	font-size: 18px;
 	margin-top: 32px;
 }
 
 h2 {
 	font-weight: 400;
-	font-size: 28px;
+	font-size: 29px;
 	margin-bottom: 32px;
 }
 
 h3 {
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 21px;
 	margin-bottom: 16px;
 	margin-top: 64px;
 }
 
 h4 {
 	font-weight: 700;
-	font-size: 17px;
+	font-size: 18px;
 	margin-top: 32px;
 }
 
