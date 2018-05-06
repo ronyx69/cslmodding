@@ -29,6 +29,7 @@ body {
 	float: left;
     bottom: 0;
 	height: 100%;
+	font-size: 16px;
 }
 
 .page {
@@ -40,7 +41,7 @@ body {
 	max-width: 768px;
 	margin: 0 auto;
 	display: block;
-	font-size: 18px;;
+	font-size: 18px;
 	margin-bottom: 128px;
 	padding: 0 32px;
 }
@@ -52,6 +53,7 @@ body {
 	background-color: #2b3033;
 	height: 100%;
 	width: 192px;
+	font-size: 16px;
 }
 
 .toc a:hover {
@@ -81,11 +83,14 @@ a {
 	margin-left: 8px;
 }
 
+.menu-category li a:hover {
+	color: #45a3e6;
+}
+
 /* Content */
 
 h1 {
 	font-weight: 400;
-	font-size: 18px;
 	margin-bottom: 32px;
 }
 
