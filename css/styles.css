@@ -133,7 +133,7 @@ strong {
 
 .content hr {
 	display: block;
-    height: 0px;
+    height: 0;
     border: 0;
     border-top: 1px solid #4c5459;
 	margin-top: 160px;
@@ -148,14 +148,18 @@ p {
 	margin-top: 16px;
 }
 
-.content-warning-text {
-	margin-top: -32px;
-	margin-left: 48px;
-	font-style: italic;
+.content-warning {
+	clear:both;
+}
+
+.content-warning em {
+	display: block;
+    margin-top: -32px;
+    padding: 0 48px;
 }
 
 .icon1 {
-	margin-top: 32px;
+
 }
 
 .content-photo-box {
