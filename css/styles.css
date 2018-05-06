@@ -56,6 +56,10 @@ body {
 	font-size: 16px;
 }
 
+.toc a {
+	color: #98a7b3
+}
+
 .toc a:hover {
 	color: #45a3e6;
 }
