@@ -1,47 +1,19 @@
 <html>
-
 <head>
-
-<title></title>
-
-
 <link rel="stylesheet" href="https://ronyx69.github.io/cslmodding/css/styles.css">
-
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
-
 </head>
-
-
 <body>
-
 <div class="menu" id="menu-file"></div>
-
-
 <div class="page" id="top">
-
 <div class="toc">
-<h1><a href="#top">Building <br>Asset <br>Creation</a></h1>
+<h1><a href="#top">
 
-</div>
+Building <br>Asset <br>Creation
 
-<div class="content">
+</a></h1></div><div class="content"><hr>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<hr>
 
 
 
@@ -58,16 +30,11 @@
 
 <p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices(their coordinates, UV mapping, normals and colors) and triangles.</p>
 
-
 <h4 id="formats">Formats</h4>
-
 <ul>
 <li>FBX (most commonly used)<br /></li>
-
 <li>OBJ (doesn't support vertex colors)<br /></li>
-
 <li>DAE</li>
-
 </ul>
 
 
@@ -90,7 +57,7 @@
 Vertex painting in 3ds Max.
 </div></div>
 
-The vertex color blue channel determines snow behavior on winter maps:
+<p>The vertex color blue channel determines snow behavior on winter maps:</p>
 
 
 <ul>
@@ -118,21 +85,21 @@ You are allowed to UV map outside the 0-1 area (main tile), so you can tile the 
 <p>
 
 <div class="content-photo-box">
-<a href="https://i.imgur.com/GfAYY35.jpg" target="null">
-<img src="https://i.imgur.com/GfAYY35.jpg"></a>
+<a href="https://i.imgur.com/rSinzFI.jpg" target="null">
+<img src="https://i.imgur.com/rSinzFI.jpg"></a>
 <div class="content-photo-desc">
-Example UV mapping using visible horizontal tiling on the bottom.
+Triangle counts of some vanilla assets.
 </div></div>
 
 It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla buildings or assets by other creators for reference.</p>
 
-<p>The absolute limit for a mesh is 65536 vertices.<br />[image showing some vanilla, from good to bad]</p>
+<p>The absolute limit for a mesh is 65536 vertices.</p>
 
 
 <div class="content-tip">
 <img src="https://ronyx69.github.io/cslmodding/icons/icon_info.svg" height="32px" width="32px" class="icon1">
 <em>
-You can use Mesh Info by SamsamTS to check triangle counts of assets. You can use Mesh Info by SamsamTS to check triangle counts of assets.
+You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891">Mesh Info by SamsamTS</a> to check triangle counts of assets.
 </em>
 </div>
 
@@ -280,21 +247,34 @@ Example normal map showing flat windows.
 
 <h4 id="resolution">Resolution</h4>
 
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as<br />1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard,<br />but the most important thing is that your width and height must be divisible by 4,<br />otherwise your texture will be corrupted by the compression.</p>
+<div class="content-photo-box">
+<a href="https://i.imgur.com/iPRqpr6.jpg" target="null">
+<img src="https://i.imgur.com/iPRqpr6.jpg"></a>
+<div class="content-photo-desc">
+Texture sizes of various vanilla assets. (Not to scale) See resolution in top right corner of preview window.
+</div></div>
 
-<p>[image showing different vanilla textures]</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 4, otherwise your texture will be corrupted by the compression.</p>
 
+
+<div class="content-tip">
 <img src="https://ronyx69.github.io/cslmodding/icons/icon_warning.svg" height="32px" width="32px" class="icon1">
-<div class="content-tip-text">
+<em>
 Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.
+</em>
 </div>
 
 
 
 
-
-
 <h3 id="lod-mesh">LOD Mesh</h3>
+
+<div class="content-photo-box">
+<a href="https://i.imgur.com/4h4UXhb.jpg" target="null">
+<img src="https://i.imgur.com/4h4UXhb.jpg"></a>
+<div class="content-photo-desc">
+Texture sizes of various vanilla assets. (Not to scale) See resolution in top right corner of preview window.
+</div></div>
 
 <p>LOD stands for level of detail.<br />This is the mesh visible from a distance.<br />It must be as simple as possible.</p>
 
@@ -780,15 +760,32 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-
-
 <script>
-$(function(){
-  $("#menu-file").load("../../menu.html");
-});
+	$(function(){
+	  $("#menu-file").load("../../menu.html");
+	});
 </script>
-
 <script>
   (function(){
     'use strict';
@@ -811,76 +808,69 @@ $(function(){
 
   })();
 </script>
-
-
 <script>
-var ToC =
-  "<nav role='navigation' class='table-of-contents'>" +
-    "<ul>";
-var newLine, el, title, link;
-$(".content h2").each(function() {
-  el = $(this);
-  title = el.text();
-  link = "#" + el.attr("id");
-  newLine =
-    "<li>" +
-      "<a href='" + link + "'>" +
-        title +
-      "</a>" +
-    "</li>";
-  ToC += newLine;
-});
-ToC +=
-   "</ul>" +
-  "</nav>";
-$(".toc").append(ToC);
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
 </script>
-
-<script type="text/javascript">
-    document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities Skylines Modding';
-</script>
-
-
 <script>
-// Select all links with hashes
-$('a[href*="#"]')
-  // Remove links that don't actually link to anything
-  .not('[href="#"]')
-  .not('[href="#0"]')
-  .click(function(event) {
-    // On-page links
-    if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-      && 
-      location.hostname == this.hostname
-    ) {
-      // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
-      if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        //event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 500, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          //$target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            //$target.focus(); // Set focus again
-          };
-        });
-      }
-    }
-  });
-</script>
 
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
 </body>
-
-
 </html>
