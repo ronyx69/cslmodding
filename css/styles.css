@@ -90,7 +90,8 @@ a {
 /* Content */
 
 h1, h2, h3, h4 {
-	clear:both;
+	outline: none;
+	clear: both;
 }
 
 h1 {
