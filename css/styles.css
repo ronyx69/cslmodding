@@ -164,6 +164,13 @@ p {
 
 }
 
+.key {
+background-color: #212426;
+padding: 0 6px;
+border-radius: 4px;
+border: solid 1px #2b3033;
+}
+
 .content-photo-box {
 	width: 25%;
 	float: right;

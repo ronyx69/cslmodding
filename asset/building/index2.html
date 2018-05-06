@@ -270,28 +270,35 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 <h3 id="lod-mesh">LOD Mesh</h3>
 
 <div class="content-photo-box">
-<a href="https://i.imgur.com/4h4UXhb.jpg" target="null">
-<img src="https://i.imgur.com/4h4UXhb.jpg"></a>
+<a href="https://i.imgur.com/K5aTXq5.jpg" target="null">
+<img src="https://i.imgur.com/K5aTXq5.jpg"></a>
 <div class="content-photo-desc">
-Texture sizes of various vanilla assets. (Not to scale) See resolution in top right corner of preview window.
+Comparison between main and LOD meshes for a large and small building.
 </div></div>
 
 <p>LOD stands for level of detail.<br />This is the mesh visible from a distance.<br />It must be as simple as possible.</p>
 
-<p>If you don't provide an LOD mesh, the game will try to generate one automatically, which can look bad, so it's highly recommended that you make your own.</p>
+<p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD using baking.</p>
 
 
 <h4 id="uv-mapping-1">UV Mapping</h4>
 
-<p>The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed.<br />This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
+<div class="content-photo-box">
+<a href="https://i.imgur.com/kAR8cmr.jpg" target="null">
+<img src="https://i.imgur.com/kAR8cmr.jpg"></a>
+<div class="content-photo-desc">
+UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
+</div></div>
 
-<p>[image showing different vanilla lods]</p>
+<p>The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
+
+
 
 
 
 <h3 id="lod-textures">LOD Textures</h3>
 
-<p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has.<br />It's recommended that your create your own LOD textures using baking.</p>
+<p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's recommended that you create your own LOD textures using baking.</p>
 
 
 <h4 id="resolution-1">Resolution</h4>
@@ -300,13 +307,7 @@ Texture sizes of various vanilla assets. (Not to scale) See resolution in top ri
 
 
 
-<h3 id="naming">Naming</h3>
 
-<p>The mesh can have any name, but it's not recommended to use spaces or underscores,<br />as the name for the lod mesh name will be meshname_lod.</p>
-
-<p>The textures must have the same name as the mesh, but with the texture type identifier after it,<br />so the result will be names like meshname_d.png and meshname_lod_d.png</p>
-
-[downloadable example asset which uses all possible textures]
 
 
 
@@ -326,9 +327,35 @@ Texture sizes of various vanilla assets. (Not to scale) See resolution in top ri
 <h2 id="import">Import</h2>
 
 
+
+
+<h3 id="naming">Naming</h3>
+
+<p>The mesh can have any name, but it's not recommended to use spaces or underscores,<br />as the name for the lod mesh name will be meshname_lod.</p>
+
+<p>The textures must have the same name as the mesh, but with the texture type identifier after it,<br />so the result will be names like meshname_d.png and meshname_lod_d.png</p>
+
+[downloadable example asset which uses all possible textures]
+
+
+
+
 <h3 id="import-folder">Import Folder</h3>
 
-<p>You should place the mesh and texture files in the import folder located here:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import<br />The AppData folder is hidden by default, you can access it by pressing [Windows+R] and typing in appdata.</p>
+
+<div class="content-photo-box">
+<a href="https://i.imgur.com/HcMrgsF.jpg" target="null">
+<img src="https://i.imgur.com/HcMrgsF.jpg"></a>
+<div class="content-photo-desc">
+Files ready for import.
+</div></div>
+
+
+
+
+<p>You should place the mesh and texture files in the import folder located here:</p>
+<p>C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import</p>
+<p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows + R</span> and typing in appdata.</p>
 
 
 
@@ -643,7 +670,7 @@ Texture sizes of various vanilla assets. (Not to scale) See resolution in top ri
 
 <h3 id="local-asset-folder">Local Asset Folder</h3>
 
-<p>Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets<br />The AppData folder is hidden by default, you can access it by pressing [Windows+R] and typing in appdata.</p>
+<p>Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets<br />The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
 
 
