@@ -55,7 +55,7 @@ Building <br>Asset <br>Creation
 Vertex painting in 3ds Max.
 </p></div>
 
-The vertex color blue channel determines snow behavior on winter maps:</p>
+The vertex color blue channel determines snow behavior on winter maps:
 
 
 <ul>
@@ -69,12 +69,13 @@ The vertex color blue channel determines snow behavior on winter maps:</p>
 
 <h4 id="uv-mapping">UV Mapping</h4>
 <p>
+
 <div class="content-photo-box">
-<a href="https://i.imgur.com/GfAYY35.jpg" target="null">
-<img src="https://i.imgur.com/GfAYY35.jpg"></a>
-<div class="content-photo-desc">
+<img src="https://i.imgur.com/GfAYY35.jpg">
+<p>
 Example UV mapping using visible horizontal tiling on the bottom.
-</div></div>
+</p>
+</div>
 
 You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
@@ -94,8 +95,7 @@ It's recommended to stay within reasonable triangle counts based on the size and
 <p>The absolute limit for a mesh is 65536 vertices.</p>
 
 
-<div class="content-tip">
-<img src="https://ronyx69.github.io/cslmodding/icons/icon_info.svg" height="32px" width="32px" class="icon1">
+<div class="content-info">
 <em>
 You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891">Mesh Info by SamsamTS</a> to check triangle counts of assets.
 </em>
@@ -289,13 +289,11 @@ Texture sizes of various vanilla assets. (Not to scale) See resolution in top ri
 <p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 4, otherwise your texture will be corrupted by the compression.</p>
 
 
-<div class="content-tip">
-<img src="https://ronyx69.github.io/cslmodding/icons/icon_warning.svg" height="32px" width="32px" class="icon1">
+<div class="content-warning">
 <em>
 Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.
 </em>
 </div>
-
 
 
 
@@ -810,6 +808,22 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 
 </div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://ronyx69.github.io/cslmodding/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://ronyx69.github.io/cslmodding/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
 <script>
 	var el3;
 	$(".content-photo-box img").each(function() 

@@ -149,12 +149,12 @@ p {
 	margin-top: 16px;
 }
 
-.content-tip {
+.content-info, .content-warning {
 	clear: both;
 	margin-top: 32px;
 }
 
-.content-tip em {
+.content-info em, .content-warning em {
 	display: block;
     margin-top: -32px;
     padding: 0 48px;
