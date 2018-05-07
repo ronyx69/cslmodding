@@ -12,7 +12,7 @@
 
 Building <br>Asset <br>Creation
 
-</a></h1></div><div class="content"><hr>
+</a></h1></div><div class="content">
 
 
 
@@ -50,14 +50,12 @@ Building <br>Asset <br>Creation
 
 <h4 id="vertex-paint">Vertex Paint</h4>
 <p>
-<div class="content-photo-box">
-<a href="https://i.imgur.com/0a286Ax.jpg" target="null">
-<img src="https://i.imgur.com/0a286Ax.jpg"></a>
-<div class="content-photo-desc">
-Vertex painting in 3ds Max.
-</div></div>
 
-<p>The vertex color blue channel determines snow behavior on winter maps:</p>
+<div class="content-photo-box"><img src="https://i.imgur.com/0a286Ax.jpg"><p>
+Vertex painting in 3ds Max.
+</p></div>
+
+The vertex color blue channel determines snow behavior on winter maps:</p>
 
 
 <ul>
@@ -128,8 +126,8 @@ Comparison between main and LOD meshes for a large and small building.
 <div class="content-photo-desc">
 UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
 </div></div>
-
-<p>The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
+<p>
+The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
 
 
 
@@ -323,7 +321,7 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 
 
 
-<hr>
+
 
 
 
@@ -408,7 +406,7 @@ Files ready for import.
 
 
 
-<hr>
+
 
 
 
@@ -527,7 +525,7 @@ Files ready for import.
 
 
 
-<hr>
+
 
 
 
@@ -631,7 +629,7 @@ Files ready for import.
 
 
 
-<hr>
+
 
 
 
@@ -687,7 +685,7 @@ Files ready for import.
 
 
 
-<hr>
+
 
 
 
@@ -743,7 +741,7 @@ Files ready for import.
 
 
 
-<hr>
+
 
 
 
@@ -771,7 +769,7 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 
 
-<hr>
+
 
 
 
@@ -811,10 +809,22 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 
 
-
-
-
 </div>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
 <script>
 	$(function(){
 	  $("#menu-file").load("../../menu.html");
