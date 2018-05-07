@@ -20,7 +20,7 @@ Building <br>Asset <br>Creation
 
 
 
-<h2 id="pre-import">Pre-import</h2>
+<h2 id="mesh">Mesh</h2>
 
 
 
@@ -106,6 +106,34 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 
 
+<h3 id="lod-mesh">LOD Mesh</h3>
+
+<div class="content-photo-box">
+<a href="https://i.imgur.com/K5aTXq5.jpg" target="null">
+<img src="https://i.imgur.com/K5aTXq5.jpg"></a>
+<div class="content-photo-desc">
+Comparison between main and LOD meshes for a large and small building.
+</div></div>
+
+<p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible.</p>
+
+<p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD using baking.</p>
+
+
+<h4 id="uv-mapping-1">UV Mapping</h4>
+
+<div class="content-photo-box">
+<a href="https://i.imgur.com/kAR8cmr.jpg" target="null">
+<img src="https://i.imgur.com/kAR8cmr.jpg"></a>
+<div class="content-photo-desc">
+UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
+</div></div>
+
+<p>The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
+
+
+
+<h2 id="textures">Textures</h2>
 
 
 <h3 id="main-textures">Main Textures</h3>
@@ -221,10 +249,16 @@ Example specular map showing high values for windows and very low values for the
 Example normal map showing flat windows.
 </div></div>
 
+<div class="content-photo-box">
+<a href="https://i.imgur.com/CeKq51I.jpg" target="null">
+<img src="https://i.imgur.com/CeKq51I.jpg"></a>
+<div class="content-photo-desc">
+Normal maps have a problem with getting weaker as they are rotated.
+</div></div>
 
 	Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
 
-<p>This can be made from the diffuse or a heightmap(brighter colors will look extruded out more) using a normal map generator online, a photoshop plugin like xNormal, or standalone software such as CrazyBump.(LINKS)</p>
+<p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using a normal map generator online, a photoshop plugin like xNormal, or standalone software such as CrazyBump.(LINKS)</p>
 <p>Make sure the generator is set to -y or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
 
 <p>High specularity and normal map don't work well together because of the compression, so you might want to paint over your windows and other shiny parts with a solid color before generating a normal map, or paint over these parts 127,127,255 on the final normal map.</p>
@@ -263,34 +297,6 @@ Texture sizes of various vanilla assets. (Not to scale) See resolution in top ri
 Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.
 </em>
 </div>
-
-
-
-
-<h3 id="lod-mesh">LOD Mesh</h3>
-
-<div class="content-photo-box">
-<a href="https://i.imgur.com/K5aTXq5.jpg" target="null">
-<img src="https://i.imgur.com/K5aTXq5.jpg"></a>
-<div class="content-photo-desc">
-Comparison between main and LOD meshes for a large and small building.
-</div></div>
-
-<p>LOD stands for level of detail.<br />This is the mesh visible from a distance.<br />It must be as simple as possible.</p>
-
-<p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD using baking.</p>
-
-
-<h4 id="uv-mapping-1">UV Mapping</h4>
-
-<div class="content-photo-box">
-<a href="https://i.imgur.com/kAR8cmr.jpg" target="null">
-<img src="https://i.imgur.com/kAR8cmr.jpg"></a>
-<div class="content-photo-desc">
-UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
-</div></div>
-
-<p>The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
 
 
 
@@ -392,7 +398,7 @@ Files ready for import.
 
 <h5 id="if-you-get-an-unsupported-color-error-one-of-your-textures-might-be-a-16-bit-file-you-need-to-change-it-to-8-bit-in-photoshop-image-mode-8-bits.">(!) <em>If you get an unsupported color error, one of your textures might be a 16 bit file, you need to change it to 8 bit, in Photoshop: Image &gt; Mode &gt; 8 Bits.</em></h5>
 
-<h5 id="if-the-mesh-preview-doesnt-display-or-you-cant-continue-you-may-have-a-problem-with-it-such-as-multiple-mesh-objects-other-entities-like-dummies-or-layers-in-the-exported-file.">(!) <em>If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like dummies, or layers in the exported file.</em></h5>
+<h5 id="if-the-mesh-preview-doesnt-display-or-you-cant-continue-you-may-have-a-problem-with-it-such-as-multiple-mesh-objects-other-entities-like-dummies-or-layers-in-the-exported-file.">(!) <em>If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like dummies, cameras, lights, or layers in the exported file.</em></h5>
 
 
 
@@ -554,14 +560,14 @@ Files ready for import.
 
 <h3 id="shader">Shader</h3>
 
-<p>When using the default building shader, parts that are under 0(ground) will get the map theme building base texture.</p>
+<p>When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.</p>
 
 <p>Scripts for commonly used building shaders:</p>
 
 <ul>
 <li><p>Default(LINK) extends the base mesh into the ground and applies the building base texture to it.</p></li>
 
-<li><p>NoBase(LINK) doesn't replace underground texture with building base texture.<br /> The base mesh may still be visible, it's generated on import for edges closer than 5cm to 0(ground).<br /> Side-effect is increased reflectivity for high specularity areas.</p></li>
+<li><p>NoBase(LINK) doesn't replace underground texture with building base texture.<br /> The base mesh may still be visible, it's generated on import for edges closer than 5cm to 0 (ground).<br /> Side-effect is increased reflectivity for high specularity areas.</p></li>
 
 <li><p>Fence(LINK) conforms to the terrain. (used for vanilla cemetary and japanese garden)</p></li>
 
@@ -664,7 +670,7 @@ Files ready for import.
 
 </ol>
 
-<p>Use this one to change the thumbnail(109x100) and tooltip(492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p>
+<p>Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p>
 
 
 

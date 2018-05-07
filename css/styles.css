@@ -176,6 +176,7 @@ border: solid 1px #2b3033;
 	float: right;
 	margin-left: 24px;
 	margin-bottom: 16px;
+	clear: both;
 }
 
 .content-photo-box img {
