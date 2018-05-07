@@ -70,12 +70,9 @@ The vertex color blue channel determines snow behavior on winter maps:
 <h4 id="uv-mapping">UV Mapping</h4>
 <p>
 
-<div class="content-photo-box">
-<img src="https://i.imgur.com/GfAYY35.jpg">
-<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
 Example UV mapping using visible horizontal tiling on the bottom.
-</p>
-</div>
+</p></div>
 
 You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
@@ -83,12 +80,9 @@ You are allowed to UV map outside the 0-1 area (main tile), so you can tile the 
 <h4 id="model-complexity">Model Complexity</h4>
 <p>
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/rSinzFI.jpg" target="null">
-<img src="https://i.imgur.com/rSinzFI.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/rSinzFI.jpg"><p>
 Triangle counts of some vanilla assets.
-</div></div>
+</p></div>
 
 It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla buildings or assets by other creators for reference.</p>
 
@@ -106,12 +100,12 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 <h3 id="lod-mesh">LOD Mesh</h3>
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/K5aTXq5.jpg" target="null">
-<img src="https://i.imgur.com/K5aTXq5.jpg"></a>
-<div class="content-photo-desc">
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/K5aTXq5.jpg"><p>
 Comparison between main and LOD meshes for a large and small building.
-</div></div>
+</p></div>
+
 
 <p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible.</p>
 
@@ -120,12 +114,12 @@ Comparison between main and LOD meshes for a large and small building.
 
 <h4 id="uv-mapping-1">UV Mapping</h4>
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/kAR8cmr.jpg" target="null">
-<img src="https://i.imgur.com/kAR8cmr.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/kAR8cmr.jpg"><p>
 UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
-</div></div>
+</p></div>
+
+
+
 <p>
 The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
 
@@ -146,12 +140,9 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 <li><strong>Diffuse (_d)</strong><br>
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/xtGMvSs.jpg" target="null">
-<img src="https://i.imgur.com/xtGMvSs.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/xtGMvSs.jpg"><p>
 Example diffuse texture for a warehouse.
-</div></div>
+</p></div>
 
 	The main color and texture of your asset.
 
@@ -165,12 +156,9 @@ Example diffuse texture for a warehouse.
 <li><strong>Alpha (_a)</strong><br>
 
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/EsrQwEb.jpg" target="null">
-<img src="https://i.imgur.com/EsrQwEb.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
 Example alpha texture for some railings and metal beams.
-</div></div>
+</p></div>
 
 
 	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
@@ -198,14 +186,11 @@ Example alpha texture for some railings and metal beams.
 
 	<strong>Illumination (_i)</strong><br>
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/ojssLXp.jpg" target="null">
-<img src="https://i.imgur.com/ojssLXp.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/ojssLXp.jpg"><p>
 Example illumination map showing both gradients.<br>
 192-128 inverted (bottom)<br>
 192-255 (top).
-</div></div>
+</p></div>
 
 Allows for randomly changing lighting for windows at night.<p>192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 192-128 (inverted) and 192-255.</p>
 
@@ -220,12 +205,9 @@ Allows for randomly changing lighting for windows at night.<p>192 is the neutral
 
 
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/bqEJq1d.jpg" target="null">
-<img src="https://i.imgur.com/bqEJq1d.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/bqEJq1d.jpg"><p>
 Example specular map showing high values for windows and very low values for the rest.
-</div></div>
+</p></div>
 
 
 
@@ -240,19 +222,13 @@ Example specular map showing high values for windows and very low values for the
 <li><strong>Normal (_n)</strong><br>
 
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/6TKBZZW.jpg" target="null">
-<img src="https://i.imgur.com/6TKBZZW.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/6TKBZZW.jpg"><p>
 Example normal map showing flat windows.
-</div></div>
+</p></div>
 
-<div class="content-photo-box">
-<a href="https://i.imgur.com/CeKq51I.jpg" target="null">
-<img src="https://i.imgur.com/CeKq51I.jpg"></a>
-<div class="content-photo-desc">
+<div class="content-photo-box"><img src="https://i.imgur.com/CeKq51I.jpg"><p>
 Normal maps have a problem with getting weaker as they are rotated.
-</div></div>
+</p></div>
 
 	Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
 

@@ -188,7 +188,7 @@ border: solid 1px #2b3033;
 
 .content-photo-box p {
 	font-size: 14px;
-	margin: 2px;
+	margin: 2px!important;
 	line-height: 24px;
 }
 
