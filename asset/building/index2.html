@@ -24,8 +24,8 @@ Building <br>Asset <br>Creation
 
 <h4 id="formats">Formats</h4>
 <ul>
-<li>FBX (most commonly used)<br /></li>
-<li>OBJ (doesn't support vertex colors)<br /></li>
+<li>FBX (most commonly used)</li>
+<li>OBJ (doesn't support vertex colors)</li>
 <li>DAE</li>
 </ul>
 
@@ -516,23 +516,26 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h2 id="editor-advanced">Editor Advanced</h2>
 
-<p>Various things can be changed with the use of ModTools scene explorer [Ctrl+E] or running scripts in the console [F7], or other mods:</p>
+<p>Various things can be changed with the use of ModTools scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
 
 <ul>
-<li>AI - Asset AI Changer by Snow_Cat &amp; cerebellum(LINK)</li>
-
-</ul>
-
+<li>AI - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=474652684'>Asset AI Changer by Snow_Cat &amp; cerebellum</a>
 <p>If you want a functionless decorative building, DecorationBuildingAI is a good choice.</p>
+<p>But if you want your building to be sinkable into the ground without lowering terrain, use BuildingAI, however a side effect is it won't get wet in the rain, or snowy on winter maps.</p>
+</li>
 
-<p>But if you want your building to be sinkable into the ground without lowering terrain, use BuildingAI, however a side effect is it won't get wet in the rain, or get snow on it on winter maps.</p>
 
-<ul>
-<li><p>UI category - Asset UI Category Changer by Snow_Cat(LINK)</p></li>
 
-<li><p>Item Class (UI sub-category) - Asset ItemClass Changer by Snow_Cat(LINK)</p></li>
 
-<li><p>UIPriority (determines item order in menu) - Asset UI Priority Changer by Snow_Cat(LINK) or script(LINK)<br /> It is recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like here.(LINK TO SHEET)</p></li>
+
+
+
+<li>UI category - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=458396767'>Asset UI Category Changer by Snow_Cat</a></li>
+
+<li>Item Class (UI sub-category) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a></li>
+
+<li>UIPriority (determines item order in menu) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>script</a>
+<p>It's recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like here.(LINK TO SHEET)</p></li>
 
 </ul>
 
@@ -545,13 +548,14 @@ You must use either vanilla or custom workshop published props and networks, not
 <p>Scripts for commonly used building shaders:</p>
 
 <ul>
-<li><p>Default(LINK) extends the base mesh into the ground and applies the building base texture to it.</p></li>
+<li><a href='https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48'>Default</a> extends the base mesh into the ground and applies the map theme building base texture to it.</li>
 
-<li><p>NoBase(LINK) doesn't replace underground texture with building base texture.<br /> The base mesh may still be visible, it's generated on import for edges closer than 5cm to 0 (ground).<br /> Side-effect is increased reflectivity for high specularity areas.</p></li>
+<li><a href='https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d'>NoBase</a> doesn't replace underground texture with building base texture. 
+<p>The base mesh may still be visible, it's generated on import for edges closer than 5cm to 0 (ground). Side-effect is increased reflectivity for high specularity areas.</p></li>
 
-<li><p>Fence(LINK) conforms to the terrain. (used for vanilla cemetary and japanese garden)</p></li>
+<li><a href='https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2'>Fence</a> conforms to the terrain. (used for vanilla cemetary and japanese garden)</li>
 
-<li><p>Floating(LINK) waves in water. (used for Mass Transit DLC boat museum steam boat)</p></li>
+<li><a href='https://gist.github.com/ronyx69/ce0ec6b39ab7a5c379dea8e10a4686f5'>Floating</a> waves in water. (used for Mass Transit DLC boat museum steam boat)</li>
 
 </ul>
 
