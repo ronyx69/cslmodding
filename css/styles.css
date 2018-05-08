@@ -49,7 +49,8 @@ body a {
 
 .toc a {
 	margin: 0 32px;
-	color: #98a7b3
+	color: #98a7b3;
+	display: block;
 }
 
 .toc a:hover {
