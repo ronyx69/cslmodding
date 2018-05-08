@@ -28,6 +28,8 @@ body a {
 }
 
 .menu {
+	position: fixed;
+	overflow-y: scroll;
 	width: 256px;
 	background-color: #2b3033;
 	float: left;
@@ -37,9 +39,8 @@ body a {
 }
 
 .page {
-	width: calc(100% - 512px);
+	width: 100%;
 	outline: none;
-	float: left;
 }
 
 .content {
@@ -53,6 +54,7 @@ body a {
 
 .toc {
 	position: fixed;
+	overflow-y: scroll;
 	right: 0;
 	padding: 32px;
 	background-color: #2b3033;
