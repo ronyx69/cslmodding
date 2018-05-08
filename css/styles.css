@@ -47,6 +47,16 @@ body a {
 	font-size: 16px;
 }
 
+.toc a {
+	margin: 0 32px;
+	color: #98a7b3
+}
+
+.toc a:hover {
+	color: #45a3e6;
+}
+	
+
 .page {
 	width: 100%;
 	outline: none;
@@ -62,14 +72,7 @@ body a {
 }
 
 
-.toc a {
-	color: #98a7b3
-}
 
-.toc a:hover {
-	color: #45a3e6;
-}
-	
 
 a {
     text-decoration: none;
