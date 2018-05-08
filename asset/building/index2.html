@@ -227,15 +227,19 @@ Example normal map showing flat windows.
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/CeKq51I.jpg"><p>
-Normal maps have a problem with getting weaker as they are rotated.
+Problem: normal maps get weaker as they are rotated.
 </p></div>
 
-	Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
+<div class="content-photo-box"><img src="https://i.imgur.com/BP3Vj1J.jpg"><p>
+Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces with different UV rotation/flip.
+</p></div>
+
+Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using a normal map generator online, a photoshop plugin like xNormal, or standalone software such as CrazyBump.(LINKS)</p>
 <p>Make sure the generator is set to -y or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
 
-<p>High specularity and normal map don't work well together because of the compression, so you might want to paint over your windows and other shiny parts with a solid color before generating a normal map, or paint over these parts 127,127,255 on the final normal map.</p>
+<p>High specularity and normal map don't work well together because of the compression, so you might want to paint over your windows and other shiny parts with a solid color before generating a normal map, or paint over these parts 128,128,255 on the final normal map.</p>
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
