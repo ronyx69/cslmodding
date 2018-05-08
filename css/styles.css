@@ -196,7 +196,7 @@ p {
 	margin-top: 48px;
 }
 
-.content-download a {
+.content .content-download a {
     text-decoration: none;
     padding: 6px 12px;
     border-radius: 8px;
