@@ -197,16 +197,17 @@ p {
 }
 
 .content .content-download a {
+	color: #98a7b3;
     text-decoration: none;
     padding: 6px 12px;
     border-radius: 8px;
-    background-color: #2b3033;
+    background-color: #212426;
     text-transform: uppercase;
     font-size: 15px;
 }
 
 .content-download a:hover {
-	background-color: #4c5459;
+	background-color: #2b3033;
 }
 
 .content ul {
