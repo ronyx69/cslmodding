@@ -35,6 +35,7 @@ body a {
 	background-color: #2b3033;
 	height: 100%;
 	font-size: 16px;
+	z-index: 5;
 }
 
 .toc {
@@ -45,6 +46,7 @@ body a {
 	background-color: #2b3033;
 	height: 100%;
 	font-size: 16px;
+	z-index: 4;
 }
 
 .toc a {
@@ -61,6 +63,7 @@ body a {
 .page {
 	width: 100%;
 	outline: none;
+	z-index: 3;
 }
 
 .content {
@@ -242,3 +245,20 @@ p {
 	color: #45a3e6;
 	cursor: pointer;
 }
+
+::-webkit-scrollbar-thumb:vertical 
+    {
+    background-color: #2b3033;
+    }
+ 
+::-webkit-scrollbar-thumb:horizontal 
+    {
+    background-color: #2b3033;
+    }
+ 
+::-webkit-scrollbar 
+    {
+    height: 8px;
+    width: 8px;
+    background-color: #4c5459;
+    }
