@@ -248,17 +248,17 @@ p {
 
 ::-webkit-scrollbar-thumb:vertical 
     {
-    background-color: #2b3033;
+    background-color: #4c5459;
     }
  
 ::-webkit-scrollbar-thumb:horizontal 
     {
-    background-color: #2b3033;
+    background-color: #4c5459;
     }
  
 ::-webkit-scrollbar 
     {
     height: 8px;
     width: 8px;
-    background-color: #4c5459;
+    background-color: #2b3033;
     }
