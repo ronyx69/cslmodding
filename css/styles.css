@@ -30,11 +30,22 @@ body a {
 .menu {
 	position: fixed;
 	overflow-y: scroll;
+	left: 0;
 	width: 256px;
 	background-color: #2b3033;
-	float: left;
     bottom: 0;
 	height: 100%;
+	font-size: 16px;
+}
+
+.toc {
+	position: fixed;
+	overflow-y: scroll;
+	right: 0;
+	padding: 32px;
+	background-color: #2b3033;
+	height: 100%;
+	width: 192px;
 	font-size: 16px;
 }
 
@@ -52,16 +63,6 @@ body a {
 	padding: 0 32px;
 }
 
-.toc {
-	position: fixed;
-	overflow-y: scroll;
-	right: 0;
-	padding: 32px;
-	background-color: #2b3033;
-	height: 100%;
-	width: 192px;
-	font-size: 16px;
-}
 
 .toc a {
 	color: #98a7b3
