@@ -24,7 +24,7 @@ body {
 }
 
 body a {
-	transition: all 1s ease-out;
+	transition: all 0.2s ease-out;
 }
 
 .menu {
