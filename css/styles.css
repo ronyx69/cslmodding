@@ -33,7 +33,6 @@ body a {
 	left: 0;
 	width: 256px;
 	background-color: #2b3033;
-    bottom: 0;
 	height: 100%;
 	font-size: 16px;
 }
@@ -42,10 +41,9 @@ body a {
 	position: fixed;
 	overflow-y: scroll;
 	right: 0;
-	padding: 32px;
+	width: 256px;
 	background-color: #2b3033;
 	height: 100%;
-	width: 192px;
 	font-size: 16px;
 }
 
