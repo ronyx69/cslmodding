@@ -238,7 +238,7 @@ p {
 }
 
 .content li p:last-of-type {
-
+    margin-bottom: 16px;
 }
 
 .content a {
