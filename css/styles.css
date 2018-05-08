@@ -218,7 +218,7 @@ p {
 	background-color: #2b3033;
 }
 
-.content ul {
+.content ul, .content ol {
 	padding-top: 16px;
 	margin-bottom: 16px;
 	display: table-cell;
