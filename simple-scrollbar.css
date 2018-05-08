@@ -24,13 +24,13 @@
 .ss-scroll {
   position: relative;
   background: rgba(0, 0, 0, 0.1);
-  width: 9px;
-  border-radius: 4px;
+  width: 8px;
+  margin: 2px;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.25s linear;
+  transition: opacity 0.2s ease-out;
 }
 
 .ss-hidden {
