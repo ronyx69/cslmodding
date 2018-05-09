@@ -37,7 +37,7 @@ Building <br>Asset <br>Creation
 
 <h4 id="transform">Transform</h4>
 
-<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using &quot;apply rotation &amp; scale&quot; in Blender, or &quot;reset xform&quot; in 3ds Max, and exporting only the selected object.</p>
+<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
 
 
 <h4 id="vertex-paint">Vertex Paint</h4>
@@ -354,14 +354,20 @@ Files ready for import.
 
 
 <div class="content-info"><em>
-All of those things can be changed later in the editor itself or using ModTools or other mods.
+All of those things can be changed later in the editor itself or using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> or other mods.
 </em></div>
 
 
 
 <h3 id="import-1">Import</h3>
 
-<p>After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around x axis are common necessities.</p>
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/WAIi5wX.jpg"><p>
+Importing a mesh in asset importer.
+</p></div>
+
+After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around x axis are common necessities.</p>
 
 
 
@@ -384,19 +390,17 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 
 
-
-
-
-
-
-
 <h2 id="editor">Editor</h2>
 
 
 
 <h3 id="lot-size">Lot Size</h3>
 
-<p>Size of the building area in cells, each cell is 8x8m.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/GZiqIy7.jpg"><p>
+For growables, the lot also includes an optional yard are for props.
+</p></div>
+ize of the building area in cells, each cell is 8x8m.</p>
 
 <p>For growables, the size is limited to 4x4.</p>
 
@@ -439,8 +443,12 @@ Make sure your building doesn't overhang the lot too much, as the overhanging pa
 
 
 <h3 id="networks">Networks</h3>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/bUjwQBI.jpg"><p>
+Vanilla train station pedestrian paths (magenta) connecting roadside to platform.
+</p></div>
 
-<p>You can place networks such as roads, train/tram tracks and pedestrian paths.</p>
+You can place networks such as roads, train/tram tracks and pedestrian paths.</p>
 
 
 
@@ -460,7 +468,13 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h3 id="surface">Surface</h3>
 
-<p>Each cell can have it's own surface:</p>
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/EKbUPgi.jpg"><p>
+The clip brush is uneven and unreliable.
+</p></div>
+
+Each cell can have it's own surface:</p>
 
 <ul>
 <li>Pavement (map theme texture)<br /></li>
@@ -485,9 +499,15 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h3 id="sub-buildings">Sub buildings</h3>
 
-<p>You can add other buildings as sub buildings to your main building. Unlike props, they are not references to another asset, they actually get embedded and saved into the main building asset.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/wrSG4gC.jpg"><p>
+Once a sub building has been added, you can change its position precisely.
+</p></div>
+You can add other buildings as sub buildings to your main building. Unlike props, they are not references to another asset, they actually get embedded and saved into the main building asset.</p>
 
 <p>This is useful for multi-function buildings or adding a part using a different shader.</p>
+
+<p>The fixed height option makes sure the sub building stays the same height even on uneven terrain.</p>
 
 <p>Sub buildings don't grow on growables, they are only visible if the growable is plopped manually.</p>
 
@@ -516,7 +536,13 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h2 id="editor-advanced">Editor Advanced</h2>
 
-<p>Various things can be changed with the use of ModTools scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
+ModTools scene explorer and console.
+</p></div>
+
+	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
 
 <ul>
 <li>AI - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=474652684'>Asset AI Changer by Snow_Cat &amp; cerebellum</a>
@@ -543,7 +569,15 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h3 id="shader">Shader</h3>
 
-<p>When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/S3kSt2w.jpg"><p>
+Comparison between Default (left), NoBase (middle) and Fence (right) building shaders.
+</p></div>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/a1D7hrz.jpg"><p>
+On winter maps, snow doesn't appear on the NoBase shader.
+</p></div>
+When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.</p>
 
 <p>Scripts for commonly used building shaders:</p>
 
@@ -588,7 +622,7 @@ You must use either vanilla or custom workshop published props and networks, not
 
 </ul>
 
-<p>It can be changed with ModTools scene explorer <span class="key">Ctrl+E</span> and going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode.</p>
+<p>It can be changed with <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> by going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode.</p>
 
 
 
@@ -605,7 +639,7 @@ You must use either vanilla or custom workshop published props and networks, not
 
 </ul>
 
-<p>It can be changed with ModTools scene explorer <span class="key">Ctrl+E</span> and going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode.</p>
+<p>It can be changed with <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode.</p>
 
 
 
@@ -628,7 +662,13 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h3 id="filename">Filename</h3>
 
-<p>The filename input is on the bottom right, this is what the actual file will be called.<br />It's not recommended to use spaces or dots.</p>
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/KYxmvPI.jpg"><p>
+Save asset window.
+</p></div>
+
+	The filename input is on the bottom right, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
 
 
 
@@ -660,7 +700,11 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h3 id="local-asset-folder">Local Asset Folder</h3>
 
-<p>Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
+CRP files in the local assets folder.
+</p></div>
+Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
 
@@ -680,7 +724,11 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h2 id="publish">Publish</h2>
 
-<p>Once you have saved the asset and reloaded the game, you can publish the asset.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/4OPnZac.jpg"><p>
+Share button in content manager.
+</p></div>
+Once you have saved the asset and reloaded the game, you can publish the asset.</p>
 
 <p>Go to the content manager &gt; assets and find your asset, then click share.</p>
 
@@ -694,7 +742,11 @@ You must use either vanilla or custom workshop published props and networks, not
 
 <h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
 
-<p>There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size you should use.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/Y53Uqxy.jpg"><p>
+Publish window and content folder.
+</p></div>
+There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size you should use.</p>
 
 <p>There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack of assets.</p>
 
@@ -758,7 +810,11 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 <h2 id="prefab-name">Prefab Name</h2>
 
-<p>This is not something you can change.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/f3Tr6NM.jpg"><p>
+Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
+</p></div>
+This is not something you can change.</p>
 
 <p>It's the hidden internal name used to refer to your asset in savefiles.</p>
 
