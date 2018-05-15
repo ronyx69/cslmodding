@@ -18,7 +18,7 @@ Building <br>Asset <br>Creation
 
 <h3 id="main-mesh">Main Mesh</h3>
 
-<p>This is a 3D model of the building, which will be visible when the camera is close to it.</p>
+<p>This is a 3D model of the prop, which will be visible when the camera is close to it.</p>
 
 <p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals and colors) and triangles.</p>
 
@@ -32,7 +32,7 @@ Building <br>Asset <br>Creation
 
 <h4 id="pivot-origin">Pivot / Origin</h4>
 
-<p>The pivot point or origin represents the center point on the ground of the lot.<br />It's usually represented using a red/green/blue axis gizmo.</p>
+<p>The pivot point or origin represents the center point on the ground, where the prop will be plopped.<br />It's usually represented using a red/green/blue axis gizmo.</p>
 
 
 <h4 id="transform">Transform</h4>
@@ -46,16 +46,7 @@ Building <br>Asset <br>Creation
 <div class="content-photo-box"><img src="https://i.imgur.com/0a286Ax.jpg"><p>
 Vertex painting in 3ds Max.
 </p></div>
-
-The vertex color blue channel determines snow behavior on winter maps:
-
-
-<ul>
-<li>128 means 3D snow will not be generated<br /></li>
-
-<li>0 means no snow will be visible at all</li>
-
-</ul>
+Vertex colors are used for specific shaders like AnimUV(LINK) for scrolling or multi-frame animations, or PropRotating(LINK) for rotating animations.
 </p>
 
 
@@ -65,18 +56,17 @@ The vertex color blue channel determines snow behavior on winter maps:
 <div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
 Example UV mapping using visible horizontal tiling on the bottom.
 </p></div>
-
 You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
 
 <h4 id="model-complexity">Model Complexity</h4>
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/rSinzFI.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 Triangle counts of some vanilla assets.
 </p></div>
 
-It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla buildings or assets by other creators for reference.</p>
+It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla props or assets by other creators for reference.</p>
 
 <p>The absolute limit for a mesh is 65536 vertices.</p>
 
@@ -94,12 +84,12 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/K5aTXq5.jpg"><p>
-Comparison between main and LOD meshes for a large and small building.
+<div class="content-photo-box"><img src="CHANGE"><p>
+Comparison between main and LOD meshes for ...
 </p></div>
 
 
-<p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible.</p>
+<p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible. Props are usually very small so a model with 1-6 triangles could be enough.</p>
 
 <p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD using baking.</p>
 
@@ -113,7 +103,7 @@ UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and conta
 
 
 <p>
-The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random building on your LOD.</p>
+The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random prop on your LOD.</p>
 
 
 
@@ -122,7 +112,7 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 <h3 id="main-textures">Main Textures</h3>
 
-<p>These determine the color and material properties of your building.</p>
+<p>These determine the color and material properties of your prop.</p>
 
 
 <h4 id="types">Types</h4>
@@ -132,8 +122,8 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 <li><strong>Diffuse (_d)</strong><br>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/xtGMvSs.jpg"><p>
-Example diffuse texture for a warehouse.
+<div class="content-photo-box"><img src="CHANGE"><p>
+Example diffuse texture for a ...
 </p></div>
 
 	The main color and texture of your asset.
@@ -180,17 +170,11 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 	<strong>Illumination (_i)</strong><br>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/ojssLXp.jpg"><p>
-Example illumination map showing both gradients.<br>
-192-128 inverted (bottom)<br>
-192-255 (top).
+<div class="content-photo-box"><img src="CHANGE"><p>
+Example illumination map ...
 </p></div>
-
-Allows for randomly changing lighting for windows at night.<p>192 is the neutral color for non-illuminated parts.<br /> Then there are two gradients: 192-128 (inverted) and 192-255.</p>
-
-<p>Create a black and white illumination texture and use a levels adjustment to set the output colors so that black becomes 192 and white becomes 128 for one set of windows, and black becomes 192 and white becomes 255 for the other set.</p>
-
-<p>0-120 is always visible illumination based on the diffuse, not recommended as it can create problems.</p>
+Allows for diffuse contribution illumination. Black means no illumination and white means the brightest possible illumination.
+</p>
 
 <p>If you don't import an illumination map, it will default to no illumination.</p>
 </li>
@@ -199,8 +183,8 @@ Allows for randomly changing lighting for windows at night.<p>192 is the neutral
 
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/BAu96Sq.jpg"><p>
-Example specular map showing high values for windows and very low values for the rest.
+<div class="content-photo-box"><img src="CHANGE"><p>
+Example specular map ...
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/xZnShPJ.jpg"><p>
@@ -208,9 +192,9 @@ Transitions between different specular values produce artifacts on the normal ma
 </p></div>
 
 
-	Reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.
+	Reflectivity, black means no reflection and white means max reflection.
 
-<p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards, like roofs.</p>
+<p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.</p>
 
 <p>If you don't import a specular map, it will default to no specularity.</p>
 
