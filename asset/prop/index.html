@@ -2,7 +2,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
 </head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
 
-Building <br>Asset <br>Creation
+Prop <br>Asset <br>Creation
 
 </a></h1></div><div class="page"><div class="content">
 
@@ -202,8 +202,8 @@ Transitions between different specular values produce artifacts on the normal ma
 <li><strong>Normal (_n)</strong><br>
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/6TKBZZW.jpg"><p>
-Example normal map showing flat windows.
+<div class="content-photo-box"><img src="CHANGE"><p>
+Example normal map ...
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/CeKq51I.jpg"><p>
@@ -219,7 +219,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
 <p>Make sure the generator is set to x- or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
 
-<p>High specularity and normal map don't work well together because of the compression, so you might want to paint over your windows and other shiny parts with a solid color before generating a normal map, or paint over these parts 128,128,255 on the final normal map.</p>
+<p>High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts parts with a solid color before generating a normal map, or paint over these parts 128,128,255 on the final normal map.</p>
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
@@ -239,7 +239,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <h4 id="resolution">Resolution</h4>
 <p>
-<div class="content-photo-box"><img src="https://i.imgur.com/iPRqpr6.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 Texture sizes of various vanilla assets. (Not to scale) See resolution in top right corner of preview window.
 </p></div>
 
@@ -269,7 +269,7 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 <h3 id="example-asset">Example Asset</h3>
 
 <p>
-Source files of an example asset ready for import.
+Source files of an example asset ready for import. CHANGE LINK
 </p>
 <div class="content-download"><a href="https://drive.google.com/open?id=1ff3geFWoI3b-wnFfg7869JC4rLCzNmqX" target="null">
 Download
@@ -305,7 +305,7 @@ Download
 <h3 id="import-folder">Import Folder</h3>
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/HcMrgsF.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 Files ready for import.
 </p></div>
 
@@ -321,22 +321,16 @@ Files ready for import.
 
 
 <h3 id="template">Template</h3>
-<p>There is a &quot;load existing props and decorations&quot; toggle on the bottom left, this will load props and networks like roads/tracks/paths from your chosen template as well, useful when you need to reimport an already imported asset but don't want to place those things again.</p>
-<p>The template you choose will determine many things about your building:</p>
+<p>The template you choose will determine some things about your prop:</p>
 
 <ul>
-<li>AI and corresponding stats (school with students, fire station with fire trucks etc.)<br /></li>
-
-<li>milestone at which it is unlocked<br /></li>
-
 <li>UI category<br /></li>
 
 <li>item class (UI sub-category)<br /></li>
 
-<li>general settings (flatten terrain, use color variations etc.)<br /></li>
+<li>general settings (create ruining, scale, use color variations)<br /></li>
 
 <li>shader, material properties (color variations)</li>
-
 </ul>
 
 
@@ -351,7 +345,7 @@ All of those things can be changed later in the editor itself or using <a href='
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/WAIi5wX.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 Importing a mesh in asset importer.
 </p></div>
 
@@ -381,131 +375,28 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 <h2 id="editor">Editor</h2>
 
 
-
-<h3 id="lot-size">Lot Size</h3>
-
-<p>
-<div class="content-photo-box"><img src="https://i.imgur.com/GZiqIy7.jpg"><p>
-For growables, the lot also includes an optional yard are for props.
-</p></div>
-Size of the building area in cells, each cell is 8x8m.</p>
-
-<p>For growables, the size is limited to 4x4.</p>
-
-<p>For other buildings, max sizes are 16x8, 15x9, 14x11, 13x12, 12x13, 11x14, 9x15 and 8x16.</p>
-
-<div class="content-warning"><em>
-Make sure your building doesn't overhang the lot too much, as the overhanging parts will disappear when the building inside the lot isn't visible.
-</em></div>
-
-
 <h3 id="general-properties">General Properties</h3>
 
 <ul>
-<li>use color variations (may require save/load for toggle to take effect)<br /></li>
 
-<li>availability (ingame, map editor etc.)<br /></li>
+<li>availability (ingame, map editor etc.)</li>
 
-<li>circular lot (used for vanilla wind turbine, water tower)<br /></li>
+<li>create ruining (shows map theme ruined texture on the ground)</li>
 
-<li>expand front yard (puts optional yard for props in front instead of back)<br /></li>
+<li>max/min scale (random scale variation for each plopped prop)</li>
 
-<li>flatten full area (makes sure the terrain is flat up to the lot edges)<br /></li>
-
-<li>flatten terrain (tries to flatten terrain in a softer way)</li>
+<li>use color variations (may require save/load for toggle to take effect)</li>
 
 </ul>
 
 
-
-<h3 id="stats">Stats</h3>
-
-<p>Based on which AI the building has, it can have different stats like electricity consumption, worker amount, police car count for a police station etc.</p>
 
 
 
 <h3 id="material-properties">Material properties</h3>
 
-<p>You can change the 4 color variations, and also floor parameters which are used for the fake interior for 100% specular windows.</p>
+<p>You can change the 4 color variations.</p>
 
-
-
-<h3 id="networks">Networks</h3>
-<p>
-<div class="content-photo-box"><img src="https://i.imgur.com/bUjwQBI.jpg"><p>
-Vanilla train station pedestrian paths (magenta) connecting roadside to platform.
-</p></div>
-
-You can place networks such as roads, train/tram tracks and pedestrian paths.</p>
-
-
-
-<h3 id="props-trees">Props &amp; Trees</h3>
-
-<p>You can place props such as benches, lights and antennas.</p>
-
-<p>If you place a prop on the ground, it will follow the terrain if the building is placed on uneven terrain. But if you place it on the building, it becomes fixed height, so it will always be at that height relative to the building.</p>
-
-<div class="content-warning"><em>
-You must use either vanilla or custom workshop published props and networks, not local custom ones, otherwise they won't show up for the subscribers of your asset.
-</em></div>
-
-
-
-
-
-<h3 id="surface">Surface</h3>
-
-<p>
-
-<div class="content-photo-box"><img src="https://i.imgur.com/EKbUPgi.jpg"><p>
-The clip brush is uneven and unreliable.
-</p></div>
-
-Each cell can have it's own surface:</p>
-
-<ul>
-<li>Pavement (map theme texture)<br /></li>
-
-<li>Gravel (map theme texture)<br /></li>
-
-<li>Ruined (map theme texture)<br /></li>
-
-<li>Field (map theme color)<br /></li>
-
-<li>Clip (hole in the ground)</li>
-
-</ul>
-
-
-
-<h3 id="markers">Markers</h3>
-
-<p>These are invisible props which have functionality such as building entry points, parking spaces or smoke particle effects.</p>
-
-
-
-<h3 id="sub-buildings">Sub buildings</h3>
-
-<p>
-<div class="content-photo-box"><img src="https://i.imgur.com/wrSG4gC.jpg"><p>
-Once a sub building has been added, you can change its position precisely.
-</p></div>
-You can add other buildings as sub buildings to your main building. Unlike props, they are not references to another asset, they actually get embedded and saved into the main building asset.</p>
-
-<p>This is useful for multi-function buildings or adding a part using a different shader.</p>
-
-<p>The fixed height option makes sure the sub building stays the same height even on uneven terrain.</p>
-
-<p>Sub buildings don't grow on growables, they are only visible if the growable is plopped manually.</p>
-
-<p>If you just imported a building for it to be used as a sub building, you need to reload the game for it to be properly loaded and available as a sub building.</p>
-
-
-
-<h3 id="sub-meshes">Sub meshes</h3>
-
-<p>TBD</p>
 
 
 
@@ -526,17 +417,14 @@ You can add other buildings as sub buildings to your main building. Unlike props
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 ModTools scene explorer and console.
 </p></div>
 
 	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
 
 <ul>
-<li>AI - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=474652684'>Asset AI Changer by Snow_Cat &amp; cerebellum</a>
-<p>If you want a functionless decorative building, DecorationBuildingAI is a good choice.</p>
-<p>But if you want your building to be sinkable into the ground without lowering terrain, use BuildingAI, however a side effect is it won't get wet in the rain, or snowy on winter maps.</p>
-</li>
+
 
 
 
@@ -558,26 +446,21 @@ ModTools scene explorer and console.
 <h3 id="shader">Shader</h3>
 
 <p>
-<div class="content-photo-box"><img src="https://i.imgur.com/S3kSt2w.jpg"><p>
-Comparison between Default (left), NoBase (middle) and Fence (right) building shaders.
+<div class="content-photo-box"><img src="CHANGE"><p>
+Comparison between Default (left), Fence (middle) and Decal (right) prop shaders.
 </p></div>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/a1D7hrz.jpg"><p>
-On winter maps, snow doesn't appear on the NoBase shader.
-</p></div>
-When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.</p>
 
-<p>Scripts for commonly used building shaders:</p>
+<p>Scripts for commonly used prop shaders:</p>
 
 <ul>
-<li><a href='https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48'>Default</a> extends the base mesh into the ground and applies the map theme building base texture to it.</li>
+<li><a href='https://gist.github.com/ronyx69/a5029e0369e45117285b113ffe1a6d48'>Default</a> CHANGELINKS aaa.</li>
 
-<li><a href='https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d'>NoBase</a> doesn't replace underground texture with building base texture. 
-<p>The base mesh may still be visible, it's generated on import for edges closer than 5cm to 0 (ground). Side-effect is increased reflectivity for high specularity areas.</p></li>
+<li><a href='https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d'>Fence</a> CHANGELINKS aaa. 
+<p>aaa</p></li>
 
-<li><a href='https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2'>Fence</a> conforms to the terrain. (used for vanilla cemetary and japanese garden)</li>
-
-<li><a href='https://gist.github.com/ronyx69/ce0ec6b39ab7a5c379dea8e10a4686f5'>Floating</a> waves in water. (used for Mass Transit DLC boat museum steam boat)</li>
+<li><a href='https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2'>Decal</a> CHANGELINKS projects the texture on the ground. 
+<p>This shader requires a specific mesh and the use of a script/mod for custom sizes.</p></li>
 
 </ul>
 
@@ -585,56 +468,7 @@ When using the default building shader, parts that are under 0 (ground) will get
 
 <h3 id="shader-properties">Shader Properties</h3>
 
-<p>Some shaders have specific hidden properties, such as the <a href='https://gist.github.com/ronyx69/18486e905c4ddf50ce14cafbd9c55ba0'>WindTurbine shader</a> and <a href='https://gist.github.com/ronyx69/92afd0686e31d59d380d98d139874abe'>AnimUV building shader</a>.</p>
-
-
-
-<h3 id="placement-mode">Placement Mode</h3>
-
-<p>This determines how your asset must be placed:</p>
-
-<ul>
-<li>Roadside<br /></li>
-
-<li>Shoreline<br /></li>
-
-<li>OnWater (also disables water collision)<br /></li>
-
-<li>OnGround (can't be placed on water)<br /></li>
-
-<li>OnSurface (same as OnGround but can be placed on water)<br /></li>
-
-<li>OnTerrain (same as OnSurface but in water, not on it)<br /></li>
-
-<li>ShorelineOrGround</li>
-
-</ul>
-
-<p>It can be changed with <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> by going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_placementMode.</p>
-
-
-
-<h3 id="zoning-mode">Zoning Mode</h3>
-
-<p>This is used only for growables to make them grow only on corners:</p>
-
-<ul>
-<li>Straight (default)<br /></li>
-
-<li>CornerLeft<br /></li>
-
-<li>CornerRight</li>
-
-</ul>
-
-<p>It can be changed with <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode.</p>
-
-
-
-
-
-
-
+<p>Some shaders have specific hidden properties, such as the <a href='https://gist.github.com/ronyx69/18486e905c4ddf50ce14cafbd9c55ba0'>PropRotating shader</a> and <a href='https://gist.github.com/ronyx69/92afd0686e31d59d380d98d139874abe'>AnimUV prop shader</a>.</p>
 
 
 
@@ -652,7 +486,7 @@ When using the default building shader, parts that are under 0 (ground) will get
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/KYxmvPI.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 Save asset window.
 </p></div>
 
