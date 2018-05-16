@@ -32,7 +32,7 @@ Prop <br>Asset <br>Creation
 
 <h4 id="pivot-origin">Pivot / Origin</h4>
 
-<p>The pivot point or origin represents the center point on the ground, where the prop will be plopped.<br />It's usually represented using a red/green/blue axis gizmo.</p>
+<p>The pivot point or origin represents the center point on the ground, where the prop will be plopped. It's usually represented using a red/green/blue axis gizmo.</p>
 
 
 <h4 id="transform">Transform</h4>
@@ -62,8 +62,8 @@ You are allowed to UV map outside the 0-1 area (main tile), so you can tile the 
 <h4 id="model-complexity">Model Complexity</h4>
 <p>
 
-<div class="content-photo-box"><img src="CHANGE"><p>
-Triangle counts of some vanilla assets.
+<div class="content-photo-box"><img src="https://i.imgur.com/f08NOKr.jpg"><p>
+Triangle counts of some vanilla props.
 </p></div>
 
 It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla props or assets by other creators for reference.</p>
@@ -78,20 +78,35 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 </div>
 
 
+<h4 id="model-complexity">Culling</h4>
+
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/nnZCoMq.jpg"><p>
+Infinitely thin triangles made by putting 2 of the 3 vertices in the same place.
+</p></div>
+
+Prop culling is when a prop disappears when you look away from the center of it.</p>
+
+<p>
+If your prop has a low height, or is wide/long, it's recommended to add an invisible triangle which is bigger than your actual mesh to make the game think the prop is larger than it actually is, which will reduce the chance of it disappearing.
+</p>
+
+
 
 
 <h3 id="lod-mesh">LOD Mesh</h3>
 
 
 
-<div class="content-photo-box"><img src="CHANGE"><p>
-Comparison between main and LOD meshes for ...
+<div class="content-photo-box"><img src="https://i.imgur.com/NWAZFvN.jpg"><p>
+Comparison between main and LOD meshes for the vanilla grill kiosk.
 </p></div>
 
 
 <p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible. Props are usually very small so a model with 1-6 triangles could be enough.</p>
 
-<p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD using baking.</p>
+<p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD mesh.</p>
 
 
 <h4 id="uv-mapping-1">UV Mapping</h4>
@@ -122,8 +137,8 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 <li><strong>Diffuse (_d)</strong><br>
 
-<div class="content-photo-box"><img src="CHANGE"><p>
-Example diffuse texture for a ...
+<div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
+Example diffuse texture for a conveyor prop.
 </p></div>
 
 	The main color and texture of your asset.
@@ -170,8 +185,8 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 	<strong>Illumination (_i)</strong><br>
 
-<div class="content-photo-box"><img src="CHANGE"><p>
-Example illumination map ...
+<div class="content-photo-box"><img src="https://i.imgur.com/APmTBu1.jpg"><p>
+Example illumination map for a torch.
 </p></div>
 Allows for diffuse contribution illumination. Black means no illumination and white means the brightest possible illumination.
 </p>
@@ -183,8 +198,8 @@ Allows for diffuse contribution illumination. Black means no illumination and wh
 
 
 
-<div class="content-photo-box"><img src="CHANGE"><p>
-Example specular map ...
+<div class="content-photo-box"><img src="https://i.imgur.com/dpTKCTS.jpg"><p>
+Example specular map for a roof water tank.
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/xZnShPJ.jpg"><p>
@@ -202,8 +217,8 @@ Transitions between different specular values produce artifacts on the normal ma
 <li><strong>Normal (_n)</strong><br>
 
 
-<div class="content-photo-box"><img src="CHANGE"><p>
-Example normal map ...
+<div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
+Example normal map for rocks.
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/CeKq51I.jpg"><p>
@@ -239,8 +254,8 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <h4 id="resolution">Resolution</h4>
 <p>
-<div class="content-photo-box"><img src="CHANGE"><p>
-Texture sizes of various vanilla assets. (Not to scale) See resolution in top right corner of preview window.
+<div class="content-photo-box"><img src="https://i.imgur.com/L4lJ9ki.jpg"><p>
+Texture sizes of various vanilla assets. See resolution in top right corner of preview window.
 </p></div>
 
 Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 4, otherwise your texture will be corrupted by the compression.</p>
@@ -305,7 +320,7 @@ Download
 <h3 id="import-folder">Import Folder</h3>
 
 
-<div class="content-photo-box"><img src="CHANGE"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/kcqp2OQ.jpg"><p>
 Files ready for import.
 </p></div>
 
@@ -750,7 +765,7 @@ This is not something you can change.</p>
 </script>
 <script>
 
-	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities Skylines Modding';
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
 </script>
 <script>
 	// Select all links with hashes
