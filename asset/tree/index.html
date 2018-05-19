@@ -1,0 +1,712 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Tree <br>Asset <br>Creation
+
+</a></h1></div><div class="page"><div class="content">
+
+
+
+
+
+
+
+<h2 id="mesh">Mesh</h2>
+
+
+
+<h3 id="main-mesh">Main Mesh</h3>
+
+<p>This is a 3D model of the tree, which will be visible when the camera is close to it.</p>
+
+<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals and colors) and triangles.</p>
+
+<h4 id="formats">Formats</h4>
+<ul>
+<li>FBX (most commonly used)</li>
+<li>OBJ (doesn't support vertex colors)</li>
+<li>DAE</li>
+</ul>
+
+
+<h4 id="pivot-origin">Pivot / Origin</h4>
+
+<p>The pivot point or origin represents the center point on the ground, where the tree will be plopped. It's usually represented using a red/green/blue axis gizmo.</p>
+
+
+<h4 id="transform">Transform</h4>
+
+<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
+
+
+
+
+
+<h4 id="uv-mapping">UV Mapping</h4>
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
+Example UV mapping using visible horizontal tiling on the bottom.
+</p></div>
+You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
+
+
+<h4 id="model-complexity">Model Complexity</h4>
+<p>
+
+<div class="content-photo-box"><img src="CHANGE"><p>
+Triangle counts of some vanilla trees.
+</p></div>
+
+It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla trees or assets by other creators for reference.</p>
+
+<p>The absolute limit for a mesh is 65536 vertices.</p>
+
+
+<div class="content-info">
+<em>
+You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891">Mesh Info by SamsamTS</a> to check triangle counts of assets.
+</em>
+</div>
+
+
+
+
+
+
+<h2 id="textures">Textures</h2>
+
+
+<h3 id="main-textures">Main Textures</h3>
+
+<p>These determine the color and material properties of your tree.</p>
+
+
+<h4 id="types">Types</h4>
+
+
+<ul>
+
+<li><strong>Diffuse (_d)</strong><br>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
+Example diffuse texture for a conveyor prop.
+</p></div>
+
+	The main color and texture of your asset.
+
+<p>It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
+
+<p>If you don't import a diffuse map, it will default to white.</p>
+
+</li>
+
+
+<li><strong>Alpha (_a)</strong><br>
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
+Example alpha texture for some railings and metal beams.
+</p></div>
+<div class="content-photo-box"><img src="https://i.imgur.com/et6nTdO.jpg"><p>
+Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
+</p></div>
+
+	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
+
+
+<p>If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
+
+</li>
+
+
+<li><strong>Color (_c)</strong><br>
+	Determines which parts are leaves or branches/bark.
+
+<p>The leaves should be black and the rest should be white.</p>
+
+<p>This allows for leaf brightness variation for each tree, snow on winter maps, and better looking normals for 2 sided faces.</p>
+
+<p>If you don't import a color map, it will default to white, which means the normals for leaves will look weird and there won't be any snow on winter maps.</p>
+
+</li>
+
+
+
+<li><strong>Normal (_n)</strong><br>
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/GDOFbuI.jpg"><p>
+Example normal map for a plant.
+</p></div>
+
+
+Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
+
+<p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
+<p>Make sure the generator is set to x- or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
+
+
+<p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
+
+</li>
+</ul>
+
+
+<h4 id="format">Format</h4>
+
+<p>Use a lossless format like .PNG.</p>
+
+<p>The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.</p>
+
+<p>Make sure the texture is 8 bit, because a 16 bit image can't be imported.</p>
+
+
+
+<h4 id="resolution">Resolution</h4>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/L4lJ9ki.jpg"><p>
+Texture sizes of various vanilla assets. See resolution in top right corner of preview window.
+</p></div>
+
+Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 4, otherwise your texture will be corrupted by the compression.</p>
+
+
+<div class="content-warning">
+<em>
+Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.
+</em>
+</div>
+
+
+
+
+
+
+<h2 id="lod">LOD</h2>
+<p>
+Trees don't require an LOD, it's generated automatically ingame using a render texture and billboarding, and updates every time the camera is rotated.
+</p>
+
+
+
+
+
+
+
+
+<h2 id="import">Import</h2>
+
+
+
+<h3 id="example-asset">Example Asset</h3>
+
+<p>
+Source files of an example prop ready for import.
+</p>
+<div class="content-download"><a href="https://drive.google.com/open?id=1x0cz4Wm_XJ5lM_GYznow1wMZAfEwv73w" target="null">
+Download
+</a></div>
+
+<h3 id="naming">Naming</h3>
+
+<p>The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.</p>
+
+<p>The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and meshname_lod_d.png</p>
+
+
+
+
+
+
+<h3 id="import-folder">Import Folder</h3>
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/kcqp2OQ.jpg"><p>
+Files ready for import.
+</p></div>
+
+
+
+
+<p>You should place the mesh and texture files in the import folder located here:</p>
+<p>C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import</p>
+<p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows + R</span> and typing in appdata.</p>
+
+
+
+
+
+<h3 id="template">Template</h3>
+<p>The template you choose will determine some things about your prop:</p>
+
+<ul>
+<li>UI category<br /></li>
+
+<li>item class (UI sub-category)<br /></li>
+
+<li>general settings (create ruining, scale, use color variations)<br /></li>
+
+<li>shader, material properties (color variations)</li>
+</ul>
+
+
+
+<div class="content-info"><em>
+All of those things can be changed later in the editor itself or using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> or other mods.
+</em></div>
+
+
+
+<h3 id="import-1">Import</h3>
+
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/9jUb6bJ.jpg"><p>
+Importing a mesh in asset importer.
+</p></div>
+
+After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around x axis are common necessities.</p>
+
+
+
+
+<div class="content-warning"><em>
+If you get an unsupported color error, one of your textures might be a 16 bit file, you need to change it to 8 bit, in Photoshop: Image &gt; Mode &gt; 8 Bits.
+</em></div>
+
+
+<div class="content-warning"><em>
+If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like dummies, cameras, lights, or layers in the exported file.
+</em></div>
+
+
+
+
+
+
+
+
+
+
+<h2 id="editor">Editor</h2>
+
+
+<h3 id="general-properties">General Properties</h3>
+
+<ul>
+
+<li>availability (ingame, map editor etc.)</li>
+
+<li>create ruining (shows map theme ruined texture on the ground)</li>
+
+<li>max/min scale (random scale variation for each plopped prop)</li>
+
+<li>use color variations (may require save/load for toggle to take effect)</li>
+
+</ul>
+
+
+
+
+
+<h3 id="material-properties">Material properties</h3>
+
+<p>You can change the 4 color variations.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="editor-advanced">Editor Advanced</h2>
+
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
+ModTools scene explorer and console.
+</p></div>
+
+	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
+
+<ul>
+
+
+
+
+
+
+
+
+<li>UI category - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=458396767'>Asset UI Category Changer by Snow_Cat</a></li>
+
+<li>Item Class (UI sub-category) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a></li>
+
+<li>UIPriority (determines item order in menu) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>script</a>
+<p>It's recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like <a href='https://docs.google.com/spreadsheets/d/1rRFx2y5yIE9Ex_qY74EE0OqXbNqS8A-XP0RvK6-vzaA'>here</a>.</p></li>
+
+</ul>
+
+
+
+<h3 id="shader">Shader</h3>
+
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/fENMu9Pg.jpg"><p>
+Comparison between Default (left), Fence (middle) and Decal (right) prop shaders.
+</p></div>
+
+
+<p>Scripts for commonly used prop shaders:</p>
+
+<ul>
+<li><a href='https://gist.github.com/ronyx69/bd84159b66ca9cb70763247ddc69fbac'>Default</a></li>
+
+<li><a href='https://gist.github.com/ronyx69/911f8a9deff79412d085f709e555e03f'>Fence</a> conforms to the ground. 
+<p>aaa</p></li>
+
+<li><a href='https://steamcommunity.com/workshop/filedetails/discussion/767233815/343787283746272981/'>Decal</a> projects the texture onto the ground.. 
+<p>This shader requires a specific mesh and the use of a script/mod for custom sizes.</p></li>
+
+</ul>
+
+
+
+<h3 id="shader-properties">Shader Properties</h3>
+
+<p>Some shaders have specific hidden properties, such as the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=954067599'>PropRotating shader</a> and <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299505 '>AnimUV prop shader</a>.</p>
+
+
+
+
+
+
+
+
+
+<h2 id="save">Save</h2>
+
+
+
+<h3 id="filename">Filename</h3>
+
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/hsWwdr5.jpg"><p>
+Save asset window.
+</p></div>
+
+	The filename input is on the bottom right, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
+
+
+
+<h3 id="asset-name">Asset Name</h3>
+
+<p>The asset name visible ingame, the name people should search for.</p>
+
+
+
+<h3 id="snapshot-thumbnail-tooltip">Snapshot, Thumbnail, Tooltip</h3>
+
+<p>There are 2 different folders you can open by clicking the folder icons:</p>
+
+<ol>
+<li>On the snapshot image, bottom right corner.
+
+
+
+<p>Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that seperately when publishing.</p></li>
+
+
+<li>Below thumbnail, on the right side.
+
+
+
+<p>Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p></li>
+
+</ol>
+
+<h3 id="local-assets-folder">Local Assets Folder</h3>
+
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
+CRP files in the local assets folder.
+</p></div>
+Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
+<p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="publish">Publish</h2>
+
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/4OPnZac.jpg"><p>
+Share button in content manager.
+</p></div>
+Once you have saved the asset and reloaded the game, you can publish the asset.</p>
+
+<p>Go to the content manager &gt; assets and find your asset, then click share.</p>
+
+
+
+<h3 id="title-and-description">Title and Description</h3>
+
+<p>You can change these on the Steam Workshop later.</p>
+
+
+
+<h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
+
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/Y53Uqxy.jpg"><p>
+Publish window and content folder.
+</p></div>
+There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size you should use.</p>
+
+<p>There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack of assets.</p>
+
+
+
+<h3 id="steam-workshop">Steam Workshop</h3>
+
+<p>On the Steam Workshop page for your asset, you can:</p>
+
+<ul>
+<li>add it to a collection<br /></li>
+
+<li>add images and videos<br /></li>
+
+<li>add contributors and links<br /></li>
+
+<li>add required items and DLC<br /></li>
+
+<li>change visibility to friends only or private</li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="update">Update</h2>
+
+<p>To update your own item, you must subscribe to it first, then it will show up in the content manager. It won't be the same as a local asset, as it will show an &quot;update&quot; button.</p>
+
+<p>When you click update, click the folder icon, and now you can change the Steam preview image and put your new asset in the content folder. If updating a pack, remember to put all the assets inside the content folder.</p>
+
+<p>You can also add more assets to make it a bigger pack.</p>
+
+
+<div class="content-warning"><em>
+Make sure your updated assets are saved with exactly the same name as before, otherwise it will disappear from your subscribers' saves, as the game uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
+</em></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="prefab-name">Prefab Name</h2>
+
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/f3Tr6NM.jpg"><p>
+Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
+</p></div>
+This is not something you can change.</p>
+
+<p>It's the hidden internal name used to refer to your asset in savefiles.</p>
+
+<p>It's the reason why a local asset is not the same as a workshop published asset.</p>
+
+<p>For local assets: filename.Asset Name_Data<br />For published workshop assets: SteamID.Asset Name_Data</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
