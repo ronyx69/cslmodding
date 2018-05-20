@@ -40,7 +40,10 @@ Tree <br>Asset <br>Creation
 <p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
 
 
-
+<h4 id="vertex-paint">Vertex Paint</h4>
+<p>
+For trees, vertex colors are automatically generated on import, they determine how much the tree will sway in the wind, you can reduce or disable this effect by running <a href='https://gist.github.com/ronyx69/318eab7a17c9d6a38d123eba0cefaab7'>this script</a> in the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> <span class=key>F7</span> console.
+</p>
 
 
 <h4 id="uv-mapping">UV Mapping</h4>
@@ -203,17 +206,17 @@ Trees don't require an LOD, it's generated automatically ingame using a render t
 <h3 id="example-asset">Example Asset</h3>
 
 <p>
-Source files of an example prop ready for import.
+Source files of an example tree ready for import. CHANGE LINK
 </p>
-<div class="content-download"><a href="https://drive.google.com/open?id=1x0cz4Wm_XJ5lM_GYznow1wMZAfEwv73w" target="null">
+<div class="content-download"><a href="change" target="null">
 Download
 </a></div>
 
 <h3 id="naming">Naming</h3>
 
-<p>The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.</p>
+<p>The mesh can have any name, but it's not recommended to use spaces or underscores.</p>
 
-<p>The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and meshname_lod_d.png</p>
+<p>The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png.</p>
 
 
 
@@ -223,7 +226,7 @@ Download
 <h3 id="import-folder">Import Folder</h3>
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/kcqp2OQ.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 Files ready for import.
 </p></div>
 
@@ -239,16 +242,14 @@ Files ready for import.
 
 
 <h3 id="template">Template</h3>
-<p>The template you choose will determine some things about your prop:</p>
+<p>The template you choose will determine some things about your tree:</p>
 
 <ul>
-<li>UI category<br /></li>
 
-<li>item class (UI sub-category)<br /></li>
+<li>UI category</li>
 
-<li>general settings (create ruining, scale, use color variations)<br /></li>
 
-<li>shader, material properties (color variations)</li>
+
 </ul>
 
 
@@ -263,7 +264,7 @@ All of those things can be changed later in the editor itself or using <a href='
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/9jUb6bJ.jpg"><p>
+<div class="content-photo-box"><img src="CHANGE"><p>
 Importing a mesh in asset importer.
 </p></div>
 
