@@ -258,7 +258,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 Texture sizes of various vanilla assets. See resolution in top right corner of preview window.
 </p></div>
 
-Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 4, otherwise your texture will be corrupted by the compression.</p>
+Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 <div class="content-warning">
@@ -277,7 +277,7 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 
 <h4 id="resolution-1">Resolution</h4>
 
-<p>The size for LOD textures must be powers of 2 such as 128x128, 64x32 etc., this is required for the LOD texture atlas generation.</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 
