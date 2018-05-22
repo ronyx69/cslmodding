@@ -298,9 +298,9 @@ p {
 .homegradient {
 	height: 128px;
 	width: 100%;
-	background: -moz-linear-gradient(top, rgba(43,48,51,0) 0%, rgba(43,48,51,0.9) 100%%);
-	background: -webkit-linear-gradient(top, rgba(43,48,51,0) 0%,rgba(43,48,51,0.9) 100%%);
-	background: linear-gradient(to bottom, rgba(43,48,51,0) 0%,rgba(43,48,51,0.9) 100%%);
+	background: -moz-linear-gradient(top, rgba(43,48,51,0) 0%, rgba(43,48,51,0.9) 100%);
+	background: -webkit-linear-gradient(top, rgba(43,48,51,0) 0%,rgba(43,48,51,0.9) 100%);
+	background: linear-gradient(to bottom, rgba(43,48,51,0) 0%,rgba(43,48,51,0.9) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002b3033', endColorstr='#2b3033',GradientType=0 ); /* IE6-9 */
 	position: absolute;
     bottom: 0px;
