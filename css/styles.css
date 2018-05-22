@@ -340,6 +340,7 @@ p {
     top: 0;
     margin: 0 240px;
     z-index: -2;
+    opacity: 0.1;
 }
 
 .imggr {
@@ -355,5 +356,4 @@ p {
 
 .imgbg img {
 	width: 100%;
-    opacity: 0.1;
 }
