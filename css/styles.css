@@ -278,28 +278,26 @@ p {
 }
 
 .contenthome table {
-	width:100%;
-	padding:16px;
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
 }
 
 .contenthome td {
-	width:33%; 
-	border: solid 16px #16181a;
 	color: #cee3f2;
-}
-
-.contenthome td img {
-	width:100%;
 }
 
 .homeimg {
 	position: relative;
-    text-align: center;
+	height: 256px;
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
 .homegradient {
-	height:128px;
-	width:100%;
+	height: 128px;
+	width: 100%;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2b3033+0,2b3033+100&0+0,1+100 */
 	background: -moz-linear-gradient(top, rgba(43,48,51,0) 0%, rgba(43,48,51,1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(43,48,51,0) 0%,rgba(43,48,51,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -314,23 +312,24 @@ p {
 	position: absolute;
     bottom: 0px;
     left: 0px;
-	background:#2b3033;
-	height:100%;
-	width:100%;
-	opacity:0;
+	background: #2b3033;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: all 0.2s ease-out;
 }
 
 .homeimgtext {
 	position: absolute;
-    bottom: 8px;
+    bottom: 16px;
     left: 24px;
 }
 
 .contenthome td:hover {
-	cursor:pointer;
-	color:#45a3e6;
+	cursor: pointer;
+	color: #45a3e6;
 }
 
 .contenthome td:hover .homeimgoverlay {
-	opacity:0.2 !important;
+	opacity: 0.5 !important;
 }
