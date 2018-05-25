@@ -24,7 +24,9 @@ Vehicle <br>Asset <br>Creation
 
 <p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals and colors) and triangles.</p>
 
-<p>Mesh elements which are closer than 5cm to 0 (ground) will be automatically detected as wheels.
+<p>Continuous connected parts of the mesh (called elements) which are closer than 5cm to 0 (ground) will be automatically detected as wheels. This it not relevant for ships, monorails, cable cars.
+
+</p>
 
 <h4 id="formats">Formats</h4>
 <ul>
@@ -36,7 +38,7 @@ Vehicle <br>Asset <br>Creation
 
 <h4 id="pivot-origin">Pivot / Origin</h4>
 
-<p>The pivot point or origin represents the center point on the ground, where the prop will be plopped. It's usually represented using a red/green/blue axis gizmo.</p>
+<p>The pivot point or origin represents the center point on the ground, on which the vehicle will drive. It's usually represented using a red/green/blue axis gizmo.</p>
 
 
 <h4 id="transform">Transform</h4>
@@ -47,10 +49,8 @@ Vehicle <br>Asset <br>Creation
 <h4 id="vertex-paint">Vertex Paint</h4>
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/0a286Ax.jpg"><p>
-Vertex painting in 3ds Max.
-</p></div>
-Vertex colors are used for specific shaders like AnimUV(LINK) for scrolling or multi-frame animations, or PropRotating(LINK) for rotating animations.
+
+Vertex colors are automatically generated to determine wheels, which will spin based on the shader of the vehicle.
 </p>
 
 
@@ -66,11 +66,11 @@ You are allowed to UV map outside the 0-1 area (main tile), so you can tile the 
 <h4 id="model-complexity">Model Complexity</h4>
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/f08NOKr.jpg"><p>
-Triangle counts of some vanilla props.
+<div class="content-photo-box"><img src="https://i.imgur.com/isNHUg5.jpg"><p>
+Triangle counts of some vanilla vehicles.
 </p></div>
 
-It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla props or assets by other creators for reference.</p>
+It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla vehicles or assets by other creators for reference.</p>
 
 <p>The absolute limit for a mesh is 65536 vertices.</p>
 
@@ -82,20 +82,6 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 </div>
 
 
-<h4 id="model-complexity">Culling</h4>
-
-<p>
-
-<div class="content-photo-box"><img src="https://i.imgur.com/nnZCoMq.jpg"><p>
-Infinitely thin triangles made by putting 2 of the 3 vertices in the same place.
-</p></div>
-
-Prop culling is when a prop disappears when you look away from the center of it.</p>
-
-<p>
-If your prop has a low height, or is wide/long, it's recommended to add an invisible triangle which is bigger than your actual mesh to make the game think the prop is larger than it actually is, which will reduce the chance of it disappearing.
-</p>
-
 
 
 
@@ -103,12 +89,12 @@ If your prop has a low height, or is wide/long, it's recommended to add an invis
 
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/NWAZFvN.jpg"><p>
-Comparison between main and LOD meshes for the vanilla grill kiosk.
+<div class="content-photo-box"><img src="https://i.imgur.com/Lu9onqw.jpg"><p>
+Comparison between main and LOD meshes for the vanilla police car.
 </p></div>
 
 
-<p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible. Props are usually very small so a model with 1-6 triangles could be enough.</p>
+<p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible.</p>
 
 <p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD mesh.</p>
 
@@ -122,7 +108,7 @@ UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and conta
 
 
 <p>
-The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random prop on your LOD.</p>
+The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random vehicle on your LOD.</p>
 
 
 
@@ -131,7 +117,7 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 <h3 id="main-textures">Main Textures</h3>
 
-<p>These determine the color and material properties of your prop.</p>
+<p>These determine the color and material properties of your vehicle.</p>
 
 
 <h4 id="types">Types</h4>
@@ -141,8 +127,8 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 <li><strong>Diffuse (_d)</strong><br>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
-Example diffuse texture for a conveyor prop.
+<div class="content-photo-box"><img src="https://i.imgur.com/xkAfU6T.jpg"><p>
+Example diffuse texture for a vehicle.
 </p></div>
 
 	The main color and texture of your asset.
@@ -178,6 +164,8 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 <p>The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.</p>
 
+<p>For emergency vehicles (police, ambulance, firetruck) this determines where the siren is. The sirens are marked white, and everything else is black.</p> 
+
 <p>If you don't import a color map, it will default to full color, but the &quot;use color variations&quot; setting must be enabled for the colors to appear.</p>
 
 </li>
@@ -189,31 +177,34 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 	<strong>Illumination (_i)</strong><br>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/APmTBu1.jpg"><p>
-Example illumination map for a torch.
+<div class="content-photo-box"><img src="https://i.imgur.com/luBfaI2.jpg"><p>
+Example illumination map for a vehicle.
 </p></div>
-Allows for diffuse contribution illumination. Black means no illumination and white means the brightest possible illumination.
+
+For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses, trams), this defines headlights and turning signals. The turning signals are 0 (black) the headlights and taillights are 255 (white), everything else is 128 (medium gray).
+
+<p>
+	For the train shader, this defines always on lights (headlights/taillights) and lights which are only on at night (windows). The always on lights are 255 (white) and the night lights are 0 (black), everything else is 128 (medium gray).
 </p>
 
-<p>If you don't import an illumination map, it will default to no illumination.</p>
+
+<p>If you don't import an illumination map, it will default to black.</p>
 </li>
 
 <li><strong>Specular (_s)</strong><br>
 
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/dpTKCTS.jpg"><p>
-Example specular map for a roof water tank.
-</p></div>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/xZnShPJ.jpg"><p>
 Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
 </p></div>
 
 
-	Reflectivity, black means no reflection and white means max reflection.
+	Reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible.
 
-<p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.</p>
+<p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards, like roofs.</p>
 
 <p>If you don't import a specular map, it will default to no specularity.</p>
 
@@ -258,7 +249,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <h4 id="resolution">Resolution</h4>
 <p>
-<div class="content-photo-box"><img src="https://i.imgur.com/L4lJ9ki.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/isNHUg5.jpg"><p>
 Texture sizes of various vanilla assets. See resolution in top right corner of preview window.
 </p></div>
 
@@ -281,7 +272,7 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 
 <h4 id="resolution-1">Resolution</h4>
 
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 256x256, 256x128, 128x64, 64x64 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 
@@ -304,9 +295,9 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 <h3 id="example-asset">Example Asset</h3>
 
 <p>
-Source files of an example prop ready for import.
+Source files of an example vehicle ready for import.
 </p>
-<div class="content-download"><a href="https://drive.google.com/open?id=1x0cz4Wm_XJ5lM_GYznow1wMZAfEwv73w" target="null">
+<div class="content-download"><a href="https://drive.google.com/open?id=1p63jdL4yuuKIJ5p_wDALO7R78C-adJG8" target="null">
 Download
 </a></div>
 
@@ -324,7 +315,7 @@ Download
 <h3 id="import-folder">Import Folder</h3>
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/kcqp2OQ.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/3S7X17k.jpg"><p>
 Files ready for import.
 </p></div>
 
@@ -338,21 +329,26 @@ Files ready for import.
 
 
 
-
 <h3 id="template">Template</h3>
-<p>The template you choose will determine some things about your prop:</p>
+
+<p>The template you choose will determine many things about your building:</p>
 
 <ul>
-<li>UI category<br /></li>
+<li>AI and corresponding stats (like capacity for cargo, or passengers for a plane)</li>
 
-<li>item class (UI sub-category)<br /></li>
+<li>trailers</li>
 
-<li>general settings (create ruining, scale, use color variations)<br /></li>
+<li>max speed</li>
+
+<li>light effects and their position</li>
+
+<li>Item class (defines service, for example industrial - farming for the tractor)</li>
+
+<li>use color variations</li>
 
 <li>shader, material properties (color variations)</li>
+
 </ul>
-
-
 
 <div class="content-info"><em>
 All of those things can be changed later in the editor itself or using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> or other mods.
@@ -364,7 +360,7 @@ All of those things can be changed later in the editor itself or using <a href='
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/9jUb6bJ.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/O4KIgJr.jpg"><p>
 Importing a mesh in asset importer.
 </p></div>
 
@@ -393,20 +389,24 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 <h2 id="editor">Editor</h2>
 
-
 <h3 id="general-properties">General Properties</h3>
 
 <ul>
 
-<li>availability (ingame, map editor etc.)</li>
+<li>max speed</li>
 
-<li>create ruining (shows map theme ruined texture on the ground)</li>
-
-<li>max/min scale (random scale variation for each plopped prop)</li>
-
-<li>use color variations (may require save/load for toggle to take effect)</li>
+<li>use color variations</li>
 
 </ul>
+
+
+
+<h3 id="trailers">Trailers</h3>
+
+<p>You can add other vehicles as trailers which are attached to your vehicle, this is used for cargo trailers, train/tram cars.
+</p>
+
+
 
 
 
@@ -418,10 +418,15 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 
 
+<h3 id="sub-meshes">Sub Meshes</h3>
 
+<p>
+	You can add additional meshes as sub meshes, you can set required and forbidden conditions so the main mesh or sub meshes appear only when those conditions are met, for example the vanilla bus has a left hand traffic sub mesh, and the forestry trailer has a loaded trailer sub mesh.
+</p>
 
-
-
+<div class="content-info"><em>
+By default, not all sub mesh flags (conditions) are visible, use <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156'>the Sub Mesh Flags mod</a> to show all flags in the asset editor UI.
+</em></div>
 
 
 
@@ -447,12 +452,11 @@ ModTools scene explorer and console.
 
 
 
-<li>UI category - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=458396767'>Asset UI Category Changer by Snow_Cat</a></li>
 
-<li>Item Class (UI sub-category) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a></li>
+<li>Item Class (service) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a></li>
 
-<li>UIPriority (determines item order in menu) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>script</a>
-<p>It's recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like <a href='https://docs.google.com/spreadsheets/d/1rRFx2y5yIE9Ex_qY74EE0OqXbNqS8A-XP0RvK6-vzaA'>here</a>.</p></li>
+<li>Many other advanced vehicle settings - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=800820816'>Extended Asset Editor by Acc3ss Violation</a></li>
+
 
 </ul>
 
@@ -464,43 +468,14 @@ ModTools scene explorer and console.
 
 <h3 id="shader">Shader</h3>
 
-<p>
-<div class="content-photo-box"><img src="https://i.imgur.com/fENMu9Pg.jpg"><p>
-Comparison between Default (left), Fence (middle) and Decal (right) prop shaders.
-</p></div>
-
-
-<p>Scripts for commonly used prop shaders:</p>
-
-<ul>
-<li><a href='https://gist.github.com/ronyx69/bd84159b66ca9cb70763247ddc69fbac'>Default</a></li>
-
-<li><a href='https://gist.github.com/ronyx69/911f8a9deff79412d085f709e555e03f'>Fence</a> conforms to the ground. 
-
-<li><a href='https://steamcommunity.com/workshop/filedetails/discussion/767233815/343787283746272981/'>Decal</a> projects the texture onto the ground.. 
-<p>This shader requires a specific mesh and the use of a script/mod for custom sizes.</p></li>
-
-</ul>
-
-
-
-<h3 id="shader-properties">Shader Properties</h3>
-
-<p>Some shaders have specific hidden properties, such as the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=954067599'>PropRotating shader</a> and <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299505 '>AnimUV prop shader</a>.</p>
+<p>Advanced article on using prop shader for monorail coming later.</p>
 
 
 
 
-<h3 id="variations">Variations</h3>
+<h3 id="tyres">Tyres</h3>
 
-<p><div class="content-photo-box"><img src="https://i.imgur.com/oe3rouc.jpg"><p>
-Prop variations menu in the asset editor.
-</p></div>You can add multiple prop assets to your prop as variations using a probability value. The probability is a percentage out of 100, but the main prop has no probability so it gets whatever is left over, so if you have two variations with a 25% probability each, the main prop will get a 50% probability. The variations will be embedded into the main prop, but also show up as seperate props in the menu.</p>
-
-<p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
-
-
-
+<p>Advanced article on custom vertex paint and parameters for tyres coming later.</p>
 
 
 
@@ -514,7 +489,7 @@ Prop variations menu in the asset editor.
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/hsWwdr5.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/avuewWu.jpg"><p>
 Save asset window.
 </p></div>
 
@@ -524,7 +499,7 @@ Save asset window.
 
 <h3 id="asset-name">Asset Name</h3>
 
-<p>The asset name visible ingame, the name people should search for.</p>
+<p>The asset name visible ingame.</p>
 
 
 
