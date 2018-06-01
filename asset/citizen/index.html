@@ -2,11 +2,14 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
 </head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
 
-Tree <br>Asset <br>Creation
+Citizen <br>Asset <br>Creation
 
 </a></h1></div><div class="page">
-<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/vYZcjXn.jpg'/></div>
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/jpMVCLg.jpg'/></div>
 <div class="content">
+
+
+
 
 
 
@@ -17,32 +20,37 @@ Tree <br>Asset <br>Creation
 
 <h3 id="main-mesh">Main Mesh</h3>
 
-<p>This is a 3D model of the tree, which will be visible when the camera is close to it.</p>
+<p>This is a 3D model of the citizen, which will be visible when the camera is close to it.</p>
 
-<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals and colors) and triangles.</p>
+<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals and colors) and triangles. For citizens this also contains the skeleton bones to which the mesh is bound to using bone weights.</p>
 
 <h4 id="formats">Formats</h4>
 <ul>
 <li>FBX (most commonly used)</li>
-<li>OBJ (doesn't support vertex colors)</li>
 <li>DAE</li>
 </ul>
 
 
+<h4 id="skeleton">Skeleton</h4>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/UH2WI1f.jpg"><p>
+One of the skeleton templates.
+</p></div>
+
+You must fit your mesh to one of the available skeleton templates, which can be found in this folder:</p>
+<p>C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Files\Templates</p>
+
+<p>You need to bind your mesh to the bones of the skeleton, in 3ds Max this is done using the skin modifier and adding all the bones</p>
+
+
 <h4 id="pivot-origin">Pivot / Origin</h4>
 
-<p>The pivot point or origin represents the center point on the ground, where the tree will be plopped. It's usually represented using a red/green/blue axis gizmo.</p>
+<p>The pivot point or origin represents the center point on the ground. It's usually represented using a red/green/blue axis gizmo.</p>
 
 
 <h4 id="transform">Transform</h4>
 
-<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
-
-
-<h4 id="vertex-paint">Vertex Paint</h4>
-<p>
-For trees, vertex colors are automatically generated on import, they determine how much the tree will sway in the wind, you can reduce or disable this effect by running <a href='https://gist.github.com/ronyx69/318eab7a17c9d6a38d123eba0cefaab7'>this script</a> in the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> <span class=key>F7</span> console.
-</p>
+<p>Make sure you are exporting a single mesh, and the associated skeleton, which has the correct rotation and scale, as you won't be able to rotate or scale your citizen on import.</p>
 
 
 <h4 id="uv-mapping">UV Mapping</h4>
@@ -57,11 +65,11 @@ You are allowed to UV map outside the 0-1 area (main tile), so you can tile the 
 <h4 id="model-complexity">Model Complexity</h4>
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/DNBQPCh.jpg"><p>
-Triangle counts of a couple vanilla trees.
+<div class="content-photo-box"><img src="https://i.imgur.com/jBtrlSE.jpg"><p>
+Main model and LOD of a vanilla citizen.
 </p></div>
 
-It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla trees or assets by other creators for reference.</p>
+It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla citizens or assets by other creators for reference.</p>
 
 <p>The absolute limit for a mesh is 65536 vertices.</p>
 
@@ -75,6 +83,26 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 
 
+<h3 id="lod-mesh">LOD Mesh</h3>
+
+
+
+<p>LOD stands for level of detail. This is the mesh visible from a distance. It must be as simple as possible. Citizens are small and the LOD is only visible very far away so a model under 100 triangles could be enough.</p>
+
+<p>The LOD is not animated, so you don't need to import a skeleton for it.</p>
+
+
+<h4 id="uv-mapping-1">UV Mapping</h4>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/kAR8cmr.jpg"><p>
+UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
+</p></div>
+
+
+
+<p>
+The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random citizen on your LOD.</p>
+
 
 
 <h2 id="textures">Textures</h2>
@@ -82,7 +110,7 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 <h3 id="main-textures">Main Textures</h3>
 
-<p>These determine the color and material properties of your tree.</p>
+<p>These determine the color and material properties of your citizen.</p>
 
 
 <h4 id="types">Types</h4>
@@ -92,8 +120,8 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 <li><strong>Diffuse (_d)</strong><br>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
-Example diffuse texture for a conveyor prop.
+<div class="content-photo-box"><img src="https://i.imgur.com/zQ8Y6dP.jpg"><p>
+Example diffuse textures for some vanilla citizens.
 </p></div>
 
 	The main color and texture of your asset.
@@ -117,38 +145,64 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
 
-
 <p>If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
 
 </li>
 
 
 <li><strong>Color (_c)</strong><br>
-	Determines which parts are leaves or branches/bark.
+	Determines which parts will be affected by color variations. White means fully affected and black means not at all.
 
-<p>The leaves should be black and the rest should be white.</p>
+<p>The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.</p>
 
-<p>This allows for leaf brightness variation for each tree, snow on winter maps, and better looking normals for 2 sided faces.</p>
-
-<p>If you don't import a color map, it will default to white, which means the normals for leaves will look weird and there won't be any snow on winter maps.</p>
+<p>If you don't import a color map, it will default to full color.</p>
 
 </li>
 
 
 
+
+<li><strong>Specular (_s)</strong><br>
+
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/dpTKCTS.jpg"><p>
+Example specular map for a roof water tank.
+</p></div>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/xZnShPJ.jpg"><p>
+Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
+</p></div>
+
+
+	Reflectivity, black means no reflection and white means max reflection.
+
+<p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.</p>
+
+<p>If you don't import a specular map, it will default to no specularity.</p>
+
+</li>
 <li><strong>Normal (_n)</strong><br>
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/GDOFbuI.jpg"><p>
-Example normal map for a plant.
+<div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
+Example normal map for rocks.
 </p></div>
 
+<div class="content-photo-box"><img src="https://i.imgur.com/CeKq51I.jpg"><p>
+Problem: normal maps get weaker as they are rotated.
+</p></div>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/BP3Vj1J.jpg"><p>
+Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces with different UV rotation/flip.
+</p></div>
 
 Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
 <p>Make sure the generator is set to x- or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
 
+<p>High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts parts with a solid color before generating a normal map, or paint over these parts 128,128,255 on the final normal map.</p>
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
@@ -168,11 +222,8 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <h4 id="resolution">Resolution</h4>
 <p>
-<div class="content-photo-box"><img src="https://i.imgur.com/251fQ7f.jpg"><p>
-Textures of a couple vanilla trees.
-</p></div>
 
-Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
+Powers of 2 is a standard practice in 3D graphics, which means sizes such as 512x512, 512x256, 256x256, 128x256 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 <div class="content-warning">
@@ -184,12 +235,21 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 
 
 
+<h3 id="lod-textures">LOD Textures</h3>
+
+<p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's recommended that you create your own LOD textures using baking.</p>
 
 
-<h2 id="lod">LOD</h2>
-<p>
-Trees don't require an LOD, it's generated automatically ingame using a render texture and billboarding, and updates every time the camera is rotated.
-</p>
+<h4 id="resolution-1">Resolution</h4>
+
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 256x256, 256x128, 128x64, 64x64 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
+
+
+
+
+
+
+
 
 
 
@@ -206,9 +266,9 @@ Trees don't require an LOD, it's generated automatically ingame using a render t
 
 <h3 id="naming">Naming</h3>
 
-<p>The mesh can have any name, but it's not recommended to use spaces or underscores.</p>
+<p>The mesh can have any name, but it's not recommended to use spaces or underscores, as the name for the lod mesh name will be meshname_lod.</p>
 
-<p>The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png.</p>
+<p>The textures must have the same name as the mesh, but with the texture type identifier after it, so the result will be names like meshname_d.png and meshname_lod_d.png</p>
 
 
 
@@ -218,7 +278,7 @@ Trees don't require an LOD, it's generated automatically ingame using a render t
 <h3 id="import-folder">Import Folder</h3>
 
 
-<div class="content-photo-box"><img src="https://i.imgur.com/xkSai2z.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/kcqp2OQ.jpg"><p>
 Files ready for import.
 </p></div>
 
@@ -234,24 +294,26 @@ Files ready for import.
 
 
 <h3 id="template">Template</h3>
-<p>The template you choose will determine some things about your tree:</p>
+<p>The template you choose will determine some things about your prop:</p>
 
 <ul>
+<li>AI</li>
 
-<li>create ruining (shows map theme ruined texture on the ground)</li>
+<li>gender</li>
 
-<li>max/min brightness</li>
+<li>age phase</li>
 
-<li>max/min scale</li>
+<li>animation</li>
 
-<li>disable snow toggle</li>
+<li>walk speed</li>
 
+<li>shader, material properties (color variations)</li>
 </ul>
 
 
 
 <div class="content-info"><em>
-All of those things can be changed later in the editor itself or using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> or other mods.
+Some of those things can be changed later in the editor itself or using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> or other mods.
 </em></div>
 
 
@@ -260,11 +322,11 @@ All of those things can be changed later in the editor itself or using <a href='
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/0VrHOvI.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/IYxkWqj.jpg"><p>
 Importing a mesh in asset importer.
 </p></div>
 
-After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around x axis are common necessities.</p>
+For citizens, you can't rotate or scale the mesh on import, so you have to make sure it's correct in your 3d software or when exporting.</p>
 
 
 
@@ -275,7 +337,7 @@ If you get an unsupported color error, one of your textures might be a 16 bit fi
 
 
 <div class="content-warning"><em>
-If the mesh preview doesn't display or you can't continue, you may have a problem with it such as multiple mesh objects, other entities like dummies, cameras, lights, or layers in the exported file.
+If the mesh preview doesn't display or you can't continue, you may have a problem with it such as a missing skeleton, multiple mesh objects, other entities like dummies, cameras, lights, or layers in the exported file.
 </em></div>
 
 
@@ -294,13 +356,9 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 <ul>
 
-<li>create ruining (shows map theme ruined texture on the ground)</li>
+<li>gender</li>
 
-<li>max/min brightness</li>
-
-<li>max/min scale</li>
-
-<li>disable snow toggle</li>
+<li>age phase</li>
 
 </ul>
 
@@ -310,7 +368,7 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 <h3 id="material-properties">Material properties</h3>
 
-<p>You can toggle snow on winter maps.</p>
+<p>You can change the 4 color variations.</p>
 
 
 
@@ -341,29 +399,8 @@ ModTools scene explorer and console.
 <ul>
 
 
+<li>AI - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=474652684'>Asset AI Changer by Snow_Cat &amp; cerebellum</a>
 
-
-
-
-
-
-
-
-<li>UIPriority (determines item order in menu) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>script</a>
-<p>It's recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like <a href='https://docs.google.com/spreadsheets/d/1rRFx2y5yIE9Ex_qY74EE0OqXbNqS8A-XP0RvK6-vzaA'>here</a>.</p></li>
-
-</ul>
-
-
-<h3 id="wind-sway">Wind Sway</h3>
-
-<p>You can use a script to recalculate vertex colors to either limit, disable, or change wind sway to a different type:</p>
-
-<ul>
-
-<li><a href='https://gist.github.com/ronyx69/318eab7a17c9d6a38d123eba0cefaab7'>Disable/Limit sway</a></li>
-
-<li><a href='https://gist.github.com/ronyx69/a66a990c0aaf3ff1e898b826cbf8be38'>Central-outwards sway</a></li>
 
 </ul>
 
@@ -371,13 +408,17 @@ ModTools scene explorer and console.
 
 
 
-<h3 id="variations">Variations</h3>
 
-<p><div class="content-photo-box"><img src="https://i.imgur.com/oe3rouc.jpg"><p>
-Tree variations menu in the asset editor.
-</p></div>You can add multiple tree assets to your tree as variations using a probability value. The probability is a percentage out of 100, but the main tree has no probability so it gets whatever is left over, so if you have two variations with a 25% probability each, the main tree will get a 50% probability. The variations will be embedded into the main tree, but also show up as seperate props in the menu.</p>
 
-<p>Run <a href='https://gist.github.com/ronyx69/5fc7e20afe73888e220165caad8c904f'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
+<h3 id="shader">LOD Shader</h3>
+
+
+
+<p>The LOD shader is incorrect by default, so you need to run <a href='https://pastebin.com/w4Cys02X'>this script</a> to make sure the LOD is correctly displayed.</p>
+
+
+
+
 
 
 
@@ -393,7 +434,7 @@ Tree variations menu in the asset editor.
 
 <p>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/hsWwdr5.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/mPQKPhW.jpg"><p>
 Save asset window.
 </p></div>
 
@@ -403,7 +444,7 @@ Save asset window.
 
 <h3 id="asset-name">Asset Name</h3>
 
-<p>The asset name visible ingame, the name people should search for.</p>
+<p>The asset name visible ingame.</p>
 
 
 
