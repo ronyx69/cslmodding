@@ -1,0 +1,223 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Scripts
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/xIuUmNX.jpg'/></div>
+<div class="content">
+
+
+
+
+
+
+<h2 id="asset-editor">Asset Editor</h2>
+<p><a href=''>Set Color Variations in RGB</a></p>
+<p><a href=''>Special Places (Sitting Spots for Benches)</a></p>
+<p><a href=''>Parking Spaces (Vehicle parking for Props)</a></p>
+<p><a href=''>Prop Illumination Range (For prop lights off during the day)</a></p>
+<p><a href=''>Flags for Building Sub Meshes</a></p>
+<p><a href=''>Flags for Vehicle Sub Meshes</a></p>
+<h2 id="shaders">Shaders</h2>
+<p>You can experiment by applying any shader to any type of asset, pick any script, a shader name from the list and make sure you are referecing the correct PrefabInfo such as BuildingInfo, VehicleInfo, etc.</p>
+<p>List of All Shaders</p>
+<h3 id="buildings">Buildings</h3>
+<ul>
+<li>Default</li>
+<li>NoBase</li>
+<li>Fence</li>
+<li>Floating</li>
+<li>AnimUV</li>
+<li>WindTurbine</li>
+</ul>
+<h3 id="props">Props</h3>
+<ul>
+<li>Default</li>
+<li>Fence</li>
+<li>Decal</li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li>Rotors shader</li>
+<li>Building sub meshes</li>
+<li>Vehicle sub meshes</li>
+</ul>
+<h2 id="variations">Variations</h2>
+<p>Variations allow saving multiple props/trees inside one asset, and plop one of them randomly based on the probability value.</p>
+<ul>
+<li>Props</li>
+<li>Trees</li>
+</ul>
+<h2 id="tree-wind-sway">Tree Wind Sway</h2>
+<p>Recalculates vertex colors for trees to change which parts get affected by the wind more. * Limited * Center-outwards</p>
+<h3 id="other-1">Other</h3>
+<p>Change Network Variables Example</p>
+<h2 id="ingame">Ingame</h2>
+<p>Change Theme Textures, Tiling, Colors</p>
+<h3 id="natural-resource-texture-import-psd">Natural Resource Texture Import (+ PSD)</h3>
+<p>Allows importing a texture for painting natural resources such as sand, oil, ore, fertile, includes a PSD template for creating the texture. * Script * PSD</p>
+<h2 id="mod-specific">Mod Specific</h2>
+<h3 id="theme-decals">Theme Decals</h3>
+<p>Allows the use of map theme textures on decals, using a custom alpha map. * Mod * Script</p>
+<h3 id="ploppable-asphalt">Ploppable Asphalt</h3>
+<p>Allows using road shaders to display map theme textures on props. * + new Props * Old props &amp; decals</p>
+<h3 id="network-tiling">Network Tiling</h3>
+<p>Allows tiling network textures. * Mod * Script</p>
+<h3 id="custom-light-effects">Custom Light Effects</h3>
+<p>Allows creating custom light effects. Very prone to memory leaks, not recommended. * Mod * Script</p>
+<h3 id="animuv-params">AnimUV Params</h3>
+<p>Allows custom UV animations on props and vehicle sub meshes. * Mod * Script for props * Script for vehicle sub meshes</p>
+<h3 id="prop-rotating">Prop Rotating</h3>
+<p>Allows custom rotating animations. * Mod * Script for a single rotating part * Script for multiple rotating parts or clocks</p>
+<h2 id="other-2">Other</h2>
+<p>List all networks in a text file</p>
+<p>ADD MORE?</p>
+<h2 id="outdated">Outdated</h2>
+<h3 id="texture-replacer">Texture Replacer</h3>
+<p>Old scripts for importing textures, they may have to be combined and gamma lifted, depending on which texture is imported.</p>
+<p>Outdated, use the Realtime mod instead, it allows replacing textures and meshes ingame.</p>
+<ul>
+<li>In-Game</li>
+<li>Asset Editor</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
