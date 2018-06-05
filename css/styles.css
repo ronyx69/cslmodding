@@ -273,7 +273,7 @@ p {
 .contenthome {
 	margin: 0 auto;
 	display: block;
-	margin-bottom: 160px;
+	/*margin-bottom: 160px;*/
 	padding: 0 0 0 256px;
 }
 
