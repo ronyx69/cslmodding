@@ -1,0 +1,730 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Network <br>Asset <br>Creation
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/0DlVOeE.jpg'/></div>
+<div class="content">
+
+
+
+<h2 id="about">About</h2>
+
+<p>Networks consist of nodes and segments, they are used for roads, tracks, canals, walls, fences, powerlines etc.</p>
+
+<p>Networks are arguably the most complicated type of assets (depends on what you are creating) so this article assumes you are familiar with basic asset creation such as props and buildings, so it skips basic concepts such as what is a mesh, pivot etc.</p>
+
+
+
+
+
+<h2 id="template">Template</h2>
+
+<p>The template you choose will be fully imported as the starting point of your network, so choose one that is closest to your desired result. You can change almost everything later in the asset editor itself, or using ModTools scene explorer [Ctrl+E] or running scripts in the console [F7].</p>
+
+
+
+
+
+<h2 id="elevations">Elevations</h2>
+
+<p>Elevations such as Elevated, Bridge, Slope, Tunnel are their own complete networks with their own properties, lanes, segments, and nodes, which are bundled together with the Basic network inside the same .crp file.</p>
+
+<p>Elevations trigger at specific build heights, or when chosen by the player using Fine Road Tool. Slope is used for the basic to tunnel transition.</p>
+
+
+
+
+
+<h4 id="deleting">Deleting</h4>
+
+<p>If you don't need specific elevations, you can delete them by opening ModTools scene explorer [Ctrl+E], going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and clicking Unset on the ones you don't need, then saving and loading the asset.</p>
+
+
+
+
+
+<h4 id="adding">Adding</h4>
+
+<p>If your template didn't have elevations, but you need them, you may be able to add them, depending on what AI your network has. This can be done by copying any other network into one of the possible elevations. You can find the base game networks in scene explorer [Ctrl+E]: Sunny (or North/Tropical/European/Winter, based on the theme environment you loaded for the asset editor) Collections &gt; Road &gt; NetCollection &gt; m_prefabs. For example you could go to Basic Road &gt; m_netAI, click Copy on m_bridgeInfo, and then go to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and click Paste on m_bridgeInfo here, then save and load the asset.</p>
+
+<p>If you would like to copy a custom network into one of the elevations, you can also find those in scene explorer: Custom Prefabs &gt; ModTools.CustomPrefabs &gt; m_nets.</p>
+
+
+
+
+
+<h2 id="properties">Properties</h2>
+
+<p>The general properties are based on the AI the road has, that means for canals or cable car networks some of them might be different, this list is primarily based on the one for RoadBridgeAI, used for elevated networks of any normal road, but also contains properties which only appear on some other AI.</p>
+
+
+<h4 id="half-width">Half Width</h4>
+
+<p>This is used to determine how roads of different widths connect - nodes of narrow roads will widen to meet wider roads.</p>
+
+<p>Also used to define the width of surface paint such as pavement, gravel, or terrain clipping.</p>
+
+<p>It's also the width of the area affected by flatten terrain.</p>
+
+
+<h4 id="pavement-width">Pavement Width</h4>
+
+<p>Defines the width of the pavement on each side of the road, used to properly connect curbs with other roads at nodes. For correct nodes when intersecting with other roads, the half width and pavement width values must be set appropriately.</p>
+
+
+<h4 id="segment-length">Segment Length</h4>
+
+<p>This needs to match the length of the mesh used for the segment (and node if used), otherwise the road will overlap itself or have holes.</p>
+
+
+<h4 id="min-max-height">Min / Max Height</h4>
+
+<p>Defines collision area for water and building other roads over/under it.</p>
+
+
+<h4 id="max-slope">Max Slope</h4>
+
+<p>Maximum slope angle allowed for building the road.</p>
+
+
+<h4 id="max-build-angle">Max Build Angle</h4>
+
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/GrOja4L.jpg"><p>
+An example 135° intersection.
+</p></div>
+
+Maximum angle allowed for intersecting the road. Limited to 135° by the game.</p>
+
+
+<h4 id="max-turn-angle">Max Turn Angle</h4>
+
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/d8gTuGK.jpg"><p>
+Example of 90° (left) and 89° (right) max turn angle.
+</p></div>
+
+<p>When a node between 2 segments exceeds this angle, a node will be used, instead of a regular bent segment.</p>
+
+
+<h4 id="min-corner-offset">Min Corner Offset</h4>
+
+<p>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/yEG7ZOY.jpg"><p>
+Example of 0 (top) and 16 (bottom) min corner offset.
+</p></div>
+
+
+<p>Increases corner smoothing, this is more noticeable for sharp turns at low angles. High values will make the road hard to use in tight situations.</p>
+
+
+<h4 id="build-height">Build Height</h4>
+
+<p>When building the road, it will be created higher or lower than the player has chosen based on this value.</p>
+
+
+<h4 id="surface-level">Surface Level</h4>
+
+<p>CO states this is the default height for vehicles and pedestrians, although it seems ingame the individual vertical offset for lanes is used instead.</p>
+
+
+<h4 id="create-pavement-gravel-ruining">Create Pavement / Gravel / Ruining</h4>
+
+<p>Applies surface paint based on the half width of the road.</p>
+
+
+<h4 id="flatten-terrain">Flatten Terrain</h4>
+
+<p>Flattens terrain based on the half width of the road.</p>
+
+
+<h4 id="lowers-terrain">Lowers Terrain</h4>
+
+<p>Lowers terrain based on the half width of the road. Usually used for elevated roads to prevent the terrain from clipping into them.</p>
+
+
+<h4 id="clip-terrain">Clip Terrain</h4>
+
+<p>Uses terrain clipping to create a hole in the ground, the actual hole is slightly smaller than the half width, and also creates ruining around the hole.</p>
+
+
+<h4 id="follow-terrain">Follow Terrain</h4>
+
+<p>Places nodes according to terrain when building the road. Usually disabled for elevated or tunnel networks.</p>
+
+
+<h4 id="flat-junctions">Flat Junctions</h4>
+
+<p>Forces area around nodes to be completely flat. Note that the centers of intersections will be flat no matter what.</p>
+
+
+<h4 id="clip-segment-ends">Clip Segment Ends</h4>
+
+<p>Enables the use of bent nodes on intersections, used for most normal roads. If disabled and the network has no nodes, the segments will connect directly, which is used for wall networks, or with an offset based on min corner offset.</p>
+
+
+<h4 id="twist-segment-ends">Twist Segment Ends</h4>
+
+<p>Twists segment ends to align to the pillar, only used for power lines and cable car paths to make sure the wires connect to the pylon correctly.</p>
+
+
+<h4 id="straight-segment-ends">Straight Segment Ends</h4>
+
+<p>Tries to prevent the segment ends from bending/skewing at intersections.</p>
+
+
+<h4 id="enable-bending-segments">Enable Bending Segments</h4>
+
+<p>Automatically bends segments when building intersections at sharp angles.</p>
+
+
+<h4 id="enable-bending-nodes">Enable Bending Nodes,</h4>
+
+<p>Use a bent segment instead of a node on sharp corners.</p>
+
+
+<h4 id="can-cross-lanes">Can Cross Lanes</h4>
+
+<p>Allows traffic to cross oncoming lanes at intersections, disabled only for roads with medians.</p>
+
+
+<h4 id="can-collide">Can Collide</h4>
+
+<p>Enables checking for collisions when building.</p>
+
+
+<h4 id="block-water">Block Water</h4>
+
+<p>Used for dam, canals, flood wall, quay. Blocks water based on half width and min/max height properties.</p>
+
+
+<h4 id="auto-remove">Auto Remove</h4>
+
+<p>Destroys the road when something else is built over it, if can collide is enabled. Used for pedestrian paths, walls, trench, and powerlines</p>
+
+
+<h4 id="connect-group">Connect Group</h4>
+
+<p>Restricts the road to connect only to certain groups of roads.</p>
+
+
+<h4 id="enable-zoning">Enable Zoning</h4>
+
+<p>Creates the zoning grid based on the road half width, but no closer than 8m to the center.</p>
+
+
+<h4 id="double-length">Double Length</h4>
+
+<p>Used for the large highway bridges, alternates between two types of pillars. Only works with disabled bending segments.</p>
+
+
+<h4 id="can-modify">Can Modify</h4>
+
+<p>Unknown, enabled for all elevated networks.</p>
+
+
+<h4 id="traffic-lights">Traffic Lights</h4>
+
+<p>Enables the traffic lights node flag for intersections involving the road. The actual traffic light props themselves must be added as lane props.</p>
+
+
+<h4 id="highway-rules">Highway Rules</h4>
+
+<p>Unknown, involved in code related to lane routing and simulation. Enabled only for all highways.</p>
+
+
+<h4 id="accumulate-snow">Accumulate Snow</h4>
+
+<p>Allows for snow to accumulate on the road on winter maps.</p>
+
+
+<h4 id="noise-accumulation-radius">Noise Accumulation / Radius</h4>
+
+<p>Affects noise pollution simulation.</p>
+
+
+<h4 id="center-area-width">Center Area Width</h4>
+
+<p>Unknown.</p>
+
+
+<h4 id="water-block-offset">Water Block Offset</h4>
+
+<p>Used for canal depth (negative) and flood wall height.</p>
+
+
+<h4 id="pillar-pylon-power-pole">Pillar / Pylon / Power Pole</h4>
+
+<p>Allows embedding a building inside the network asset for use as a pillar which appears on nodes. Some AI have specific pillars for different heights, corners, or intersections.</p>
+
+
+<h4 id="middle-pillar">Middle Pillar</h4>
+
+<p>Only used for Double Length networks, used for the large highway bridges for alternating pillars.</p>
+
+
+<h4 id="bridge-middle-pillar-offset">Bridge / Middle Pillar Offset</h4>
+
+<p>Raises or lowers the pillars.</p>
+
+
+
+
+
+<h2 id="lanes">Lanes</h2>
+
+<p>Lanes are usually used for vehicles and pedestrians, but can also be used as a container for props.</p>
+
+<p>Some lane properties have no official documentation, therefore some explanations might be inaccurate.</p>
+
+
+<h4 id="position">Position</h4>
+
+<p>Distance from the center of the road.</p>
+
+
+<h4 id="width">Width</h4>
+
+<p>Width of the lane.</p>
+
+
+<h4 id="vertical-offset">Vertical Offset</h4>
+
+<p>Height position of the lane.</p>
+
+
+<h4 id="stop-offset">Stop Offset</h4>
+
+<p>Lane position offset used for pedestrian lanes with stop types, used for public transport stops such as bus and tram.</p>
+
+
+<h4 id="speed-limit">Speed Limit</h4>
+
+<p>Usually 0.25 for pedestrian lanes, 0.8 for vehicle lanes on basic roads, 2 for highways,</p>
+
+
+<h4 id="direction">Direction</h4>
+
+<p>Forward for right hand lanes, backward for left hand lanes. Automatically flips on left hand traffic maps.</p>
+
+
+<h4 id="lane-type">Lane Type</h4>
+
+<p>Determines the kind of traffic the lane is meant for.</p>
+
+
+<h4 id="vehicle-type">Vehicle Type</h4>
+
+<p>Defines which vehicle types can use the lane.</p>
+
+
+<h4 id="stop-type">Stop Type</h4>
+
+<p>Used for pedestrian lanes, on which people will wait for public transport.</p>
+
+
+<h4 id="allow-connect">Allow Connect</h4>
+
+<p>Used to find road access for buildings. Likely used for spawning or visiting vehicles. Usually disabled on any slope, elevated and bridge networks, also disabled on blimp, monorail, and cable car paths.</p>
+
+
+<h4 id="use-terrain-height">Use Terrain Height</h4>
+
+<p>Uses terrain instead of lane vertical offset or surface level. Used for ground pedestrian paths.</p>
+
+
+<h4 id="center-platform">Center Platform</h4>
+
+<p>Used for pedestrian lanes for tram stops in the middle of the avenue.</p>
+
+
+<h4 id="elevated">Elevated</h4>
+
+<p>Used for elevated pedestrian lanes which are not accessible from the regular roadside pedestrian lanes. Used only for the medium road monorail station stop lanes.</p>
+
+
+
+
+
+<h2 id="lane-props">Lane Props</h2>
+
+<p>You can add props to lanes, such as hydrants, manholes, arrows, traffic lights, signs etc. These props don't get embedded into the road asset .crp file, so you must add published workshop props.</p>
+
+
+
+
+
+<h4 id="flags">Flags</h4>
+
+<p>Required and forbidden conditions which determine when the prop will appear.</p>
+
+<ul>
+	<li>a</li>
+	<li>a</li>
+</ul>
+
+<p>Start and End flags refer to the direction of the lane, as it goes in one direction from start to end.</p>
+
+<ul>
+	<li>a</li>
+	<li>a</li>
+</ul>
+
+
+<h4 id="color-mode">Color Mode</h4>
+
+<p>Determines state of traffic light and level crossing props.</p>
+
+
+<h4 id="position-1">Position</h4>
+
+<p>Prop XYZ offset relative to the lane position.</p>
+
+
+<h4 id="angle">Angle</h4>
+
+<p>Rotation of the prop.</p>
+
+
+<h4 id="segment-offset">Segment Offset</h4>
+
+<p>Pushes the prop towards the end of the segment</p>
+
+
+<h4 id="repeat-distance">Repeat Distance</h4>
+
+<p>When set to 0, repeats once per segment.</p>
+
+
+<h4 id="min-length">Min Length</h4>
+
+<p>Minimum segment length required for the prop to appear.</p>
+
+
+<h4 id="corner-angle">Corner Angle</h4>
+
+<p>1 Means the prop will rotate to match the intesection if it's near it. The value 0.5 is used for traffic lights to not be perpendicular to the road at angled intersections.</p>
+
+
+<h4 id="probability">Probability</h4>
+
+<p>Percentage chance of the prop appearing.</p>
+
+
+
+
+
+<h2 id="segments">Segments</h2>
+
+<p>Segments can be the main mesh of your network, or also used for specific segments, like a bus stop on one side, bus stop on both sides.</p>
+
+
+
+<h3 id="flags-1">Flags</h3>
+
+<p>Required and forbidden conditions for each direction which determine when the segment will appear.</p>
+
+<ul>
+	<li>a</li>
+	<li>a</li>
+</ul>
+
+
+<h4 id="disable-bend-nodes">Disable Bend Nodes</h4>
+
+<p>Disables using the segment as a node on turns which exceed the Max Turn Angle.</p>
+
+
+<h4 id="road-color">Road Color</h4>
+
+<p>The upward road (asphalt) texture will get multiplied by this color.</p>
+
+
+
+<h3 id="shader">Shader</h3>
+
+
+<h4 id="basic">Basic</h4>
+
+<p>Used for ground level roads. Instead of alpha being used for making the mesh transparent, it shows the underlying terrain such as grass or ruined. Will have weird normals/shading in many situations.</p>
+
+
+<h4 id="bridge">Bridge</h4>
+
+<p>Used for elevated roads and bridges.</p>
+
+
+<h4 id="rail">Rail</h4>
+
+<p>Same as basic but shows gravel instead of pavement.</p>
+
+
+<h4 id="wire">Wire</h4>
+
+<p>Used for power lines, tram wires, and cable car cables.</p>
+
+
+<h4 id="fence">Fence</h4>
+
+<p>Conforms to terrain, used for Parklife fences.</p>
+
+
+
+
+
+<h2 id="nodes">Nodes</h2>
+
+<p>Nodes can be used for intersections, sharp turns, transitions, dead-ends.</p>
+
+
+
+<h3 id="flags-2">Flags</h3>
+
+<p>Required and forbidden conditions for each direction which determine when the segment will appear.</p>
+
+<ul>
+	<li>a</li>
+	<li>a</li>
+</ul>
+
+
+<h4 id="connect-group-1">Connect Group</h4>
+
+<p>Limits the node to connect to specific groups of roads.</p>
+
+
+<h4 id="direct-connect">Direct Connect</h4>
+
+<p>Instead of splitting a node mesh in half and connecting each side seperately, connects each segment in an intersection to every other segment. This is used for train tracks.</p>
+
+
+
+<h3 id="shader-1">Shader</h3>
+
+<p><a href='file:///C:/Users/Ronyx69/Documents/GitHub/cities-skylines-knowledge-base/asset/network/index.html#shader'>Same as for segments.</a></p>
+
+
+
+
+
+<h2 id="mesh">Mesh</h2>
+
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/asxDJHG.jpg"><p>
+Vanilla six-lane road segment mesh.
+</p></div>
+
+<p>The mesh for segments and nodes usually is an extruded profile, but some also have railings or other details. The mesh will always stretch for the entire segment, so it's not recommended to rely on the segment mesh for anything else other than the extruded profile, and use lane props for such details instead.</p>
+
+<p>The mesh is also subdivided multiple times, usually 16. The more subdivisions, the smoother it will look when bending.</p>
+
+<p>Node mesh also requires a cut through the middle, so the game can split it for use in intersections, it will also place the center vertex in the middle of the intersection.</p>
+
+
+
+<h3 id="uv-mapping">UV Mapping</h3>
+
+<p>Normally you only have control over the horizontal (U) UV mapping (horizontal/vertical is called UV when talking about the texture image itself) because the game will automatically tile it along the segment depending on how long the segment is.</p>
+
+<p>You may have details for which you want to disable this automatic tiling, this can be done using vertex paint - by setting the green channel for those parts to 0, which means those parts would be 255,0,255 (magenta). This will make sure the texture is exactly as you UV map it, so it will stretch together with the segment.</p>
+
+<p>(i) <em>You can use the Network Tiling mod to change how much the texture is tiled along the segment.</em></p>
+
+
+
+
+
+<h2 id="textures">Textures</h2>
+
+
+<h4 id="diffuse-_d">Diffuse (_d)</h4>
+
+<p>Just like any diffuse texture, defines the main color of the network.</p>
+
+<p>Defaults to white.</p>
+
+
+<h4 id="alpha-_a">Alpha (_a)</h4>
+
+<p>When black, on the basic shader, it displays the terrain underneath, on other shaders it works like an alpha map usually would.</p>
+
+<p>Black means invisible, white is visible. Defaults to white.</p>
+
+
+<h4 id="pavement-_p">Pavement (_p)</h4>
+
+<p>Usually displays the map theme pavement texture, but for the rail shader shows gravel instead.</p>
+
+<p>Black means no pavement, white means pavement. Defaults to black, unless no diffuse is imported.</p>
+
+
+<h4 id="road-_r">Road (_r)</h4>
+
+<p>Displays the map theme upward road (asphalt) texture, which also is multiplied by the segment color.</p>
+
+<p>Black means no asphalt, white means asphalt. Defaults to black.</p>
+
+
+<h4 id="normal-_n">Normal (_n)</h4>
+
+<p>Just like any normal map.</p>
+
+<p>Defaults to flat.</p>
+
+
+<h4 id="specular-_s">Specular (_s)</h4>
+
+<p>Just like any specular.</p>
+
+<p>Defaults to black.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
