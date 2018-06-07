@@ -353,7 +353,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h2 id="lane-props">Lane Props</h2>
 
-<p>You can add props to lanes, such as hydrants, manholes, arrows, traffic lights, signs etc. These props don't get embedded into the road asset .crp file, so you must add published workshop props.</p>
+<p>You can add props to lanes, such as hydrants, manholes, arrows, traffic lights, signs etc. You can't add terrain conforming props such as fences as lane props. These props don't get embedded into the road asset .crp file, so you must add published workshop props.</p>
 
 
 
@@ -471,7 +471,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="fence">Fence</h4>
 
-<p>Conforms to terrain, used for Parklife fences.</p>
+<p>Conforms to terrain, used for Parklife fences. Can't be used for nodes. Can't be used in combination with segments/nodes which have other shaders. Lane props will not match the terrain conforming network.</p>
 
 
 
