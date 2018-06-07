@@ -428,8 +428,62 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 <h3 id="sub-meshes">Sub Meshes</h3>
 
 <p>
-	You can add additional meshes as sub meshes, you can set required and forbidden conditions so the main mesh or sub meshes appear only when those conditions are met, for example the vanilla bus has a left hand traffic sub mesh, and the forestry trailer has a loaded trailer sub mesh.
+	You can add additional meshes as sub meshes, which appear only when certain conditions are met, for example the vanilla bus has a left hand traffic sub mesh, and the forestry trailer has a loaded trailer sub mesh.
 </p>
+
+
+<h4 id="flags">Flags</h4>
+<p>
+	Flags are required and forbidden conditions, which determine when the sub mesh shows up, and also when the main mesh is hidden.
+</p>
+
+<ul>
+<li><strong>Created</strong></li>
+<li><strong>Deleted</strong></li>
+<li><strong>Spawned</strong></li>
+<li><strong>Inverted</strong></li>
+<li><strong>TransferToTarget</strong></li>
+<li><strong>TransferToSource</strong></li>
+<li><strong>Emergency1</strong></li>
+<li><strong>Emergency2</strong></li>
+<li><strong>WaitingPath</strong></li>
+<li><strong>Stopped</strong></li>
+<li><strong>Leaving</strong></li>
+<li><strong>Arriving</strong></li>
+<li><strong>Reversed</strong></li>
+<li><strong>TakingOff</strong></li>
+<li><strong>Flying</strong></li>
+<li><strong>Landing</strong></li>
+<li><strong>WaitingSpace</strong></li>
+<li><strong>WaitingCargo</strong></li>
+<li><strong>GoingBack</strong></li>
+<li><strong>WaitingTarget</strong></li>
+<li><strong>Importing</strong></li>
+<li><strong>Exporting</strong></li>
+<li><strong>Parking</strong></li>
+<li><strong>CustomName</strong></li>
+<li><strong>OnGravel</strong></li>
+<li><strong>WaitingLoading</strong></li>
+<li><strong>Congestion</strong></li>
+<li><strong>DummyTraffic</strong></li>
+<li><strong>Underground</strong></li>
+<li><strong>Transition</strong></li>
+<li><strong>InsideBuilding</strong></li>
+<li><strong>LeftHandDrive	</strong></li>
+</ul>
+
+<h4 id="parked-flags">Parked Flags</h4>
+<p>Flags used for when the vehicle is parked.</p>
+<ul>
+<li><strong>None</strong></li>
+<li><strong>Created</strong></li>
+<li><strong>Deleted</strong></li>
+<li><strong>Updated</strong></li>
+<li><strong>Parking</strong></li>
+<li><strong>CustomName</strong></li>
+</ul>
+
+
 
 <div class="content-info"><em>
 By default, not all sub mesh flags (conditions) are visible, use <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156'>the Sub Mesh Flags mod</a> to show all flags in the asset editor UI.
@@ -477,6 +531,17 @@ ModTools scene explorer and console.
 
 <p>Advanced article on using prop shader for monorail coming later.</p>
 
+
+<h3 id="sub-mesh-1">Sub Meshes</h3>
+
+<h4 id="trailer-sub-mesh">Trailer Sub Mesh</h4>
+
+<p>When loading a trailer template, the sub mesh UI doesn't show up. To fix this, open the scene explorer, go to Tool Controller > ToolController > m_editPrefabInfo > m_placementStyle and set it to automatic, save and load the asset, the sub mesh UI should show up. Once you add the sub mesh, change m_placementStyle back to procedural and save your asset.</p>
+
+
+<h4 id="trailer-sub-mesh">Sub Mesh Flags</h4>
+
+<p>The flags for the main mesh and sub meshes are oversimplified in the UI. The main mesh conditions are actually just like for any sub mesh, and the regular flags and parked flags are seperate fields. You can change them using <a href='https://gist.github.com/ronyx69/ab2e3fdcbab5f78c9b41a337c1d19280'>this script</a>.</p>
 
 
 
