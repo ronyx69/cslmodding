@@ -113,29 +113,26 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 <p>These determine the color and material properties of your citizen.</p>
 
 
-<h4 id="types">Types</h4>
 
 
-<ul>
 
-<li><strong>Diffuse (_d)</strong><br>
-
+<h4 id="diffuse">Diffuse (_d)</h4>
+<p>
 <div class="content-photo-box"><img src="https://i.imgur.com/zQ8Y6dP.jpg"><p>
 Example diffuse textures for some vanilla citizens.
 </p></div>
 
-	The main color and texture of your asset.
+	The main color and texture of your asset.</p>
 
 <p>It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
 
 <p>If you don't import a diffuse map, it will default to white.</p>
 
-</li>
 
 
-<li><strong>Alpha (_a)</strong><br>
 
-
+<h4 id="alpha">Alpha (_a)</h4>
+<p>
 <div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
 Example alpha texture for some railings and metal beams.
 </p></div>
@@ -143,28 +140,29 @@ Example alpha texture for some railings and metal beams.
 Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
 </p></div>
 
-	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
+	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.</p>
 
 <p>If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
 
-</li>
 
 
-<li><strong>Color (_c)</strong><br>
-	Determines which parts will be affected by color variations. White means fully affected and black means not at all.
+
+<h4 id="color">Color (_c)</h4>
+<p>
+	Determines which parts will be affected by color variations. White means fully affected and black means not at all.</p>
 
 <p>The diffuse will get multiplied by the color variation, that means the resulting color will look darker than the original diffuse.</p>
 
 <p>If you don't import a color map, it will default to full color.</p>
 
-</li>
 
 
 
 
-<li><strong>Specular (_s)</strong><br>
 
+<h4 id="specular">Specular (_s)</h4>
 
+<p>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/dpTKCTS.jpg"><p>
 Example specular map for a roof water tank.
@@ -175,15 +173,17 @@ Transitions between different specular values produce artifacts on the normal ma
 </p></div>
 
 
-	Reflectivity, black means no reflection and white means max reflection.
+	Reflectivity, black means no reflection and white means max reflection.</p>
 
 <p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.</p>
 
 <p>If you don't import a specular map, it will default to no specularity.</p>
 
-</li>
-<li><strong>Normal (_n)</strong><br>
 
+
+
+<h4 id="normal">Normal (_n)</h4>
+<p>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
 Example normal map for rocks.
@@ -197,7 +197,7 @@ Problem: normal maps get weaker as they are rotated.
 Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces with different UV rotation/flip.
 </p></div>
 
-Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
+Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
 <p>Make sure the generator is set to x- or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
@@ -206,8 +206,8 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
-</li>
-</ul>
+
+
 
 
 <h4 id="format">Format</h4>

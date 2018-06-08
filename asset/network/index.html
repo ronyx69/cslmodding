@@ -22,7 +22,7 @@ Network <br>Asset <br>Creation
 
 <h2 id="template">Template</h2>
 
-<p>The template you choose will be fully imported as the starting point of your network, so choose one that is closest to your desired result. You can change almost everything later in the asset editor itself, or using ModTools scene explorer [Ctrl+E] or running scripts in the console [F7].</p>
+<p>The template you choose will be fully imported as the starting point of your network, so choose one that is closest to your desired result. You can change almost everything later in the asset editor itself, or using ModTools scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>.</p>
 
 
 
@@ -40,7 +40,7 @@ Network <br>Asset <br>Creation
 
 <h4 id="deleting">Deleting</h4>
 
-<p>If you don't need specific elevations, you can delete them by opening ModTools scene explorer [Ctrl+E], going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and clicking Unset on the ones you don't need, then saving and loading the asset.</p>
+<p>If you don't need specific elevations, you can delete them by opening ModTools scene explorer <span class=key>Ctrl+E</span>, going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and clicking Unset on the ones you don't need, then saving and loading the asset.</p>
 
 
 
@@ -48,7 +48,7 @@ Network <br>Asset <br>Creation
 
 <h4 id="adding">Adding</h4>
 
-<p>If your template didn't have elevations, but you need them, you may be able to add them, depending on what AI your network has. This can be done by copying any other network into one of the possible elevations. You can find the base game networks in scene explorer [Ctrl+E]: Sunny (or North/Tropical/European/Winter, based on the theme environment you loaded for the asset editor) Collections &gt; Road &gt; NetCollection &gt; m_prefabs. For example you could go to Basic Road &gt; m_netAI, click Copy on m_bridgeInfo, and then go to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and click Paste on m_bridgeInfo here, then save and load the asset.</p>
+<p>If your template didn't have elevations, but you need them, you may be able to add them, depending on what AI your network has. This can be done by copying any other network into one of the possible elevations. You can find the base game networks in scene explorer <span class=key>Ctrl+E</span>: Sunny (or North/Tropical/European/Winter, based on the theme environment you loaded for the asset editor) Collections &gt; Road &gt; NetCollection &gt; m_prefabs. For example you could go to Basic Road &gt; m_netAI, click Copy on m_bridgeInfo, and then go to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and click Paste on m_bridgeInfo here, then save and load the asset.</p>
 
 <p>If you would like to copy a custom network into one of the elevations, you can also find those in scene explorer: Custom Prefabs &gt; ModTools.CustomPrefabs &gt; m_nets.</p>
 
@@ -363,17 +363,9 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <p>Required and forbidden conditions which determine when the prop will appear.</p>
 
-<ul>
-	<li>a</li>
-	<li>a</li>
-</ul>
 
 <p>Start and End flags refer to the direction of the lane, as it goes in one direction from start to end.</p>
 
-<ul>
-	<li>a</li>
-	<li>a</li>
-</ul>
 
 
 <h4 id="color-mode">Color Mode</h4>
@@ -429,10 +421,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <p>Required and forbidden conditions for each direction which determine when the segment will appear.</p>
 
-<ul>
-	<li>a</li>
-	<li>a</li>
-</ul>
+
 
 
 <h4 id="disable-bend-nodes">Disable Bend Nodes</h4>
@@ -485,12 +474,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h3 id="flags-2">Flags</h3>
 
-<p>Required and forbidden conditions for each direction which determine when the segment will appear.</p>
-
-<ul>
-	<li>a</li>
-	<li>a</li>
-</ul>
+<p>Required and forbidden conditions for each direction which determine when the node will appear.</p>
 
 
 <h4 id="connect-group-1">Connect Group</h4>
@@ -544,7 +528,12 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1274
 
 <h4 id="diffuse-_d">Diffuse (_d)</h4>
 
-<p>Just like any diffuse texture, defines the main color of the network.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/vTKFr8K.jpg"><p>
+An example diffuse texture for an expressway.
+</p></div>
+
+Just like any diffuse texture, defines the main color of the network.</p>
 
 <p>Defaults to white.</p>
 

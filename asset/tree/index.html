@@ -85,28 +85,24 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 <p>These determine the color and material properties of your tree.</p>
 
 
-<h4 id="types">Types</h4>
 
-
-<ul>
-
-<li><strong>Diffuse (_d)</strong><br>
-
+<h4 id="diffuse">Diffuse (_d)</h4>
+<p>
 <div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
 Example diffuse texture for a conveyor prop.
 </p></div>
 
-	The main color and texture of your asset.
+	The main color and texture of your asset.</p>
 
 <p>It will look very bright, contrasty, and saturated in the game, so make sure to reduce the saturation and limit the brightest parts to a medium/light gray below 150 RGB.</p>
 
 <p>If you don't import a diffuse map, it will default to white.</p>
 
-</li>
 
 
-<li><strong>Alpha (_a)</strong><br>
 
+<h4 id="alpha">Alpha (_a)</h4>
+<p>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
 Example alpha texture for some railings and metal beams.
@@ -115,16 +111,16 @@ Example alpha texture for some railings and metal beams.
 Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
 </p></div>
 
-	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.
+	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.</p>
 
 
 <p>If you don't import an alpha map, it will default to fully opaque or fully visible.</p>
 
-</li>
 
 
-<li><strong>Color (_c)</strong><br>
-	Determines which parts are leaves or branches/bark.
+
+<h4 id="color">Color (_c)</h4>
+	<p>Determines which parts are leaves or branches/bark.</p>
 
 <p>The leaves should be black and the rest should be white.</p>
 
@@ -132,19 +128,18 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 <p>If you don't import a color map, it will default to white, which means the normals for leaves will look weird and there won't be any snow on winter maps.</p>
 
-</li>
 
 
 
-<li><strong>Normal (_n)</strong><br>
+<h4 id="normal">Normal (_n)</h4>
 
-
+<p>
 <div class="content-photo-box"><img src="https://i.imgur.com/GDOFbuI.jpg"><p>
 Example normal map for a plant.
 </p></div>
 
 
-Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.
+Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
 <p>Make sure the generator is set to x- or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
@@ -152,8 +147,6 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
-</li>
-</ul>
 
 
 <h4 id="format">Format</h4>
