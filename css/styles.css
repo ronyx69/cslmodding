@@ -49,6 +49,11 @@ body a {
 	z-index: 4;
 }
 
+.toc li {
+	line-height: 24px;
+	margin: 8px 0;
+}
+
 .toc a {
 	margin: 0 32px;
 	color: #98a7b3;
