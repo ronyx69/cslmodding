@@ -1,0 +1,232 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Ploppable <br>Asphalt + <br>Props
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/XleNsu3.jpg'/></div>
+<div class="content">
+
+
+
+
+
+
+
+<h2 id="about">About</h2>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/XleNsu3.jpg"><p>
+The official PA+ prop packs.
+</p></div>
+
+<p><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=881291183&searchtext=ploppable+asphalt'>The Ploppable Asphalt + (PA+) mod</a> can be used to create props which use network shaders to display map theme textures such as asphalt, pavement, grass, gravel, cliff. You can also use diffuse, alpha, normal, specular maps depending on which exact shader you use. The props are also decal compatible.</p>
+
+<p>This article assumes you are familiar with regular prop asset creation.</p>
+
+
+
+
+<h2 id="script">Script</h2>
+
+<p>To convert a prop for use with PA+ mod, you need to run <a href='https://gist.github.com/ronyx69/2f4b08a45f3a14c585597c848a594150'>one of these scripts</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span>.</p>
+
+<p>There are 3 different network shaders to choose from. In the official packs for PA+ they are used like this:</p>
+<ul>
+<li>RoadBridge for asphalt and pavement<br /></li>
+<li>Road for grass and cliff<br /></li>
+<li>TrainBridge for gravel</li>
+</ul>
+
+<p>The prop will not appear correctly inside the asset editor, as the PA+ mod hasn't processed it, that only happens when you load the game normally.</p>
+
+
+
+
+<h2 id="mesh">Mesh</h2>
+
+<p>It's highly recommended to use only completely flat meshes, as the normals will not appear correctly when the prop is rotated - the lighting will &quot;follow&quot; the rotation.</p>
+
+<p>There are size limitations depending on the shader, for example the regular road shader doesn't appear correctly for a 32 x 32 meter prop.</p>
+
+<p>To avoid z fighting for props placed on the ground, the mesh should be slightly raised, the official packs for PA+ are 2 cm above ground for main meshes and 5 cm above ground for LOD meshes.</p>
+
+
+
+
+<h2 id="textures">Textures</h2>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/eb0CoMl.jpg"><p>
+Comparison between RoadBridge (left), TrainBridge (middle), Road (right) shaders. Imported textures shown at the bottom.
+</p></div>
+
+
+<p>The textures you need to import are similar to regular props, but the PA+ mod will convert the textures for use on network shaders.</p>
+
+<h4 id="diffuse-d">Diffuse (_d)</h4>
+
+<p>Just like any diffuse texture</p>
+
+<h4 id="alpha-a">Alpha (_a)</h4>
+
+<p>Works like regular alpha for RoadBridge and TrainBridge but displays grass on the Road shader.</p>
+
+<h4 id="color-c">Color (_c)</h4>
+
+<p>White will display pavement for RoadBridge, gravel for TrainBridge, cliff for Road.</p>
+
+<h4 id="illumination-i">Illumination (_i)</h4>
+
+<p>White displays asphalt on all 3 shaders.</p>
+
+<h4 id="normal-n">Normal (_n)</h4>
+
+<p>Works just like any normal map for RoadBridge and TrainBridge, but doesn't work at all for Road.</p>
+
+<h4 id="specular-s">Specular (_s)</h4>
+
+<p>Works just like any specular map.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h4', 'h4', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+	var relevant =
+	"<div class='menu-category-title' style='margin-left:32px'>RELEVANT VIDEOS</div><ul class='menu-category'>" +
+	"<li><a href='https://www.youtube.com/watch?v=HTNiAlk9Phk'>PA+ Props Explanation</a></li>" +
+	"</ul><br>";
+	$(".toc").append(relevant);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
