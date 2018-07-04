@@ -230,6 +230,36 @@ If you get an unsupported color error, one of your textures might be a 16 bit fi
 
 
 
+<h2 id="Script">Script</h2>
+
+<p>To convert a prop for the decal prop fix mod, you need to run <a href='https://gist.github.com/ronyx69/ffff7459be346bc807b72b99713bbf9f'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span>.</p>
+
+<p>The result will be instantly visible and it's fine to run the script multiple times.</p>
+
+<p>If you load a decal in the asset editor, it will not show up correctly.</p>
+
+
+<h3 id="variables">Variables</h3>
+<p>At the top of the script you can change some variables.</p>
+
+<h4 id="size">Size</h4>
+<p>This defines the width and length of your decal in meters, the texture width and height will be stretched to match this size.</p>
+
+<h4 id="tile">Tile</h4>
+<p>This allows to tile the texture multiple in width and length directions. This is usually left at 1.</p>
+
+<h4 id="slope-tolerance">Slope Tolerance</h4>
+<p>This defines the height of the decal box mesh, which determines the amount of sloped terrain the decal will be able to handle, once the terrain slope exceeds this value, the decal will begin fading out at the top and bottom.</p>
+
+<p>When the camera enters the decal box mesh, the decal will not be visible.</p>
+
+<p>If you leave this as a negative value, the script will automatically calculate a reasonable value.</p>
+
+
+
+
+
+
 
 <h2 id="editor-advanced">Editor Advanced</h2>
 
@@ -263,36 +293,6 @@ Prop variations menu in the asset editor.
 
 <p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
 
-
-
-
-
-
-
-<h2 id="Script">Script</h2>
-
-<p>To convert a prop for the decal prop fix mod, you need to run <a href='https://gist.github.com/ronyx69/ffff7459be346bc807b72b99713bbf9f'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span>.</p>
-
-<p>The result will be instantly visible and it's fine to run the script multiple times.</p>
-
-<p>If you load a decal in the asset editor, it will not show up correctly.</p>
-
-
-<h3 id="variables">Variables</h3>
-<p>At the top of the script you can change some variables.</p>
-
-<h4 id="size">Size</h4>
-<p>This defines the width and length of your decal in meters, the texture width and height will be stretched to match this size.</p>
-
-<h4 id="tile">Tile</h4>
-<p>This allows to tile the texture multiple in width and length directions. This is usually left at 1.</p>
-
-<h4 id="slope-tolerance">Slope Tolerance</h4>
-<p>This defines the height of the decal box mesh, which determines the amount of sloped terrain the decal will be able to handle, once the terrain slope exceeds this value, the decal will begin fading out at the top and bottom.</p>
-
-<p>When the camera enters the decal box mesh, the decal will not be visible.</p>
-
-<p>If you leave this as a negative value, the script will automatically calculate a reasonable value.</p>
 
 
 
