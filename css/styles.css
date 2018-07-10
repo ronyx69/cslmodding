@@ -255,6 +255,12 @@ p {
 	cursor: pointer;
 }
 
+::selection
+    {
+    color: #fff;
+	background-color: #45a3e6;
+	}
+
 ::-webkit-scrollbar-thumb:vertical 
     {
     background-color: #4c5459;
