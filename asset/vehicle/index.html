@@ -216,7 +216,7 @@ Example normal map for rocks.
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/CeKq51I.jpg"><p>
-Problem: normal maps get weaker as they are rotated.
+Problem: normal maps appear incorrectly if the asset importer mesh rotation feature is used.
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/BP3Vj1J.jpg"><p>
@@ -226,7 +226,7 @@ Problem: default normal map value is 0.5, which isn't possible by using 127(left
 Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
-<p>Make sure the generator is set to x- or simply invert the red channel of the normal map after generation, otherwise it won't behave correctly ingame.</p>
+<p>The normal map generator should be set to +X +Y, which means no color channel inversions are required.</p>
 
 <p>High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts parts with a solid color before generating a normal map, or paint over these parts 128,128,255 on the final normal map.</p>
 
@@ -364,12 +364,15 @@ Importing a mesh in asset importer.
 
 After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around x axis are common necessities.</p>
 
-
+<div class="content-warning"><em>
+Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some parts. To fix this either don't use the rotation and make sure the mesh is rotated properly before import, or if you need to use the mesh rotation feature - use the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to run <a href='https://gist.github.com/ronyx69/29dfd41933b6735ac3a442455e1ef6ee'>this script</a>, which will recalculate the tangents.
+</em></div>
 
 
 <div class="content-warning"><em>
 If you get an unsupported color error, one of your textures might be a 16 bit file, you need to change it to 8 bit, in Photoshop: Image &gt; Mode &gt; 8 Bits.
 </em></div>
+
 
 
 <div class="content-warning"><em>

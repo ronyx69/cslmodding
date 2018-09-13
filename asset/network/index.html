@@ -440,7 +440,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="basic">Basic</h4>
 
-<p>Used for ground level roads. Instead of alpha being used for making the mesh transparent, it shows the underlying terrain such as grass or ruined. Will have weird normals/shading in many situations.</p>
+<p>Used for ground level roads. Instead of alpha being used for making the mesh transparent, it shows the underlying terrain such as grass or ruined. Will have weird normals/shading in many situations. Doesn't display normal maps.</p>
 
 
 <h4 id="bridge">Bridge</h4>
@@ -450,7 +450,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="rail">Rail</h4>
 
-<p>Same as basic but shows gravel instead of pavement.</p>
+<p>Same as bridge but shows gravel instead of pavement.</p>
 
 
 <h4 id="wire">Wire</h4>
@@ -460,7 +460,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="fence">Fence</h4>
 
-<p>Conforms to terrain, used for Parklife fences. Can't be used for nodes. Can't be used in combination with segments/nodes which have other shaders. Lane props will not match the terrain conforming network.</p>
+<p>Conforms to terrain, used for Parklife fences. Can't be used for nodes. Can't be used in combination with segments/nodes which have other shaders. Lane props may not match the terrain conforming network depending on the AI and other settings.</p>
 
 
 
@@ -479,7 +479,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="connect-group-1">Connect Group</h4>
 
-<p>Limits the node to connect to specific groups of roads.</p>
+<p>Limits the node to connect to specific groups of roads. Works only for roads with direct connect enabled.</p>
 
 
 <h4 id="direct-connect">Direct Connect</h4>
@@ -561,7 +561,7 @@ Just like any diffuse texture, defines the main color of the network.</p>
 
 <h4 id="normal-_n">Normal (_n)</h4>
 
-<p>Works similarly to any other normal map, the only difference is instead of inverting the red channel (-x), the green channel needs to be inverted instead (-y). If you have already made a normal map without considering this, you can simply invert the entire normal map to make it correct.</p>
+<p>Works similarly to any other normal map.</p>
 
 <p>Defaults to flat.</p>
 
