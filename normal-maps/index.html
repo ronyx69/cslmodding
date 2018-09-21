@@ -1,0 +1,224 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Normal Maps
+
+</a></h1>
+
+
+
+</div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/eQNvoe1.jpg'/></div>
+<div class="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="normal-maps">Normal Maps</h1>
+
+
+<h2 id="about">About</h2>
+
+<p>This article describes how to create correct normal maps in different situations, and potential problems while generating or importing them ingame.</p>
+
+
+<h2 id="generation">Generation</h2>
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/RLIMzQX.png"><p>
+A regular normal map without any inverted channels and its red and green channels shown seperately.
+</p></div>
+
+<p>Before you decide if you need to invert one of the normal map channels, you need to make sure the normal map generator you are using isn't inverting it by default. Some normal map generators have settings for inverting the red(x) and green(y) channels, but some of them invert the red channel by default.</p>
+
+<p>A regular normal map with no inversions looks as if it's lit from the top right - that means the red channel looks like light is coming from the right, but the green channel looks like the light from the top. That means it appears to be lit from the positive x and y directions which is <a href="https://en.wikipedia.org/wiki/Normal_mapping#How_it_works">the normal map standard</a>.</p>
+
+
+
+<h2 id="mesh-importer-rotation">Mesh Importer Rotation</h2>
+
+<p>The rotation feature in the asset editor mesh importer is broken - it produces incorrect tangents, which will make normal maps appear incorrectly or not at all depending on the orientaton and uv mapping of each face.</p>
+
+<p>If you would like to use the rotation feature without breaking the tangents and normal maps, use the Mesh Import Rotation Tangents Fix mod.</p>
+
+
+<div class="content-info"><em>
+If you would like to use the rotation feature without breaking the tangents and normal maps, use the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094">Mesh Import Rotation Tangents Fix mod</a>.
+</em></div>
+
+<h2 id="assets">Assets</h2>
+
+<p>For regular assets such as buildings, props, vehicles, trees and citizens, the normal map works correctly with no inverted channels, according to the standard described above.</p>
+
+
+<h2 id="networks">Networks</h2>
+
+<p>For faces which are vertex painted magenta the normal map always works just like for any normal asset, as described above.</p>
+
+<p>But for faces which are not vertex painted magenta (that means they use the automatic tiling as networks usually do) the green channel usually needs to be inverted.</p>
+
+<p>If you are creating a network using an asymmetric mesh, you would use the invert flag for the segment mesh to appear continuous and not flip every other segment, this will result in the normal map green channel being inverted for every other segment. The solution in that case is to have 2 different segment meshes, one of which would have a flipped mesh or a flipped normal map, depending on the flags it has.</p>
+
+
+<h2 id="map-themes">Map Themes</h2>
+
+<p>Map theme sand and cliff normal maps require an inverted green channel to appear correctly.</p>
+
+<p><a href="https://i.imgur.com/MjT23We.png">https://i.imgur.com/MjT23We.png</a><br />A normal map with an inverted green channel and its appearance ingame.</p>
+
+<p>The water normal map is animated ingame and constantly fades between a regular and an inverted version.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
