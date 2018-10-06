@@ -210,7 +210,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="connect-group">Connect Group</h4>
 
-<p>Restricts the road to connect only to certain groups of roads.</p>
+<p>Nodes of the current or other networks which match this connect group and have direct connect enabled will show up in intersections. For example tram track nodes do this.</p>
 
 
 <h4 id="enable-zoning">Enable Zoning</h4>
@@ -455,7 +455,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="wire">Wire</h4>
 
-<p>Used for power lines, tram wires, and cable car cables.</p>
+<p>Used for power lines, tram wires, and cable car cables. Has <a href='#wire-shader'>specific mesh requirements</a>.</p>
 
 
 <h4 id="fence">Fence</h4>
@@ -479,7 +479,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="connect-group-1">Connect Group</h4>
 
-<p>Limits the node to connect to specific groups of roads. Works only for roads with direct connect enabled.</p>
+<p>Limits the node to connect to networks which have this connect group. Works only when direct connect is enabled.</p>
 
 
 <h4 id="direct-connect">Direct Connect</h4>
@@ -520,6 +520,19 @@ Vanilla six-lane road segment mesh.
 <div class="content-info"><em>
 You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1274199764">the Network Tiling mod</a> to change how much the texture is tiled along the segments and nodes.
 </em></div>
+
+<h3 id="wire-shader">Wire Shader</h3>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/He2diBn.jpg"><p>
+The vanilla powerline wire mesh showing vertex paint and uv mapping.
+</p></div>
+
+The wire shader requires a specific kind of mesh - each "wire" should be a vertical plane, which can be subdivided and curved like the vanilla powerlines.</p>
+
+<p>It should be UV Mapped horizontally from -1 to 1 but the height of the uv mapping depends on the height of the mesh - for example on the vanilla powerline mesh, each wire is 4m high, so the UV mapping vertically goes from -2 to 2.</p>
+
+<p>The vertex paint green channel must be 0. The blue channel controls the amount of sway in the wind, 0 means no sway. The red channel controls the phase of the sway.</p>
+
 
 
 
