@@ -1,12 +1,47 @@
 <html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127804702-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<script type="text/javascript">
 
-  gtag('config', 'UA-127804702-1');
+	window.addEventListener('load', function()
+	{
+		if(window.ga && ga.create) 
+		{
+			console.log('Google Analytics is loaded');
+
+			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = '/collect.php?tid=UA-127804702-1&ec=Allowing&ea=Google%20Analytics';
+			document.body.appendChild(img);    
+		}
+		else 
+		{
+			console.log('Google Analytics is not loaded');
+
+   			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = '/collect.php?tid=UA-127804702-1&ec=Blocking&ea=Google%20Analytics';
+			document.body.appendChild(img);    
+		}
+      
+		if(window.google_tag_manager)
+		{
+			console.log('Google Tag Manager is loaded');
+
+			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = '/collect.php?tid=UA-127804702-1&ec=Allowing&ea=Google%20Tag%20Manager';
+			document.body.appendChild(img);    
+		}
+		else
+		{
+			console.log('Google Tag Manager is not loaded');
+
+			var img = document.createElement('img');
+			img.setAttribute('style','display:none;');
+			img.src = '/collect.php?tid=UA-127804702-1&ec=Blocking&ea=Google%20Tag%20Manager';
+			document.body.appendChild(img);    
+		}
+	}, false);
 </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
