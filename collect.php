@@ -3,7 +3,7 @@
 header('Content-Type: image/png');
 echo base64_decode('R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs');	
  
-if(isset($_GET['tid'])) { $tid = $_GET['tid']; } else { $tid = 'UA-XXXXXX-X';}
+if(isset($_GET['tid'])) { $tid = $_GET['tid']; } else { $tid = 'UA-127804702-1';}
 if(isset($_GET['ec'])) { $ec = $_GET['ec']; } else { $ec = 'Blocking';}
 if(isset($_GET['ea'])) { $ea = $_GET['ea']; } else { $ea = 'Something';}
  
