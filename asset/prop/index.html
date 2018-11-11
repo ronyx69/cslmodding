@@ -396,6 +396,14 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 <h2 id="editor">Editor</h2>
 
 
+<h3 id="effects">Effects</h3>
+
+<p>You can add effects such as lights and particles, and change their position and direction.</p>
+
+<p>The "always active" toggle has no known effect, it's only enabled for the vanilla red/orange roof warning lights, but they still turn off if the building has no electricity or is turned off.</p>
+
+
+
 <h3 id="general-properties">General Properties</h3>
 
 <ul>
@@ -464,6 +472,8 @@ ModTools scene explorer and console.
 
 
 
+
+
 <h3 id="shader">Shader</h3>
 
 <p>
@@ -502,6 +512,35 @@ Prop variations menu in the asset editor.
 <p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
 
 
+<h3 id="prefab-info-fields">Prefab Info Fields</h3>
+
+<p>To change variables of the asset, open the scene explorer <span class=key>Ctrl+E</span> and go to Tool Controller > ToolController > m_editPrefabInfo. This is where you can find all the fields of the prop, note that some things can only be changed using scripts, and also not all changed fields will save.</p>
+
+
+
+
+
+<h4 id="m_illuminationblinktype">m_illuminationBlinkType</h4>
+
+<p>Determines the animation of the prop illumination.</p>
+
+
+
+<h4 id="m_illuminationoffrange">m_illuminationOffRange</h4>
+
+<p>Determines the upper and lower limit for how long the illumination is disabled during daytime. For lights this usually matches the off range of the light effect which can be found in m_effects > m_effects.[id] > m_effect > m_offRange. You can also use <a href='https://gist.github.com/ronyx69/bfa8940c8d68f99b8826c88af51a39b7'>this script</a> to change it using an hour value.</p>
+
+
+
+<h4 id="m_specialplaces">m_specialPlaces</h4>
+
+<p>Allows adding sitting places for citizens using <a href='https://gist.github.com/ronyx69/0353e26a6b6c1c0a8d5c28c1a1e7401c'>this script</a>.</p>
+
+
+
+<h4 id="m_parkingspaces">m_parkingSpaces</h4>
+
+<p>Allows adding parking places for cars using <a href='https://gist.github.com/ronyx69/89d48923dbd020c2109686487dcc4d9c'>this script</a>.</p>
 
 
 
