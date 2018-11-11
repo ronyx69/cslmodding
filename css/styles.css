@@ -91,7 +91,7 @@ a {
 /* Menu */
 
 .menu-content {
-	margin: 32px;
+	margin: 32px 0 32px 32px;
 	color: #98a7b3;
 }
 
