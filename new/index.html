@@ -5,6 +5,8 @@
 	
 .homegrid {
 	text-align:center;
+	max-width:1320px;
+	margin:32px auto;
 }
 
 .homeitem {
@@ -13,6 +15,8 @@
 	padding:32px;
 	margin:32px auto;
 	display:inline-block;
+	vertical-align:top;
+	color:#98a7b3;
 }
 
 .homeitem img {
@@ -20,17 +24,25 @@
 	width:128px;
 }
 
+.homeitem img path {
+	fill:#000;
+}
 
 .homeitem p {
 	line-height:24px;
+	color:#77838c;
 }
 
 .homeitem strong {
-	color:#98a7b3;
+	color:unset;
 	font-size:20px;
 	display:block;
 	margin:16px 0 0 0;
 	line-height:32px;
+}
+
+.homeitem:hover {
+	color:#45a3e6!important;
 }
 
 
@@ -45,47 +57,62 @@
 
 
 <a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
+<img src='https://cslmodding.info/icons/icon_Building.svg'><strong>
+Building</strong><p>
+The basics of building<br>asset creation.</p></a>
 
-<a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
 
-<a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
+<a href='https://cslmodding.info/asset/prop/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Prop.svg'><strong>
+Prop</strong><p>
+The basics of prop<br>asset creation.</p></a>
 
-<a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
 
-<a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
+<a href='https://cslmodding.info/asset/tree/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Tree.svg'><strong>
+Tree</strong><p>
+The basics of tree<br>asset creation.</p></a>
 
-<a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
 
-<a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
+<a href='https://cslmodding.info/asset/vehicle/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Vehicle.svg'><strong>
+Vehicle</strong><p>
+The basics of vehicle<br>asset creation.</p></a>
 
-<a href='https://cslmodding.info/asset/building/' class="homeitem">
-<img src='https://cslmodding.info/icons/icon_Building.svg'>
-<strong>Building</strong>
-<p>The basics of building<br>asset creation.</p></a>
+
+<a href='https://cslmodding.info/asset/network/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Network.svg'><strong>
+Network</strong><p>
+The basics of road and other<br>network asset creation.</p></a>
+
+
+<a href='https://cslmodding.info/asset/citizen/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Citizen.svg'><strong>
+Citizen</strong><p>
+The basics of citizen<br>asset creation.</p></a>
 
 
 
+<a href='https://cslmodding.info/noworkshop/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_NoWorkshop.svg'><strong>
+No Workshop<br>& Local Mods</strong><p>
+Disable workshop content<br>and use local mods.</p></a>
+
+<a href='https://cslmodding.info/normal-maps/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Normal.svg'><strong>
+Normal Maps</strong><p>
+Generate correct normal maps and solve common issues.</p></a>
+
+<a href='https://cslmodding.info/scale/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Scale.svg'><strong>
+Scale</strong><p>
+Find out the size of cells, tiles, roads, and more.</p></a>
+
+
+<a href='https://cslmodding.info/scripts/' class="homeitem">
+<img src='https://cslmodding.info/icons/icon_Scripts.svg'><strong>
+Scripts</strong><p>
+Useful scripts for changing asset variables and more.</p></a>
 
 
 
@@ -164,6 +191,40 @@
 <script>
 
 	document.title = 'Cities: Skylines Modding & Asset Creation';
+</script>
+<script>
+	
+    /*
+     * Replace all SVG images with inline SVG
+     */
+        jQuery('img.svg').each(function(){
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+        });
 </script>
 <script>
 	// Select all links with hashes
