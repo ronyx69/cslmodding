@@ -200,29 +200,20 @@ Create props or vehicle sub meshes which use a glowing particle shader.</p></a><
 <script>
 $(function() {
 
-
-
-
 	var max = 0, min = 1;
+	var i;
+	for (i = 0; i < 100; i++) 
+	{ 
+		var http = new XMLHttpRequest();
+		http.open('HEAD', "tips/"+i+".html", false);
+		http.send();
+		if(http.status!=404) 
+		{
+			max = max + 1;
+		}
+	}
 
-
-
-	$.ajax({
-  		url: "https://github.com/ronyx69/cslmodding/tree/master/new/tips"  
-	})
-  	.done(function( data ) 
-  	{      
-	    $(data).find(".html</a>").each(function(i)
-	    {      
-	    	max = max + 1;      
-	    });
-	});
-
-
-   	$("#tip").load("tips/"+Math.floor(Math.random()*(max-min+1)+min)+".html"); 
-
-
-
+	$("#tip").load("tips/"+Math.floor(Math.random()*(max-min+1)+min)+".html"); 
 
 });
 </script>
@@ -264,23 +255,23 @@ $(function() {
 </script>
 <script>
   (function(){
-    'use strict';
+	'use strict';
 
-    var headingNodes = [], results, link,
-        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+	var headingNodes = [], results, link,
+		tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
 
-    tags.forEach(function(tag){
-      results = document.getElementsByTagName(tag);
-      Array.prototype.push.apply(headingNodes, results);
-    });
+	tags.forEach(function(tag){
+	  results = document.getElementsByTagName(tag);
+	  Array.prototype.push.apply(headingNodes, results);
+	});
 
-    headingNodes.forEach(function(node){
-      link = document.createElement('a');
-      link.className = 'deepLink';
-      link.textContent = node.textContent;
-      link.href = '#' + node.getAttribute('id');
-      node.innerHTML = '--><a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a><!--';
-    });
+	headingNodes.forEach(function(node){
+	  link = document.createElement('a');
+	  link.className = 'deepLink';
+	  link.textContent = node.textContent;
+	  link.href = '#' + node.getAttribute('id');
+	  node.innerHTML = '--><a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a><!--';
+	});
 
   })();
 </script>
@@ -290,37 +281,37 @@ $(function() {
 </script>
 <script>
 	
-    /*
-     * Replace all SVG images with inline SVG
-     */
-        jQuery('img.svg').each(function(){
-            var $img = jQuery(this);
-            var imgID = $img.attr('id');
-            var imgClass = $img.attr('class');
-            var imgURL = $img.attr('src');
+	/*
+	 * Replace all SVG images with inline SVG
+	 */
+		jQuery('img.svg').each(function(){
+			var $img = jQuery(this);
+			var imgID = $img.attr('id');
+			var imgClass = $img.attr('class');
+			var imgURL = $img.attr('src');
 
-            jQuery.get(imgURL, function(data) {
-                // Get the SVG tag, ignore the rest
-                var $svg = jQuery(data).find('svg');
+			jQuery.get(imgURL, function(data) {
+				// Get the SVG tag, ignore the rest
+				var $svg = jQuery(data).find('svg');
 
-                // Add replaced image's ID to the new SVG
-                if(typeof imgID !== 'undefined') {
-                    $svg = $svg.attr('id', imgID);
-                }
-                // Add replaced image's classes to the new SVG
-                if(typeof imgClass !== 'undefined') {
-                    $svg = $svg.attr('class', imgClass+' replaced-svg');
-                }
+				// Add replaced image's ID to the new SVG
+				if(typeof imgID !== 'undefined') {
+					$svg = $svg.attr('id', imgID);
+				}
+				// Add replaced image's classes to the new SVG
+				if(typeof imgClass !== 'undefined') {
+					$svg = $svg.attr('class', imgClass+' replaced-svg');
+				}
 
-                // Remove any invalid XML tags as per http://validator.w3.org
-                $svg = $svg.removeAttr('xmlns:a');
+				// Remove any invalid XML tags as per http://validator.w3.org
+				$svg = $svg.removeAttr('xmlns:a');
 
-                // Replace image with new SVG
-                $img.replaceWith($svg);
+				// Replace image with new SVG
+				$img.replaceWith($svg);
 
-            }, 'xml');
+			}, 'xml');
 
-        });
+		});
 </script>
 <script>
 	// Select all links with hashes
@@ -329,35 +320,35 @@ $(function() {
 	  .not('[href="#"]')
 	  .not('[href="#0"]')
 	  .click(function(event) {
-	    // On-page links
-	    if (
-	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-	      && 
-	      location.hostname == this.hostname
-	    ) {
-	      // Figure out element to scroll to
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-	      // Does a scroll target exist?
-	      if (target.length) {
-	        // Only prevent default if animation is actually gonna happen
-	        //event.preventDefault();
-	        $('html, body').animate({
-	          scrollTop: target.offset().top
-	        }, 500, function() {
-	          // Callback after animation
-	          // Must change focus!
-	          var $target = $(target);
-	          //$target.focus();
-	          if ($target.is(":focus")) { // Checking if the target was focused
-	            return false;
-	          } else {
-	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-	            //$target.focus(); // Set focus again
-	          };
-	        });
-	      }
-	    }
+		// On-page links
+		if (
+		  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+		  && 
+		  location.hostname == this.hostname
+		) {
+		  // Figure out element to scroll to
+		  var target = $(this.hash);
+		  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		  // Does a scroll target exist?
+		  if (target.length) {
+			// Only prevent default if animation is actually gonna happen
+			//event.preventDefault();
+			$('html, body').animate({
+			  scrollTop: target.offset().top
+			}, 500, function() {
+			  // Callback after animation
+			  // Must change focus!
+			  var $target = $(target);
+			  //$target.focus();
+			  if ($target.is(":focus")) { // Checking if the target was focused
+				return false;
+			  } else {
+				$target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+				//$target.focus(); // Set focus again
+			  };
+			});
+		  }
+		}
 	  });
 </script>
 </body>
