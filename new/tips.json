@@ -1,23 +1,23 @@
 [
-    {
-    	"title": "Don't make your assets too bright.",
-        "text": "Textures look very bright and saturated ingame. You can use a reference color chart prop, testing LUTs, and the context of other well known assets ingame. In general, white should be below 140 RGB and black above 20 RGB. You can use a mod to replace textures ingame for testing adjustments quickly.",
-        "image": "https://i.imgur.com/WsXS1Gj.jpg",
-        "morelink": "https://steamcommunity.com/sharedfiles/filedetails/?id=1586722178",
-        "moretext": "Learn more »"
-    },
-    {
-    	"title": "Prop Special Places for Sitting",
-        "text": "It's possible to add sitting spots to props, and citizens will sit on them when those props are part of a building.",
-        "image": "https://i.imgur.com/p3zFmf9.jpg",
-        "morelink": "https://cslmodding.info/asset/prop/#m_specialplaces",
-        "moretext": "Learn more »"
-    },
-    {
-    	"title": "Make sure your normal maps are correct.",
-        "text": "Some normal map generators invert normal map channels by default. The game has specific requirements for normal maps in different uses. The asset editor mesh importer can break the mesh and result in incorrectly displayed normal maps.",
-        "image": "https://i.imgur.com/RLIMzQX.png",
-        "morelink": "https://cslmodding.info/normal-maps/",
-        "moretext": "Learn more »"
-    }
+	{
+		"title": "Don't make your assets too bright.",
+		"text": "Textures look very bright and saturated ingame. You can use a reference color chart prop, testing LUTs, and the context of other well known assets ingame. In general, white should be below 140 RGB and black above 20 RGB. You can use a mod to replace textures ingame for testing adjustments quickly.",
+		"image": "https://i.imgur.com/WsXS1Gj.jpg",
+		"morelink": "https://steamcommunity.com/sharedfiles/filedetails/?id=1586722178",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Prop Special Places for Sitting",
+		"text": "It's possible to add sitting spots to props, and citizens will sit on them when those props are part of a building.",
+		"image": "https://i.imgur.com/p3zFmf9.jpg",
+		"morelink": "https://cslmodding.info/asset/prop/#m_specialplaces",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Make sure your normal maps are correct.",
+		"text": "Some normal map generators invert normal map channels by default. The game has specific requirements for normal maps in different uses. The asset editor mesh importer can break the mesh and result in incorrectly displayed normal maps.",
+		"image": "https://i.imgur.com/RLIMzQX.png",
+		"morelink": "https://cslmodding.info/normal-maps/",
+		"moretext": "Learn more »"
+	}
 ]
