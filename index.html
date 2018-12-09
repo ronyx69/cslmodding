@@ -1,138 +1,188 @@
 <html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
-</head><body id="top"><div class="menu" id="menu-file"></div><div class="page"><div class="contenthome"><table>
 
+<style type="text/css">
+	
+.homegrid {
+	text-align:center;
+	margin:48px 64px;
+}
 
-<tr>
+.homeitem {
+	text-align:center;
+	width:256px;
+	padding:32px 0;
+	margin:16px 32px;
+	display:inline-block;
+	vertical-align:top;
+	color:#98a7b3;
+}
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/yWikXKf.jpg);">
-<a href="https://cslmodding.info/asset/building/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Building Asset Creation
-</div></a></div></td>
+.homeitem svg, .homeitem strong, .homeitem p {
+	transition: all 0.2s ease-out;
+}
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/L0UEJLD.jpg);">
-<a href="https://cslmodding.info/asset/prop/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Prop Asset Creation
-</div></a></div></td>
+.homeitem svg {
+	clear:both;
+	width:128px!important;
+	height:128px!important;
+	fill:#98a7b3;
+}
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/vYZcjXn.jpg);">
-<a href="https://cslmodding.info/asset/tree/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Tree Asset Creation
-</div></a></div></td>
 
+.homeitem:hover svg, .homeitem:hover strong, .homeitem:hover p {
+	fill:#45a3e6;
+	color:#45a3e6!important;
+}
 
 
-</tr>
+.homeitem p {
+	line-height:24px;
+	color:#77838c;
+}
 
+.homeitem strong {
+	color:unset;
+	font-size:20px;
+	display:block;
+	margin:16px 0 0 0;
+	line-height:32px;
+}
 
+.randomtip {
+	color:#b8cbd9;
+	padding:32px 32px;
+	line-height:32px;
+	margin:0 auto;
+	max-width:768px;
+}
 
-<tr>
+.randomtip p {
+	margin:0;
+	line-height:24px;
+}
 
+.randomtip a {
+	text-decoration: underline;
+}
 
+.randomtip a:hover {
+	color:#45a3e6;
+}
 
+.randomtipoverlay {
+	width:100%;
+	height:100%;
+	background-color:rgba(22,24,26,0.75);
+}
 
+.randomtipbg {
+	background-repeat: no-repeat; 
+	background-attachment: local; 
+	background-position: center; 
+	background-size: cover;
+}
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/p5Wg0Ia.jpg);">
-<a href="https://cslmodding.info/asset/vehicle/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Vehicle Asset Creation
-</div></a></div></td>
+</style>
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="page"><div class="contenthome">
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/jpMVCLg.jpg);">
-<a href="https://cslmodding.info/asset/citizen/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Citizen Asset Creation
-</div></a></div></td>
+<div id="tip"></div>
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/0DlVOeE.jpg);">
-<a href="https://cslmodding.info/asset/network/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Network Asset Creation (WIP)
-</div></a></div></td>
 
-</tr>
 
 
 
-<tr>
+<div class="homegrid"><!--
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/d6xy1v2.jpg);">
-<a href="https://cslmodding.info/noworkshop/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-No Workshop & Local Mods
-</div></a></div></td>
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/eQNvoe1.jpg);">
-<a href="https://cslmodding.info/normal-maps/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Normal Maps
-</div></a></div></td>
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/5mLJJx3.jpg);">
-<a href="https://cslmodding.info/scale/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Scale
-</div></a></div></td>
+--><a href='https://cslmodding.info/asset/building/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Building.svg'><strong>
+Building</strong><p>
+The basics of building<br>asset creation.</p></a><!--
 
-</tr>
 
+--><a href='https://cslmodding.info/asset/prop/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Prop.svg'><strong>
+Prop</strong><p>
+The basics of prop<br>asset creation.</p></a><!--
 
 
-<tr>
+--><a href='https://cslmodding.info/asset/tree/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Tree.svg'><strong>
+Tree</strong><p>
+The basics of tree<br>asset creation.</p></a><!--
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/xIuUmNX.jpg);">
-<a href="https://cslmodding.info/scripts/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Scripts
-</div></a></div></td>
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/BR98RaE.jpg);">
-<a href="https://cslmodding.info/shader/rotors/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Rotors Shader (Props &amp; Buildings)
-</div></a></div></td>
+--><a href='https://cslmodding.info/asset/vehicle/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Vehicle.svg'><strong>
+Vehicle</strong><p>
+The basics of vehicle<br>asset creation.</p></a><!--
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/sbjx1df.jpg);">
-<a href="https://cslmodding.info/mod/decal-prop-fix/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Decal Prop Fix Decals
-</div></a></div></td>
 
+--><a href='https://cslmodding.info/asset/network/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Network.svg'><strong>
+Network</strong><p>
+The basics of road and other<br>network asset creation.</p></a><!--
 
 
-</tr>
+--><a href='https://cslmodding.info/asset/citizen/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Citizen.svg'><strong>
+Citizen</strong><p>
+The basics of citizen<br>asset creation.</p></a><!--
 
 
 
+--><a href='https://cslmodding.info/noworkshop/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_NoWorkshop.svg'><strong>
+No Workshop</strong><p>
+Disable workshop content<br>and use local mods.</p></a><!--
 
+--><a href='https://cslmodding.info/normal-maps/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Normal.svg'><strong>
+Normal Maps</strong><p>
+Generate correct normal maps and solve common issues.</p></a><!--
 
+--><a href='https://cslmodding.info/scale/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Scale.svg'><strong>
+Scale</strong><p>
+Find out the size of cells, tiles, roads, and more.</p></a><!--
 
-<tr>
 
+--><a href='https://cslmodding.info/scripts/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Scripts.svg'><strong>
+Scripts</strong><p>
+Useful scripts for changing asset variables and more.</p></a><!--
 
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/XleNsu3.jpg);">
-<a href="https://cslmodding.info/mod/ploppable-asphalt-props/">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Ploppable Asphalt + Props
-</div></a></div></td>
 
+--><a href='https://cslmodding.info/shader/rotors/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Rotors.svg'><strong>
+Rotors Shader<br>Props & Buildings</strong><p>
+Supports semi-transparency and is often used for glass.</p></a><!--
 
+--><a href='https://cslmodding.info/shader/rotors-vehicle/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Rotors_Car.svg'><strong>
+Rotors Shader<br>Vehicle Glass</strong><p>
+Static rotors shader sub meshes for windows or lights.</p></a><!--
 
-<td><div class="homeimg" style="background-image: url(https://i.imgur.com/yAln0Qu.jpg);">
-<a href="https://cslmodding.info/mod/additive-shader">
-<div class="homeimgoverlay"></div><div class="homegradient"></div><div class="homeimgtext">
-Additive Shader
-</div></a></div></td>
 
 
+--><a href='https://cslmodding.info/mod/decal-prop-fix/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Decal.svg'><strong>
+Decal Prop Fix</strong><p>
+Create props which project textures onto the terrain.</p></a><!--
 
 
-</tr>
+--><a href='https://cslmodding.info/mod/ploppable-asphalt-props/' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Ploppable.svg'><strong>
+Ploppable Asphalt +</strong><p>
+Create props which display map theme textures such as asphalt, pavement, or others.</p></a><!--
 
+--><a href='https://cslmodding.info/mod/additive-shader' class="homeitem">
+<img class='svg' src='https://cslmodding.info/icons/icon_Additive.svg'><strong>
+Additive Shader</strong><p>
+Create props or vehicle sub meshes which use a glowing particle shader.</p></a><!--
 
 
 
@@ -142,14 +192,22 @@ Additive Shader
 
 
 
+--></div></div></div>
 
 
 
 
-
-
-
-</table></div></div></div>
+<script>
+$(function() {
+    $.getJSON("tips.json", function(myjson) {
+        console.log(myjson);
+        var rndIndex = Math.floor(Math.random() * myjson.length);
+        var myrndelement = myjson[rndIndex];
+        document.getElementById("tip").innerHTML = '<div class="randomtipbg" style="background-image:url(' + myrndelement.image + ');"><div class="randomtipoverlay"><div class="randomtip">' + myrndelement.title + '<p><br>' + myrndelement.text + ' <a href="' + myrndelement.morelink + '">' + myrndelement.moretext + '</a>';
+    '</p></div></div></div>';
+    });
+});
+</script>
 <script>
 	var el5;
 	$(".content-warning").each(function() 
@@ -171,7 +229,7 @@ Additive Shader
 	$(".content-photo-box img").each(function() 
 	{	
 	el3 = $(this);	
-	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	el3.wrap('--><a href="' + el3.attr('src') + '" target="null"></a><!--');
 	});
 </script>
 <script>
@@ -188,29 +246,63 @@ Additive Shader
 </script>
 <script>
   (function(){
-    'use strict';
+	'use strict';
 
-    var headingNodes = [], results, link,
-        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+	var headingNodes = [], results, link,
+		tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
 
-    tags.forEach(function(tag){
-      results = document.getElementsByTagName(tag);
-      Array.prototype.push.apply(headingNodes, results);
-    });
+	tags.forEach(function(tag){
+	  results = document.getElementsByTagName(tag);
+	  Array.prototype.push.apply(headingNodes, results);
+	});
 
-    headingNodes.forEach(function(node){
-      link = document.createElement('a');
-      link.className = 'deepLink';
-      link.textContent = node.textContent;
-      link.href = '#' + node.getAttribute('id');
-      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
-    });
+	headingNodes.forEach(function(node){
+	  link = document.createElement('a');
+	  link.className = 'deepLink';
+	  link.textContent = node.textContent;
+	  link.href = '#' + node.getAttribute('id');
+	  node.innerHTML = '--><a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a><!--';
+	});
 
   })();
 </script>
 <script>
 
-	document.title = 'Cities: Skylines Modding';
+	document.title = 'Cities: Skylines Modding & Asset Creation';
+</script>
+<script>
+	
+	/*
+	 * Replace all SVG images with inline SVG
+	 */
+		jQuery('img.svg').each(function(){
+			var $img = jQuery(this);
+			var imgID = $img.attr('id');
+			var imgClass = $img.attr('class');
+			var imgURL = $img.attr('src');
+
+			jQuery.get(imgURL, function(data) {
+				// Get the SVG tag, ignore the rest
+				var $svg = jQuery(data).find('svg');
+
+				// Add replaced image's ID to the new SVG
+				if(typeof imgID !== 'undefined') {
+					$svg = $svg.attr('id', imgID);
+				}
+				// Add replaced image's classes to the new SVG
+				if(typeof imgClass !== 'undefined') {
+					$svg = $svg.attr('class', imgClass+' replaced-svg');
+				}
+
+				// Remove any invalid XML tags as per http://validator.w3.org
+				$svg = $svg.removeAttr('xmlns:a');
+
+				// Replace image with new SVG
+				$img.replaceWith($svg);
+
+			}, 'xml');
+
+		});
 </script>
 <script>
 	// Select all links with hashes
@@ -219,35 +311,35 @@ Additive Shader
 	  .not('[href="#"]')
 	  .not('[href="#0"]')
 	  .click(function(event) {
-	    // On-page links
-	    if (
-	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-	      && 
-	      location.hostname == this.hostname
-	    ) {
-	      // Figure out element to scroll to
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-	      // Does a scroll target exist?
-	      if (target.length) {
-	        // Only prevent default if animation is actually gonna happen
-	        //event.preventDefault();
-	        $('html, body').animate({
-	          scrollTop: target.offset().top
-	        }, 500, function() {
-	          // Callback after animation
-	          // Must change focus!
-	          var $target = $(target);
-	          //$target.focus();
-	          if ($target.is(":focus")) { // Checking if the target was focused
-	            return false;
-	          } else {
-	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-	            //$target.focus(); // Set focus again
-	          };
-	        });
-	      }
-	    }
+		// On-page links
+		if (
+		  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+		  && 
+		  location.hostname == this.hostname
+		) {
+		  // Figure out element to scroll to
+		  var target = $(this.hash);
+		  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		  // Does a scroll target exist?
+		  if (target.length) {
+			// Only prevent default if animation is actually gonna happen
+			//event.preventDefault();
+			$('html, body').animate({
+			  scrollTop: target.offset().top
+			}, 500, function() {
+			  // Callback after animation
+			  // Must change focus!
+			  var $target = $(target);
+			  //$target.focus();
+			  if ($target.is(":focus")) { // Checking if the target was focused
+				return false;
+			  } else {
+				$target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+				//$target.focus(); // Set focus again
+			  };
+			});
+		  }
+		}
 	  });
 </script>
 </body>
