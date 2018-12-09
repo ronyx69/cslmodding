@@ -203,8 +203,7 @@ $(function() {
         console.log(myjson);
         var rndIndex = Math.floor(Math.random() * myjson.length);
         var myrndelement = myjson[rndIndex];
-
-        $("#tip").innerHTML = '<div class="randomtipbg" style="background-image:url(' + myrndelement.image + ');"><div class="randomtipoverlay"><div class="randomtip">' + myrndelement.title + '<p><br>' + myrndelement.text + '<a href="' + myrndelement.morelink + '">' + myrndelement.moretext + '</a>';
+        document.getElementById("tip").innerHTML = '<div class="randomtipbg" style="background-image:url(' + myrndelement.image + ');"><div class="randomtipoverlay"><div class="randomtip">' + myrndelement.title + '<p><br>' + myrndelement.text + '<a href="' + myrndelement.morelink + '">' + myrndelement.moretext + '</a>';
     '</p></div></div></div>';
     });
 });
