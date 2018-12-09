@@ -203,15 +203,19 @@ $(function() {
 	var max = 0, min = 1;
 
 
-	$.ajax({
-  		url: "tips/"  
-	}).done(function( data ) {      
-    $(data).find("tbody tr a").each(function(i){
-        if(i>=4)
-        {           
-     		max = max + 1;
-        }
-    });
+	$.ajax({ url: "tips/" })
+
+  	.done(function(data) 
+  	{      
+	    $(data).find("tbody tr a").each(function(i)
+	    {
+	        if(i>=4)
+	        {           
+	            max = max + 1;      
+	        }
+
+	    });
+	});
    	
 
    	$("#tip").load("tips/"+Math.floor(Math.random()*(max-min+1)+min)+".html"); 
