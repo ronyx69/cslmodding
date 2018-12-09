@@ -195,8 +195,13 @@ Create props or vehicle sub meshes which use a glowing particle shader.</p></a><
 --></div></div></div>
 <script>
 $(function() {
-   var max = 2, min = 1;
-   $("#tip").load("tips/"+Math.floor(Math.random()*(max-min+1)+min)+".html"); 
+	const fs = require('fs');
+	const dir = './directory';
+   	var max = 1, min = 1;
+   	fs.readdir(dir, (err, files) => {
+	  max = files.length;
+	});
+   	$("#tip").load("tips/"+Math.floor(Math.random()*(max-min+1)+min)+".html"); 
 });
 </script>
 <script>
