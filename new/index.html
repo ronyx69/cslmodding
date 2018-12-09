@@ -200,8 +200,29 @@ Create props or vehicle sub meshes which use a glowing particle shader.</p></a><
 <script>
 $(function() {
 
-	var max = 3, min = 1;
+
+
+
+	var max = 0, min = 1;
+
+
+
+	$.ajax({
+  		url: "https://github.com/ronyx69/cslmodding/tree/master/new/tips"  
+	})
+  	.done(function( data ) 
+  	{      
+	    $(data).find(".html</a>").each(function(i)
+	    {      
+	    	max = max + 1;      
+	    });
+	});
+
+
    	$("#tip").load("tips/"+Math.floor(Math.random()*(max-min+1)+min)+".html"); 
+
+
+
 
 });
 </script>
