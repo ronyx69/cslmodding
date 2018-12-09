@@ -203,6 +203,8 @@ $(function() {
 
 	var myjson = $.getJSON("tips.json");
 
+	console.log(myJson);
+
 	var myjs = JSON.parse(myjson);
 
 	var rndIndex = Math.floor(Math.random() * Math.floor(myjs.length));
