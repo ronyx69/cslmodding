@@ -200,23 +200,20 @@ Create props or vehicle sub meshes which use a glowing particle shader.</p></a><
 <script>
 $(function() {
 
-	var max = 0, min = 1;
-	var i;
-	for (i = 1; i < 100; i++) 
-	{ 
-		var http = new XMLHttpRequest();
-		http.open('HEAD', "tips/"+i+".html", false);
-		http.send();
-		if(http.status!=404) 
-		{
-			max = max + 1;
-		}
-		else break;
-	}
 
-	$("#tip").load("tips/"+Math.floor(Math.random()*(max-min+1)+min)+".html"); 
+	var myjson = $.getJSON("tips.json");
+
+	var myjs = JSON.parse(myjson);
+
+	var rndIndex = Math.floor(Math.random() * Math.floor(myjs.length));
+
+	var myrndelement = myjs[rndIndex];
+
+	$("#tip").innerHTML = '<div class="randomtipbg" style="background-image:url(' + myrndelement.image + ');"><div class="randomtipoverlay"><div class="randomtip">' + myrndelement.title + '<p><br>' + myrndelement.text + '<a href="' + myrndelement.morelink + '">' + myrndelement.moretext + '</a>';
+'</p></div></div></div>';
 
 });
+
 </script>
 <script>
 	var el5;
