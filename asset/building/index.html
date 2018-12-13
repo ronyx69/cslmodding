@@ -180,11 +180,13 @@ Example illumination map showing both gradients.<br>
 192-255 (top).
 </p></div>
 
-Allows for randomly changing lighting for windows at night. 192 is the neutral color for non-illuminated parts. Then there are two gradients: 192-128 (inverted) and 192-255.</p>
+<p>Buildings can have two different types of illumination - diffuse contribution illumination in the 0-120 range, which is almost never used, and random night window illumination in the 128-255 range, which is what most buildings use.</p>
+
+<p>For randomly illuminated night windows 192 is the neutral color for non-illuminated parts. Then there are two gradients: 192-128 (inverted) and 192-255.</p>
 
 <p>Create a black and white illumination texture and use a levels adjustment to set the output colors so that black becomes 192 and white becomes 128 for one set of windows, and black becomes 192 and white becomes 255 for the other set.</p>
 
-<p>0-120 is always visible illumination based on the diffuse, not recommended as it can create problems.</p>
+<p>0-120 is always turned on illumination based on the diffuse. It's not recommended to mix the two different types of illumination on one texture as it can create aliasing problems.</p>
 
 <p>If you don't import an illumination map, it will default to no illumination.</p>
 
