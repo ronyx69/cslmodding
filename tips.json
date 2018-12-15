@@ -14,10 +14,17 @@
 		"moretext": "Learn more »"
 	},
 	{
-		"title": "Make sure your normal maps are correct.",
+		"title": "Correct Normal Maps",
 		"text": "Some normal map generators invert normal map channels by default. The game has specific requirements for normal maps in different uses. The asset editor mesh importer can break the mesh and result in incorrectly displayed normal maps.",
 		"image": "https://i.imgur.com/RLIMzQX.png",
 		"morelink": "https://cslmodding.info/normal-maps/",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Replace Textures Ingame",
+		"text": "You can use the the Realtime mod to replace textures and even meshes ingame for testing purposes. This helps to quickly test color adjustments in context with other assets.",
+		"image": "https://i.imgur.com/cHzST7l.jpg",
+		"morelink": "https://steamcommunity.com/sharedfiles/filedetails/?id=1122189715",
 		"moretext": "Learn more »"
 	}
 ]
