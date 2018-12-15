@@ -26,5 +26,47 @@
 		"image": "https://i.imgur.com/cHzST7l.jpg",
 		"morelink": "https://steamcommunity.com/sharedfiles/filedetails/?id=1122189715",
 		"moretext": "Learn more »"
+	},
+	{
+		"title": "Animated Building Shaders",
+		"text": "Some building shaders allow for simple animations, such as rotating wind turbines and multi-frame animation or scrolling textures.",
+		"image": "https://i.imgur.com/M4in1i8.jpg",
+		"morelink": "https://cslmodding.info/asset/building/#shader-properties",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Building Placement Mode",
+		"text": "The placement mode of a building determines how the user plops the building - on the side of a road or shore, on water or anywhere on terrain. It can also affect if your building blocks water.",
+		"image": "https://i.imgur.com/6ufMc8i.jpg",
+		"morelink": "https://cslmodding.info/asset/building/#placement-mode",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Prop Variations",
+		"text": "It's possible to add multiple props to the same prop and set probabilities, so a different prop gets plopped every time.",
+		"image": "https://i.imgur.com/7jzcZsS.jpg",
+		"morelink": "https://cslmodding.info/asset/prop/#variations",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Rotors Shader for Props, Buildings, and Sub Meshes",
+		"text": "This shader supports semi-transparency, so it can be used to create glass or fake water.",
+		"image": "https://i.imgur.com/jQyVOET.jpg",
+		"morelink": "https://cslmodding.info/shader/rotors/",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Rotors Shader for Vehicles",
+		"text": "It's possible to use the rotors shader to create semi-transparent glass parts for vehicles.",
+		"image": "https://i.imgur.com/4A7ruxL.jpg",
+		"morelink": "https://cslmodding.info/shader/rotors-vehicle/",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Decals",
+		"text": "Decals project textures onto the ground, they are the easiest type of asset to create, you don't need to worry about meshes or LODs. Just a diffuse and an alpha texture should be enough for most decal ideas, a script will do the rest automatically.",
+		"image": "https://i.imgur.com/j8UKUIJ.jpg",
+		"morelink": "https://cslmodding.info/mod/decal-prop-fix/",
+		"moretext": "Learn more »"
 	}
 ]
