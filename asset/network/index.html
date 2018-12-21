@@ -65,9 +65,9 @@ Network <br>Asset <br>Creation
 
 <p>This is used to determine how roads of different widths connect - nodes of narrow roads will widen to meet wider roads.</p>
 
-<p>Used to define the width of surface paint (such as pavement, gravel, or terrain clipping) and the area affected by flatten terrain.</p>
+<p>Used to define the width of surface paint (such as pavement, gravel, or terrain clipping) but becomes very unreliable when lower than 4.</p>
 
-<p>It's also the width of the drawable/selectable area and affects how the road will snap to the grid.</p>
+<p>It's also the width of the area affected by flatten terrain, drawable/selectable area and affects how the road will snap to the grid.</p>
 
 
 <h4 id="pavement-width">Pavement Width</h4>
@@ -150,7 +150,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="clip-terrain">Clip Terrain</h4>
 
-<p>Uses terrain clipping to create a hole in the ground, the actual hole is slightly smaller than the half width, and also creates ruining around the hole.</p>
+<p>Uses terrain clipping to create a hole in the ground, the actual hole is slightly smaller than the half width, and it becomes very unreliable when half width is less than 4. This also creates ruining around the hole.</p>
 
 
 <h4 id="follow-terrain">Follow Terrain</h4>
