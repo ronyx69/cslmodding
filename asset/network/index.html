@@ -371,7 +371,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 
 
-<h4 id="flags">Flags</h4>
+<h4 id="flags-1">Flags</h4>
 
 <p>Required and forbidden conditions which determine when the prop will appear.</p>
 
@@ -503,6 +503,113 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h3 id="shader-1">Shader</h3>
 
 <p><a href='#shader'>Same as for segments.</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="flags">Flags</h2>
+<p>There are many node, segment, and lane flags, and some of them might have different uses and results in different situations, so their descriptions might be incomplete or not accurate in all cases.</p>
+
+<h3 id="node-flags">Nodes</h3>
+
+<p>Node flags are used to determine when certain nodes or lane props appear.</p>
+
+
+
+<h4 id="node-flag-created">Created</h4>
+<p>Active for all created nodes.</p>
+<h4 id="node-flag-deleted">Deleted</h4>
+<p>Unknown.</p>
+<h4 id="node-flag-original">Original</h4>
+<p>Unknown.</p>
+<h4 id="node-flag-disabled">Disabled</h4>
+<p>Unknown.</p>
+<h4 id="node-flag-end">End</h4>
+<p>Active for a dead end - where the road ends.</p>
+<h4 id="node-flag-middle">Middle</h4>
+<p>Active for nodes between 2 segments of the same network.</p>
+<h4 id="node-flag-bend">Bend</h4>
+<p>Active for nodes where an asymmetric network changes direction.</p>
+<h4 id="node-flag-junction">Junction</h4>
+<p>Active for nodes which are intersections and transitions between 2 different networks.</p>
+<h4 id="node-flag-moveable">Moveable</h4>
+<p>Unknown.</p>
+<h4 id="node-flag-untouchable">Untouchable</h4>
+<p>Active for nodes of networks which are placed within buildings, and therefore can't be deleted or upgraded under normal circumstances.</p>
+<h4 id="node-flag-outside">Outside</h4>
+<p>Active for nodes which are at the edge of the map and connected to the "outside world".</p>
+<h4 id="node-flag-temporary">Temporary</h4>
+<p>Unknown.</p>
+<h4 id="node-flag-double">Double</h4>
+<p>Active for the "middle" node of a double length network. For example the node where the big pillar for highway suspension bridges is.</p>
+<h4 id="node-flag-fixed">Fixed</h4>
+<p>Related to public transport line stops, unlikely to be related to normal networks created by the player directly.</p>
+<h4 id="node-flag-onground">OnGround</h4>
+<p>Active for nodes which are on the ground, as opposed to being part of an elevated, bridge, or tunnel network. Likely to be based on the AI of the network.</p>
+<h4 id="node-flag-ambiguous">Ambiguous</h4>
+<p>Unknown. Likely to be related to automatically generated "transport lines" from the "outside world".</p>
+<h4 id="node-flag-water">Water</h4>
+<p>Related to water/sewage pipes.</p>
+<h4 id="node-flag-sewage">Sewage</h4>
+<p>Related to water/sewage pipes.</p>
+<h4 id="node-flag-forbidlaneconnection">ForbidLaneConnection</h4>
+<p>Related to invisible networks such as pedestrian paths, ship dock or bus way networks.</p>
+<h4 id="node-flag-underground">Underground</h4>
+<p>Active for nodes of networks which are tunnels.</p>
+<h4 id="node-flag-transition">Transition</h4>
+<p>Active for nodes between networks which have different "levels". For roads - dirt road is level 1 and the other roads have level 2 - 5 based on their UI category.</p>
+<h4 id="node-flag-levelcrossing">LevelCrossing</h4>
+<p>Active for nodes which are train/road intersections. But also could be used for other things such as the canal lowered end node.</p>
+<h4 id="node-flag-onewayout">OneWayOut</h4>
+<p>Active for nodes which have literally only one way out - only one network with lanes which lead "out" from the current node.</p>
+<h4 id="node-flag-trafficlights">TrafficLights</h4>
+<p>Active for nodes which have traffic lights.</p>
+<h4 id="node-flag-onewayin">OneWayIn</h4>
+<p>Active for nodes which have literally only one way in - only one network with lanes which lead "in" from the surrounding nodes.</p>
+<h4 id="node-flag-heating">Heating</h4>
+<p>Related to water/sewage/heating pipes.</p>
+<h4 id="node-flag-electricity">Electricity</h4>
+<p>Related to power line networks.</p>
+<h4 id="node-flag-collapsed">Collapsed</h4>
+<p>Unknown. Likely related to Natural Disasters DLC.</p>
+<h4 id="node-flag-disableonlymiddle">DisableOnlyMiddle</h4>
+<p>Related to ship paths.</p>
+<h4 id="node-flag-asymforward">AsymForward</h4>
+<p>Active for nodes where an asymmetric network changes direction from backward to forward, related to the direction in which the player draws the road.</p>
+<h4 id="node-flag-asymbackward">AsymBackward</h4>
+<p>Active for nodes where an asymmetric network changes direction from forward to backward, related to the direction in which the player draws the road.</p>
+<h4 id="node-flag-customtrafficlights">CustomTrafficLights</h4>
+<p>Active for nodes for which the player has toggled traffic lights.</p>
+
+
+
+
+
+<h3 id="segment-flags">Segments</h3>
+
+<p>Segment flags are used to determine when certain segments appear or how they appear.</p>
+
+
+
+
+
+
+<h3 id="lane-flags">Lane</h3>
+
+<p>Lane flags can be used to control when lane props are visible.</p>
+
+
+
+
+
 
 
 
