@@ -146,7 +146,99 @@ table.gsc-search-box td.gsc-input {
 <p>This is an embedded Google Custom Search for searching the entire website. If you would like to search within a specific article, press <span class=key>Ctrl+F</span> to use the search in your browser.</p>
 <p><br></p>
 <script>
-  (function() {
+(function() {
+
+    window.__gcse = { callback: myCallback };
+
+    function myCallback() {
+
+        $('input.gsc-input').keyup(function(e) { if(e.keyCode == 13 || e.which == 13) {  
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 200);
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 300);
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 400);
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 600);
+        }});
+
+        $('.gsc-search-button-v2').on('click', function(e) { 
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 200);
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 300);
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 400);
+            setTimeout(function () {
+                var gcsert;
+                $(".gs-title a").each(function() {
+                    gcsert = $(this);
+                    text1 = gcsert.get()[0].innerHTML;
+                    text2 = $.trim(text1);
+                    text3 = text2.split(' - ')[0];
+                    gcsert.get()[0].innerHTML = text3;
+                }); 
+            }, 600);
+        });
+    }
+
     var cx = '015514945784992196959:dsae6fouck8';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
@@ -154,7 +246,8 @@ table.gsc-search-box td.gsc-input {
     gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
-  })();
+
+})();
 </script>
 <gcse:search></gcse:search>
 
