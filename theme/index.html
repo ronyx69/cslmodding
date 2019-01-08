@@ -1,0 +1,369 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Map Theme
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/C4oSOeu.jpg'/></div>
+<div class="content">
+
+
+
+
+
+
+
+
+
+
+<h2 id="environment">Environment</h2>
+<p>Affects the cubemap which is visible in water and highly specular asset reflections. Also affects availability of some environment-specific vanilla assets.</p>
+
+
+
+
+<h2 id="terrain-properties">Terrain Properties</h2>
+
+
+<h3 id="textures">Textures</h3>
+
+<h4 id="resolution">Resolution</h4>
+<p>Map theme textures are usually 1024x1024, 2048x2048 or 4096x4096.</p>
+
+<h4 id="format">Format</h4>
+<p>Use a lossless format like .PNG.</p>
+<p>The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.</p>
+<p>Make sure the texture is 8 bit, because a 16 bit image can't be imported.</p>
+
+<h4 id="grass">Grass</h4>
+<p>The main texture of grass, transparency controls how much the grass texture is affected by the grass color offsets.</p>
+
+<h4 id="ruined">Ruined</h4><div class="content-photo-box"><img src="https://i.imgur.com/a0pa1Gz.jpg"><p>
+Example of ruined texture.
+</p></div>
+<p>Appears near buildings, some props, networks, and hills which are not steep enough for the cliff texture to be visible. Also visible near pavement surface and can also be painted using surface painter. Also visible under sand, if the opacity of the sand texture is low enough. The opacity is usually very high.</p>
+
+<h4 id="cliff">Cliff</h4><div class="content-photo-box"><img src="https://i.imgur.com/0WX4fvb.jpg"><p>
+Example of cliff texture.
+</p></div>
+<p>Visible if the terrain is steep enough. Usually high opacity.</p>
+
+<h4 id="cliff-normal">Cliff Normal</h4>
+<p>Adds bump to the cliff texture. <a href='https://cslmodding.info/normal-maps/'>Requires a flipped green channel compared to the normal map standard</a>.</p>
+
+<h4 id="sand">Sand</h4><div class="content-photo-box"><img src="https://i.imgur.com/QoQD4lA.jpg"><p>
+Example of sand texture.
+</p></div>
+<p>Can be painted. If the opacity is low, the ruined texture might be visible before the sand becomes fully visible. Can't coexist with the fertile color.</p>
+
+<h4 id="sand-normal">Sand Normal</h4>
+<p>Adds bump to the sand texture. <a href='https://cslmodding.info/normal-maps/'>Requires a flipped green channel compared to the normal map standard</a>.</p>
+
+<h4 id="pavement">Pavement</h4><div class="content-photo-box"><img src="https://i.imgur.com/JkpQzI7.jpg"><p>
+Example of pavement texture.
+</p></div>
+<p>Appears as surface paint on buildings, networks, or when painted using surface painter. Also can appear on network bridges using the bridge shader.</p>
+
+<h4 id="gravel">Gravel</h4><div class="content-photo-box"><img src="https://i.imgur.com/jOoWIMu.jpg"><p>
+Example of gravel texture.
+</p></div>
+<p>Appears as surface paint on buildings, networks, or when painted using surface painter. Also can appear on network bridges using the rail shader.</p>
+
+<h4 id="oil">Oil</h4><div class="content-photo-box"><img src="https://i.imgur.com/TXnm0ks.jpg"><p>
+Example of oil and ore textures.
+</p></div>
+<p>Can be painted using the resource brush. Half-transparent by default, unless it's very bright. Can't coexist with ore.</p>
+
+<h4 id="ore">Ore</h4>
+<p>Can be painted using the resource brush. Half-transparent by default, unless it's very bright. Can't coexist with oil</p>
+
+
+<h3 id="grass-color-offsets">Grass Color Offsets</h3><div class="content-photo-box"><img src="https://i.imgur.com/TxBavHC.jpg"><p>
+Example of color offsets.
+</p></div>
+<p>Colors which affect the grass texture based on its opacity.</p>
+
+<h4 id="pollution">Pollution</h4>
+<p>Appears where there is ground pollution.</p>
+
+<h4 id="field">Field</h4>
+<p>Appears as surface paint on buildings, or when painted using surface painter.</p>
+
+<h4 id="fertility">Fertility</h4>
+<p>Appears when painted using the fertile resource brush. Can't coexist with sand.</p>
+
+<h4 id="forest">Forest</h4>
+<p>Appears where there are trees.</p>
+
+
+<h3 id="geometry-details">Geometry Details</h3><div class="content-photo-box"><img src="https://i.imgur.com/tSwogPh.jpg"><p>
+Example of sprites.
+</p></div>
+<p>2D sprites which are visible on the terrain.</p>
+
+<h4 id="grass-1">Grass</h4>
+<p>Visible on normal grass.</p>
+
+<h4 id="fertile">Fertile</h4>
+<p>Visible on fertile resource paint.</p>
+
+<h4 id="rocks">Rocks</h4>
+<p>Visible on cliffs and gravel.</p>
+
+
+
+
+<h2 id="water-properties">Water Properties</h2>
+
+
+<h3 id="textures-1">Textures</h3>
+
+<h4 id="water-normal">Water Normal</h4>
+<p>Constantly fades between the normal and a flipped and rotated version.</p>
+
+<h4 id="water-foam">Water Foam</h4><div class="content-photo-box"><img src="https://i.imgur.com/paPFaCY.jpg"><p>
+Example of water normal and foam.
+</p></div>
+<p>The red channel controls the normal foam when water is moving. The green channel controls the foam on polluted water. It's safe to import a simple black &amp; white foam texture.</p>
+
+
+<h3 id="water-colors">Water Colors</h3>
+
+<h4 id="clean">Clean</h4><div class="content-photo-box"><img src="https://i.imgur.com/jXX1hhO.jpg"><p>
+Example of water colors.
+</p></div>
+<p>Deep water.</p>
+
+<h4 id="dirty">Dirty</h4>
+<p>Polluted water.</p>
+
+<h4 id="underwater">Underwater</h4>
+<p>Shallow water.</p>
+
+
+
+
+<h2 id="atmosphere-properties">Atmosphere Properties</h2>
+
+
+<h3 id="sun">Sun</h3>
+
+<h4 id="longitude-latitude">Longitude &amp; Latitude</h4>
+<p>Placement of the sun.</p>
+
+<h4 id="anisotropy">Anisotropy</h4>
+<p>Affects the highlight falloff of the sun, and also affects the fog.</p>
+
+
+<h3 id="moon">Moon</h3>
+
+<h4 id="inner-corona">Inner Corona</h4>
+<p>Color and intensity of the small highlight of the moon.</p>
+
+<h4 id="outer-corona">Outer Corona</h4>
+<p>Color and intensity of the big highlight of the moon.</p>
+
+
+<h3 id="sky">Sky</h3>
+
+<h4 id="rayleigh-scattering">Rayleigh Scattering</h4><div class="content-photo-box"><img src="https://i.imgur.com/hxO8vq6.jpg"><p>
+Example of rayleigh scattering.
+</p></div>
+<p>Affects the scattering of blue light. 0 means no blue light is scattered so the sky will be black. High values mean blue light is scattered a lot, therefore sunsets and sunrises will be very red.</p>
+
+<h4 id="mie-scattering">Mie Scattering</h4><div class="content-photo-box"><img src="https://i.imgur.com/HLWuwVh.jpg"><p>
+Example of mie scattering.
+</p></div>
+<p>Affects the visibility of the sun and fog.</p>
+
+<h4 id="stars-intensity">Stars Intensity</h4>
+<p>Affects the visibility of the stars at night.</p>
+
+<h4 id="outer-space-intensity">Outer Space Intensity</h4>
+<p>Affects the visibility of the night space cubemap.</p>
+
+<h4 id="exposure">Exposure</h4>
+<p>Affects the brightness of ambient light.</p>
+
+<h4 id="sky-tint">Sky Tint</h4><div class="content-photo-box"><img src="https://i.imgur.com/kPCVAqZ.jpg"><p>
+Example of sky tint.
+</p></div>
+<p>Tints the color of the sky and ambient light. Note that sunsets and sunrises will be tinted the opposite of this color.</p>
+
+<h4 id="night-horizon-color">Night Horizon Color</h4>
+<p>Color of the horizon during the night.</p>
+
+<h4 id="early-night-zenith-color">Early Night Zenith Color</h4>
+<p>Tints the sky and ambient light during mornings and evenings.</p>
+
+<h4 id="late-night-zenith-color">Late Night Zenith Color</h4>
+<p>Tints the sky and ambient light during the night.</p>
+
+
+
+
+<h2 id="structures-properties">Structures Properties</h2>
+
+<h4 id="upward-road">Upward Road</h4><div class="content-photo-box"><img src="https://i.imgur.com/e3kMwWN.jpg"><p>
+Example of asphalt texture.
+</p></div>
+<p>Asphalt texture which gets multiplied by the road segment color.</p>
+
+<h4 id="downward-road">Downward Road</h4>
+<p>Unknown, likely not used.</p>
+
+<h4 id="building-base">Building Base</h4><div class="content-photo-box"><img src="https://i.imgur.com/SI2uKKC.jpg"><p>
+Example of base texture.
+</p></div>
+<p>Texture of the underground parts of buildings.</p>
+
+<h4 id="building-base-normal">Building Base Normal</h4>
+<p>Adds bump to the underground parts of buildings. Doesn't import correctly normally, requires an image which has the X channel of the normal map gamma lifted and applied to each RGB channel, but the Y channel as the opacity. You can convert a <a href='https://cslmodding.info/normal-maps/'>regular normal map which has no inverted channels</a> to this using <a href='https://drive.google.com/open?id=0B6Ccf1N5h5f7YnhsXzVzVmFnR1E'>this Photoshop action</a>.</p>
+
+<h4 id="burnt-building">Burnt Building</h4>
+<p>Used for buildings which are burned down.</p>
+
+<h4 id="abandoned-building">Abandoned Building</h4>
+<p>Used for buildings which are abandoned.</p>
+
+<h4 id="floor">Floor</h4><div class="content-photo-box"><img src="https://i.imgur.com/IiAcXQX.jpg"><p>
+Example of floor texture.
+</p></div>
+<p>Used for fake interiors inside building windows.</p>
+
+<h4 id="light-color-palette">Light Color Palette</h4><div class="content-photo-box"><img src="https://i.imgur.com/iu4U0zd.jpg"><p>
+Example of light texture.
+</p></div>
+<p>Each building samples a random color from this texture to use for window illumination during the night.</p>
+
+
+
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h3', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
