@@ -1,0 +1,226 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Flag Params
+
+</a></h1>
+
+
+
+</div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/5VfR5o3.jpg'/></div>
+<div class="content">
+
+
+
+
+
+
+
+
+
+
+<h2 id="about">About</h2><div class="content-photo-box"><img src="https://i.imgur.com/5VfR5o3.jpg"><p>
+Various <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1603399261'>example props</a> using the flag shader.
+</p></div>
+<p><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1603398633'>The Flag Params mod</a> can be used to create props which contain something moving in the wind, such as flags or some kind of cloth.</p>
+<p>It's also possible to have multiple textures inside the same flag prop, which change based on the position of the prop, just like the vanilla flags do.</p>
+<p>This article assumes you are familiar with regular prop asset creation.</p>
+
+
+
+
+
+<h2 id="textures">Textures</h2>
+<p>The textures work just like they would for any normal prop.</p>
+
+
+
+
+
+<h2 id="mesh">Mesh</h2>
+<p>The mesh is modeled as usual.</p>
+
+
+
+<h3 id="multiple-flag-textures">Multiple Flag Textures</h3>
+<p>If you have multiple flag textures on your texture, the flag should be UV mapped to the bottom right flag.</p>
+
+
+
+<h3 id="vertex-paint">Vertex Paint</h3><div class="content-photo-box"><img src="https://i.imgur.com/xhoe7KT.png"><p>
+Vertex paint of example props. Only the flag on the left uses multiple flag textures in the same prop.
+</p></div>
+<p>The vertex colors define which parts use the wind movement and multiple flag texture UV mapping.</p>
+<p>If you're not planning to use multiple flag textures inside the same prop, like vanilla flags, then you can use the full range from white to black to define how much movement each vertex will have.</p>
+<p>White means no movement, and black means maximum movement.</p>
+<p>If you will use multiple flag textures inside the same prop, then you can't use any shade of gray, as it will break the UV mapping when the flag tries to change textures. In that case the flag must be completely black, and you can't control the strength of the wind effect.</p>
+
+
+
+<h3 id="lod">LOD</h3>
+<p>The LOD also moves in the wind, so it should also be treated as described above.</p>
+
+
+
+
+
+<h2 id="script">Script</h2>
+<p>You can find the script <a href='https://gist.github.com/ronyx69/529244047b2a28f29b5aebe89184cfb0'>here</a>.</p>
+
+
+
+<h3 id="flag-grid">Flag Grid</h3><div class="content-photo-box"><img src="https://i.imgur.com/Bvk1dA9.png"><p>
+Grid of flags for an example prop. 5 columns, 1 row, top left corner is (0,0), bottom right corner is (1024, 364).
+</p></div>
+<p>If you're using multiple flag textures for the same prop and want them to change based on position, just like the vanilla flags, this section describes the flag grid on the texture. If you're not using multiple flag textures for the same prop, then you can leave these at defaults.</p>
+
+<h4 id="columns-and-rows">Columns and Rows</h4>
+<p>Defines how many columns and rows the grid of flags on the texture has.</p>
+
+<h4 id="top-left-and-bottom-right">Top Left and Bottom Right</h4>
+<p>Defines the X and Y coordinates of the top left and bottom right corners of the entire flag grid on the texture, in pixels, as measured from the top left corner of the texture which is 0,0.</p>
+
+
+
+<h3 id="movement-parameters">Movement Parameters</h3>
+
+<h4 id="strength">Strength</h4>
+<p>This will recalculate the vertex paint to reduce the strength of the wind movement.</p>
+
+<h4 id="axis">Axis</h4>
+<p>This defines the axis orientation in X Y Z, around which the wind movement happens.</p>
+<p>The axis orientation is defined by a vector, so if you set both X and Y to the same value, the axis will be rotated 45°.</p>
+<p>Keep in mind that ingame the Y axis represents height, so the Y and Z axis are swapped compared to what 3D software usually uses.</p>
+
+<h4 id="pivot">Pivot</h4>
+<p>This defines the pivot, where the axis is moved to, so you can move the axis, around which the movement happens.</p>
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
