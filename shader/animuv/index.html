@@ -1,0 +1,215 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+AnimUV Shader
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/MvDLymL.jpg'/></div>
+<div class="content">
+
+
+
+
+
+
+
+
+
+<h2 id="about">About</h2><div class="content-photo-box"><img src="https://i.imgur.com/MvDLymL.jpg"><p>
+Example of a <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299860'>scrolling LED sign</a> AnimUV prop.
+</p></div>
+<p>The AnimUV shader can be used to create scrolling or multi-frame animations. There are 2 AnimUV shaders - one for props and one for buildings and building sub meshes.</p>
+<p>The building AnimUV shader doesn't require a mod.</p>
+<p>But the prop AnimUV shader requires <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299505'>the AnimUV Params mod</a>, and can also be used for vehicle sub meshes.</p>
+
+
+
+
+
+<h2 id="mesh">Mesh</h2>
+
+<h4 id="uv-mapping">UV Mapping</h4>
+<p>The UV mapping is as usual, but in the case of a multi-frame animation, the first frame should be UV mapped.</p>
+
+<h4 id="format">Format</h4>
+<p>Use a format which supports vertex colors, such as FBX or DAE.</p>
+
+
+
+
+<h4 id="vertex-paint">Vertex Paint</h4>
+<p>The vertex colors define which parts will have the UV animation.</p>
+<p>Black vertex paint will be animated and everything else should be white.</p>
+
+
+
+
+
+<h2 id="scripts">Scripts</h2>
+<p>There are 2 types of scripts for each type of asset - one creates a simple scrolling animation, and the other can be used to create multi-frame animations.</p>
+
+
+<h4 id="transform-amount">Transform Amount</h4>
+<p>For the advanced multi-frame animation scripts, the transform amount is (how many pixels you want the UV mapping to move each frame) divided by (the width or height of the texture).</p>
+
+
+<h4 id="frames">Frames</h4>
+<p>Frames simply describes how many frames each animation has.</p>
+
+
+<h4 id="cycles">Cycles</h4>
+<p>Cycles describes how many times per minute the animation runs. If 60 doesn't divide by this number evenly, the animation will &quot;reset&quot; every minute.</p>
+
+
+
+
+<h3 id="buildings">Buildings</h3>
+<p><a href='https://gist.github.com/ronyx69/92afd0686e31d59d380d98d139874abe'>The building AnimUV shader scripts</a> works without any mods. And it can also be applied to building sub meshes.</p>
+
+
+
+
+<h3 id="props">Props</h3>
+<p>The prop AnimUV shader works only with the Animuv Params mod. But the mod is not necessary to create the asset and run <a href='https://gist.github.com/ronyx69/558a2adbe7557da62ea7a7153b86e74c'>the AnimUV Params prop scripts</a>, the mod is only required for loading the prop ingame.</p>
+
+
+<h4 id="example-source-files">Example Source Files</h4>
+<p>You can download source files and scripts of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299860'>the examples</a>.</p>
+<div class="content-download"><a href="https://drive.google.com/open?id=0B6Ccf1N5h5f7VHVRUUtTaG5Qc1k" target="null">
+Download
+</a></div>
+
+
+<h3 id="vehicle-sub-meshes">Vehicle Sub Meshes</h3>
+<p>The prop AnimUV shader can also be applied to vehicle sub meshes using <a href='https://gist.github.com/ronyx69/e69e5d0b0b4a28d6577a5afad1af3dcf'>these scripts</a>, but it requires the mesh to be imported as a prop first, then the game must be reloaded and then the vertex paint can be copied from the prop to the vehicle sub mesh. This is similar to <a href='https://cslmodding.info/shader/rotors-propellers/#prop'>the process of creating rotors shader propellers for blimps</a>.</p>
+
+
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h3', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
