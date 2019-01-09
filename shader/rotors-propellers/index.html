@@ -1,0 +1,250 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Rotors Shader (Propellers)
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/QqhcAZk.jpg'/></div>
+<div class="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="about">About</h2><div class="content-photo-box"><img src="https://i.imgur.com/QqhcAZk.jpg"><p>
+<a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1433248647'>LZ-120 Bodensee by GiometryE</a> using custom propellers.
+</p></div>
+<p>The rotors shader can be used for creating blimp, helicopter, and plane propeller vehicle sub meshes.</p>
+<p>This article assumes your are familiar with rotors shader prop/building asset creation and regular vehicle asset creation.</p>
+
+
+
+
+
+<h2 id="textures">Textures</h2>
+<p>The textures work just like <a href='https://cslmodding.info/shader/rotors/#textures'>they would for any rotors shader prop</a>.</p>
+
+
+
+
+
+<h2 id="mesh">Mesh</h2>
+<p>The mesh is modeled and UV mapped as usual.</p>
+
+<h4 id="format">Format</h4>
+<p>Use a format which supports vertex colors, such as FBX or DAE.</p>
+
+
+
+<h3 id="vertex-paint">Vertex Paint</h3>
+<p>The vertex colors control various aspects of the rotors propellers.</p>
+
+<h4 id="red">Red</h4>
+<p>The red channel controls visibility of the rotors.</p>
+<p>For blimps 0 means the rotors will be fully visible when spinning and 255 means the rotors will be fully visible when stopped.</p>
+<p>Values between 0 and 255 can also be used to always have partial visibility.</p>
+
+<h4 id="green">Green</h4>
+<p>The green channel determines which of the tyre parameters (as they will be defined in the script) the rotor will use. 0 means it will use tyre parameter 0, 8 means it will use tyre parameter 1, 16 means it will use tyre parameter 2 and so on.</p>
+
+<h4 id="blue">Blue</h4>
+<p>The blue channel defines around which axis the rotor will spin.</p>
+<p>0 means it will spin around the Y axis, like a helicopter rotor.</p>
+<p>255 means it will spin around the X axis, like a vehicle wheel, or the Z axis, like a plane propeller.</p>
+<p>To make the rotor spin around the Z axis, the blue channel needs to be 255 and also the FlipXZ variable in the script must be set to true, which means the final asset will require <a href='https://steamcommunity.com/workshop/filedetails/?id=1433003062'>the Rotors FlipXZ mod</a>.</p>
+
+
+
+
+
+<h2 id="import">Import</h2>
+
+
+
+<h3 id="prop">Prop</h3>
+<p>Because the game recalculates vertex colors when importing vehicle meshes or sub meshes, it's necessary to import your rotors sub mesh as a prop first. To make it easier, save it using a simple name, use the same name for the file name and the asset name. Once it's saved, reload the game.</p>
+
+
+
+<h3 id="sub-mesh">Sub Mesh</h3>
+<p>Once the game is reloaded, import or load your vehicle, and import the rotors vehicle sub mesh.</p>
+
+
+
+
+
+<h2 id="scripts">Scripts</h2>
+<p><a href='https://gist.github.com/ronyx69/63f32ddd64c87e65c5c3ccee92f6077e'>There are 2 scripts, which you will need to run</a> - one to copy the vertex colors from the prop to the vehicle sub mesh, and another to apply the rotors shader and tyre parameters.</p>
+
+
+
+<h3 id="copy-vertex-paint">Copy Vertex Paint</h3>
+
+<h4 id="sub-mesh-id">Sub Mesh ID</h4>
+<p>ID of the sub mesh you want to copy the vertex colors to.</p>
+
+<h4 id="prop-name">Prop Name</h4>
+<p>The name of the prop you imported before. Formatted as &quot;filename.Asset Name_Data&quot;.</p>
+
+
+
+<h3 id="rotors">Rotors</h3>
+
+<h4 id="sub-mesh-id-1">Sub Mesh ID</h4>
+<p>ID of the sub mesh you want to apply the rotors shader to.</p>
+
+<h4 id="flipxz">FlipXZ</h4>
+<p>FlipXZ variable if necessary, as described in the blue vertex paint section.</p>
+
+<h4 id="tires">Tires</h4>
+<p>Set the amount of &quot;tires&quot; - how many different rotors there are.</p>
+
+<h4 id="tire-parameter-vectors">Tire Parameter Vectors</h4>
+<p>Each vector describes the pivot coordinates of the rotor, the point around which that rotor will spin.</p>
+<p>Which of the tire parameter vectors a rotor uses, depends on the vertex paint of it, as described in the green vertex paint section.</p>
+<p>Keep in mind that ingame the Y axis represents height, so the Y and Z axis are swapped compared to what 3D software usually uses. It's likely that you will need to invert positive values to negative and vice versa for X and Z coordinates, depending on what 3d software you use.</p>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h3', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
