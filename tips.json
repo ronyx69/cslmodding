@@ -1,7 +1,7 @@
 [
 	{
 		"title": "Don't make your assets too bright.",
-		"text": "Textures look very bright and saturated ingame. You can use a reference color chart prop, testing LUTs, and the context of other well known assets ingame. In general, white should be below 140 RGB and black above 20 RGB. You can use a mod to replace textures ingame for testing adjustments quickly.",
+		"text": "Textures look very bright and saturated ingame. You can use reference color & material chart props, testing LUTs, and the context of other well known assets ingame. In general, white should be below 140 RGB and black above 10 RGB. You can use a mod to replace textures ingame for testing adjustments quickly.",
 		"image": "https://i.imgur.com/WsXS1Gj.jpg",
 		"morelink": "https://steamcommunity.com/sharedfiles/filedetails/?id=1586722178",
 		"moretext": "Learn more »"
