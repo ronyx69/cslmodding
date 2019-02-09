@@ -22,7 +22,7 @@ Citizen <br>Asset <br>Creation
 
 <p>This is a 3D model of the citizen, which will be visible when the camera is close to it.</p>
 
-<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals and colors) and triangles. For citizens this also contains the skeleton bones to which the mesh is bound to using bone weights.</p>
+<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals, and colors) and triangles. For citizens this also contains the skeleton bones to which the mesh is bound to using bone weights.</p>
 
 <h4 id="formats">Formats</h4>
 <ul>
@@ -198,7 +198,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
 <p>The normal map generator should be set to +X +Y, which means no color channel inversions are required.</p>
 
-<p>High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts parts with a solid color before generating a normal map, or paint over these parts 128,128,255 on the final normal map.</p>
+<p>High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts with a solid color before generating a normal map or paint over these parts 128,128,255 on the final normal map.</p>
 
 
 <p>Read more in the <a href="https://cslmodding.info/normal-maps/">normal map article</a>.</p>
@@ -216,7 +216,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <p>The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.</p>
 
-<p>Make sure the texture is 8-bit, because a 16-bit image can't be imported.</p>
+<p>Make sure the texture is 8-bit since a 16-bit image can't be imported.</p>
 
 
 
