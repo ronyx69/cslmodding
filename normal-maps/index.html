@@ -38,13 +38,13 @@ A regular normal map without any inverted channels and its red and green channel
 
 <p>Before you decide if you need to invert one of the normal map channels, you need to make sure the normal map generator you are using isn't inverting it by default. Some normal map generators have settings for inverting the red(x) and green(y) channels, but some of them invert the red channel by default.</p>
 
-<p>A regular normal map with no inversions looks as if it's lit from the top right - that means the red channel looks like light is coming from the right, but the green channel looks like the light from the top. That means it appears to be lit from the positive x and y directions which is <a href="https://en.wikipedia.org/wiki/Normal_mapping#How_it_works">the normal map standard</a>.</p>
+<p>A regular normal map with no inversions looks as if it's lit from the top right - that means the red channel looks like the light is coming from the right, but the green channel looks like the light from the top. That means it appears to be lit from the positive x and y directions which is <a href="https://en.wikipedia.org/wiki/Normal_mapping#How_it_works">the normal map standard</a>.</p>
 
 
 
 <h2 id="mesh-import-rotation">Mesh Import Rotation</h2>
 
-<p>The rotation feature in the asset editor mesh importer is broken - it produces incorrect tangents, which will make normal maps appear incorrectly or not at all depending on the orientaton and uv mapping of each face.</p>
+<p>The rotation feature in the asset editor mesh importer is broken - it produces incorrect tangents, which will make normal maps appear incorrectly or not at all depending on the orientation and uv mapping of each face.</p>
 
 
 <div class="content-info"><em>
@@ -53,7 +53,7 @@ If you would like to use the rotation feature without breaking the tangents and 
 
 <h2 id="assets">Assets</h2>
 
-<p>For regular assets such as buildings, props, vehicles, trees and citizens, the normal map works correctly with no inverted channels, according to the standard described above.</p>
+<p>For regular assets such as buildings, props, vehicles, trees, and citizens, the normal map works correctly with no inverted channels, according to the standard described above.</p>
 
 
 <h2 id="networks">Networks</h2>
@@ -62,7 +62,7 @@ If you would like to use the rotation feature without breaking the tangents and 
 
 <p>But for faces which are not vertex painted magenta (that means they use the automatic tiling as networks usually do) the green channel usually needs to be inverted.</p>
 
-<p>If you are creating a network using an asymmetric mesh, you would use the invert flag for the segment mesh to appear continuous and not flip every other segment, this will result in the normal map green channel being inverted for every other segment. The solution in that case is to have 2 different segment meshes, one of which would have a flipped mesh or a flipped normal map, depending on the flags it has.</p>
+<p>If you are creating a network using an asymmetric mesh, you would use the invert flag for the segment mesh to appear continuous and not flip every other segment, this will result in the normal map green channel being inverted for every other segment. The solution for that is to have 2 different segment meshes, one of which would have a flipped mesh or a flipped normal map, depending on the flags it has.</p>
 
 
 <h2 id="map-themes">Map Themes</h2>
