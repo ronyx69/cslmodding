@@ -243,7 +243,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <p>The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.</p>
 
-<p>Make sure the texture is 8 bit, because a 16 bit image can't be imported.</p>
+<p>Make sure the texture is 8-bit, because a 16-bit image can't be imported.</p>
 
 
 
@@ -255,12 +255,12 @@ Texture sizes of various vanilla assets. See resolution in top right corner of p
 
 All imported main textures must be the same resolution.
 </p>
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 <div class="content-warning">
 <em>
-Make sure texture quality is set to high in the game's graphics settings. Otherwise your imported textures will be downscaled to a lower resolution.
+Make sure texture quality is set to high in the game's graphics settings. otherwise, your imported textures will be downscaled to a lower resolution.
 </em>
 </div>
 
@@ -274,7 +274,7 @@ Make sure texture quality is set to high in the game's graphics settings. Otherw
 
 <h4 id="resolution-1">Resolution</h4>
 
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 256x256, 256x128, 128x64, 64x64 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 256x256, 256x128, 128x64, 64x64 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 
@@ -366,15 +366,15 @@ All of those things can be changed later in the editor itself or using <a href='
 Importing a mesh in asset importer.
 </p></div>
 
-After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around x axis are common necessities.</p>
+After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around X-axis are common necessities.</p>
 
 <div class="content-warning"><em>
-Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some parts. To fix this either don't use the rotation and make sure the mesh is rotated properly before import, or if you need to use the mesh rotation feature - use the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094'>Mesh Import Rotation Tangents Fix mod</a> to fix it.
+Using the mesh rotation feature will result in broken mesh tangents - that means the normal maps will appear incorrectly or not at all on some parts. To fix this, don't use the rotation feature and make sure the mesh is rotated properly before import. If you need to use the mesh rotation feature - use the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1518485094'>Mesh Import Rotation Tangents Fix mod</a> to fix it.
 </em></div>
 
 
 <div class="content-warning"><em>
-If you get an unsupported color error, one of your textures might be a 16 bit file, you need to change it to 8 bit, in Photoshop: Image &gt; Mode &gt; 8 Bits.
+If you get an unsupported color error, one of your textures might be a 16-bit file, you need to change it to 8-bit, in Photoshop: Image &gt; Mode &gt; 8-bits.
 </em></div>
 
 
@@ -424,18 +424,18 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 
 
-<h3 id="sub-meshes">Sub Meshes</h3>
+<h3 id="sub-meshes">sub-meshes</h3>
 
 <p>
-	You can add additional meshes as sub meshes, which appear only when certain conditions are met, for example the vanilla bus has a left hand traffic sub mesh, and the forestry trailer has a loaded trailer sub mesh.
+	You can add additional meshes as sub-meshes, which appear only when certain conditions are met, for example the vanilla bus has a left hand traffic sub-mesh, and the forestry trailer has a loaded trailer sub-mesh.
 </p>
 
-<p>Train trailers can display different sub meshes based on the cargo type they are carrying using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1552053911'>this mod</a>.</p>
+<p>Train trailers can display different sub-meshes based on the cargo type they are carrying using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1552053911'>this mod</a>.</p>
 
 
 <h4 id="flags">Flags</h4>
 <p>
-	Flags are required and forbidden conditions, which determine when the sub mesh shows up, and also when the main mesh is hidden.
+	Flags are required and forbidden conditions, which determine when the sub-mesh shows up, and also when the main mesh is hidden.
 </p>
 
 <h4 id="parked-flags">Parked Flags</h4>
@@ -444,7 +444,7 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 
 <div class="content-info"><em>
-By default, not all sub mesh flags (conditions) are visible, use <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156'>the Sub Mesh Flags mod</a> to show all flags in the asset editor UI.
+By default, not all sub-mesh flags (conditions) are visible, use <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156'>the sub-mesh Flags mod</a> to show all flags in the asset editor UI.
 </em></div>
 
 
@@ -493,16 +493,16 @@ ModTools scene explorer and console.
 <p>Advanced article on using prop shader for monorail coming later.</p>
 
 
-<h3 id="sub-mesh-1">Sub Meshes</h3>
+<h3 id="sub-mesh-1">sub-meshes</h3>
 
-<h4 id="trailer-sub-mesh">Trailer Sub Mesh</h4>
+<h4 id="trailer-sub-mesh">Trailer sub-mesh</h4>
 
-<p>When loading a trailer template, the sub mesh UI doesn't show up. To fix this, open the scene explorer, go to Tool Controller > ToolController > m_editPrefabInfo > m_placementStyle and set it to automatic, save and load the asset, the sub mesh UI should show up. Once you add the sub mesh, change m_placementStyle back to procedural and save your asset.</p>
+<p>When loading a trailer template, the sub-mesh UI doesn't show up. To fix this, open the scene explorer, go to Tool Controller > ToolController > m_editPrefabInfo > m_placementStyle and set it to automatic, save and load the asset, the sub-mesh UI should show up. Once you add the sub-mesh, change m_placementStyle back to procedural and save your asset.</p>
 
 
-<h4 id="trailer-sub-mesh">Sub Mesh Flags</h4>
+<h4 id="trailer-sub-mesh">sub-mesh Flags</h4>
 
-<p>The flags for the main mesh and sub meshes are oversimplified in the UI. The main mesh conditions are actually just like for any sub mesh, and the regular flags and parked flags are seperate fields. You can change them using <a href='https://gist.github.com/ronyx69/ab2e3fdcbab5f78c9b41a337c1d19280'>this script</a>.</p>
+<p>The flags for the main mesh and sub-meshes are oversimplified in the UI. The main mesh conditions are actually just like for any sub-mesh, and the regular flags and parked flags are separate fields. You can change them using <a href='https://gist.github.com/ronyx69/ab2e3fdcbab5f78c9b41a337c1d19280'>this script</a>.</p>
 
 
 
@@ -545,7 +545,7 @@ Save asset window.
 
 
 
-<p>Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that seperately when publishing.</p></li>
+<p>Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when publishing.</p></li>
 
 
 <li>Below thumbnail, on the right side.
@@ -652,7 +652,7 @@ There is a folder icon again on the snapshot image, bottom right corner. Here yo
 
 
 <div class="content-warning"><em>
-Make sure your updated assets are saved with exactly the same name as before, otherwise it will disappear from your subscribers' saves, as the game uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
+Make sure your updated assets are saved with exactly the same name as before, otherwise, it will disappear from your subscribers' saves, as the game uses the internal prefab name to refer to it. In the case of networks (roads, tracks etc.) it may completely break a save.
 </em></div>
 
 
@@ -787,7 +787,7 @@ This is not something you can change.</p>
 <script>
 	var relevant =
 	"<div class='menu-category-title' style='margin-left:32px'>RELEVANT VIDEOS</div><ul class='menu-category'>" +
-	"<li><a href='https://youtube.com/watch?v=K0bsYvreks4'>Sub Meshes</a></li>" +
+	"<li><a href='https://youtube.com/watch?v=K0bsYvreks4'>sub-meshes</a></li>" +
 	"<li><a href='https://youtube.com/watch?v=K3wnhJjyvkw'>Decide Color Variations Ingame</a></li>" +
 	"</ul><br>";
 	$(".toc").append(relevant);

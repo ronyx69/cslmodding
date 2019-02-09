@@ -49,7 +49,7 @@
 		"moretext": "Learn more »"
 	},
 	{
-		"title": "Rotors Shader for Props, Buildings, and Sub Meshes",
+		"title": "Rotors Shader for Props, Buildings, and sub-meshes",
 		"text": "This shader supports semi-transparency, so it can be used to create glass or fake water.",
 		"image": "https://i.imgur.com/jQyVOET.jpg",
 		"morelink": "https://cslmodding.info/shader/rotors/",

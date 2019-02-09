@@ -23,7 +23,7 @@ Rotors Shader (Propellers)
 <h2 id="about">About</h2><div class="content-photo-box"><img src="https://i.imgur.com/QqhcAZk.jpg"><p>
 <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1433248647'>LZ-120 Bodensee by GiometryE</a> using custom propellers.
 </p></div>
-<p>The rotors shader can be used for creating blimp, helicopter, and plane propeller vehicle sub meshes.</p>
+<p>The rotors shader can be used for creating blimp, helicopter, and plane propeller vehicle sub-meshes.</p>
 <p>This article assumes your are familiar with rotors shader prop/building asset creation and regular vehicle asset creation.</p>
 
 
@@ -58,9 +58,9 @@ Rotors Shader (Propellers)
 
 <h4 id="blue">Blue</h4>
 <p>The blue channel defines around which axis the rotor will spin.</p>
-<p>0 means it will spin around the Y axis, like a helicopter rotor.</p>
-<p>255 means it will spin around the X axis, like a vehicle wheel, or the Z axis, like a plane propeller.</p>
-<p>To make the rotor spin around the Z axis, the blue channel needs to be 255 and also the FlipXZ variable in the script must be set to true, which means the final asset will require <a href='https://steamcommunity.com/workshop/filedetails/?id=1433003062'>the Rotors FlipXZ mod</a>.</p>
+<p>0 means it will spin around the Y-axis, like a helicopter rotor.</p>
+<p>255 means it will spin around the X-axis, like a vehicle wheel, or the Z-axis, like a plane propeller.</p>
+<p>To make the rotor spin around the Z-axis, the blue channel needs to be 255 and also the FlipXZ variable in the script must be set to true, which means the final asset will require <a href='https://steamcommunity.com/workshop/filedetails/?id=1433003062'>the Rotors FlipXZ mod</a>.</p>
 
 <h3 id="lod">LOD</h3>
 <p>The LOD is not animated, so it doesn't need to be vertex painted.</p>
@@ -73,26 +73,26 @@ Rotors Shader (Propellers)
 
 
 <h3 id="prop">Prop</h3>
-<p>Because the game recalculates vertex colors when importing vehicle meshes or sub meshes, it's necessary to import your rotors sub mesh as a prop first. To make it easier, save it using a simple name, use the same name for the file name and the asset name. Once it's saved, reload the game.</p>
+<p>Because the game recalculates vertex colors when importing vehicle meshes or sub-meshes, it's necessary to import your rotors sub-mesh as a prop first. To make it easier, save it using a simple name, use the same name for the file name and the asset name. Once it's saved, reload the game.</p>
 
 
 
-<h3 id="sub-mesh">Sub Mesh</h3>
-<p>Once the game is reloaded, import or load your vehicle, and import the rotors vehicle sub mesh.</p>
+<h3 id="sub-mesh">sub-mesh</h3>
+<p>Once the game is reloaded, import or load your vehicle, and import the rotors vehicle sub-mesh.</p>
 
 
 
 
 
 <h2 id="scripts">Scripts</h2>
-<p><a href='https://gist.github.com/ronyx69/63f32ddd64c87e65c5c3ccee92f6077e'>There are 2 scripts, which you will need to run</a> - one to copy the vertex colors from the prop to the vehicle sub mesh, and another to apply the rotors shader and tyre parameters.</p>
+<p><a href='https://gist.github.com/ronyx69/63f32ddd64c87e65c5c3ccee92f6077e'>There are 2 scripts, which you will need to run</a> - one to copy the vertex colors from the prop to the vehicle sub-mesh, and another to apply the rotors shader and tyre parameters.</p>
 
 
 
 <h3 id="copy-vertex-paint">Copy Vertex Paint</h3>
 
-<h4 id="sub-mesh-id">Sub Mesh ID</h4>
-<p>ID of the sub mesh you want to copy the vertex colors to.</p>
+<h4 id="sub-mesh-id">sub-mesh ID</h4>
+<p>ID of the sub-mesh you want to copy the vertex colors to.</p>
 
 <h4 id="prop-name">Prop Name</h4>
 <p>The name of the prop you imported before. Formatted as &quot;filename.Asset Name_Data&quot;.</p>
@@ -101,8 +101,8 @@ Rotors Shader (Propellers)
 
 <h3 id="rotors">Rotors</h3>
 
-<h4 id="sub-mesh-id-1">Sub Mesh ID</h4>
-<p>ID of the sub mesh you want to apply the rotors shader to.</p>
+<h4 id="sub-mesh-id-1">sub-mesh ID</h4>
+<p>ID of the sub-mesh you want to apply the rotors shader to.</p>
 
 <h4 id="flipxz">FlipXZ</h4>
 <p>FlipXZ variable if necessary, as described in the blue vertex paint section.</p>
@@ -113,7 +113,7 @@ Rotors Shader (Propellers)
 <h4 id="tire-parameter-vectors">Tire Parameter Vectors</h4>
 <p>Each vector describes the pivot coordinates of the rotor, the point around which that rotor will spin.</p>
 <p>Which of the tire parameter vectors a rotor uses depends on the vertex paint of it, as described in the green vertex paint section.</p>
-<p>Keep in mind that ingame the Y axis represents height, so the Y and Z axis are swapped compared to what 3D software usually uses. It's likely that you will need to invert positive values to negative and vice versa for X and Z coordinates, depending on what 3d software you use.</p>
+<p>Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared to what 3D software usually uses. It's likely that you will need to invert positive values to negative and vice versa for X and Z coordinates, depending on what 3d software you use.</p>
 
 
 

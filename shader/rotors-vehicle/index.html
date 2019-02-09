@@ -20,7 +20,7 @@ Rotors Shader (Vehicle Glass)
 Semi-transparent windows on a car.
 </p></div>Rotors shader was designed for spinning helicopter and blimp propellers, but it can also be used to create semi-transparent glass window sub-meshes for vehicles. The shader spins similarly to wheels and there is no known way to stop it from spinning, so a workaround defines each vertex of the mesh as a wheel which spins around itself.</p>
 
-<p>This article assumes you are familiar with <a href='https://cslmodding.info/shader/rotors/'>rotors shader prop or building asset creation</a> and regular vehicle asset creation using sub meshes.</p>
+<p>This article assumes you are familiar with <a href='https://cslmodding.info/shader/rotors/'>rotors shader prop or building asset creation</a> and regular vehicle asset creation using sub-meshes.</p>
 
 
 
@@ -31,13 +31,13 @@ Semi-transparent windows on a car.
 
 <h3 id="Vertex Count">Vertex Count</h3>
 
-<p>Each sub mesh is limited to 32 vertices, this is because vertex paint is used to define each spinning "wheel" and every wheel adds 8 to the green vertex color channel.</p>
+<p>Each sub-mesh is limited to 32 vertices, this is because vertex paint is used to define each spinning "wheel" and every wheel adds 8 to the green vertex color channel.</p>
 
 
 <h3 id="vertex-normals">Vertex Normals</h3>
 <p>
 <div class="content-photo-box"><img src="https://i.imgur.com/mc34lyU.jpg"><p>
-Car windows split into 4 sub meshes. Normals of each mesh are facing straight on an axis. The side windows will spin around X axis, windshield around Y, rear window around Z. Note that ingame the Y axis is up/down.
+Car windows split into 4 sub-meshes. Normals of each mesh are facing straight on an axis. The side windows will spin around X-axis, windshield around Y, rear window around Z. Note that ingame the Y-axis is up/down.
 </p></div>Every vertex will become a wheel which spins around itself, and it can only spin around one axis, which results in rotating reflections while the vehicle is moving. To hide this problem, all vertex normals of each mesh should be facing straight into the direction of the axis around which they will spin.
 </p>
 
@@ -52,7 +52,7 @@ Car windows split into 4 sub meshes. Normals of each mesh are facing straight on
 <h2 id="textures">Textures</h2>
 
 
-<p>Everything is the same way as for regular rotors shader props and buildings, except for the alpha map. On vehicles, the sub meshes will be 50% transparent by default and the alpha map can only make it even more transparent.</p>
+<p>Everything is the same way as for regular rotors shader props and buildings, except for the alpha map. On vehicles, the sub-meshes will be 50% transparent by default and the alpha map can only make it even more transparent.</p>
 
 
 
