@@ -24,7 +24,7 @@ Vehicle <br>Asset <br>Creation
 
 <p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals, and colors) and triangles.</p>
 
-<p>Continuous connected parts of the mesh (called elements) which are closer than 5cm to 0 (ground) will be automatically detected as wheels. This it not relevant for ships, monorails, cable cars.
+<p>Continuously connected parts of the mesh (called elements) which are closer than 5cm to 0 (ground) will be automatically detected as wheels. This is not relevant for ships, monorails, cable cars.
 
 </p>
 
@@ -177,14 +177,14 @@ Example illumination map for a vehicle.
 Example illumination map for a train.
 </p></div>
 
-For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses, trams), this defines headlights and turning signals. The turning signals are 0 (black) the headlights and taillights are 255 (white), everything else is 128 (medium gray).</p>
+For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses, trams), this defines headlights and turn signals. The turn signals are 0 (black) the headlights and taillights are 255 (white), everything else is 128 (medium gray).</p>
 
 <p>
-	For the train shader, this defines always on lights (headlights/taillights) and lights which are only on at night (windows). The always on lights are 255 (white) and the night lights are 0 (black), everything else is 128 (medium gray).
+	For the train shader, this defines always-on lights (headlights/taillights) and lights which are only on at night (windows). The always-on lights are 255 (white) and the night lights are 0 (black), everything else is 128 (medium gray).
 </p>
 
 <p>
-	For the ship shader (used by ships, monorails, cable cars), this defines lights which are only on at night (windows). The always on lights are 255 (white), everything else is 0 (black).
+	For the ship shader (used by ships, monorails, cable cars), this defines lights which are only on at night (windows). The always-on lights are 255 (white), everything else is 0 (black).
 </p>
 
 <p>If you don't import an illumination map, it will default to black.</p>
@@ -201,7 +201,7 @@ Transitions between different specular values produce artifacts on the normal ma
 </p></div>
 
 
-	Reflectivity, white values will become &quot;windows&quot; where fake interior floor will be visible. <a href='#floor'>It's possible to control this fake floor using a script</a>.</p>
+	Reflectivity, white values will become &quot;windows&quot; where the fake interior floor will be visible. <a href='#floor'>It's possible to control this fake floor using a script</a>.</p>
 
 <p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards, like roofs.</p>
 
@@ -427,7 +427,7 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 <h3 id="sub-meshes">sub-meshes</h3>
 
 <p>
-	You can add additional meshes as sub-meshes, which appear only when certain conditions are met, for example the vanilla bus has a left hand traffic sub-mesh, and the forestry trailer has a loaded trailer sub-mesh.
+	You can add additional meshes as sub-meshes, which appear only when certain conditions are met, for example - the vanilla bus has a left hand traffic sub-mesh, and the forestry trailer has a loaded trailer sub-mesh.
 </p>
 
 <p>Train trailers can display different sub-meshes based on the cargo type they are carrying using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1552053911'>this mod</a>.</p>
@@ -506,9 +506,9 @@ ModTools scene explorer and console.
 
 
 
-<h3 id="tyres">Tyres</h3>
+<h3 id="tires">Tires</h3>
 
-<p>Advanced article on custom vertex paint and parameters for tyres coming later.</p>
+<p>Advanced article on custom vertex paint and parameters for tires coming later.</p>
 
 
 
