@@ -61,7 +61,7 @@ Network <br>Asset <br>Creation
 <p>The general properties are based on the AI the road has, that means for canals or cable car networks some of them might be different, this list is primarily based on the one for RoadBridgeAI, used for elevated networks of any normal road, but also contains properties which only appear on some other AI.</p>
 
 
-<h4 id="half-width">Half Width</h4>
+<h4 id="half-width">half-width</h4>
 
 <p>This is used to determine how roads of different widths connect - nodes of narrow roads will widen to meet wider roads.</p>
 
@@ -72,7 +72,7 @@ Network <br>Asset <br>Creation
 
 <h4 id="pavement-width">Pavement Width</h4>
 
-<p>Defines the width of the pavement on each side of the road, used to properly connect curbs with other roads at nodes. For correct nodes when intersecting with other roads, the half width and pavement width values must be set appropriately.</p>
+<p>Defines the width of the pavement on each side of the road, used to properly connect curbs with other roads at nodes. For correct nodes when intersecting with other roads, the half-width and pavement width values must be set appropriately.</p>
 
 
 <h4 id="segment-length">Segment Length</h4>
@@ -135,22 +135,22 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="create-pavement-gravel-ruining">Create Pavement / Gravel / Ruining</h4>
 
-<p>Applies surface paint based on the half width of the road.</p>
+<p>Applies surface paint based on the half-width of the road.</p>
 
 
 <h4 id="flatten-terrain">Flatten Terrain</h4>
 
-<p>Flattens terrain based on the half width of the road.</p>
+<p>Flattens terrain based on the half-width of the road.</p>
 
 
 <h4 id="lowers-terrain">Lowers Terrain</h4>
 
-<p>Lowers terrain based on the half width of the road. Usually used for elevated roads to prevent the terrain from clipping into them.</p>
+<p>Lowers terrain based on the half-width of the road. Usually used for elevated roads to prevent the terrain from clipping into them.</p>
 
 
 <h4 id="clip-terrain">Clip Terrain</h4>
 
-<p>Uses terrain clipping to create a hole in the ground, the actual hole is slightly smaller than the half width, and it becomes very unreliable when half width is less than 4. This also creates ruining around the hole.</p>
+<p>Uses terrain clipping to create a hole in the ground, the actual hole is slightly smaller than the half-width, and it becomes very unreliable when half-width is less than 4. This also creates ruining around the hole.</p>
 
 
 <h4 id="follow-terrain">Follow Terrain</h4>
@@ -200,7 +200,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="block-water">Block Water</h4>
 
-<p>Used for dam, canals, flood wall, quay. Blocks water based on half width and min/max height properties.</p>
+<p>Used for the dam, canals, flood wall, quay. Blocks water based on half-width and min/max height properties.</p>
 
 
 <h4 id="auto-remove">Auto Remove</h4>
@@ -210,12 +210,12 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="connect-group">Connect Group</h4>
 
-<p>Nodes of the current or other networks which match this connect group and have direct connect enabled will show up in intersections. For example tram track nodes do this.</p>
+<p>Nodes of the current or other networks which match this connect group and have direct connect enabled will show up in intersections. For example - tram track nodes do this.</p>
 
 
 <h4 id="enable-zoning">Enable Zoning</h4>
 
-<p>Creates the zoning grid based on the road half width, but no closer than 8m to the center.</p>
+<p>Creates the zoning grid based on the road half-width, but no closer than 8m to the center.</p>
 
 
 <h4 id="double-length">Double Length</h4>
@@ -241,7 +241,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="accumulate-snow">Accumulate Snow</h4>
 
-<p>Allows for snow to accumulate on the road on winter maps.</p>
+<p>Allows for the snow to accumulate on the road on winter maps.</p>
 
 
 <h4 id="noise-accumulation-radius">Noise Accumulation / Radius</h4>
@@ -261,7 +261,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="pillar-pylon-power-pole">Pillar / Pylon / Power Pole</h4>
 
-<p>Allows embedding a building inside the network asset for use as a pillar which appears on nodes. Some AI have specific pillars for different heights, corners, or intersections.</p>
+<p>Allows embedding a building inside the network asset for use as a pillar which appears on nodes. Some AIs have specific pillars for different heights, corners, or intersections.</p>
 
 
 <h4 id="middle-pillar">Middle Pillar</h4>
@@ -302,12 +302,12 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="width">Width</h4>
 
-<p>Width of the lane.</p>
+<p>The width of the lane.</p>
 
 
 <h4 id="vertical-offset">Vertical Offset</h4>
 
-<p>Height position of the lane.</p>
+<p>The height position of the lane.</p>
 
 
 <h4 id="stop-offset">Stop Offset</h4>
@@ -322,7 +322,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="direction">Direction</h4>
 
-<p>Forward for right hand lanes, backward for left hand lanes. Automatically flips on left hand traffic maps.</p>
+<p>Forward for right-hand lanes, backward for left-hand lanes. Automatically flips on left-hand traffic maps.</p>
 
 
 <h4 id="lane-type">Lane Type</h4>
@@ -382,7 +382,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="color-mode">Color Mode</h4>
 
-<p>Determines state of traffic light and level crossing props.</p>
+<p>Determines state of traffic lights and level crossing props.</p>
 
 
 <h4 id="position-1">Position</h4>
@@ -412,7 +412,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="corner-angle">Corner Angle</h4>
 
-<p>1 Means the prop will rotate to match the intesection if it's near it. The value 0.5 is used for traffic lights to not be perpendicular to the road at angled intersections.</p>
+<p>1 Means the prop will rotate to match the intersection if it's near it. The value 0.5 is used for traffic lights to not be perpendicular to the road at angled intersections.</p>
 
 
 <h4 id="probability">Probability</h4>
@@ -452,7 +452,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="basic">Basic</h4>
 
-<p>Used for ground level roads. Instead of alpha being used for making the mesh transparent, it shows the underlying terrain such as grass or ruined. Will have weird normals/shading in many situations. Doesn't display normal maps.</p>
+<p>Used for ground-level roads. Instead of alpha being used for making the mesh transparent, it shows the underlying terrain such as grass or ruined. Will have weird normals/shading in many situations. Doesn't display normal maps.</p>
 
 
 <h4 id="bridge">Bridge</h4>
@@ -549,7 +549,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id='node-flag-temporary'>Temporary</h4>
 <p>Unknown.</p>
 <h4 id='node-flag-double'>Double</h4>
-<p>Active for the "middle" node of a double length network. For example the node where the big pillar for highway suspension bridges is.</p>
+<p>Active for the "middle" node of a double length network. For example - the node where the big pillar for highway suspension bridges is.</p>
 <h4 id='node-flag-fixed'>Fixed</h4>
 <p>Related to public transport line stops, unlikely to be related to normal networks created by the player directly.</p>
 <h4 id='node-flag-onground'>OnGround</h4>
@@ -561,7 +561,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id='node-flag-sewage'>Sewage</h4>
 <p>Related to water/sewage pipes.</p>
 <h4 id='node-flag-forbidlaneconnection'>ForbidLaneConnection</h4>
-<p>Related to invisible networks such as pedestrian paths, ship dock or bus way networks.</p>
+<p>Related to invisible networks such as pedestrian paths, ship dock or busway networks.</p>
 <h4 id='node-flag-underground'>Underground</h4>
 <p>Active for nodes of networks which are tunnels.</p>
 <h4 id='node-flag-transition'>Transition</h4>
@@ -617,11 +617,11 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id='segment-flag-waitingpath'>WaitingPath</h4>
 <p>Related to transport lines and combustion engine ban district policy. Unlikely to be related to normal networks created by the player directly.</p>
 <h4 id='segment-flag-pathfailed'>PathFailed</h4>
-<p>Related to transport lines and path finding. Unlikely to be related to normal networks created by the player directly.</p>
+<p>Related to transport lines and pathfinding. Unlikely to be related to normal networks created by the player directly.</p>
 <h4 id='segment-flag-pathlength'>PathLength</h4>
-<p>Related to transport lines and path finding. Unlikely to be related to normal networks created by the player directly.</p>
+<p>Related to transport lines and pathfinding. Unlikely to be related to normal networks created by the player directly.</p>
 <h4 id='segment-flag-accessfailed'>AccessFailed</h4>
-<p>Related to path finding.</p>
+<p>Related to pathfinding.</p>
 <h4 id='segment-flag-trafficstart'>TrafficStart</h4>
 <p>Related to traffic light state. Also active for some "end" segments of networks using decoration wall AI.</p>
 <h4 id='segment-flag-trafficend'>TrafficEnd</h4>
@@ -653,7 +653,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id='segment-flag-asymbackward'>AsymBackward</h4>
 <p>Used to display an asymmetric segment mesh where an <a href='https://cslmodding.info/asset/network/#node-flag-asymbackward'>AsymBackward node</a> is.</p>
 <h4 id='segment-flag-customname'>CustomName</h4>
-<p>Active for segments which have custom street name assigned by the player.</p>
+<p>Active for segments which have a custom street name assigned by the player.</p>
 <h4 id='segment-flag-namevisible1'>NameVisible1</h4>
 <p>Active for segments which display the street name.</p>
 <h4 id='segment-flag-namevisible2'>NameVisible2</h4>
@@ -705,13 +705,13 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id='lane-flag-yieldend'>YieldEnd</h4>
 <p>Active for lanes of segments which have a player assigned stop sign at the end of the segment based on the direction it was built.</p>
 <h4 id='lane-flag-startonewayleft'>StartOneWayLeft</h4>
-<p>Unknown. Related to surrounding one way roads.</p>
+<p>Unknown. Related to surrounding one-way roads.</p>
 <h4 id='lane-flag-startonewayright'>StartOneWayRight</h4>
-<p>Unknown. Related to surrounding one way roads.</p>
+<p>Unknown. Related to surrounding one-way roads.</p>
 <h4 id='lane-flag-endonewayleft'>EndOneWayLeft</h4>
-<p>Unknown. Related to surrounding one way roads.</p>
+<p>Unknown. Related to surrounding one-way roads.</p>
 <h4 id='lane-flag-endonewayright'>EndOneWayRight</h4>
-<p>Unknown. Related to surrounding one way roads.</p>
+<p>Unknown. Related to surrounding one-way roads.</p>
 
 
 
@@ -753,7 +753,7 @@ The vanilla powerline wire mesh showing vertex paint and uv mapping.
 
 The wire shader requires a specific kind of mesh - each "wire" should be a vertical plane, which can be subdivided and curved like the vanilla powerlines.</p>
 
-<p>It should be UV Mapped horizontally from -1 to 1 but the height of the uv mapping depends on the height of the mesh - for example on the vanilla powerline mesh, each wire is 4m high, so the UV mapping vertically goes from -2 to 2.</p>
+<p>It should be UV Mapped horizontally from -1 to 1 but the height of the uv mapping depends on the height of the mesh, for example - on the vanilla powerline mesh each wire is 4m high, so the UV mapping vertically goes from -2 to 2.</p>
 
 <p>The vertex paint green channel must be 0. The blue channel controls the amount of sway in the wind, 0 means no sway. The red channel controls the phase of the sway.</p>
 
@@ -784,7 +784,7 @@ Just like any diffuse texture, defines the main color of the network.</p>
 
 <h4 id="pavement-_p">Pavement (_p)</h4>
 
-<p>Usually displays the map theme pavement texture, but for the rail shader shows gravel instead.</p>
+<p>Usually displays the map theme pavement texture, but for the rail shader - it shows gravel instead.</p>
 
 <p>Black means no pavement, white means pavement. Defaults to black, unless no diffuse is imported.</p>
 
