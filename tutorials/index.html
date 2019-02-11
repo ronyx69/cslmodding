@@ -1,0 +1,245 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Tutorials
+
+</a></h1>
+
+
+
+</div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src=''/></div>
+<div class="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="generic">Generic</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=oRidpGxLmQ8">No Workshop Mode &amp; Local Mods</a></li>
+	<li><a href="https://youtube.com/watch?v=K3wnhJjyvkw">Decide Color Variations Ingame</a></li>
+</ul>
+
+
+
+<h2 id="buildings">Buildings</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=K0bsYvreks4">Sub Meshes</a></li>
+	<li><a href="https://youtube.com/watch?v=48C__Aj4itk">Illumination Map</a></li>
+</ul>
+
+
+
+<h2 id="props">Props</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=3ZGYVKFL30M">Prop Variations</a></li>
+</ul>
+
+
+
+<h2 id="vehicles">Vehicles</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=K0bsYvreks4">Sub Meshes</a></li>
+</ul>
+
+
+
+<h2 id="publishing">Publishing</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=Hwi-y50JSRc">Publish Multiple Assets as a Single Workshop Item</a></li>
+	<li><a href="https://youtube.com/watch?v=iSe-AmFP1KM">Publish a Building with an Included Prop as a Single Workshop Item</a></li>
+</ul>
+
+
+
+<h2 id="lod">LOD</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=S1EBdi2fGB0">LOD Texture Baking in 3ds Max</a></li>
+	<li><a href="https://youtube.com/watch?v=UiGqTCB2w8w">LOD Texture Baking in Blender</a></li>
+</ul>
+
+
+
+<h2 id="modtools">ModTools</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=jbFvYGO-AFE">Change Shader &amp; Placement Mode</a></li>
+	<li><a href="https://youtube.com/watch?v=nzJK77BU2Lg">Dump/Extract Meshes and Textures</a></li>
+</ul>
+
+
+
+<h2 id="shaders">Shaders</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=ELoMC1rWOSc">Rotors Shader</a></li>
+</ul>
+
+
+
+<h2 id="mod-specific">Mod-specific</h2>
+<ul>
+	<li><a href="https://youtube.com/watch?v=OxUymsbljyg">Decal Prop Fix Decals</a></li>
+	<li><a href="https://youtube.com/watch?v=ohxjbx7VMM8">AnimUV Props</a></li>
+	<li><a href="https://youtube.com/watch?v=HTNiAlk9Phk">Ploppable Asphalt + Props</a></li>
+	<li><a href="https://youtube.com/watch?v=1pVxf0OeELk">Additive Shader</a></li>
+</ul>
+
+
+
+<h2 id="mod-development">Mod Development</h2>
+<ul>
+	<li><a href="https://community.simtropolis.com/forums/topic/73388--/">Tutorials by boformer</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script>
+	var el5;
+	$(".content-warning").each(function() 
+	{	
+	el5 = $(this);	
+	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el4;
+	$(".content-info").each(function() 
+	{	
+	el4 = $(this);	
+	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
+	});
+</script>
+<script>
+	var el3;
+	$(".content-photo-box img").each(function() 
+	{	
+	el3 = $(this);	
+	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
+	});
+</script>
+<script>
+	var el2;
+	$(".content h2").each(function() {
+	  el2 = $(this);
+	  el2.before('<div style="clear:both"></div><hr>');
+	});
+</script>
+<script>
+	$(function(){
+	  $("#menu-file").load("https://cslmodding.info/menu.html");
+	});
+</script>
+<script>
+  (function(){
+    'use strict';
+
+    var headingNodes = [], results, link,
+        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
+
+    tags.forEach(function(tag){
+      results = document.getElementsByTagName(tag);
+      Array.prototype.push.apply(headingNodes, results);
+    });
+
+    headingNodes.forEach(function(node){
+      link = document.createElement('a');
+      link.className = 'deepLink';
+      link.textContent = node.textContent;
+      link.href = '#' + node.getAttribute('id');
+      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
+    });
+
+  })();
+</script>
+<script>
+	var ToC =
+	  "<nav role='navigation' class='table-of-contents'>" +
+	    "<ul>";
+	var newLine, el, title, link;
+	$(".content h2").each(function() {
+	  el = $(this);
+	  title = el.text();
+	  link = "#" + el.attr("id");
+	  newLine =
+	    "<li>" +
+	      "<a href='" + link + "'>" +
+	        title +
+	      "</a>" +
+	    "</li>";
+	  ToC += newLine;
+	});
+	ToC +=
+	   "</ul>" +
+	  "</nav>";
+	$(".toc").append(ToC);
+</script>
+
+<script>
+
+	document.title = document.getElementsByTagName('h1')[0].textContent + ' - Cities: Skylines Modding';
+</script>
+<script>
+	// Select all links with hashes
+	$('a[href*="#"]')
+	  // Remove links that don't actually link to anything
+	  .not('[href="#"]')
+	  .not('[href="#0"]')
+	  .click(function(event) {
+	    // On-page links
+	    if (
+	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+	      && 
+	      location.hostname == this.hostname
+	    ) {
+	      // Figure out element to scroll to
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+	      // Does a scroll target exist?
+	      if (target.length) {
+	        // Only prevent default if animation is actually gonna happen
+	        //event.preventDefault();
+	        $('html, body').animate({
+	          scrollTop: target.offset().top
+	        }, 500, function() {
+	          // Callback after animation
+	          // Must change focus!
+	          var $target = $(target);
+	          //$target.focus();
+	          if ($target.is(":focus")) { // Checking if the target was focused
+	            return false;
+	          } else {
+	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+	            //$target.focus(); // Set focus again
+	          };
+	        });
+	      }
+	    }
+	  });
+</script>
+</body>
+</html>
