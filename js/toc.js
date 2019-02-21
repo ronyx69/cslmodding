@@ -4,7 +4,6 @@ var ToC =
 var newLine, el, title, link, tagname;
 $(".content h2, .content h3").each(function() {
   el = $(this);
-  console.log(el[0].tagName);
   title = el.text();
   link = "#" + el.attr("id");
   if(el[0].tagName == "H3") {
