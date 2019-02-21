@@ -50,7 +50,7 @@ body a {
 }
 
 .toc li {
-	line-height: 24px;
+	line-height: 20px;
 	margin: 8px 0;
 }
 
@@ -63,7 +63,22 @@ body a {
 .toc a:hover {
 	color: #45a3e6;
 }
-	
+
+.table-of-contents {
+	margin-top: -16px;
+}
+
+.toc2 a {
+	font-size: 15px;
+	display:inline-block;
+	margin-left: 48px;
+}
+
+.toc1 {
+	display: block;
+	padding-top: 16px;
+	font-size: 18px;
+}
 
 .page {
 	width: 100%;
