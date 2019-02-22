@@ -10,7 +10,6 @@
 }
 
 
-
 input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
     background-color: #2b3033!important;
     color: #98a7b3!important;
@@ -254,105 +253,8 @@ table.gsc-search-box td.gsc-input {
 
 
 </div>
-<script>
-	var el5;
-	$(".content-warning").each(function() 
-	{	
-	el5 = $(this);	
-	el5.prepend('<img src="https://cslmodding.info/icons/icon_warning.svg" height="32px" width="32px" class="icon1">');
-	});
-</script>
-<script>
-	var el4;
-	$(".content-info").each(function() 
-	{	
-	el4 = $(this);	
-	el4.prepend('<img src="https://cslmodding.info/icons/icon_info.svg" height="32px" width="32px" class="icon1">');
-	});
-</script>
-<script>
-	var el3;
-	$(".content-photo-box img").each(function() 
-	{	
-	el3 = $(this);	
-	el3.wrap('<a href="' + el3.attr('src') + '" target="null"></a>');
-	});
-</script>
-<script>
-	var el2;
-	$(".content h2").each(function() {
-	  el2 = $(this);
-	  el2.before('<div style="clear:both"></div><hr>');
-	});
-</script>
-<script>
-	$(function(){
-	  $("#menu-file").load("https://cslmodding.info/menu.html");
-	});
-</script>
-<script>
-  (function(){
-    'use strict';
-
-    var headingNodes = [], results, link,
-        tags = ['h2', 'h3', 'h4', 'h5', 'h6'];
-
-    tags.forEach(function(tag){
-      results = document.getElementsByTagName(tag);
-      Array.prototype.push.apply(headingNodes, results);
-    });
-
-    headingNodes.forEach(function(node){
-      link = document.createElement('a');
-      link.className = 'deepLink';
-      link.textContent = node.textContent;
-      link.href = '#' + node.getAttribute('id');
-      node.innerHTML = '<a href="' + link.href + '" title="Click to generate a direct link to this section in the browser&apos;s address bar for easy sharing."/>' + link.textContent + '</a>';
-    });
-
-  })();
-</script>
-<script>
-
-	document.title = 'Search - Cities: Skylines Modding & Asset Creation';
-</script>
-<script>
-	// Select all links with hashes
-	$('a[href*="#"]')
-	  // Remove links that don't actually link to anything
-	  .not('[href="#"]')
-	  .not('[href="#0"]')
-	  .click(function(event) {
-	    // On-page links
-	    if (
-	      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-	      && 
-	      location.hostname == this.hostname
-	    ) {
-	      // Figure out element to scroll to
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-	      // Does a scroll target exist?
-	      if (target.length) {
-	        // Only prevent default if animation is actually gonna happen
-	        //event.preventDefault();
-	        $('html, body').animate({
-	          scrollTop: target.offset().top
-	        }, 500, function() {
-	          // Callback after animation
-	          // Must change focus!
-	          var $target = $(target);
-	          //$target.focus();
-	          if ($target.is(":focus")) { // Checking if the target was focused
-	            return false;
-	          } else {
-	            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-	            //$target.focus(); // Set focus again
-	          };
-	        });
-	      }
-	    }
-	  });
-</script>
-</body>
-</html>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+<script>document.title = 'Search - Cities: Skylines Modding & Asset Creation';</script>
+</body></html>
