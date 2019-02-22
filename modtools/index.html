@@ -1,0 +1,325 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+ModTools
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/d0nzhSb.jpg'/></div><div class="content">
+
+
+
+
+
+
+
+
+
+
+<h2 id="usage">Usage</h2>
+<p><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> should be added as a local mod, so that it is always available. Read the <a href='https://cslmodding.info/noworkshop/'>No Workshop &amp; Local Mods</a> article for more information. The game should be restarted after ModTools is enabled.</p>
+
+
+
+<h3 id="shortcuts">Shortcuts</h3>
+<p><span class=key>Ctrl+Q</span> opens the ModTools menu with settings and buttons for opening other windows.</p>
+<p><span class=key>F7</span> opens the debug console, which is also used for running scripts.</p>
+<p><span class=key>Ctrl+E</span> open the scene explorer.</p>
+<p><span class=key>Ctrl+W</span> opens watches, which allows monitoring values chosen in scene explorer.</p>
+
+
+
+<h3 id="settings">Settings</h3>
+<p>Both the console and scene explorer have a settings menu button in the top left corner.</p>
+
+
+
+
+
+<h2 id="asset-editor">Asset Editor</h2>
+<p>The current prefab loaded in the asset editor can be found in Scene Explorer &gt; Tool Controller &gt; ToolController &gt; m_editPrefabInfo.</p>
+<p>Whether or not the changes made there save is based on what the game was designed to save, and if something is a reference to some other prefab or object, such as props placed on a building, or effects placed on a prop - these are not part of the actual asset.</p>
+
+
+
+<h3 id="generic">Generic</h3>
+
+<h4 id="m_uipriority">m_UIPriority</h4>
+<p>For assets visible in the menu, this defines the order in which they are sorted. Can also be changed using <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>a script</a> or <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>a mod</a>.</p>
+
+<h4 id="m_uicategory">m_UICategory</h4>
+<p>Sets the UI category the asset appears in. Can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=458396767'>a mod</a>.</p>
+
+<h4 id="m_dlcrequired">m_dlcRequired</h4>
+<p>Defines which dlc is required for the asset.</p>
+
+<h4 id="m_generatedinfo">m_generatedInfo</h4>
+<p>Contains various measured values, such as the size of the asset.</p>
+
+<h4 id="m_class">m_class</h4>
+<p>Contains information about what type of asset it is, may also affect UI sub-category. Can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>a mod</a>.</p>
+
+<h4 id="m_color">m_color</h4>
+<p>Color variations, although the actual saved values are inside m_material, which can be changed in the asset editor UI or using <a href='https://gist.github.com/ronyx69/0530f6ad4ee1d85bf2f1222d96a24a07'>a script</a>.</p>
+
+<h4 id="m_usecolorvariations">m_useColorVariations</h4>
+<p>Controls whether or not the asset uses color variations.</p>
+
+
+
+<h3 id="building">Building</h3>
+
+<h4 id="m_buildingai">m_buildingAI</h4>
+<p>Defines how the building behaves and what values it has. Can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=421616513'>a mod</a>.</p>
+
+<h4 id="m_celllength-m_cellwidth">m_cellLength &amp; m_cellWidth</h4>
+<p>Defines the size of the lot. Can be changed in the asset editor UI.</p>
+
+<h4 id="m_cellsurfaces">m_cellSurfaces</h4>
+<p>Contains an array of ground surfaces which can be painted in the asset editor.</p>
+
+<h4 id="m_class-1">m_class</h4>
+<p>Contains information about what type and level of building it is. Can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>a mod</a>.</p>
+
+<h4 id="m_circular">m_circular</h4>
+<p>Changes the square lot to a circular one, only visible ingame.</p>
+
+<h4 id="m_expandfrontyard">m_expandFrontYard</h4>
+<p>For growables, changes where the yard for props is.</p>
+
+<h4 id="m_fixedheight">m_fixedHeight</h4>
+<p>Controls whether or not the height of the building might automatically change, for example - when the water level changes.</p>
+
+<h4 id="m_flattenfullarea">m_flattenFullArea</h4>
+<p>Completely flattens the entire lot of the building.</p>
+
+<h4 id="m_flattenterrain">m_flattenTerrain</h4>
+<p>The usual, less aggressive flattening of the lot area.</p>
+
+<h4 id="m_fullgravel-m_fullpavement">m_fullGravel &amp; m_fullPavement</h4>
+<p>Covers the entire lot in this surface paint.</p>
+
+<h4 id="m_paths">m_paths</h4>
+<p>May contain an array of networks placed on the lot, such as pedestrian paths, roads, train tracks.</p>
+
+<h4 id="m_placementmode">m_placementMode</h4>
+<p>Controls how the building is plopped, <a href='https://cslmodding.info/asset/building/#placement-mode'>read more in the building article</a>.</p>
+
+<h4 id="m_placementstyle">m_placementStyle</h4>
+<p>Defines how the building is placed, ploppable buildings are manual, while growables are automatic, and sub-buildings are procedural.</p>
+
+<h4 id="m_props">m_props</h4>
+<p>May contain an array of the props which are plopped on the building.</p>
+
+<h4 id="m_requireheightmap">m_requireHeightMap</h4>
+<p>True for buildings which use the fence shader to conform to the terrain.</p>
+
+<h4 id="m_requirewatermap">m_requireWaterMap</h4>
+<p>True for buildings which use the floating shader to float in the water.</p>
+
+<h4 id="m_subbuildings">m_subBuildings</h4>
+<p>May contain an array of sub-buildings.</p>
+
+<h4 id="m_submeshes">m_subMeshes</h4>
+<p>May contain an array of sub-meshes.</p>
+
+<h4 id="m_zoningmode">m_zoningMode</h4>
+<p>Defines whether a growable is a regular building or a corner building.</p>
+
+
+
+<h3 id="prop">Prop</h3>
+
+<h4 id="m_createruining">m_createRuining</h4>
+<p>Controls whether or not the prop shows the ruined texture under it. Can be changed in the asset editor UI.</p>
+
+<h4 id="m_effects">m_effects</h4>
+<p>May contain an array of effects, such as light effects for a lamp. Can be changed in the asset editor UI.</p>
+
+<h4 id="m_illuminationblinktype">m_illuminationBlinkType</h4>
+<p>Defines the kind of blinking the illumination has.</p>
+
+<h4 id="m_illuminationoffrange">m_illuminationOffRange</h4>
+<p>Controls when the illumination turns off based on time of day. Can be changed using <a href='https://gist.github.com/ronyx69/bfa8940c8d68f99b8826c88af51a39b7'>a script</a>.</p>
+
+<h4 id="m_maxscale-m_minscale">m_maxScale &amp; m_minScale</h4>
+<p>Controls the random size variation.</p>
+
+<h4 id="m_placementstyle-1">m_placementStyle</h4>
+<p>Defines how the prop is placed, most props are manual, but some - such as the garbage bin, are automatic.</p>
+
+<h4 id="m_parkingspaces">m_parkingSpaces</h4>
+<p>May contain parking spaces for cars. Can be changed using <a href='https://gist.github.com/ronyx69/89d48923dbd020c2109686487dcc4d9c'>a script</a>.</p>
+
+<h4 id="m_specialplaces">m_specialPlaces</h4>
+<p>May contain sitting places for chairs. Can be changed using <a href='https://gist.github.com/ronyx69/0353e26a6b6c1c0a8d5c28c1a1e7401c'>a script</a>.</p>
+
+<h4 id="m_requireheightmap-1">m_requireHeightMap</h4>
+<p>True for props which use the fence shader to conform to the terrain.</p>
+
+<h4 id="m_requirewatermap-1">m_requireWaterMap</h4>
+<p>True for props which use the floating shader to float in the water, although these props likely must be part of a building or network to appear.</p>
+
+<h4 id="m_variations">m_variations</h4>
+<p>May contain an array of other props, which get plopped instead of the main prop based on probabilities. Can be changed using <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>a script</a> and then asset editor UI.</p>
+
+
+
+<h3 id="tree">Tree</h3>
+
+<h4 id="m_createruining-1">m_createRuining</h4>
+<p>Controls whether or not the prop shows the ruined texture under it. Can be changed in the asset editor UI.</p>
+
+<h4 id="m_defaultcolor">m_defaultColor</h4>
+<p>Affects the color of the leaves, as defined by the color map.</p>
+
+<h4 id="m_maxbrightness-m_minbrightness">m_maxBrightness &amp; m_minBrightness</h4>
+<p>Defines the random brightness variation.</p>
+
+<h4 id="m_maxscale-m_minscale-1">m_maxScale &amp; m_minScale</h4>
+<p>Controls the random size variation.</p>
+
+<h4 id="m_variations-1">m_variations</h4>
+<p>May contain an array of other trees, which get plopped instead of the main tree based on probabilities. Can be changed using <a href='https://gist.github.com/ronyx69/5fc7e20afe73888e220165caad8c904f'>a script</a> and then asset editor UI.</p>
+
+
+
+<h3 id="vehicle">Vehicle</h3>
+<p>Many vehicle properties can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=800820816'>the Extended Asset Editor mod</a>.</p>
+
+<h4 id="m_acceleration">m_acceleration</h4>
+<p>Controls how quickly the vehicle increases speed, may also affect max speed.</p>
+
+<h4 id="m_attachoffsetback-m_attachoffsetfront">m_attachOffsetBack &amp; m_attachOffsetFront</h4>
+<p>Defines the placement of trailers.</p>
+
+<h4 id="m_braking">m_braking</h4>
+<p>Controls how quickly the vehicle decreases speed.</p>
+
+<h4 id="m_dampers">m_dampers</h4>
+<p>Defines how quickly the suspension returns to the default state.</p>
+
+<h4 id="m_doors">m_doors</h4>
+<p>Contains an array of doors, where citizens will enter or exit the vehicle.</p>
+
+<h4 id="m_effects-1">m_effects</h4>
+<p>Contains an array of effects such as lights, sounds, and particles.</p>
+
+<h4 id="m_generatedinfo-1">m_generatedInfo</h4>
+<p>In addition to the regular measured values, also contains tire(wheel) properties.</p>
+
+<h4 id="m_islargevehicle">m_isLargeVehicle</h4>
+<p>True for big vehicles such as planes or ships.</p>
+
+<h4 id="m_leanmultiplier">m_leanMultiplier</h4>
+<p>Defines how much the vehicle leans to the sides when turning.</p>
+
+<h4 id="m_maxspeed">m_maxSpeed</h4>
+<p>Defines the max speed of the vehicle, 1 equals 6.25 km/h.</p>
+
+<h4 id="m_nodmultiplier">m_nodMultiplier</h4>
+<p>Defines how much the vehicles nods forward/backward when braking or accelerating.</p>
+
+<h4 id="m_springs">m_springs</h4>
+<p>Defines how much the suspension moves.</p>
+
+<h4 id="m_submeshes-1">m_subMeshes</h4>
+<p>May contain an array of sub-meshes.</p>
+
+<h4 id="m_trailers">m_trailers</h4>
+<p>May contain an array of trailers.</p>
+
+<h4 id="m_turning">m_turning</h4>
+<p>Defines how well the car corners.</p>
+
+<h4 id="m_vehicleai">m_vehicleAI</h4>
+<p>Controls what type of vehicle it is and how it behaves, can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=421616513'>a mod</a>.</p>
+
+
+
+<h3 id="citizen">Citizen</h3>
+
+<h4 id="m_citizenai">m_citizenAI</h4>
+<p>Controls what type of citizen it is and how it behaves, can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=421616513'>a mod</a>.</p>
+
+<h4 id="m_class-2">m_class</h4>
+<p>Contains information about what type and level of citizen it is. Can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>a mod</a>.</p>
+
+<h4 id="m_walkspeed">m_walkSpeed</h4>
+<p>Defines how fast the citizen walks.</p>
+
+
+
+<h3 id="network">Network</h3>
+
+<h4 id="m_enablemiddlenodes">m_enableMiddleNodes</h4>
+<p>If this is disabled, every node will be an intersection. This is disabled for train or monorail station tracks so they always have the track cross node, and also for road slope(tunnel entrance) networks.</p>
+
+<h4 id="m_class.m_level">m_class.m_level</h4>
+<p>Networks which have different levels activate the transition node flag when intersecting, this used for transitions between normal sunken roads and ground-level highways or the gravel road.</p>
+
+<h4 id="m_netai">m_netAI</h4>
+<p>Controls what type of network it is and how it behaves, can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=421616513'>a mod</a>. Also it may contain networks used for elevations and pillars.</p>
+
+<h4 id="m_setcitizenflags">m_setCitizenFlags</h4>
+<p>Activates flags for citizens currently using this network, used for hiding citizens in tunnels.</p>
+
+<h4 id="m_setvehicleflags">m_setVehicleFlags</h4>
+<p>Activates flags for vehicles currently using this network, used for hiding vehicles in tunnels, or enabling the gravel dust particles on the gravel road.</p>
+
+<h4 id="m_usefixedheight">m_useFixedHeight</h4>
+<p>True for station tracks and depot roads which are part of buildings, so they don't align to the terrain when such buildings are built on uneven terrain.</p>
+
+
+
+
+
+<h2 id="prefabs">Prefabs</h2>
+
+<h4 id="base-game">Base Game</h4>
+<p>Scene Explorer &gt; Sunny Collections<br />If you are on a boreal, european, tropical, or winter map - instead of Sunny, it will be North, Europe, Tropical, or Winter.</p>
+
+<h4 id="dlc">DLC</h4>
+<p>Scene Explorer &gt; Expansion ID &gt; BuildingCollection / PropCollection etc.</p>
+
+<h4 id="custom">Custom</h4>
+<p>Scene Explorer &gt; Custom Prefabs &gt; ModTools.CustomPrefabs &gt; m_buildings / m_props etc.</p>
+
+
+
+
+
+<h2 id="theme-textures-and-properties">Theme Textures and Properties</h2>
+<p>Most map theme textures, tiling values, color offsets, and decoration properties can be found in Scene Explorer &gt; Sunny Properties &gt; Sunny Terrain, but the asphalt (upward road) texture can be found in Scene Explorer &gt; Sunny Properties &gt; Sunny Net &gt; m_upwardDiffuse. The building base, abandoned, burned, and floor textures can be found in Scene Explorer &gt; Sunny Properties &gt; Sunny Building.</p>
+<p>If you are on a boreal, european, tropical, or winter map - instead of Sunny, it will be North, Europe, Tropical, or Winter.</p>
+
+
+
+
+
+<h2 id="render-properties">Render Properties</h2>
+<p>Many render properties, such as fog, sky, clouds, sun, and others can be found in Scene Explorer &gt; Sunny Properties &gt; Sunny Render</p>
+<p>If you are on a boreal, european, tropical, or winter map - instead of Sunny, it will be North, Europe, Tropical, or Winter.</p>
+
+
+
+
+
+<h2 id="camera-properties">Camera Properties</h2>
+<p>Many camera properties, such as shadow distances, and max tilt angle can be found in Scene Explorer &gt; Main Camera &gt; CameraController.</p>
+
+
+
+
+
+
+
+</div></div>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/headings.js'></script>
+<script src='https://cslmodding.info/js/toc.js'></script>
+<script src='https://cslmodding.info/js/title.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+<script>var relevant = "<br>"; $(".toc").append(relevant);</script>
+</body></html>
