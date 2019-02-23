@@ -1,0 +1,106 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Dump & Extract Assets
+
+</a></h1></div><div class="page">
+<div class="imgbg"><div class="imggr"></div><img src='https://i.imgur.com/dkDrCQr.jpg'/></div><div class="content">
+
+
+
+
+
+
+
+
+
+<h2 id="modtools">ModTools</h2>
+<p>This assumes you are familiar with <a href='https://cslmodding.info/modtools/'>ModTools usage</a>. For buildings and vehicles, you can simply click on it ingame and press dump asset there.</p>
+
+
+<h3 id="tool-controller">Tool Controller</h3>
+<p>You can click on the desired item in the menu as if you are about to plop it, and then find the prefab in Scene Explorer &gt; Tool Controller &gt; BuildingTool / PropTool / TreeTool / NetTool. If you preview it, you can dump it there. Alternatively, inside the prefab you can find the m_mesh and textures inside m_material and dump those.</p>
+
+<h4 id="sub-meshes-sub-buildings">Sub-meshes &amp; Sub-buildings</h4>
+<p>If a building has sub-buildings or sub-meshes, those can be found inside the prefab in m_subBuildings and m_subMeshes.</p>
+
+<h4 id="network-segments-nodes">Network Segments &amp; Nodes</h4>
+<p>For networks, the nodes and segments can be found inside the prefab in m_nodes and m_segments. There you can find the m_segmentMesh and m_segmentMaterial which contains the textures.</p>
+
+<h4 id="network-elevations">Network Elevations</h4>
+<p>Network elevations such as bridge and tunnel can be found inside the prefab in m_netAI.</p>
+
+
+<h3 id="prefab-collections">Prefab Collections</h3>
+<p>To find prefabs when you can't click on them ingame or in the menu, <a href='https://cslmodding.info/modtools/#prefabs'>see how to find any vanilla or custom prefab in the ModTools article</a>.</p>
+
+
+<h3 id="format-conversion-script">Format Conversion Script</h3>
+<p>ModTools can't dump some textures because of their format, in this case, <a href='https://gist.github.com/ronyx69/14655bc04d94fc6557dfc79739cef832'>a script can be used</a> to convert the texture, which ModTools can then dump.</p>
+
+
+<h3 id="protected-assets">Protected Assets</h3>
+<p>Some meshes or textures are not readable, and therefore ModTools can't dump them, in that case, you remember the name of the mesh or material and use one of the other methods.</p>
+
+
+
+
+
+<h2 id="unity-assets-bundle-extractor">Unity Assets Bundle Extractor</h2>
+<p><a href='https://7daystodie.com/forums/showthread.php?22675-Unity-Assets-Bundle-Extractor'>UABE is a tool</a> which can open .assets files which are located in the Cities_Data folder which is in the game folder. Most vanilla assets can be found in the sharedassets11 file, although assets from DLCs can be found in files with a higher number. It can export meshes as OBJ and textures as PNG.</p>
+
+
+
+
+
+<h2 id="utinyripper">uTinyRipper</h2>
+<p><a href='https://github.com/mafaca/UtinyRipper'>uTinyRipper is a tool</a> which can extract an entire .assets file.</p>
+
+
+
+
+
+<h2 id="crper">Crper</h2>
+<p><a href='http://unera.se/crper/'>Crper is a web-based tool</a> which can read .crp files and extract meshes and textures.</p>
+
+
+
+
+<h2 id="texture-correction">Texture Correction &amp; Splitting</h2>
+<div class="content-photo-box"><img src="https://i.imgur.com/46jPOVs.jpg"><p>
+XYS texture before and after gamma correction.
+</p></div>
+
+<p>Depending on how the textures were extracted, they may need to be gamma corrected and split into multiple textures.</p>
+
+<p>ACI textures contain alpha, color, and illumination maps combined into a single texture. Similarly, XYS textures contain normal and specular maps, and APR textures, which are used for roads, contain alpha, pavement, and road maps. These combined textures are sometimes gamma lifted (brighter) so they require a 0.45 gamma adjustment.</p>
+
+<h3 id="splitting">Splitting</h3>
+<div class="content-photo-box"><img src="https://i.imgur.com/xnpqlur.jpg"><p>
+ACI map gamma corrected, split, some channels inverted.
+</p></div>
+
+<p>For combined textures such as ACI, XYS, APR - each RGB channel contains one of the maps. The channels should be separated and some channels need to be inverted as well.</p>
+
+<p>You can download Photoshop actions which will gamma correct, split, and invert dumped ACI and XYS textures automatically.</p>
+<div class="content-download"><a href="https://drive.google.com/open?id=1SjSEB_6Q_wT4uv_HNZDVUc6qn4zzsK_v" target="null">
+Download
+</a></div>
+
+
+
+
+</div></div>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/headings.js'></script>
+<script src='https://cslmodding.info/js/toc.js'></script>
+<script src='https://cslmodding.info/js/title.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+<script> var relevant = 
+"<div class='menu-category-title' style='margin-left:32px'>RELEVANT VIDEOS</div><ul class='menu-category'>" +
+"<li><a href='https://youtube.com/watch?v=nzJK77BU2Lg'>Dump/Extract Meshes and Textures</a></li>" +
+"<li><a href='https://youtube.com/watch?v=hEidZ_LsTkA'>Dump Road Meshes with ModTools</a></li>" +
+"</ul><br>"; $(".toc").append(relevant);</script>
+</body></html>
