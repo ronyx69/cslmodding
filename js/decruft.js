@@ -2,6 +2,9 @@ function decruft(doc,errs)
 {
 	let log = doc.value;
 	let lines = log.split("\n");
+
+	// decruft the log file
+
 	for (var i=lines.length-1; i>0; i--)
 	{
 		let current = lines[i];
@@ -71,7 +74,9 @@ function decruft(doc,errs)
 			lines.splice(i+1,1);
 		}
 	}
+
 	// clear excess blank lines
+
 	let blank = false;
 
 	for (var i=lines.length-1; i>0; i--)
@@ -92,11 +97,17 @@ function decruft(doc,errs)
 			blank = false;
 		}
 	}
+
 	// output decrufted log
+
 	doc.value = lines.join("\n");
+
 	// now split out errors
+
 	let active = false;
 	let trace = [];
+	let errors = 0;
+
 	for (var i=0; i<lines.length; i++)
 	{
 		current = lines[i];
@@ -104,7 +115,8 @@ function decruft(doc,errs)
 		{
 			if (!active) 
 			{
-				trace.push(lines[i-1]);
+				errors += 1;
+				trace.push("", "--- #"+errors+" ---", "", lines[i-1]);
 				active = true;
 			}
 			trace.push(current);
@@ -112,9 +124,14 @@ function decruft(doc,errs)
 		else if (active)
 		{
 			active = false;
-			trace.push("","----------------------------------","","");
 		}
 	}
+
+	// add number of stack traces found
+
+	trace.unshift("Stack traces found: "+errors); 
+
 	// output stack traces
+
 	errs.value = trace.join("\n");
 }
