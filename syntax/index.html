@@ -1,0 +1,42 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/styles.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cslmodding.info/css/syntax.css">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+Syntax Highlighting
+</a></h1></div><div class="page"><div class="content">
+
+
+<h2 id="example">Example</h2>
+
+<p>Example of syntax highlighting:</p>
+<pre><code class="csharp">var materials = UnityEngine.Object.FindObjectsOfType<Material>();
+Texture2D tempTex2; //comment yeet
+
+foreach (var mat in materials) 
+{
+	tempTex2 = mat.GetTexture("_MainTex") as Texture2D;
+	if (mat.shader.name == "Custom/Net/RoadBridge" && tempTex2 != null) // comment to make it longer to see what happens
+	{
+		if(tempTex2.width == 512 && tempTex2.height == 1024) 
+		{
+			mat.name = "NetworkTiling " + "2"; 
+			mat.mainTextureScale = new Vector2(1, 2);
+		}
+	}
+}</code></pre>
+
+<p>Example of syntax highlighting:</p>
+<pre><code class="csharp">var num = 0;</code></pre>
+
+
+</div></div>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/headings.js'></script>
+<script src='https://cslmodding.info/js/toc.js'></script>
+<script src='https://cslmodding.info/js/title.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+<script>var relevant = "<br>"; $(".toc").append(relevant);</script>
+<script src='https://cslmodding.info/js/syntax.js'></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body></html>
