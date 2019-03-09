@@ -42,30 +42,30 @@ Prop <br>Asset <br>Creation
 
 
 <h4 id="vertex-paint">Vertex Paint</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/0a286Ax.jpg"><p>
 Vertex painting in 3ds Max.
-</p></div>
+</p></div><p>
 Vertex colors are used for specific shaders like AnimUV(LINK) for scrolling or multi-frame animations, or PropRotating(LINK) for rotating animations.
 </p>
 
 
 <h4 id="uv-mapping">UV Mapping</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
 Example UV mapping using visible horizontal tiling on the bottom.
-</p></div>
+</p></div><p>
 You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
 
 <h4 id="model-complexity">Model Complexity</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/f08NOKr.jpg"><p>
 Triangle counts of some vanilla props.
-</p></div>
+</p></div><p>
 
 It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla props or assets by other creators for reference.</p>
 
@@ -81,11 +81,11 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 <h4 id="culling">Culling</h4>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/nnZCoMq.jpg"><p>
 Infinitely thin triangles made by putting 2 of the 3 vertices in the same place.
-</p></div>
+</p></div><p>
 
 Prop culling is when a prop disappears when you look away from the center of it.</p>
 
@@ -135,10 +135,10 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 <h4 id="diffuse">Diffuse (_d)</h4>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
 Example diffuse texture for a conveyor prop.
-</p></div>
+</p></div><p>
 
 	The main color and texture of your asset.</p>
 
@@ -150,7 +150,7 @@ Example diffuse texture for a conveyor prop.
 
 
 <h4 id="alpha">Alpha (_a)</h4>
-<p>
+
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
@@ -158,7 +158,7 @@ Example alpha texture for some railings and metal beams.
 </p></div>
 <div class="content-photo-box"><img src="https://i.imgur.com/et6nTdO.jpg"><p>
 Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
-</p></div>
+</p></div><p>
 
 	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.</p>
 
@@ -179,11 +179,11 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 
 <h4 id="illumination">Illumination (_i)</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/APmTBu1.jpg"><p>
 Example illumination map for a torch.
-</p></div>
+</p></div><p>
 Allows for diffuse contribution illumination. Black means no illumination and white means the brightest possible illumination. 
 </p>
 <p><a href='https://cslmodding.info/asset/prop/#m_illuminationblinktype'>There are parameters for blinking illumination or disabling illumination during the day.</a></p>
@@ -192,7 +192,6 @@ Allows for diffuse contribution illumination. Black means no illumination and wh
 
 
 <h4 id="specular">Specular (_s)</h4>
-<p>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/dpTKCTS.jpg"><p>
 Example specular map for a roof water tank.
@@ -200,7 +199,8 @@ Example specular map for a roof water tank.
 
 <div class="content-photo-box"><img src="https://i.imgur.com/xZnShPJ.jpg"><p>
 Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
-</p></div>
+</p></div><p>
+
 
 
 	Reflectivity, black means no reflection and white means max reflection.</p>
@@ -213,7 +213,7 @@ Transitions between different specular values produce artifacts on the normal ma
 
 
 <h4 id="normal">Normal (_n)</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
 Example normal map for rocks.
@@ -225,7 +225,7 @@ Problem: normal maps appear incorrectly if the asset importer mesh rotation feat
 
 <div class="content-photo-box"><img src="https://i.imgur.com/BP3Vj1J.jpg"><p>
 Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces with different UV rotation/flip.
-</p></div>
+</p></div><p>
 
 Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
@@ -253,11 +253,11 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 
 <h4 id="resolution">Resolution</h4>
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/L4lJ9ki.jpg"><p>
 Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.
 </p></div>
-
+<p>
 All imported main textures must be the same resolution.
 </p>
 <p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
@@ -360,12 +360,12 @@ All of those things can be changed later in the editor itself or using <a href='
 
 <h3 id="import-1">Import</h3>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/9jUb6bJ.jpg"><p>
 Importing a mesh in asset importer.
 </p></div>
-
+<p>
 After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around X-axis are common necessities.</p>
 
 
@@ -444,11 +444,11 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 <h2 id="editor-advanced">Editor Advanced</h2>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
 ModTools scene explorer and console.
-</p></div>
+</p></div><p>
 
 	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
 
@@ -505,9 +505,9 @@ Comparison between Default (left), Fence (middle) and Decal (right) prop shaders
 
 <h3 id="variations">Variations</h3>
 
-<p><div class="content-photo-box"><img src="https://i.imgur.com/oe3rouc.jpg"><p>
+<div class="content-photo-box"><img src="https://i.imgur.com/oe3rouc.jpg"><p>
 Prop variations menu in the asset editor.
-</p></div>You can add multiple prop assets to your prop as variations using a probability value. The probability is a percentage out of 100, but the main prop has no probability so it gets whatever is left over, so if you have two variations with a 25% probability each, the main prop will get a 50% probability. The variations will be embedded into the main prop, but also show up as separate props in the menu.</p>
+</p></div><p>You can add multiple prop assets to your prop as variations using a probability value. The probability is a percentage out of 100, but the main prop has no probability so it gets whatever is left over, so if you have two variations with a 25% probability each, the main prop will get a 50% probability. The variations will be embedded into the main prop, but also show up as separate props in the menu.</p>
 
 <p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
 
@@ -553,13 +553,13 @@ Prop variations menu in the asset editor.
 
 <h3 id="filename">Filename</h3>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/hsWwdr5.jpg"><p>
 Save asset window.
 </p></div>
 
-	The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
+	<p>The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
 
 
 
@@ -591,10 +591,10 @@ Save asset window.
 
 <h3 id="local-assets-folder">Local Assets Folder</h3>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
 CRP files in the local assets folder.
-</p></div>
+</p></div><p>
 Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
@@ -615,10 +615,10 @@ Once the asset is saved, the .crp file will appear in the local assets folder:<b
 
 <h2 id="publish">Publish</h2>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/4OPnZac.jpg"><p>
 Share button in content manager.
-</p></div>
+</p></div><p>
 Once you have saved the asset and reloaded the game, you can publish the asset.</p>
 
 <p>Go to the content manager &gt; assets and find your asset, then click share.</p>
@@ -633,10 +633,10 @@ Once you have saved the asset and reloaded the game, you can publish the asset.<
 
 <h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/Y53Uqxy.jpg"><p>
 Publish window and content folder.
-</p></div>
+</p></div><p>
 There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size you should use.</p>
 
 <p>There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack of assets.</p>
@@ -701,10 +701,10 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 <h2 id="prefab-name">Prefab Name</h2>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/f3Tr6NM.jpg"><p>
 Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
-</p></div>
+</p></div><p>
 This is not something you can change.</p>
 
 <p>It's the hidden internal name used to refer to your asset in savefiles.</p>

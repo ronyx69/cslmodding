@@ -31,11 +31,11 @@ Citizen <br>Asset <br>Creation
 
 
 <h4 id="skeleton">Skeleton</h4>
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/UH2WI1f.jpg"><p>
 One of the skeleton templates.
 </p></div>
-
+<p>
 You must fit your mesh to one of the available skeleton templates, which can be found in this folder:</p>
 <p>C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Files\Templates</p>
 
@@ -53,21 +53,21 @@ You must fit your mesh to one of the available skeleton templates, which can be 
 
 
 <h4 id="uv-mapping">UV Mapping</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
 Example UV mapping using visible horizontal tiling on the bottom.
-</p></div>
+</p></div><p>
 You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
 
 <h4 id="model-complexity">Model Complexity</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/jBtrlSE.jpg"><p>
 Main model and LOD of a vanilla citizen.
 </p></div>
-
+<p>
 It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla citizens or assets by other creators for reference.</p>
 
 <p>The absolute limit for a mesh is 65536 vertices.</p>
@@ -131,13 +131,13 @@ Example diffuse textures for some vanilla citizens.
 
 
 <h4 id="alpha">Alpha (_a)</h4>
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
 Example alpha texture for some railings and metal beams.
 </p></div>
 <div class="content-photo-box"><img src="https://i.imgur.com/et6nTdO.jpg"><p>
 Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
-</p></div>
+</p></div><p>
 
 	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.</p>
 
@@ -161,7 +161,7 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 <h4 id="specular">Specular (_s)</h4>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/dpTKCTS.jpg"><p>
 Example specular map for a roof water tank.
@@ -172,7 +172,7 @@ Transitions between different specular values produce artifacts on the normal ma
 </p></div>
 
 
-	Reflectivity, black means no reflection and white means max reflection.</p>
+	<p>Reflectivity, black means no reflection and white means max reflection.</p>
 
 <p>The specular highlight from the sun is very big and bright, so you might want to use very low (0-10%) specularity for surfaces facing upwards.</p>
 
@@ -182,7 +182,7 @@ Transitions between different specular values produce artifacts on the normal ma
 
 
 <h4 id="normal">Normal (_n)</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
 Example normal map for rocks.
@@ -190,7 +190,7 @@ Example normal map for rocks.
 
 <div class="content-photo-box"><img src="https://i.imgur.com/BP3Vj1J.jpg"><p>
 Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces with different UV rotation/flip.
-</p></div>
+</p></div><p>
 
 Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
@@ -320,11 +320,11 @@ Some of those things can be changed later in the editor itself or using <a href=
 
 <h3 id="import-1">Import</h3>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/IYxkWqj.jpg"><p>
 Importing a mesh in asset importer.
-</p></div>
+</p></div><p>
 
 For citizens, you can't rotate or scale the mesh on import, so you have to make sure it's correct in your 3d software or when exporting.</p>
 
@@ -388,11 +388,11 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 <h2 id="editor-advanced">Editor Advanced</h2>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
 ModTools scene explorer and console.
-</p></div>
+</p></div><p>
 
 	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
 
@@ -432,11 +432,11 @@ ModTools scene explorer and console.
 
 <h3 id="filename">Filename</h3>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/mPQKPhW.jpg"><p>
 Save asset window.
-</p></div>
+</p></div><p>
 
 	The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
 
@@ -470,10 +470,10 @@ Save asset window.
 
 <h3 id="local-assets-folder">Local Assets Folder</h3>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
 CRP files in the local assets folder.
-</p></div>
+</p></div><p>
 Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
@@ -494,10 +494,10 @@ Once the asset is saved, the .crp file will appear in the local assets folder:<b
 
 <h2 id="publish">Publish</h2>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/4OPnZac.jpg"><p>
 Share button in content manager.
-</p></div>
+</p></div><p>
 Once you have saved the asset and reloaded the game, you can publish the asset.</p>
 
 <p>Go to the content manager &gt; assets and find your asset, then click share.</p>
@@ -512,10 +512,10 @@ Once you have saved the asset and reloaded the game, you can publish the asset.<
 
 <h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/Y53Uqxy.jpg"><p>
 Publish window and content folder.
-</p></div>
+</p></div><p>
 There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size you should use.</p>
 
 <p>There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack of assets.</p>
@@ -580,10 +580,10 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 <h2 id="prefab-name">Prefab Name</h2>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/f3Tr6NM.jpg"><p>
 Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
-</p></div>
+</p></div><p>
 This is not something you can change.</p>
 
 <p>It's the hidden internal name used to refer to your asset in savefiles.</p>

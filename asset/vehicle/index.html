@@ -55,20 +55,20 @@ Vertex colors are automatically generated to determine wheels, which will spin b
 
 
 <h4 id="uv-mapping">UV Mapping</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
 Example UV mapping using visible horizontal tiling on the bottom.
-</p></div>
+</p></div><p>
 You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
 
 <h4 id="model-complexity">Model Complexity</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/isNHUg5.jpg"><p>
 Triangle counts of some vanilla vehicles.
-</p></div>
+</p></div><p>
 
 It's recommended to stay within reasonable triangle counts based on the size and detail of your model. You may look at examples of vanilla vehicles or assets by other creators for reference.</p>
 
@@ -122,10 +122,10 @@ The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling 
 
 
 <h4 id="diffuse">Diffuse (_d)</h4>
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/xkAfU6T.jpg"><p>
 Example diffuse texture for a vehicle.
-</p></div>
+</p></div><p>
 
 	The main color and texture of your asset.</p>
 
@@ -137,14 +137,14 @@ Example diffuse texture for a vehicle.
 
 
 <h4 id="alpha">Alpha (_a)</h4>
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
 Example alpha texture for some railings and metal beams.
 </p></div>
 <div class="content-photo-box"><img src="https://i.imgur.com/et6nTdO.jpg"><p>
 Using lighter values for the invisible parts will decrease the chance of small details like railings disappearing completely.
-</p></div>
+</p></div><p>
 
 	Transparency, white means opaque or visible, black means transparent or invisible. Gray values may affect how it looks from a distance or at an angle.</p>
 
@@ -168,14 +168,14 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 
 <h4 id="illumination">Illumination (_i)</h4>
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/luBfaI2.jpg"><p>
 Example illumination map for a vehicle.
 </p></div>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Hr9iJu7.jpg"><p>
 Example illumination map for a train.
-</p></div>
+</p></div><p>
 
 For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses, trams), this defines headlights and turn signals. The turn signals are 0 (black) the headlights and taillights are 255 (white), everything else is 128 (medium gray).</p>
 
@@ -192,13 +192,13 @@ For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses,
 
 <h4 id="specular">Specular (_s)</h4>
 
-<p>
+
 
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/xZnShPJ.jpg"><p>
 Transitions between different specular values produce artifacts on the normal map and vice versa, even if a normal map is not imported.
-</p></div>
+</p></div><p>
 
 
 	Reflectivity, white values will become &quot;windows&quot; where the fake interior floor will be visible. <a href='#floor'>It's possible to control this fake floor using a script</a>.</p>
@@ -210,7 +210,7 @@ Transitions between different specular values produce artifacts on the normal ma
 
 <h4 id="normal">Normal (_n)</h4>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
 Example normal map for rocks.
 </p></div>
@@ -222,7 +222,7 @@ Problem: normal maps appear incorrectly if the asset importer mesh rotation feat
 <div class="content-photo-box"><img src="https://i.imgur.com/BP3Vj1J.jpg"><p>
 Problem: default normal map value is 0.5, which isn't possible by using 127(left) or 128(right). Image shows the same flat normal map on faces with different UV rotation/flip.
 </p></div>
-
+<p>
 Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
@@ -248,11 +248,11 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 
 <h4 id="resolution">Resolution</h4>
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/isNHUg5.jpg"><p>
 Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.
 </p></div>
-
+<p>
 All imported main textures must be the same resolution.
 </p>
 <p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
@@ -360,12 +360,12 @@ All of those things can be changed later in the editor itself or using <a href='
 
 <h3 id="import-1">Import</h3>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/O4KIgJr.jpg"><p>
 Importing a mesh in asset importer.
 </p></div>
-
+<p>
 After you choose your mesh, depending on how it was exported, you might need to set the correct scale and rotation, scale 100 and rotating 3 times around X-axis are common necessities.</p>
 
 <div class="content-warning"><em>
@@ -458,11 +458,11 @@ By default, not all sub-mesh flags (conditions) are visible, use <a href='https:
 
 <h2 id="editor-advanced">Editor Advanced</h2>
 
-<p>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
 ModTools scene explorer and console.
-</p></div>
+</p></div><p>
+
 
 	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
 
@@ -520,11 +520,11 @@ ModTools scene explorer and console.
 
 <h3 id="filename">Filename</h3>
 
-<p>
+
 
 <div class="content-photo-box"><img src="https://i.imgur.com/avuewWu.jpg"><p>
 Save asset window.
-</p></div>
+</p></div><p>
 
 	The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
 
@@ -558,10 +558,10 @@ Save asset window.
 
 <h3 id="local-assets-folder">Local Assets Folder</h3>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
 CRP files in the local assets folder.
-</p></div>
+</p></div><p>
 Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
@@ -582,10 +582,10 @@ Once the asset is saved, the .crp file will appear in the local assets folder:<b
 
 <h2 id="publish">Publish</h2>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/4OPnZac.jpg"><p>
 Share button in content manager.
-</p></div>
+</p></div><p>
 Once you have saved the asset and reloaded the game, you can publish the asset.</p>
 
 <p>Go to the content manager &gt; assets and find your asset, then click share.</p>
@@ -600,10 +600,10 @@ Once you have saved the asset and reloaded the game, you can publish the asset.<
 
 <h3 id="steam-preview-image-and-content-folder">Steam Preview Image and Content Folder</h3>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/Y53Uqxy.jpg"><p>
 Publish window and content folder.
-</p></div>
+</p></div><p>
 There is a folder icon again on the snapshot image, bottom right corner. Here you can change the Steam preview image, which is the thumbnail visible on steam. The largest size the image will be visible is 437x437 (on the front page) but it will get upscaled to 512x512 by Steam so that's the size you should use.</p>
 
 <p>There is also the content folder, which is where the actual asset file is. You can paste multiple .crp files here if you would like to upload a pack of assets.</p>
@@ -668,10 +668,10 @@ Make sure your updated assets are saved with exactly the same name as before, ot
 
 <h2 id="prefab-name">Prefab Name</h2>
 
-<p>
+
 <div class="content-photo-box"><img src="https://i.imgur.com/f3Tr6NM.jpg"><p>
 Comparison between local (top) and workshop published (bottom) prefab names shown in ModTools.
-</p></div>
+</p></div><p>
 This is not something you can change.</p>
 
 <p>It's the hidden internal name used to refer to your asset in savefiles.</p>
