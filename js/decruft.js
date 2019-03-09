@@ -105,13 +105,31 @@ function decruft(doc,errs)
 	// now split out errors
 
 	let active = false;
+	let crash = false;
 	let trace = [];
 	let errors = 0;
 
 	for (var i=0; i<lines.length; i++)
 	{
 		current = lines[i];
-		if (current.startsWith("  at ")) 
+		if (current.startsWith("Crash!!!"))
+		{
+			crash = true;
+			errors += 1;
+			trace.push("", "--- #"+errors+" ---", "", current);
+		}
+		else if (crash)
+		{
+			if (current.length < 2)
+			{
+				crash = false;
+			}
+			else
+			{
+				trace.push(current);
+			}
+		}
+		else if (current.startsWith("  at ")) 
 		{
 			if (!active) 
 			{
