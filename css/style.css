@@ -742,8 +742,12 @@ button:hover {
 	background-color: #2b3033;
 }
 
+::-webkit-resizer {
+  background: #454b52;
+}
+
 textarea::-webkit-resizer {
-  background: #34383d;
+  background: #454b52;
 }
 
 textarea::-webkit-scrollbar-thumb:vertical {
