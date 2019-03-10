@@ -21,7 +21,7 @@ Network <br>Asset <br>Creation
 
 <h2 id="template">Template</h2>
 
-<p>The template you choose will be fully imported as the starting point of your network, so choose one that is closest to your desired result. You can change almost everything later in the asset editor itself, or using ModTools scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>.</p>
+<p>The template you choose will be fully imported as the starting point of your network, so choose one that is closest to your desired result. You can change almost everything later in the asset editor itself, or using ModTools scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>.</p>
 
 
 
@@ -39,7 +39,7 @@ Network <br>Asset <br>Creation
 
 <h4 id="deleting">Deleting</h4>
 
-<p>If you don't need specific elevations, you can delete them by opening ModTools scene explorer <span class=key>Ctrl+E</span>, going to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and clicking Unset on the ones you don't need, then saving and loading the asset.</p>
+<p>If you don't need specific elevations, you can delete them by opening ModTools scene explorer <span class="key">Ctrl+E</span>, going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI</span> and clicking Unset on the ones you don't need, then saving and loading the asset.</p>
 
 
 
@@ -47,9 +47,11 @@ Network <br>Asset <br>Creation
 
 <h4 id="adding">Adding</h4>
 
-<p>If your template didn't have elevations, but you need them, you may be able to add them, depending on what AI your network has. This can be done by copying any other network into one of the possible elevations. You can find the base game networks in scene explorer <span class=key>Ctrl+E</span>: Sunny (or North/Tropical/European/Winter, based on the theme environment you loaded for the asset editor) Collections &gt; Road &gt; NetCollection &gt; m_prefabs. For example you could go to Basic Road &gt; m_netAI, click Copy on m_bridgeInfo, and then go to Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI and click Paste on m_bridgeInfo here, then save and load the asset.</p>
+<p>If your template didn't have elevations, but you need them, you may be able to add them, depending on what AI your network has. This can be done by copying any other network into one of the possible elevations.</p>
 
-<p>If you would like to copy a custom network into one of the elevations, you can also find those in scene explorer: Custom Prefabs &gt; ModTools.CustomPrefabs &gt; m_nets.</p>
+<p>You can find the base game networks in scene explorer <span class="key">Ctrl+E</span>: <span class="path">Sunny</span> (or North/Tropical/European/Winter, based on the theme environment you loaded for the asset editor) <span class="path">Collections &gt; Road &gt; NetCollection &gt; m_prefabs</span>. For example you could go to <span class="path">Basic Road &gt; m_netAI</span>, click Copy on <span class="path">m_bridgeInfo</span>, and then go to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_netAI</span> and click Paste on <span class="path">m_bridgeInfo</span> here, then save and load the asset.</p>
+
+<p>If you would like to copy a custom network into one of the elevations, you can also find those in scene explorer: <span class="path">Custom Prefabs &gt; ModTools.CustomPrefabs &gt; m_nets</span>.</p>
 
 
 
@@ -277,7 +279,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h3 id="hidden-properties">Hidden Properties</h3>
 
-<p>Some properties are not visible in the road editor UI, but can be changed by using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> and going to Tool Controller > ToolController > m_editPrefabInfo.</p>
+<p>Some properties are not visible in the road editor UI, but can be changed by using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Tool Controller > ToolController > m_editPrefabInfo</span>.</p>
 
 <h4 id="m_enablemiddlenodes">m_enableMiddleNodes</h4>
 
@@ -762,7 +764,7 @@ The wire shader requires a specific kind of mesh - each "wire" should be a verti
 <h2 id="textures">Textures</h2>
 
 
-<h4 id="diffuse-_d">Diffuse (_d)</h4>
+<h3 id="diffuse">Diffuse</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/vTKFr8K.jpg"><p>
@@ -774,28 +776,28 @@ Just like any diffuse texture, defines the main color of the network.</p>
 <p>Defaults to white.</p>
 
 
-<h4 id="alpha-_a">Alpha (_a)</h4>
+<h3 id="alpha">Alpha</h3>
 
 <p>When black, on the basic shader, it displays the terrain underneath, on other shaders it works like an alpha map usually would.</p>
 
 <p>Black means invisible, white is visible. Defaults to white.</p>
 
 
-<h4 id="pavement-_p">Pavement (_p)</h4>
+<h3 id="pavement">Pavement</h3>
 
 <p>Usually displays the map theme pavement texture, but for the rail shader - it shows gravel instead.</p>
 
 <p>Black means no pavement, white means pavement. Defaults to black, unless no diffuse is imported.</p>
 
 
-<h4 id="road-_r">Road (_r)</h4>
+<h3 id="road">Road</h3>
 
 <p>Displays the map theme upward road (asphalt) texture, which also is multiplied by the segment color.</p>
 
 <p>Black means no asphalt, white means asphalt. Defaults to black.</p>
 
 
-<h4 id="normal-_n">Normal (_n)</h4>
+<h3 id="normal">Normal</h3>
 
 <p>Works similarly to any other normal map.</p>
 
@@ -808,7 +810,7 @@ Just like any diffuse texture, defines the main color of the network.</p>
 <p>Defaults to flat.</p>
 
 
-<h4 id="specular-_s">Specular (_s)</h4>
+<h3 id="specular">Specular</h3>
 
 <p>Just like any specular.</p>
 

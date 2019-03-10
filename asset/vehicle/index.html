@@ -28,43 +28,7 @@ Vehicle <br>Asset <br>Creation
 
 </p>
 
-<h4 id="formats">Formats</h4>
-<ul>
-<li>FBX (most commonly used)</li>
-<li>OBJ (doesn't support vertex colors)</li>
-<li>DAE</li>
-</ul>
-
-
-<h4 id="pivot-origin">Pivot / Origin</h4>
-
-<p>The pivot point or origin represents the center point on the ground, on which the vehicle will drive. It's usually represented using a red/green/blue axis gizmo.</p>
-
-
-<h4 id="transform">Transform</h4>
-
-<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
-
-
-<h4 id="vertex-paint">Vertex Paint</h4>
-<p>
-
-
-Vertex colors are automatically generated to determine wheels, which will spin based on the shader of the vehicle.
-</p>
-
-
-<h4 id="uv-mapping">UV Mapping</h4>
-
-
-<div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
-Example UV mapping using visible horizontal tiling on the bottom.
-</p></div><p>
-You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
-
-
 <h4 id="model-complexity">Model Complexity</h4>
-
 
 <div class="content-photo-box"><img src="https://i.imgur.com/isNHUg5.jpg"><p>
 Triangle counts of some vanilla vehicles.
@@ -84,7 +48,6 @@ You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=4539
 
 
 
-
 <h3 id="lod-mesh">LOD Mesh</h3>
 
 
@@ -99,29 +62,105 @@ Comparison between main and LOD meshes for the vanilla police car.
 <p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD mesh.</p>
 
 
-<h4 id="uv-mapping-1">UV Mapping</h4>
+
+
+<h3 id="uv-mapping">UV Mapping</h3>
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
+Example UV mapping using visible horizontal tiling on the bottom.
+</p></div><p>
+For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
+
+<h4 id="uv-mapping-lod">LOD</h4>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/kAR8cmr.jpg"><p>
 UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
 </p></div>
 
-
-
 <p>
-The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random vehicle on your LOD.</p>
+For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random vehicle on your LOD.</p>
+
+
+<h3 id="pivot-origin">Pivot / Origin</h3>
+
+<p>The pivot point or origin represents the center point on the ground, on which the vehicle will drive. It's usually represented using a red/green/blue axis gizmo.</p>
+
+
+<h3 id="transform">Transform</h3>
+
+<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
+
+
+<h3 id="vertex-paint">Vertex Paint</h3>
+<p>
+
+
+Vertex colors are automatically generated to determine wheels, which will spin based on the shader of the vehicle.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="formats">Formats</h3>
+<ul>
+<li>FBX (most commonly used)</li>
+<li>OBJ (doesn't support vertex colors)</li>
+<li>DAE</li>
+</ul>
+
+
+
 
 
 
 <h2 id="textures">Textures</h2>
 
-
-<h3 id="main-textures">Main Textures</h3>
-
 <p>These determine the color and material properties of your vehicle.</p>
 
 
 
-<h4 id="diffuse">Diffuse (_d)</h4>
+<h3 id="resolution">Resolution</h3>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/isNHUg5.jpg"><p>
+Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.
+</p></div>
+<p>
+All imported main textures must be the same resolution.
+</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression.</p>
+
+<div class="content-warning">
+<em>
+Make sure texture quality is set to high in the game's graphics settings. otherwise, your imported textures will be downscaled to a lower resolution.
+</em>
+</div>
+
+
+
+
+<h3 id="lod-textures">LOD Textures</h3>
+
+<p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's recommended that you create your own LOD textures using baking.</p>
+
+
+
+<h3 id="diffuse">Diffuse</h3>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/xkAfU6T.jpg"><p>
 Example diffuse texture for a vehicle.
@@ -136,7 +175,7 @@ Example diffuse texture for a vehicle.
 
 
 
-<h4 id="alpha">Alpha (_a)</h4>
+<h3 id="alpha">Alpha</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/EsrQwEb.jpg"><p>
@@ -155,7 +194,7 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 
 
-<h4 id="color">Color (_c)</h4>
+<h3 id="color">Color</h3>
 <p>
 	Determines which parts will be affected by color variations. White means fully affected and black means not at all.</p>
 
@@ -167,33 +206,44 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 
 
-<h4 id="illumination">Illumination (_i)</h4>
+<h3 id="illumination">Illumination</h3>
+
+
+
+
+<h4 id="illumination-default">Default Vehicle</h4>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/luBfaI2.jpg"><p>
 Example illumination map for a vehicle.
 </p></div>
+<p>For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses, trams), this defines headlights and turn signals. The turn signals are 0 (black) the headlights and taillights are 255 (white), everything else is 128 (medium gray).</p>
+
+
+
+<h4 id="illumination-train">Train</h4>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Hr9iJu7.jpg"><p>
 Example illumination map for a train.
-</p></div><p>
+</p></div>
 
-For the default vehicle shader (used by cars, trucks, bicycles, scooters, buses, trams), this defines headlights and turn signals. The turn signals are 0 (black) the headlights and taillights are 255 (white), everything else is 128 (medium gray).</p>
-
-<p>
-	For the train shader, this defines always-on lights (headlights/taillights) and lights which are only on at night (windows). The always-on lights are 255 (white) and the night lights are 0 (black), everything else is 128 (medium gray).
+<p>For the train shader, this defines always-on lights (headlights/taillights) and lights which are only on at night (windows). The always-on lights are 255 (white) and the night lights are 0 (black), everything else is 128 (medium gray).
 </p>
 
-<p>
-	For the ship shader (used by ships, monorails, cable cars), this defines lights which are only on at night (windows). The always-on lights are 255 (white), everything else is 0 (black).
-</p>
+
+<h4 id="illumination-ship">Ship</h4>
+
+<p>For the ship shader (used by ships, monorails, cable cars), this defines lights which are only on at night (windows). The always-on lights are 255 (white), everything else is 0 (black).</p>
 
 <p>If you don't import an illumination map, it will default to black.</p>
 
 
-<h4 id="specular">Specular (_s)</h4>
 
 
 
+
+
+
+<h3 id="specular">Specular</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/xZnShPJ.jpg"><p>
@@ -208,7 +258,7 @@ Transitions between different specular values produce artifacts on the normal ma
 <p>If you don't import a specular map, it will default to no specularity.</p>
 
 
-<h4 id="normal">Normal (_n)</h4>
+<h3 id="normal">Normal</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
@@ -226,18 +276,16 @@ Problem: default normal map value is 0.5, which isn't possible by using 127(left
 Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
-<p>The normal map generator should be set to +X +Y, which means no color channel inversions are required.</p>
+<p>The normal map generator should be set to +X +Y, which means no color channel inversions are required. Read more in the <a href="https://cslmodding.info/normal-maps/">normal map article</a>.</p>
 
 <p>High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts with a solid color before generating a normal map or paint over these parts 128,128,255 on the final normal map.</p>
 
-
-<p>Read more in the <a href="https://cslmodding.info/normal-maps/">normal map article</a>.</p>
 
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
 
-<h4 id="format">Format</h4>
+<h3 id="format">Format</h3>
 
 <p>Use a lossless format like .PNG.</p>
 
@@ -247,34 +295,11 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 
 
-<h4 id="resolution">Resolution</h4>
-
-<div class="content-photo-box"><img src="https://i.imgur.com/isNHUg5.jpg"><p>
-Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.
-</p></div>
-<p>
-All imported main textures must be the same resolution.
-</p>
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
-
-
-<div class="content-warning">
-<em>
-Make sure texture quality is set to high in the game's graphics settings. otherwise, your imported textures will be downscaled to a lower resolution.
-</em>
-</div>
 
 
 
 
-<h3 id="lod-textures">LOD Textures</h3>
 
-<p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's recommended that you create your own LOD textures using baking.</p>
-
-
-<h4 id="resolution-1">Resolution</h4>
-
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 256x256, 256x128, 128x64, 64x64 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 
@@ -325,7 +350,7 @@ Files ready for import.
 
 
 <p>You should place the mesh and texture files in the import folder located here:</p>
-<p>C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import</p>
+<p><span class="path">C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import</span></p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows + R</span> and typing in appdata.</p>
 
 
@@ -459,25 +484,33 @@ By default, not all sub-mesh flags (conditions) are visible, use <a href='https:
 <h2 id="editor-advanced">Editor Advanced</h2>
 
 
+
 <div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
 ModTools scene explorer and console.
-</p></div><p>
+</p></div>
+<p>
+	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or specific mods.</p>
+
+<p>Many vehicle settings can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=800820816'>Extended Asset Editor by Acc3ss Violation</a></p>
 
 
-	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
-
-<ul>
-
-
-<li>AI - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=474652684'>Asset AI Changer by Snow_Cat &amp; cerebellum</a>
-</li>
-
-<li>Item Class (service) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a></li>
-
-<li>Many other advanced vehicle settings - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=800820816'>Extended Asset Editor by Acc3ss Violation</a></li>
+<h3 id="ai">AI</h3>
+<p>AI defines what kind of vehicle it is and how it behaves. It can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=474652684'>Asset AI Changer by Snow_Cat &amp; cerebellum</a>.</p>
 
 
-</ul>
+
+<h3 id="item-class">Item Class</h3>
+<p>Contains information about what type of vehicle it is. It can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a>.</p>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -488,27 +521,19 @@ ModTools scene explorer and console.
 
 
 
-<h3 id="shader">Shader</h3>
-
-<p>Advanced article on using prop shader for monorail coming later.</p>
 
 
 <h3 id="sub-mesh-1">Sub-meshes</h3>
 
 <h4 id="trailer-sub-mesh">Trailer Sub-mesh</h4>
 
-<p>When loading a trailer template, the sub-mesh UI doesn't show up. To fix this, open the scene explorer, go to Tool Controller > ToolController > m_editPrefabInfo > m_placementStyle and set it to automatic, save and load the asset, the sub-mesh UI should show up. Once you add the sub-mesh, change m_placementStyle back to procedural and save your asset.</p>
+<p>When loading a trailer template, the sub-mesh UI doesn't show up. To fix this, open the scene explorer, go to <span class="path">Tool Controller > ToolController > m_editPrefabInfo > m_placementStyle</span> and set it to automatic, save and load the asset, the sub-mesh UI should show up. Once you add the sub-mesh, change <span class="path">m_placementStyle</span> back to procedural and save your asset.</p>
 
 
 <h4 id="trailer-sub-mesh">Sub-mesh Flags</h4>
 
 <p>The flags for the main mesh and sub-meshes are oversimplified in the UI. The main mesh conditions are actually just like for any sub-mesh, and the regular flags and parked flags are separate fields. You can change them using <a href='https://gist.github.com/ronyx69/ab2e3fdcbab5f78c9b41a337c1d19280'>this script</a>.</p>
 
-
-
-<h3 id="tires">Tires</h3>
-
-<p>Advanced article on custom vertex paint and parameters for tires coming later.</p>
 
 
 
@@ -526,7 +551,7 @@ ModTools scene explorer and console.
 Save asset window.
 </p></div><p>
 
-	The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
+	The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.</p>
 
 
 
@@ -535,26 +560,24 @@ Save asset window.
 <p>The asset name visible ingame.</p>
 
 
-
-<h3 id="snapshot-thumbnail-tooltip">Snapshot, Thumbnail, Tooltip</h3>
+<h3 id="images">Images</h3>
 
 <p>There are 2 different folders you can open by clicking the folder icons:</p>
 
-<ol>
-<li>On the snapshot image, bottom right corner.
 
 
 
-<p>Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when publishing.</p></li>
+<h4 id="snapshot">Snapshot</h4>
+
+<p>On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when publishing.</p>
 
 
-<li>Below thumbnail, on the right side.
+
+<h4 id="thumbnail-tooltip">Thumbnail &amp; Tooltip</h4>
+
+<p>Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p></li>
 
 
-
-<p>Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p></li>
-
-</ol>
 
 <h3 id="local-assets-folder">Local Assets Folder</h3>
 
@@ -562,7 +585,8 @@ Save asset window.
 <div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
 CRP files in the local assets folder.
 </p></div><p>
-Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
+Once the asset is saved, the .crp file will appear in the local assets folder:</p>
+<p><span class="path">C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</span></p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
 

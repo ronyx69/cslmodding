@@ -36,15 +36,14 @@ Download
 
 <h2 id="textures">Textures</h2>
 
-
-<h3 id="main-textures">Main Textures</h3>
-
 <p>These determine the color and material properties of your decal.</p>
 
 
 
 
-<h4 id="diffuse">Diffuse (_d)</h4>
+
+
+<h3 id="diffuse">Diffuse (_d)</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/FcOV4KM.jpg"><p>
@@ -60,7 +59,7 @@ Example diffuse texture for a mud decal.
 
 
 
-<h4 id="alpha">Alpha (_a)</h4>
+<h3 id="alpha">Alpha (_a)</h3>
 
 
 
@@ -75,14 +74,14 @@ Example alpha texture for a mud decal.
 
 
 
-<h4 id="color">Color (_c)</h4>
+<h3 id="color">Color (_c)</h3>
 <p>Decals created using the Decal Prop Fix mod do not support color variations.</p>
 
 
 
 
 
-<h4 id="illumination">Illumination (_i)</h4>
+<h3 id="illumination">Illumination (_i)</h3>
 <p>
 
 Allows for diffuse contribution illumination. Black means no illumination and white means the brightest possible illumination. For decals, the illumination is not very noticeable.
@@ -92,7 +91,7 @@ Allows for diffuse contribution illumination. Black means no illumination and wh
 
 
 
-<h4 id="specular">Specular (_s)</h4>
+<h3 id="specular">Specular (_s)</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Mcx61TZ.jpg"><p>
@@ -111,7 +110,7 @@ Transitions between different specular values produce artifacts on the normal ma
 
 
 
-<h4 id="normal">Normal (_n)</h4>
+<h3 id="normal">Normal (_n)</h3>
 
 <p>The normal map only affects the reflective parts of decals, therefore it's often not useful.</p>
 
@@ -121,7 +120,7 @@ Transitions between different specular values produce artifacts on the normal ma
 
 
 
-<h4 id="format">Format</h4>
+<h3 id="format">Format</h3>
 
 <p>Use a lossless format like .PNG.</p>
 
@@ -131,7 +130,7 @@ Transitions between different specular values produce artifacts on the normal ma
 
 
 
-<h4 id="resolution">Resolution</h4>
+<h3 id="resolution">Resolution</h3>
 <p>
 
 
@@ -233,7 +232,7 @@ If you get an unsupported color error, one of your textures might be a 16-bit fi
 
 <h2 id="Script">Script</h2>
 
-<p>To convert a prop for the decal prop fix mod, you need to run <a href='https://gist.github.com/ronyx69/ffff7459be346bc807b72b99713bbf9f'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span>.</p>
+<p>To convert a prop for the decal prop fix mod, you need to run <a href='https://gist.github.com/ronyx69/ffff7459be346bc807b72b99713bbf9f'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class="key">F7</span>.</p>
 
 <p>The result will be instantly visible and it's fine to run the script multiple times.</p>
 
@@ -262,6 +261,7 @@ If you get an unsupported color error, one of your textures might be a 16-bit fi
 
 
 
+
 <h2 id="editor-advanced">Editor Advanced</h2>
 
 
@@ -269,16 +269,18 @@ If you get an unsupported color error, one of your textures might be a 16-bit fi
 <div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
 ModTools scene explorer and console.
 </p></div>
-
-	<p>Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
-
-<ul>
+<p>
+	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or specific mods.</p>
 
 
-<li>UIPriority (determines item order in the menu) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>script</a>
-<p>It's recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like <a href='https://docs.google.com/spreadsheets/d/1rRFx2y5yIE9Ex_qY74EE0OqXbNqS8A-XP0RvK6-vzaA'>here</a>.</p></li>
 
-</ul>
+
+
+<h3 id="ui-category">UI Priority</h3>
+<p>UIPriority determines item order in the menu. It can be changed <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>a script</a>.</p>
+
+
+
 
 
 
@@ -292,7 +294,7 @@ ModTools scene explorer and console.
 Prop variations menu in the asset editor.
 </p></div><p>You can add multiple prop assets to your prop as variations using a probability value. The probability is a percentage out of 100, but the main prop has no probability so it gets whatever is left over, so if you have two variations with a 25% probability each, the main prop will get a 50% probability. The variations will be embedded into the main prop, but also show up as separate props in the menu.</p>
 
-<p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
+<p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class="key">F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
 
 
 
@@ -312,7 +314,7 @@ Prop variations menu in the asset editor.
 Save asset window.
 </p></div>
 
-	<p>The filename input is on the bottom right, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
+	<p>The filename input is on the bottom right, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.</p>
 
 
 
@@ -321,26 +323,24 @@ Save asset window.
 <p>The asset name visible ingame, the name people should search for.</p>
 
 
-
-<h3 id="snapshot-thumbnail-tooltip">Snapshot, Thumbnail, Tooltip</h3>
+<h3 id="images">Images</h3>
 
 <p>There are 2 different folders you can open by clicking the folder icons:</p>
 
-<ol>
-<li>On the snapshot image, bottom right corner.
 
 
 
-<p>Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when publishing.</p></li>
+<h4 id="snapshot">Snapshot</h4>
+
+<p>On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when publishing.</p>
 
 
-<li>Below thumbnail, on the right side.
+
+<h4 id="thumbnail-tooltip">Thumbnail &amp; Tooltip</h4>
+
+<p>Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p></li>
 
 
-
-<p>Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p></li>
-
-</ol>
 
 <h3 id="local-assets-folder">Local Assets Folder</h3>
 
@@ -348,7 +348,8 @@ Save asset window.
 <div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
 CRP files in the local assets folder.
 </p></div><p>
-Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
+Once the asset is saved, the .crp file will appear in the local assets folder:</p>
+<p><span class="path">C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</span></p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
 

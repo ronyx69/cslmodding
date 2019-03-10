@@ -19,45 +19,10 @@ Prop <br>Asset <br>Creation
 
 <h3 id="main-mesh">Main Mesh</h3>
 
-<p>This is a 3D model of the prop, which will be visible when the camera is close to it.</p>
+<p>This is a 3D model of the prop, which will be visible when the camera is close to it. The actual mesh file contains vertices (their coordinates, UV mapping, normals, and colors) and triangles.</p>
 
-<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.<br>The actual mesh file contains vertices (their coordinates, UV mapping, normals, and colors) and triangles.</p>
+<p>It's created using 3D modeling software such as Blender, 3ds Max, Maya or SketchUp.</p>
 
-<h4 id="formats">Formats</h4>
-<ul>
-<li>FBX (most commonly used)</li>
-<li>OBJ (doesn't support vertex colors)</li>
-<li>DAE</li>
-</ul>
-
-
-<h4 id="pivot-origin">Pivot / Origin</h4>
-
-<p>The pivot point or origin represents the center point on the ground, where the prop will be plopped. It's usually represented using a red/green/blue axis gizmo.</p>
-
-
-<h4 id="transform">Transform</h4>
-
-<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
-
-
-<h4 id="vertex-paint">Vertex Paint</h4>
-
-
-<div class="content-photo-box"><img src="https://i.imgur.com/0a286Ax.jpg"><p>
-Vertex painting in 3ds Max.
-</p></div><p>
-Vertex colors are used for specific shaders like AnimUV(LINK) for scrolling or multi-frame animations, or PropRotating(LINK) for rotating animations.
-</p>
-
-
-<h4 id="uv-mapping">UV Mapping</h4>
-
-
-<div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
-Example UV mapping using visible horizontal tiling on the bottom.
-</p></div><p>
-You are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
 
 
 <h4 id="model-complexity">Model Complexity</h4>
@@ -71,29 +36,11 @@ It's recommended to stay within reasonable triangle counts based on the size and
 
 <p>The absolute limit for a mesh is 65536 vertices.</p>
 
-
 <div class="content-info">
 <em>
 You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=453956891">Mesh Info by SamsamTS</a> to check triangle counts of assets.
 </em>
 </div>
-
-
-<h4 id="culling">Culling</h4>
-
-
-
-<div class="content-photo-box"><img src="https://i.imgur.com/nnZCoMq.jpg"><p>
-Infinitely thin triangles made by putting 2 of the 3 vertices in the same place.
-</p></div><p>
-
-Prop culling is when a prop disappears when you look away from the center of it.</p>
-
-<p>
-If your prop has a low height or is wide/long, it's recommended to add an invisible triangle which is bigger than your actual mesh to make the game think the prop is larger than it actually is, which will reduce the chance of it disappearing.
-</p>
-
-
 
 
 <h3 id="lod-mesh">LOD Mesh</h3>
@@ -110,30 +57,127 @@ Comparison between main and LOD meshes for the vanilla grill kiosk.
 <p>If you don't provide an LOD mesh, the game will try to generate one automatically, which may have visual issues, so it's highly recommended to make a custom LOD mesh.</p>
 
 
-<h4 id="uv-mapping-1">UV Mapping</h4>
+
+
+<h3 id="uv-mapping">UV Mapping</h3>
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/GfAYY35.jpg"><p>
+Example UV mapping using visible horizontal tiling on the bottom.
+</p></div><p>
+For the main mesh, you are allowed to UV map outside the 0-1 area (main tile), so you can tile the entire texture multiple times on a single face.</p>
+
+
+<h4 id="uv-mapping-lod">LOD</h4>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/kAR8cmr.jpg"><p>
 UV mapping for LOD mesh using automatic mapping in 3ds Max. No overlap and contained within the main tile - good for baking.
 </p></div>
 
+<p>
+For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random prop on your LOD.</p>
 
+
+
+
+
+
+<h3 id="pivot-origin">Pivot / Origin</h3>
+
+<p>The pivot point or origin represents the center point on the ground, where the prop will be plopped. It's usually represented using a red/green/blue axis gizmo.</p>
+
+
+<h3 id="transform">Transform</h3>
+
+<p>Make sure you are exporting a single object, which doesn't have any rotation or scale.<br />This can be done using <a href='https://wiki.blender.org/index.php/User:Fade/Doc:2.6/Manual/3D_interaction/Transform_Control/Reset_Object_Transformations#Apply_Object_transformations'>&quot;apply rotation &amp; scale&quot; in Blender</a>, or <a href='https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2017/ENU/3DSMax/files/GUID-B98414B9-4F28-45F4-A1F4-9DA994548ED9-htm.html'>&quot;reset xform&quot; in 3ds Max</a>, and exporting only the selected object.</p>
+
+
+<h3 id="vertex-paint">Vertex Paint</h3>
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/0a286Ax.jpg"><p>
+Vertex painting in 3ds Max.
+</p></div><p>
+Vertex colors are used for specific shaders like AnimUV(LINK) for scrolling or multi-frame animations, or PropRotating(LINK) for rotating animations.
+</p>
+
+
+
+
+
+
+
+<h3 id="culling">Culling</h3>
+
+
+
+<div class="content-photo-box"><img src="https://i.imgur.com/nnZCoMq.jpg"><p>
+Infinitely thin triangles made by putting 2 of the 3 vertices in the same place.
+</p></div><p>
+
+Prop culling is when a prop disappears when you look away from the center of it.</p>
 
 <p>
-The UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random prop on your LOD.</p>
+If your prop has a low height or is wide/long, it's recommended to add an invisible triangle which is bigger than your actual mesh to make the game think the prop is larger than it actually is, which will reduce the chance of it disappearing.
+</p>
+
+
+
+
+
+
+<h3 id="formats">Formats</h3>
+<ul>
+<li>FBX (most commonly used)</li>
+<li>OBJ (doesn't support vertex colors)</li>
+<li>DAE</li>
+</ul>
+
+
+
+
+
 
 
 
 <h2 id="textures">Textures</h2>
-
-
-<h3 id="main-textures">Main Textures</h3>
-
 <p>These determine the color and material properties of your prop.</p>
 
 
 
+<h3 id="resolution">Resolution</h3>
 
-<h4 id="diffuse">Diffuse (_d)</h4>
+<div class="content-photo-box"><img src="https://i.imgur.com/L4lJ9ki.jpg"><p>
+Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.
+</p></div>
+<p>
+All imported main textures must be the same resolution.
+</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression.</p>
+
+
+<div class="content-warning">
+<em>
+Make sure texture quality is set to high in the game's graphics settings, otherwise, your imported textures will be downscaled to a lower resolution.
+</em>
+</div>
+
+
+
+
+<h3 id="lod-textures">LOD Textures</h3>
+
+<p>All imported LOD textures must be the same resolution.</p>
+
+<p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's recommended that you create your own LOD textures using baking.</p>
+
+
+
+
+
+
+
+<h3 id="diffuse">Diffuse</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
@@ -149,7 +193,7 @@ Example diffuse texture for a conveyor prop.
 
 
 
-<h4 id="alpha">Alpha (_a)</h4>
+<h3 id="alpha">Alpha</h3>
 
 
 
@@ -168,7 +212,7 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 
 
-<h4 id="color">Color (_c)</h4>
+<h3 id="color">Color</h3>
 <p>
 	Determines which parts will be affected by color variations. White means fully affected and black means not at all.</p>
 
@@ -178,7 +222,7 @@ Using lighter values for the invisible parts will decrease the chance of small d
 
 
 
-<h4 id="illumination">Illumination (_i)</h4>
+<h3 id="illumination">Illumination</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/APmTBu1.jpg"><p>
@@ -191,7 +235,7 @@ Allows for diffuse contribution illumination. Black means no illumination and wh
 
 
 
-<h4 id="specular">Specular (_s)</h4>
+<h3 id="specular">Specular</h3>
 
 <div class="content-photo-box"><img src="https://i.imgur.com/dpTKCTS.jpg"><p>
 Example specular map for a roof water tank.
@@ -212,7 +256,7 @@ Transitions between different specular values produce artifacts on the normal ma
 
 
 
-<h4 id="normal">Normal (_n)</h4>
+<h3 id="normal">Normal</h3>
 
 
 <div class="content-photo-box"><img src="https://i.imgur.com/Tep5ZIS.jpg"><p>
@@ -230,19 +274,18 @@ Problem: default normal map value is 0.5, which isn't possible by using 127(left
 Also sometimes called a bump map, adds fake depth or form by affecting how the lighting appears.</p>
 
 <p>This can be made from the diffuse or a height map (brighter colors will look extruded out more) using <a href='http://cpetry.github.io/NormalMap-Online/'>a normal map generator online</a>, a photoshop plugin like <a href='http://www.xnormal.net/'>xNormal</a>, or standalone software such as <a href='https://www.crazybump.com/'>CrazyBump</a>.</p>
-<p>The normal map generator should be set to +X +Y, which means no color channel inversions are required.</p>
+<p>The normal map generator should be set to +X +Y, which means no color channel inversions are required. Read more in the <a href="https://cslmodding.info/normal-maps/">normal map article</a>.</p>
 
 <p>High specularity and normal map don't work well together because of the compression, so you might want to paint over shiny parts with a solid color before generating a normal map or paint over these parts 128,128,255 on the final normal map.</p>
 
 
-<p>Read more in the <a href="https://cslmodding.info/normal-maps/">normal map article</a>.</p>
 
 
 <p>If you don't import a normal map, it will default to a flat normal map - no bump.</p>
 
 
 
-<h4 id="format">Format</h4>
+<h3 id="format">Format</h3>
 
 <p>Use a lossless format like .PNG.</p>
 
@@ -252,34 +295,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 
 
-<h4 id="resolution">Resolution</h4>
 
-<div class="content-photo-box"><img src="https://i.imgur.com/L4lJ9ki.jpg"><p>
-Texture sizes of various vanilla assets. See the resolution in the top right corner of the preview window.
-</p></div>
-<p>
-All imported main textures must be the same resolution.
-</p>
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
-
-
-<div class="content-warning">
-<em>
-Make sure texture quality is set to high in the game's graphics settings. otherwise, your imported textures will be downscaled to a lower resolution.
-</em>
-</div>
-
-
-
-
-<h3 id="lod-textures">LOD Textures</h3>
-
-<p>If you don't provide LOD textures, the game will try to bake them using the UV mapping your LOD mesh has, and that may cause visual issues, so it's recommended that you create your own LOD textures using baking.</p>
-
-
-<h4 id="resolution-1">Resolution</h4>
-
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 256x256, 256x128, 128x64, 64x64 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression. You can also use a very small size like 32x16 or 16x16 if necessary.</p>
 
 
 
@@ -330,7 +346,7 @@ Files ready for import.
 
 
 <p>You should place the mesh and texture files in the import folder located here:</p>
-<p>C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import</p>
+<p><span class="path">C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Import</span></p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows + R</span> and typing in appdata.</p>
 
 
@@ -448,33 +464,34 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 
 <div class="content-photo-box"><img src="https://i.imgur.com/0ztXu62.jpg"><p>
 ModTools scene explorer and console.
-</p></div><p>
-
-	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class=key>Ctrl+E</span> or running scripts in the console <span class=key>F7</span>, or other mods:</p>
-
-<ul>
+</p></div>
+<p>
+	Various things can be changed with the use of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> or running scripts in the console <span class="key">F7</span>, or specific mods.</p>
 
 
 
-
-<li>UI category - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=458396767'>Asset UI Category Changer by Snow_Cat</a></li>
-
-<li>Item Class (UI sub-category) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a></li>
-
-<li>UIPriority (determines item order in the menu) - <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>script</a>
-<p>It's recommended to pick a high number, use the first few numbers as a &quot;signature&quot; and only change the last few numbers of it for each item like <a href='https://docs.google.com/spreadsheets/d/1rRFx2y5yIE9Ex_qY74EE0OqXbNqS8A-XP0RvK6-vzaA'>here</a>.</p></li>
-
-</ul>
+<h3 id="item-class">Item Class</h3>
+<p>Contains information about what type of prop it is. It can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=455068042'>Asset ItemClass Changer by Snow_Cat</a>.</p>
 
 
 
+<h3 id="ui-category">UI Category</h3>
+<p>UI category determines in which menu your asset will appear. It can be changed using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=458396767'>Asset UI Category Changer by Snow_Cat</a></p>
+
+
+
+<h3 id="ui-category">UI Priority</h3>
+<p>UIPriority determines item order in the menu. It can be changed <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=466485089'>Asset UI Priority Changer by Snow_Cat</a> or <a href='https://gist.github.com/ronyx69/60e9297695ff983b655b05b21f0407e5'>a script</a>.</p>
 
 
 
 
 
 
-<h3 id="shader">Shader</h3>
+
+
+
+<h3 id="shaders">Shaders</h3>
 
 <p>
 <div class="content-photo-box"><img src="https://i.imgur.com/fENMu9Pg.jpg"><p>
@@ -489,8 +506,7 @@ Comparison between Default (left), Fence (middle) and Decal (right) prop shaders
 
 <li><a href='https://gist.github.com/ronyx69/911f8a9deff79412d085f709e555e03f'>Fence</a> conforms to the ground. 
 
-<li><a href='https://cslmodding.info/mod/decal-prop-fix/'>Decal</a> projects the texture onto the ground. 
-<p>This shader requires a specific mesh and the use of a script/mod for custom sizes.</p></li>
+<li><a href='https://cslmodding.info/mod/decal-prop-fix/'>Decal</a> projects the texture onto the ground.</li>
 
 </ul>
 
@@ -509,12 +525,12 @@ Comparison between Default (left), Fence (middle) and Decal (right) prop shaders
 Prop variations menu in the asset editor.
 </p></div><p>You can add multiple prop assets to your prop as variations using a probability value. The probability is a percentage out of 100, but the main prop has no probability so it gets whatever is left over, so if you have two variations with a 25% probability each, the main prop will get a 50% probability. The variations will be embedded into the main prop, but also show up as separate props in the menu.</p>
 
-<p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class=key>F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
+<p>Run <a href='https://gist.github.com/ronyx69/8071d41a135cdb5d1f1f0627b5806b6d'>this script</a> using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> console <span class="key">F7</span> to set the variation amount, and also calculate equal probability automatically.</p>
 
 
 <h3 id="prefab-info-fields">Prefab Info Fields</h3>
 
-<p>To change variables of the asset, open the scene explorer <span class=key>Ctrl+E</span> and go to Tool Controller > ToolController > m_editPrefabInfo. This is where you can find all the fields of the prop, note that some things can only be changed using scripts, and also not all changed fields will save.</p>
+<p>To change variables of the asset, open the scene explorer <span class="key">Ctrl+E</span> and go to <span class="path">Tool Controller > ToolController > m_editPrefabInfo</span>. This is where you can find all the fields of the prop, note that some things can only be changed using scripts, and also not all changed fields will save.</p>
 
 
 
@@ -528,7 +544,7 @@ Prop variations menu in the asset editor.
 
 <h4 id="m_illuminationoffrange">m_illuminationOffRange</h4>
 
-<p>Determines the upper and lower limit for how long the illumination is disabled during the daytime. For lights, this usually matches the off range of the light effect which can be found in m_effects > m_effects.[id] > m_effect > m_offRange. You can also use <a href='https://gist.github.com/ronyx69/bfa8940c8d68f99b8826c88af51a39b7'>this script</a> to change it using an hour value.</p>
+<p>Determines the upper and lower limit for how long the illumination is disabled during the daytime. For lights, this usually matches the off range of the light effect which can be found in <span class="path">m_effects > m_effects.[id] > m_effect > m_offRange</span>. You can also use <a href='https://gist.github.com/ronyx69/bfa8940c8d68f99b8826c88af51a39b7'>this script</a> to change it using an hour value.</p>
 
 
 
@@ -559,7 +575,7 @@ Prop variations menu in the asset editor.
 Save asset window.
 </p></div>
 
-	<p>The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces or dots.</p>
+	<p>The filename input is on the bottom left, this is what the actual file will be called. It's not recommended to use spaces, dots, or special symbols.</p>
 
 
 
@@ -569,25 +585,24 @@ Save asset window.
 
 
 
-<h3 id="snapshot-thumbnail-tooltip">Snapshot, Thumbnail, Tooltip</h3>
+<h3 id="images">Images</h3>
 
 <p>There are 2 different folders you can open by clicking the folder icons:</p>
 
-<ol>
-<li>On the snapshot image, bottom right corner.
 
 
 
-<p>Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when publishing.</p></li>
+<h4 id="snapshot">Snapshot</h4>
+
+<p>On the snapshot image, bottom right corner. Use this one to replace the snapshot, you can replace it with a 1x1 px image to save on the asset file size. This image will only be visible in the content manager. It will also default as the Steam preview image, but you can change that separately when publishing.</p>
 
 
-<li>Below thumbnail, on the right side.
+
+<h4 id="thumbnail-tooltip">Thumbnail &amp; Tooltip</h4>
+
+<p>Below thumbnail, on the right side. Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p></li>
 
 
-
-<p>Use this one to change the thumbnail (109x100) and tooltip (492x147) of your asset.<br /> Once you change the main thumbnail, the hover/active states will update automatically.</p></li>
-
-</ol>
 
 <h3 id="local-assets-folder">Local Assets Folder</h3>
 
@@ -595,7 +610,8 @@ Save asset window.
 <div class="content-photo-box"><img src="https://i.imgur.com/CNfdvdz.jpg"><p>
 CRP files in the local assets folder.
 </p></div><p>
-Once the asset is saved, the .crp file will appear in the local assets folder:<br />C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</p>
+Once the asset is saved, the .crp file will appear in the local assets folder:</p>
+<p><span class="path">C:\Users\Username\AppData\Local\Colossal Order\Cities_Skylines\Addons\Assets</span></p>
 <p>The AppData folder is hidden by default, you can access it by pressing <span class="key">Windows+R</span> and typing in appdata.</p>
 
 
