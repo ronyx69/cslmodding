@@ -718,8 +718,7 @@ pre {
 textarea {
 	background-color: #282b2f;
 	padding: 8px;
-	border: 1px solid #34383d;
-	border-radius: 8px;
+	border: 0;
 	resize: vertical;
 	font-family: inherit;
 	font-size: 16px;
@@ -743,5 +742,11 @@ button:hover {
 	background-color: #2b3033;
 }
 
+textarea::-webkit-resizer {
+  background: #34383d;
+}
 
+textarea::-webkit-scrollbar-thumb:vertical {
+	background-color: #34383d;
+}
 
