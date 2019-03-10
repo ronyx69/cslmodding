@@ -717,7 +717,7 @@ pre {
 
 textarea {
 	background-color: #282b2f;
-	padding: 7px;
+	padding: 7px 14px;
 	border: 0;
 	resize: vertical;
 	font-family: inherit;
