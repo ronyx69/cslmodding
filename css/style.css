@@ -724,10 +724,11 @@ textarea {
 	font-size: 16px;
 	color: #909da7;
 	outline: 0;
-	margin: 32px 0;
+	margin-top: 28px;
 }
 
 button {
+	margin-top: 28px;
 	color: #909da7;
 	text-decoration: none;
 	padding: 6px 12px;
