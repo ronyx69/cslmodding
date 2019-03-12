@@ -1,0 +1,102 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+PropRotating Params
+
+</a></h1></div><div class="page"><div class="content">
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="about">About</h2>
+<p><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=954067599'>The PropRotating Params mod</a> can be used to create props which have rotating parts or clocks.</p>
+<p>This article assumes you are familiar with prop asset creation.</p>
+
+
+
+
+<h2 id="textures">Textures</h2>
+<p>The textures work just like they would for any normal prop.</p>
+
+
+
+
+<h2 id="mesh">Mesh</h2>
+
+
+<h3 id="vertex-paint">Vertex Paint</h3>
+
+<h4 id="single-rotating-part">Single Rotating Part</h4>
+<p>If you are using the script for a single rotating part, the rotating part should be vertex painted black and the rest should be vertex painted white.</p>
+
+<h4 id="multiple-rotating-parts-or-clocks">Multiple Rotating Parts or Clocks</h4>
+<p>If you are using the script for multiple rotating parts, you can have up to 4 different rotating parts.</p>
+<p>For rotating parts - the vertex color blue channel must be 0.</p>
+<p>Each rotating part can have its own parameters, and which parameters will be used is controlled by the vertex color green channel:</p>
+<ul>
+<li>Part 0 - G=0<br /></li>
+<li>Part 1 - G=64<br /></li>
+<li>Part 2 - G=128<br /></li>
+<li>Part 3 - G=192</li>
+</ul>
+
+
+
+
+<h2 id="lod">LOD</h2>
+<p>The LOD can't rotate, it's static just like any regular prop LOD.</p>
+
+
+
+
+<h2 id="scripts">Scripts</h2>
+<p>The script for a single rotating part can be found <a href='https://gist.github.com/ronyx69/55f2201f2d1f2d8f6c81042c7a47e47d'>here</a>, and the script for multiple rotating parts or clocks can be found <a href='https://gist.github.com/ronyx69/595c837a3141eb9c894168e385727217'>here</a>.</p>
+<p>Keep in mind that when dealing with XYZ coordinates - the Y coordinate ingame represents height.</p>
+
+
+<h3 id="axis">Axis</h3>
+<p>Around which axis the rotation happens. Off-axis rotation is not possible.</p>
+
+
+<h3 id="pivot">Pivot</h3>
+<p>The center of the rotation.</p>
+
+
+<h3 id="speed">Speed</h3>
+<p>How many times per minute the rotation happens. Negative values reverse the rotation direction.</p>
+
+
+<h3 id="speed-for-clocks">Speed for Clocks</h3>
+<p>When the clock parameter is set to 1, the speed defines how many times per day the part will rotate.</p>
+<p>Speeds for usual clock arms:</p>
+<ul>
+<li>12 hour arm = 2<br /></li>
+<li>minute arm = 24<br /></li>
+<li>second arm = 1440</li>
+</ul>
+
+
+
+
+
+
+
+
+</div></div>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/headings.js'></script>
+<script src='https://cslmodding.info/js/toc.js'></script>
+<script src='https://cslmodding.info/js/title.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+<script>var relevant = "<br>"; $(".toc").append(relevant);</script>
+</body></html>
