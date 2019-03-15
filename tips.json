@@ -70,6 +70,34 @@
 		"moretext": "Learn more »"
 	},
 	{
+		"title": "Flag Params",
+		"text": "The Flag Params mod can be used to create props which contain something moving in the wind, such as flags or some kind of cloth.",
+		"image": "https://i.imgur.com/5VfR5o3.jpg",
+		"morelink": "https://cslmodding.info/mod/flag-params/",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Custom Animation Loader",
+		"text": "The Custom Animation Loader mod by boformer can be used to import custom animations for buildings.",
+		"image": "https://i.imgur.com/En3MpX8.jpg",
+		"morelink": "https://cslmodding.info/mod/custom-animation-loader/",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "Detail",
+		"text": "The Detail mod can be used to create props with color variations chosen by the player using sliders, intended for color matching vegetation props and trees to the map theme grass color.",
+		"image": "https://i.imgur.com/qzggucE.jpg",
+		"morelink": "https://cslmodding.info/mod/detail/",
+		"moretext": "Learn more »"
+	},
+	{
+		"title": "ModTools",
+		"text": "Using ModTools scene explorer and running scripts in the console is a big part of advanced asset creation.",
+		"image": "https://i.imgur.com/dkDrCQr.jpg",
+		"morelink": "https://cslmodding.info/modtools/",
+		"moretext": "Learn more »"
+	},
+	{
 		"title": "Decals",
 		"text": "Decals project textures onto the ground, they are the easiest type of asset to create, you don't need to worry about meshes or LODs. Just a diffuse and an alpha texture should be enough for most decal ideas, a script will do the rest automatically.",
 		"image": "https://i.imgur.com/j8UKUIJ.jpg",
