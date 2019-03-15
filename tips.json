@@ -63,6 +63,13 @@
 		"moretext": "Learn more »"
 	},
 	{
+		"title": "Additive Shader",
+		"text": "Create RGB illumination using additive shader props and control the time of day when they turn on.",
+		"image": "https://i.imgur.com/2HbYUO9.jpg",
+		"morelink": "https://cslmodding.info/mod/additive-shader/",
+		"moretext": "Learn more »"
+	},
+	{
 		"title": "Decals",
 		"text": "Decals project textures onto the ground, they are the easiest type of asset to create, you don't need to worry about meshes or LODs. Just a diffuse and an alpha texture should be enough for most decal ideas, a script will do the rest automatically.",
 		"image": "https://i.imgur.com/j8UKUIJ.jpg",
