@@ -458,19 +458,121 @@ If the mesh preview doesn't display or you can't continue, you may have a proble
 <p>Train trailers can display different sub-meshes based on the cargo type they are carrying using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1552053911'>this mod</a>.</p>
 
 
-<h4 id="flags">Flags</h4>
+<h4 id="sub-mesh-flags">Sub-mesh Flags</h4>
 <p>
 	Flags are required and forbidden conditions, which determine when the sub-mesh shows up, and also when the main mesh is hidden.
 </p>
 
-<h4 id="parked-flags">Parked Flags</h4>
-<p>Flags used for when the vehicle is parked.</p>
-
-
+<p>There are many flags and their use is not always obvious so their descriptions might be incomplete or not relevant in all cases.</p>
 
 <div class="content-info"><em>
 By default, not all sub-mesh flags (conditions) are visible, use <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156'>the sub-mesh Flags mod</a> to show all flags in the asset editor UI.
 </em></div>
+
+<h4 id="sub-mesh-flag-parked">Parked</h4>
+<p>Restricts the sub-mesh to only appear when the vehicle is parked.</p>
+
+<h4 id="sub-mesh-flag-created">Created</h4>
+<p>Active for all non-parked vehicles.</p>
+
+<h4 id="sub-mesh-flag-deleted">Deleted</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-spawned">Spawned</h4>
+<p>Likely active for all spawned vehicles.</p>
+
+<h4 id="sub-mesh-flag-inverted">Inverted</h4>
+<p>Active for vehicle trailers which have been inverted based on the invert probability of the trailer. Usually used for randomly inverted train passenger cars and the last trailer of a train - the inverted train engine.</p>
+
+<h4 id="sub-mesh-flag-transfertotarget">TransferToTarget</h4>
+<p>Unknown. Usually active for vehicles going to a target, such as trucks exporting, importing, returning to facility, or trains going to the next station.</p>
+
+<h4 id="sub-mesh-flag-transfertosource">TransferToSource</h4>
+<p>Unknown. Usually active for garbage trucks collecting garbage.</p>
+
+<h4 id="sub-mesh-flag-emergency1">Emergency1</h4>
+<p>Likely used for firetrucks. Also used for blimps to display different ads.</p>
+
+<h4 id="sub-mesh-flag-emergency2">Emergency2</h4>
+<p>Active for police cars responding to an emergency. Likely also used for ambulances and firetrucks. Also used for blimps to display different ads.</p>
+
+<h4 id="sub-mesh-flag-waitingpath">WaitingPath</h4>
+<p>Unknown. Likely active while the vehicle is waiting for its path to be calculated.</p>
+
+<h4 id="sub-mesh-flag-stopped">Stopped</h4>
+<p>Active for train engines stopped at a station, taxis stopped to pick up a passenger, and emergency vehicles which have arrived at the emergency.</p>
+
+<h4 id="sub-mesh-flag-leaving">Leaving</h4>
+<p>Active for train engines which are about to leave, but haven't started moving yet.</p>
+
+<h4 id="sub-mesh-flag-arriving">Arriving</h4>
+<p>Active for train engines arriving to a stop before they are fully stopped. Also active for taxis carrying a passenger.</p>
+
+<h4 id="sub-mesh-flag-reversed">Reversed</h4>
+<p>Active for a train or monorail engine which is going backwards.</p>
+
+<h4 id="sub-mesh-flag-takingoff">TakingOff</h4>
+<p>Active for planes which are in the process of taking off.</p>
+
+<h4 id="sub-mesh-flag-flying">Flying</h4>
+<p>Active for planes which are flying in the air.</p>
+
+<h4 id="sub-mesh-flag-landing">Landing</h4>
+<p>Active for planes which are in the process of landing.</p>
+
+<h4 id="sub-mesh-flag-waitingspace">WaitingSpace</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-waitingcargo">WaitingCargo</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-goingback">GoingBack</h4>
+<p>Active for vehicles which are going back to where they came from - such as garbage tracks returning to their facility or trucks which have imported their goods and are leaving the map.</p>
+
+<h4 id="sub-mesh-flag-waitingtarget">WaitingTarget</h4>
+<p>Unknown. Likely active while a vehicle waits for where to go next.</p>
+
+<h4 id="sub-mesh-flag-importing">Importing</h4>
+<p>Active for vehicles which are for importing goods, even when they are returning to facility.</p>
+
+<h4 id="sub-mesh-flag-exporting">Exporting</h4>
+<p>Active for vehicles which are for exporting goods, even when they are returning to facility.</p>
+
+<h4 id="sub-mesh-flag-parking">Parking</h4>
+<p>Active for vehicles which are in the process of parking.</p>
+
+<h4 id="sub-mesh-flag-customname">CustomName</h4>
+<p>Active for vehicles which the played has renamed.</p>
+
+<h4 id="sub-mesh-flag-ongravel">OnGravel</h4>
+<p>Active when a vehicle is driving on a network which activates this flag, such as a gravel road.</p>
+
+<h4 id="sub-mesh-flag-waitingloading">WaitingLoading</h4>
+<p>Active for cargo trains which are being loaded with cargo.</p>
+
+<h4 id="sub-mesh-flag-congestion">Congestion</h4>
+<p>Unknown, may be related to vehicles despawning when stuck in traffic.</p>
+
+<h4 id="sub-mesh-flag-dummytraffic">DummyTraffic</h4>
+<p>Active for vehicles which are "background traffic" driving from and to map outside connections.</p>
+
+<h4 id="sub-mesh-flag-underground">Underground</h4>
+<p>Active when a vehicle is driving on a network which activates this flag, such as tunnels.</p>
+
+<h4 id="sub-mesh-flag-transition">Transition</h4>
+<p>Active when a vehicle is driving on a network which activates this flag, such as slopes.</p>
+
+<h4 id="sub-mesh-flag-insidebuilding">InsideBuilding</h4>
+<p>Unknown, related to bicycles.</p>
+
+<h4 id="sub-mesh-flag-lefthanddrive">LeftHandDrive</h4>
+<p>Active for all vehicles when playing on a left hand traffic maps.</p>
+
+
+
+
+
+
 
 
 

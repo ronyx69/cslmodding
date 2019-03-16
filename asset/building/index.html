@@ -497,6 +497,18 @@ Vanilla train station pedestrian paths (magenta) connecting the roadside to the 
 <p>
 You can place networks such as roads, train/tram tracks, and pedestrian paths.</p>
 
+<h4 id="stations">Stations</h4>
+<p>Train, monorail, cable car stations require a special track, which is a station track. The station track must be a single segment.</p>
+
+<h4 id="train-station-track">Train Station Track</h4>
+<p>The train station track can be accessed by using <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a>.</p>
+
+<h4 id="monorail-station-track">Monorail Station Track</h4>
+<p>The monorail station track can be accessed using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; Monorail Station Track / Medium Road Monorail Elevated &gt; Plop</span>.</p>
+
+<h4 id="cable-car-stop">Cable Car Stop</h4>
+<p>The cable car stop networks can be accessed using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span>.</p>
+
 <div class="content-info"><em>
 You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a> to use paths and other networks in the editor.
 </em></div>
@@ -575,16 +587,120 @@ You can add other buildings as sub-buildings to your main building. Unlike props
 </p>
 
 
-<h4 id="flags">Flags</h4>
+<h4 id="sub-mesh-flags">Flags</h4>
 
 <p>
 	Flags are required and forbidden conditions, which determine when the sub-mesh shows up.
 </p>
 
+<p>There are many flags and their use is not always obvious so their descriptions might be incomplete or not relevant in all cases.</p>
 
 <div class="content-info"><em>
 By default, not all sub-mesh flags (conditions) are visible, use <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1393831156'>the sub-mesh Flags mod by TPB</a> to show all flags in the asset editor UI.
 </em></div>
+
+
+
+<h4 id="sub-mesh-flag-created">Created</h4>
+<p>Active for all created buildings.</p>
+
+<h4 id="sub-mesh-flag-deleted">Deleted</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-original">Original</h4>
+<p>Likely active for buildings which were on the map originally, not created by the user.</p>
+
+<h4 id="sub-mesh-flag-customname">CustomName</h4>
+<p>Active for buildings which the user has renamed.</p>
+
+<h4 id="sub-mesh-flag-untouchable">Untouchable</h4>
+<p>Likely active for buildings which cannot be clicked by the user.</p>
+
+<h4 id="sub-mesh-flag-fixedheight">FixedHeight</h4>
+<p>Likely active for buildings which will not change their height based on water level changes.</p>
+
+<h4 id="sub-mesh-flag-incoming">Incoming</h4>
+<p>Likely related to vehicles arriving at the building.</p>
+
+<h4 id="sub-mesh-flag-outgoing">Outgoing</h4>
+<p>Likely related to vehicles leaving the building.</p>
+
+<h4 id="sub-mesh-flag-capacitystep1">CapacityStep1 (First Half Filled)</h4>
+<p>Active for buildings which have their capacity at 50%, such as cemetaries, landfills, snow dumps, warehouses, or processing facilities.</p>
+
+<h4 id="sub-mesh-flag-capacitystep2">CapacityStep2 (Second Half Filled)</h4>
+<p>Same as CapacityStep1 but 100%.</p>
+
+<h4 id="sub-mesh-flag-ratereduced">RateReduced</h4>
+<p>Likely active for buildings which are operating at a reduced rate.</p>
+
+<h4 id="sub-mesh-flag-highdensity">HighDensity</h4>
+<p>Likely active for high density residential and commercial buildings.</p>
+
+<h4 id="sub-mesh-flag-levelupeducation">LevelUpEducation</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-leveluplandvalue">LevelUpLandValue</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-roadaccessfailed">RoadAccessFailed</h4>
+<p>Likely related to pathfinding failure.</p>
+
+<h4 id="sub-mesh-flag-evacuating">Evacuating</h4>
+<p>Likely active for buildings during disaster evacuation.</p>
+
+<h4 id="sub-mesh-flag-completed">Completed</h4>
+<p>Active for buildings which have completed being constructed.</p>
+
+<h4 id="sub-mesh-flag-active">Active</h4>
+<p>Active for operating buildings.</p>
+
+<h4 id="sub-mesh-flag-abandoned">Abandoned</h4>
+<p>Active for abandoned buildings.</p>
+
+<h4 id="sub-mesh-flag-demolishing">Demolishing</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-zonesupdated">ZonesUpdated</h4>
+<p>Related to zoning being updated.</p>
+
+<h4 id="sub-mesh-flag-downgrading">Downgrading</h4>
+<p>Unknown, likely related to buildings with capacity being emptied.</p>
+
+<h4 id="sub-mesh-flag-collapsed">Collapsed</h4>
+<p>Likely active for collapsed buildings.</p>
+
+<h4 id="sub-mesh-flag-burneddown">BurnedDown</h4>
+<p>Same as Collapsed. Likely active for buildings which have burned down.</p>
+
+<h4 id="sub-mesh-flag-upgrading">Upgrading</h4>
+<p>Likely active for buildings which are leveling up.</p>
+
+<h4 id="sub-mesh-flag-loading1">Loading1</h4>
+<p>Related to animation playback on cargo station buildings.</p>
+
+<h4 id="sub-mesh-flag-loading2">Loading2</h4>
+<p>Related to animation playback on cargo station buildings.</p>
+
+<h4 id="sub-mesh-flag-secondaryloading">SecondaryLoading</h4>
+<p>Related to animation playback on cargo station buildings.</p>
+
+<h4 id="sub-mesh-flag-hidden">Hidden</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-eventactive">EventActive</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-flooded">Flooded</h4>
+<p>Likely active for buildings which are flooded.</p>
+
+<h4 id="sub-mesh-flag-filling">Filling</h4>
+<p>Unknown.</p>
+
+<h4 id="sub-mesh-flag-historical">Historical</h4>
+<p>Likely used for buildings which have been marked as historical by the player.</p>
+
+
 
 
 
