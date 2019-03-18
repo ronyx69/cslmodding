@@ -1,0 +1,91 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Vehicle Wheels
+
+</a></h1></div><div class="page">
+<div class="content">
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="about">About</h2>
+<div class="content-photo-box"><img src="https://i.imgur.com/zFeZlE2.png"><p>Bicycle vertex painted for custom multi-part wheels. Yellow gizmos show where the wheels will be. The pedals will also become a &quot;wheel&quot; for extra animation.</p></div>
+
+<p>When importing a vehicle, the game analyzes the mesh for continuously connected parts of the mesh (called elements) which are closer than 5cm to 0 (ground). Each of these parts receives a unique vertex color and a set of parameters which describe the position and diameter of each wheel.</p>
+<p>This article explains how to take full control of the vertex paint and tire parameters to manually create custom wheels. This allows for wheels which are made of multiple separate parts, or even wheels which don't touch the ground.</p>
+<p>This article assumes you are familiar with regular vehicle asset creation.</p>
+
+
+
+
+<h2 id="mesh-vertex-paint">Mesh Vertex Paint</h2>
+
+
+<h3 id="non-rotating-parts">Non-rotating Parts</h3>
+<p>The parts which don't rotate should be blue(RGB 0,0,255).</p>
+
+
+<h3 id="wheels">Wheels</h3>
+
+<h4 id="red">Red</h4>
+<p>The red channel defines what is a wheel and what isn't, therefore it should be 255.</p>
+
+<h4 id="green">Green</h4>
+<p>The green channel determines which of the tire parameters (as they will be defined in the script) the wheel will use. 0 means it will use tire parameter 0, 8 means it will use tire parameter 1, 16 means it will use tire parameter 2 and so on.</p>
+
+<h4 id="blue">Blue</h4>
+<p>The blue channel has no known effect, so it can stay at 255.</p>
+
+
+
+
+<h2 id="import">Import</h2>
+
+
+<h3 id="prop">Prop</h3>
+<p>Because the game recalculates vertex colors when importing vehicle meshes, it's necessary to import your vehicle mesh as a prop first. To make it easier, save it using a simple name, use the same name for the file name and the asset name. Once it's saved, reload the game.</p>
+
+
+<h3 id="vehicle">Vehicle</h3>
+<p>Once the game is reloaded, import your vehicle as usual.</p>
+
+
+
+
+<h2 id="script">Script</h2>
+<p>The script can be found <a href='https://gist.github.com/ronyx69/b2a53cce3a02b22ab4f425b95bf0825a'>here</a>. It will copy the vertex paint from the prop to the vehicle, and set tire parameters.</p>
+
+
+<h3 id="prop-name">Prop Name</h3>
+<p>The name of the prop you imported before. Formatted as &quot;filename.Asset Name_Data&quot;.</p>
+
+
+<h3 id="tire-parameter-vectors">Tire Parameter Vectors</h3>
+<p>Each vector describes the pivot coordinates of the wheel, the point around which that wheel will spin.</p>
+<p>You can add more or fewer tire parameters, the limit is 32 wheels because of the vertex paint green channel.</p>
+<p>The game might not allow adding more tire parameter vectors than the number of parts touching the ground the game detected on import. If you run into this problem, simply add some small/invisible triangles at 0 (ground) to your vehicle mesh.</p>
+<p>Which of the tire parameter vectors a wheel uses depends on the vertex paint of it, as described in the green vertex paint section.</p>
+<div class="content-warning"><em>
+Keep in mind that ingame the Y-axis represents height, so the Y and Z-axis are swapped compared to what 3D software usually uses. It's likely that you will need to invert positive values to negative and vice versa for X and Z coordinates, depending on what 3D software you use.
+</em></div>
+
+
+
+</div></div>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/headings.js'></script>
+<script src='https://cslmodding.info/js/toc.js'></script>
+<script src='https://cslmodding.info/js/title.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+<script>var relevant = "<br>"; $(".toc").append(relevant);</script>
+</body></html>
