@@ -399,6 +399,9 @@ Files ready for import.
 All of those things can be changed later in the editor itself or using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> or other mods.
 </em></div>
 
+<div class="content-info"><em>Some types of buildings don't have a template, <a href='#specific-cases'>see specific cases</a> for downloadable premade templates and instructions.</em></div>
+
+
 
 
 <h3 id="import-1">Import</h3>
@@ -497,17 +500,7 @@ Vanilla train station pedestrian paths (magenta) connecting the roadside to the 
 <p>
 You can place networks such as roads, train/tram tracks, and pedestrian paths.</p>
 
-<h4 id="stations">Stations</h4>
-<p>Train, monorail, cable car stations require a special track, which is a station track. The station track must be a single segment.</p>
 
-<h4 id="train-station-track">Train Station Track</h4>
-<p>The train station track can be accessed by using <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a>.</p>
-
-<h4 id="monorail-station-track">Monorail Station Track</h4>
-<p>The monorail station track can be accessed using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; Monorail Station Track / Medium Road Monorail Elevated &gt; Plop</span>.</p>
-
-<h4 id="cable-car-stop">Cable Car Stop</h4>
-<p>The cable car stop networks can be accessed using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span>.</p>
 
 <div class="content-info"><em>
 You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=512314255">More Network Stuff by BloodyPenguin</a> to use paths and other networks in the editor.
@@ -830,6 +823,94 @@ When using the default building shader, parts that are under 0 (ground) will get
 </ul>
 
 <p>It can be changed with <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Tool Controller &gt; ToolController &gt; m_editPrefabInfo &gt; m_zoningMode</span>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="specific-cases">Specific Cases</h2>
+<p>This section covers some specific types of buildings which do not have a template or require special instructions. It will also make references to <a href='https://cslmodding.info/modtools/'>using ModTools</a>, and other mods mentioned in the <a href='#editor-advanced'>editor advanced section</a>.</p>
+
+<p>For buildings such as stations and harbors, <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=790347696'>Advanced Buildings Editor by BloodyPenguin</a> is recommended for making all segments editable and auto-placing spawn points which are used to spawn trains, ships, or planes.</p>
+
+<p>Various station tracks and invisible connection paths can be accessed in the asset editor road and decoration menu by using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=512314255'>More Network Stuff by BloodyPenguin</a> and they can be moved using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1619685021&searchtext=move+it'>Move It!</a>.</p>
+
+
+
+<h3 id="train-station">Train Station</h3>
+<p>The train station has a template.</p>
+<p>Train stations require a train tation track. They also have invisible pedestrian connection paths leading to the station track.</p>
+
+
+
+
+
+
+<h3 id="cargo-train-station">Cargo Train Station</h3>
+<p>Cargo train station doesn't have a template. You can <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=527544869'>download a premade template here</a> or you can use the regular train station template, but change the AI to CargoStationAI and the item class to Train Cargo Facility.</p>
+
+<p>Cargo train stations require any train station track, but usually a special cargo station track is used. They also have invisible cargo connection paths which are used by the cargo vehicles to enter and exit the station.</p>
+
+
+
+
+
+
+<h3 id="harbor">Harbor</h3>
+<p>The harbor has have a template.</p>
+
+<p>Harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.</p>
+
+
+
+
+
+
+<h3 id="cargo-harbor">Cargo Harbor</h3>
+<p>Cargo harbor doesn't have a template. You can <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=707939755'>download a premade template here</a> or you can use the regular harbor template, but change the AI to CargoHarborAI and the item class to Ship Cargo Facility.</p>
+
+<p>Cargo harbors require a ship dock path and ship dockway paths, and also a pedestrian connection path.</p>
+
+
+
+
+<h3 id="airport">Airport</h3>
+<p>Airports have templates.</p>
+
+<p>Airports use runways and taxiways as expected. For the terminals they use airplane stop paths.</p>
+
+
+
+
+
+<h3 id="monorail-station">Monorail Station</h3>
+<p>Monorail stations have templates.</p>
+<p>The monorail station track and road can be accessed by using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; Monorail Station Track / Medium Road Monorail Elevated &gt; Plop</span>.</p>
+
+
+
+
+
+
+<h3 id="cable-car-stop">Cable Car Stop</h3>
+<p>Cable car stops have templates.</p>
+<p>The cable car stop networks can be accessed by using the <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Expansion 4 &gt; NetCollection &gt; m_prefabs &gt; CableCar Stop &gt; Plop</span>.</p>
+
+
+
+
 
 
 
