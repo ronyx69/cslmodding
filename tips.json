@@ -98,6 +98,13 @@
 		"moretext": "Learn more »"
 	},
 	{
+		"title": "Custom Vehicle Wheels",
+		"text": "It's possible to avoid the automatic wheel detection by the game, and use vertex paint and tire parameters to create custom wheels manually.",
+		"image": "https://i.imgur.com/zFeZlE2.png",
+		"morelink": "https://cslmodding.info/shader/vehicle-wheels/",
+		"moretext": "Learn more »"
+	},
+	{
 		"title": "Decals",
 		"text": "Decals project textures onto the ground, they are the easiest type of asset to create, you don't need to worry about meshes or LODs. Just a diffuse and an alpha texture should be enough for most decal ideas, a script will do the rest automatically.",
 		"image": "https://i.imgur.com/j8UKUIJ.jpg",
