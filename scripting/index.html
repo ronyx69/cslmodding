@@ -1,0 +1,83 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Writing Scripts
+
+</a></h1></div><div class="page">
+<div class="content">
+
+
+
+
+
+<h2 id="about">About</h2>
+<div class="content-photo-box"><img src="https://i.imgur.com/yKBhTJx.png"><p>
+Decal Prop Fix script in Sublime Text.
+</p></div>
+<p>While many things can be changed using <a href ='https://cslmodding.info/modtools/'>ModTools</a> scene explorer or other mods, some things require using scripts. This article explains some basics of C#(C Sharp) programming in the context of Cities: Skylines scripting.</p>
+<p>It's highly recommended to use a text editor with C# syntax highlighting such as <a href='https://www.sublimetext.com/'>Sublime Text</a>.</p>
+
+
+
+<h2 id="basics">Basics</h2>
+<p>Before getting into examples, this section describes some basic elements of code you will see a lot.</p>
+
+<h3 id="variables">Variables</h3>
+<p>Variables are things like numbers, text strings, booleans(true/false), arrays(multiple variables in one), references to any field and many other things.</p>
+<p>Usually variables can be initialized(created) by simply writing "var" but it's also possible(and sometimes necessary) to specify what type of variable it is, such as "string" or "bool" etc.</p>
+<p>Some examples:</p>
+<pre><code class="csharp">var number = 15;
+string text = "Lorem ipsum dolor sit amet";
+bool binary = true;</code></pre>
+
+<h3 id="debug-log">Debug Log</h3>
+<p>Debug log allows to print messages in the console:</p>
+<pre><code class="csharp">Debug.Log("This will appear in the console when executed.");</code></pre>
+
+<h3 id="comments">Comments</h3>
+<p>Comments allow adding notes to your script, they will not affect the code in any way. Everything after a double slash (//) will appear as a comment:</p>
+<pre><code class="csharp">var number = 69; // some random notes</code></pre>
+<p>It's also possible to use /* */ to comment multiple lines or a specific area:</p>
+<pre><code class="csharp">/*multi
+line
+comment*/
+
+var number = /*comment in between code*/ 69;</code></pre>
+
+
+
+
+
+<h2 id="ui-priority">UI Priority</h2>
+<p>The first example is for one of the simplest possible scripts - to change the <a href='https://cslmodding.info/asset/building/#ui-priority'>UI Priority</a> value. It's possible to change this value using <a href='https://cslmodding.info/modtools/#m_uipriority'>the ModTools scene explorer</a> or a specific mod, but this example will show how to change it using a script.</p>
+
+<p>Here is a script which changes the UI Priority of the currently loaded building in the asset editor:</p>
+<pre><code class="csharp">var asset = ToolsModifierControl.toolController.m_editPrefabInfo as BuildingInfo;
+asset.m_UIPriority = 69;</code></pre>
+
+<p>The first line is what you will usually see in scripts for use in the asset editor. It creates a variable called "asset" and gets m_editPrefabInfo, which is the currently loaded asset in the asset editor. It also specifies to get it as "BuildingInfo", this makes sure you can access all the fields a building might have.</p>
+
+<p>The second line uses the variable "asset" which was just created, gets the m_UIPriority field from it, and sets that to a new value.</p>
+
+<p>Each line of code usually has a semicolon (;) at the end of it.</p>
+
+
+
+
+
+
+
+
+
+</div></div>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/headings.js'></script>
+<script src='https://cslmodding.info/js/toc.js'></script>
+<script src='https://cslmodding.info/js/title.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+<script>var relevant = "<br>"; $(".toc").append(relevant);</script>
+<script src='https://cslmodding.info/js/syntax.js'></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace:'    '});</script>
+</body></html>
