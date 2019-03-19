@@ -1,5 +1,14 @@
 <html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/style.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+
+
+<style type="text/css">
+p .csharp {
+	padding: 2px 4px;
+	color: #b3937d;
+}
+</style>
+
 </head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
 
 Writing Scripts
@@ -25,7 +34,7 @@ Decal Prop Fix script in Sublime Text.
 
 <h3 id="variables">Variables</h3>
 <p>Variables are things like numbers, text strings, booleans(true/false), arrays(multiple variables in one), references to any field and many other things.</p>
-<p>Usually variables can be initialized(created) by simply writing "var" but it's also possible(and sometimes necessary) to specify what type of variable it is, such as "string" or "bool" etc.</p>
+<p>Usually, variables can be initialized(created) by simply writing "var" but it's also possible(and sometimes necessary) to specify what type of variable it is, such as "string" or "bool" etc.</p>
 <p>Some examples:</p>
 <pre><code class="csharp">var number = 15;
 string text = "Lorem ipsum dolor sit amet";
@@ -48,17 +57,20 @@ var number = /*comment in between code*/ 69;</code></pre>
 
 
 
+<h2 id="examples">Examples</h2>
 
-<h2 id="ui-priority">UI Priority</h2>
+
+
+<h3 id="ui-priority">UI Priority</h3>
 <p>The first example is for one of the simplest possible scripts - to change the <a href='https://cslmodding.info/asset/building/#ui-priority'>UI Priority</a> value. It's possible to change this value using <a href='https://cslmodding.info/modtools/#m_uipriority'>the ModTools scene explorer</a> or a specific mod, but this example will show how to change it using a script.</p>
 
 <p>Here is a script which changes the UI Priority of the currently loaded building in the asset editor:</p>
 <pre><code class="csharp">var asset = ToolsModifierControl.toolController.m_editPrefabInfo as BuildingInfo;
 asset.m_UIPriority = 69;</code></pre>
 
-<p>The first line is what you will usually see in scripts for use in the asset editor. It creates a variable called "asset" and gets m_editPrefabInfo, which is the currently loaded asset in the asset editor. It also specifies to get it as "BuildingInfo", this makes sure you can access all the fields a building might have.</p>
+<p>The first line is what you will usually see in scripts for use in the asset editor. It creates a variable called <code class="csharp">asset</code> and gets <code class="csharp">m_editPrefabInfo</code>, which is the currently loaded asset in the asset editor. It also specifies to get it as <code class="csharp">BuildingInfo</code>, this makes sure you can access all the fields a building might have.</p>
 
-<p>The second line uses the variable "asset" which was just created, gets the m_UIPriority field from it, and sets that to a new value.</p>
+<p>The second line sets the field <code class="csharp">m_UIPriority</code> of <code class="csharp">asset</code> to 69.</p>
 
 <p>Each line of code usually has a semicolon (;) at the end of it.</p>
 
