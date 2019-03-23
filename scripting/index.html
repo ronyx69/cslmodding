@@ -86,11 +86,12 @@ asset.m_material.SetColor("_ColorV1", color2);
 asset.m_material.SetColor("_ColorV2", color3);
 asset.m_material.SetColor("_ColorV3", color4);</code></pre>
 
-<p>The first four lines create new variables which contain the chosen colors. Here <code class="csharp">new Color32</code> means a new variable of the type <code class="csharp">Color32</code> will be created. The difference between <code class="csharp">Color</code> and <code class="csharp">Color32</code> is that <code class="csharp">Color32</code> allows using values of 0-255 instead of floating point values 0.0-1.0. There are four values - red, green, blue, alpha. In this context the alpha is not relevant.</p>
-
-
-
-
+<p>The first four lines create new variables which contain the chosen colors. Here <code class="csharp">new Color32</code> means a new variable of the type <code class="csharp">Color32</code> will be created.</p>
+<p>The difference between <code class="csharp">Color</code> and <code class="csharp">Color32</code> is that <code class="csharp">Color32</code> allows using values of 0-255 instead of floating point values 0.0-1.0. There are four values - red, green, blue, alpha. In this context the alpha is not relevant.</p>
+<p>The last four lines use the method <code class="csharp">SetColor</code> to set the colors of <code class="csharp">asset.m_material</code> to the previously created colors.</p>
+<p>For the color variations to work, the "use color variations" option for the building must be enabled. It's possible to add a line to the script to enable it as well:</p>
+<pre><code class="csharp">asset.m_useColorVariations = true;</code></pre>
+<p>For the color variations to be visible in the asset editor, the asset may need to be saved and loaded again.</p>
 
 
 </div></div>
