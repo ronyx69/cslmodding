@@ -48,7 +48,10 @@ var number = /*comment in between code*/ 69;</code></pre>
 
 
 
+
 <h2 id="examples">Examples</h2>
+<p>In general, each example will be more complicated than the previous one, and may not repeat explanations from simpler scripts.</p>
+
 
 
 
@@ -67,6 +70,23 @@ asset.m_UIPriority = 69;</code></pre>
 
 
 
+
+
+
+<h3 id="color-variations">Color Variations</h3>
+<p>This script can be used to set color variations for a building in the asset editor.</p>
+
+<pre><code class="csharp">var color1 = new Color32(128, 128, 128, 255);
+var color2 = new Color32(128, 128, 128, 255);
+var color3 = new Color32(128, 128, 128, 255);
+var color4 = new Color32(128, 128, 128, 255);
+var asset = ToolsModifierControl.toolController.m_editPrefabInfo as BuildingInfo;
+asset.m_material.SetColor("_ColorV0", color1);
+asset.m_material.SetColor("_ColorV1", color2);
+asset.m_material.SetColor("_ColorV2", color3);
+asset.m_material.SetColor("_ColorV3", color4);</code></pre>
+
+<p>The first four lines create new variables which contain the chosen colors. Here <code class="csharp">new Color32</code> means a new variable of the type <code class="csharp">Color32</code> will be created. The difference between <code class="csharp">Color</code> and <code class="csharp">Color32</code> is that <code class="csharp">Color32</code> allows using values of 0-255 instead of floating point values 0.0-1.0. There are four values - red, green, blue, alpha. In this context the alpha is not relevant.</p>
 
 
 
