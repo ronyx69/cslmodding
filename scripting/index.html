@@ -49,8 +49,17 @@ var number = /*comment in between code*/ 69;</code></pre>
 
 
 
+
+
+
+
+
+
 <h2 id="examples">Examples</h2>
 <p>In general, each example will be more complicated than the previous one, and may not repeat explanations from simpler scripts.</p>
+
+
+
 
 
 
@@ -67,6 +76,7 @@ asset.m_UIPriority = 69;</code></pre>
 <p>The second line sets the field <code class="csharp">m_UIPriority</code> of <code class="csharp">asset</code> to 69.</p>
 
 <p>Each line of code usually has a semicolon <code class="csharp">;</code> at the end of it.</p>
+
 
 
 
@@ -92,6 +102,33 @@ asset.m_material.SetColor("_ColorV3", color4);</code></pre>
 <p>For the color variations to work, the "use color variations" option for the building must be enabled. It's possible to add a line to the script to enable it as well:</p>
 <pre><code class="csharp">asset.m_useColorVariations = true;</code></pre>
 <p>For the color variations to be visible in the asset editor, the asset may need to be saved and loaded again.</p>
+
+
+
+
+
+
+
+<h3 id="placement-mode">Placement Mode</h3>
+<p>This script can be used to change the <a href='https://cslmodding.info/asset/building/#placement-mode'>placement mode</a> of a building, which determines how the player must place it.</p>
+
+<pre><code class="csharp">var asset = ToolsModifierControl.toolController.m_editPrefabInfo as BuildingInfo;
+asset.m_placementMode = BuildingInfo.PlacementMode.Roadside;</code></pre>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/5eYn8sb.png"><p>
+BuildingInfo.PlacementMode in ILSpy.
+</p></div>
+
+<p>The second line sets the field <code class="csharp">m_placementMode</code> of <code class="csharp">asset</code> to <code class="csharp">BuildingInfo.PlacementMode.Roadside</code>.</p> 
+<p>To find out what values can be used in this field, you can use <a href='#ilspy'>ILSpy</a> to see the content of <code class="csharp">BuildingInfo.PlacementMode</code>.</p>
+
+
+
+
+
+
+
+
 
 
 
