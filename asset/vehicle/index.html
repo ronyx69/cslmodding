@@ -232,7 +232,13 @@ Example illumination map for a train.
 
 <h4 id="illumination-ship">Ship</h4>
 
-<p>For the ship shader (used by ships, monorails, cable cars), this defines lights which are only on at night (windows). The always-on lights are 255 (white), everything else is 0 (black).</p>
+<p>For the ship shader (used by ships, monorails, cable cars), this defines lights which are only on at night (windows). The randomly changing night lights are brighter or darker than 128. If they are much darker or brighter than 128 - they will never go dark. Everything else is 128 (medium gray).</p>
+
+
+<h4 id="illumination-aircraft">Aircraft</h4>
+
+<p>For the aircraft shader (used by helicopters, blimps, planes), this defines lights which are only on at night (windows) and always-on diffuse contribution illumination. The window lights are above 128 and the diffuse contribution illumination is below 128. Everything else is 128 (medium gray).</p>
+
 
 <p>If you don't import an illumination map, it will default to black.</p>
 
