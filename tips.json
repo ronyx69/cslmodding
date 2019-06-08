@@ -71,9 +71,9 @@
 	},
 	{
 		"title": "Flag Params",
-		"text": "The Flag Params mod can be used to create props which contain something moving in the wind, such as flags or some kind of cloth.",
+		"text": "The flag shader can be used to create props which contain something moving in the wind, such as flags or some kind of cloth.",
 		"image": "https://i.imgur.com/5VfR5o3.jpg",
-		"morelink": "https://cslmodding.info/mod/flag-params/",
+		"morelink": "https://cslmodding.info/shader/flag/",
 		"moretext": "Learn more »"
 	},
 	{
@@ -108,7 +108,7 @@
 		"title": "Decals",
 		"text": "Decals project textures onto the ground, they are the easiest type of asset to create, you don't need to worry about meshes or LODs. Just a diffuse and an alpha texture should be enough for most decal ideas, a script will do the rest automatically.",
 		"image": "https://i.imgur.com/j8UKUIJ.jpg",
-		"morelink": "https://cslmodding.info/mod/decal-prop-fix/",
+		"morelink": "https://cslmodding.info/shader/decal/",
 		"moretext": "Learn more »"
 	}
 ]
