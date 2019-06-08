@@ -2,7 +2,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
 </head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
 
-Flag Params
+Flag Shader
 
 </a></h1>
 
@@ -13,12 +13,7 @@ Flag Params
 
 
 
-<hr>
-<div class="content-info"><em>
-While previously created flag props (and vehicle sub meshes) still require the Flag Params mod, a new method for saving shader parameters by boformer has removed the requirement for a mod.
-<br><br>
-See the <a href='https://cslmodding.info/shader/flag/'>Flag Shader</a> article.</em>
-</div>
+
 
 
 
@@ -26,9 +21,9 @@ See the <a href='https://cslmodding.info/shader/flag/'>Flag Shader</a> article.<
 
 
 <h2 id="about">About</h2><div class="content-photo-box"><img src="https://i.imgur.com/5VfR5o3.jpg"><p>
-Various <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1603399261'>example props</a> using the flag shader.
+Various example props using the flag shader.
 </p></div>
-<p><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1603398633'>The Flag Params mod</a> can be used to create props which contain something moving in the wind, such as flags or some kind of cloth.</p>
+<p>The flag shader can be used to create props which contain something moving in the wind, such as flags or some kind of cloth.</p>
 <p>It's also possible to have multiple textures inside the same flag prop, which change based on the position of the prop, just like the vanilla flags do.</p>
 <p>This article assumes you are familiar with regular prop asset creation.</p>
 
@@ -105,16 +100,6 @@ A grid of flags for an example prop. 5 columns, 1 row, top left corner is (0,0),
 
 <h4 id="pivot">Pivot</h4>
 <p>This defines the pivot, where the axis is moved to, so you can move the axis, around which the movement happens.</p>
-
-
-
-<h2 id="vehicle-sub-mesh">Vehicles</h2>
-<p>It's also possible to use the flag shader for vehicle sub-meshes using <a href='https://gist.github.com/ronyx69/e2f574d1cec4c666719e9642f08e8e9d'>these scripts</a>.</p>
-<p>The only difference in the creation process is that the mesh should be imported as a prop first, then the game must be reloaded, and then the vertex colors can be copied to the vehicle sub-mesh using the first script. This is the same process required for <a href='https://cslmodding.info/shader/rotors-propellers/#import'>rotors shader propellers</a>.</p>
-
-<h4 id="limitations">Limitations</h4>
-<p>The LOD on vehicle sub-meshes doesn't support flag shader, therefore an invisible, or a static regular vehicle LOD can be made.</p>
-<p>If you try to use the multiple flag textures method, the flag texture will change as the vehicle drives.</p>
 
 
 
