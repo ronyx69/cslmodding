@@ -765,8 +765,9 @@ On winter maps, snow doesn't appear on the NoBase shader.
 </p></div><p>
 When using the default building shader, parts that are under 0 (ground) will get the map theme building base texture.</p>
 
-<p><a href='https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d'>NoBase</a> doesn't replace the underground texture with building base texture.</p>
-<p>The base mesh may still be visible, it's generated on import for edges closer than 5cm to 0 (ground). A side-effect is increased reflectivity for high specularity areas.</p>
+<p><a href='https://gist.github.com/ronyx69/24a430d610fe5bb2070c1a9cbb793e0d'>NoBase</a> doesn't replace the underground texture with the building base texture.</p>
+<p>The base mesh may still be visible, as it's generated on import for edges closer than 5cm to 0 (ground). It is possible to delete the base mesh completely using <a href='https://gist.github.com/ronyx69/a5fd0eb2627131de12cd21878fa320be'>this script</a>.</p>
+<p>This shader also has a side-effect of increased reflectivity for high specularity areas.</p>
 
 <h4 id="shader-default">Fence</h4>
 <p><a href='https://gist.github.com/ronyx69/7a720c7c7f767d8441b824da4e0ea5f2'>Fence</a> conforms to the terrain. (used for the vanilla cemetery and Japanese garden)</p>
