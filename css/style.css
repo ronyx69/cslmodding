@@ -191,12 +191,12 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
 	cursor: pointer;
 }
 
-.content p a, .content li a, .content-info a, .content-warn a {
+.content p a, .content li a, .content-info a, .content-warning a {
 	color: #7aaacc;
 	text-decoration: underline;
 }
 
-.content p a:hover, .content li a:hover, .content-info a:hover, .content-warn a:hover {
+.content p a:hover, .content li a:hover, .content-info a:hover, .content-warning a:hover {
 	color: #45a3e6;
 	cursor: pointer;
 }
