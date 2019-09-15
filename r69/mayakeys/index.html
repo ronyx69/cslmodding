@@ -9,7 +9,7 @@ body {
 	background-color: #373737;
 	font-family: 'Segoe UI', sans-serif;
 	font-weight: 400;
-	letter-spacing: -0.9px;
+	letter-spacing: -1.0px;
 }
 .row {
 	clear:both;
@@ -21,12 +21,12 @@ body {
 	background-color: #444444;
 	border: 1px solid #373737;
 	color: #bdbdbd;
-	padding: 0.4vw;
+	padding: 0.3vw;
 	box-sizing: border-box;
 	position: relative;
 }
 .action {
-	bottom: 0.4vw;
+	bottom: 0.3vw;
 	position: absolute;
 }
 h2 {
@@ -34,7 +34,7 @@ h2 {
 	line-height: 1.3vw;
 }
 h3 {
-	font-size: 0.9vw;
+	font-size: 0.85vw;
 	line-height: 1.1vw;
 	bottom: 0;
 	margin-bottom: -1px;
@@ -222,7 +222,7 @@ h3 {
 <div class='key'>
 	<h2>0</h2>
 	<div class='action'>
-		<h3></h3>
+		<h3>soft selection</h3>
 	</div>
 </div>
 
@@ -264,6 +264,8 @@ h3 {
 	<h2>W</h2>
 	<div class='action'>
 		<h3>move</h3>
+		<h3><span class='shift'>s</span> align uv horizontal</h3>
+		<h3><span class='alt'>a</span> space uv horizontal</h3>
 	</div>
 </div>
 
@@ -271,6 +273,7 @@ h3 {
 	<h2>E</h2>
 	<div class='action'>
 		<h3>rotate</h3>
+		<h3><span class='ctrl'>c</span> uv editor</h3>		
 	</div>
 </div>
 
@@ -313,7 +316,7 @@ h3 {
 <div class='key'>
 	<h2>O</h2>
 	<div class='action'>
-		<h3></h3>
+		<h3>outliner</h3>
 	</div>
 </div>
 
@@ -354,7 +357,9 @@ h3 {
 <div class='key'>
 	<h2>A</h2>
 	<div class='action'>
-		<h3></h3>
+		<h3><span class='shift'>s</span> align uv vertical</h3>
+		<h3><span class='alt'>a</span> space uv vertical</h3>
+		<h3><span class='shift'>s</span> <span class='alt'>a</span> attribute sheet</h3>
 	</div>
 </div>
 
@@ -392,7 +397,8 @@ h3 {
 <div class='key'>
 	<h2>H</h2>
 	<div class='action'>
-		<h3></h3>
+		<h3>toggle history</h3>
+		<h3><span class='ctrl'>c</span> delete history</h3>
 	</div>
 </div>
 
@@ -446,13 +452,6 @@ h3 {
 <div class='row'>
 
 <div class='key'>
-	<h2></h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
 	<h2>Z</h2>
 	<div class='action'>
 		<h3>frame selected</h3>
@@ -494,7 +493,7 @@ h3 {
 <div class='key'>
 	<h2>N</h2>
 	<div class='action'>
-		<h3></h3>
+		<h3>reverse normals</h3>
 	</div>
 </div>
 
@@ -533,15 +532,22 @@ h3 {
 	<div class='action'>
 		<h3><span class='ctrl'>c</span> subtract</h3>
 		<h3><span class='shift'>s</span> add</h3>
-		<h3><span class='alt'>a</span> orbit</h3>
+		<h3><span class='alt'>a</span> <strong>orbit</strong></h3>
 	</div>
 </div>
 
 <div class='key'>
 	<h2>MMB</h2>
 	<div class='action'>
-		<h3>previous transform</h3>
-		<h3><span class='alt'>a</span> pan</h3>
+		<h3><strong>previous transform</strong></h3>
+		<h3><span class='alt'>a</span> <strong>pan</strong></h3>
+	</div>
+</div>
+
+<div class='key'>
+	<h2>RMB</h2>
+	<div class='action'>
+		<h3><span class='alt'>a</span> <strong>zoom</strong></h3>
 	</div>
 </div>
 
