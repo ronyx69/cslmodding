@@ -165,7 +165,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <p>The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.</p>
 
-<p>Make sure the texture is 8-bit since a 16-bit image can't be imported.</p>
+<p>Make sure the texture is 8 bits/channel since a 16 bits/channel image can't be imported.</p>
 
 
 
@@ -177,7 +177,7 @@ Textures for a couple of vanilla trees.
 <p>
 All imported main textures must be the same resolution.
 </p>
-<p>Powers of 2 is a standard practice in 3D graphics, which means sizes such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, but the most important thing is that your width and height must be divisible by 32, otherwise, your texture will be corrupted by compression.</p>
+<p>Powers of 2 is a standard practice in 3D graphics, which means resolutions such as 1024x1024, 1024x512, 256x512, 2048x128 etc. It is recommended to stick to this standard, otherwise, your texture may be corrupted by compression, which may be more visible at longer distances or grazing angles. The smallest allowed resolution is 32x32.</p>
 
 
 <div class="content-warning">
@@ -277,7 +277,7 @@ Using the mesh rotation feature will result in broken mesh tangents - that means
 </em></div>
 
 <div class="content-warning"><em>
-If you get an unsupported color error, one of your textures might be a 16-bit file, you need to change it to 8-bit, in Photoshop: Image &gt; Mode &gt; 8 Bits/Channel.
+If you get an unsupported color error, one of your textures might be a 16 bits/channel file, you need to change it to 8 bits/channel, in Photoshop: Image &gt; Mode &gt; 8 Bits/Channel.
 </em></div>
 
 
