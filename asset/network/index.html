@@ -280,13 +280,19 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h3 id="hidden-properties">Hidden Properties</h3>
 
-<p>Some properties are not visible in the road editor UI, but can be changed by using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Tool Controller > ToolController > m_editPrefabInfo</span>.</p>
+<p>Some properties are not visible in the road editor UI, but can be changed by using <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=450877484'>ModTools</a> scene explorer <span class="key">Ctrl+E</span> and going to <span class="path">Tool Controller > ToolController > m_editPrefabInfo</span> or running scripts in the console <span class="key">F7</span>.</p>
 
 <h4 id="m_enablemiddlenodes">m_enableMiddleNodes</h4>
 
 <p>If this is disabled, every node will be an intersection. This is disabled for train or monorail station tracks so they always have the track cross node, and also for road slope(tunnel entrance) networks.</p>
 
+<h4 id="m_setvehicleflags">m_setVehicleFlags</h4>
 
+<p>Vehicles driving on the network will get these flags applied. Used for OnGravel flag which adds a dust effect on gravel roads, and Underground flag to make vehicles invisible in tunnels. This can be changed using <a href='https://gist.github.com/ronyx69/1581ac01ca54e6a563f7bb00a8fd1c4b'>a script</a>.</p>
+
+<h4 id="m_setcitizenflags">m_setCitizenFlags</h4>
+
+<p>Same as m_setVehicleFlags but for citizens.</p>
 
 
 
@@ -334,7 +340,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 <h4 id="vehicle-type">Vehicle Type</h4>
 
-<p>If the lane type is set to vehicle, this defines which vehicle types can use the lane.</p>
+<p>If the lane type is set to vehicle, this defines which vehicle types can use the lane. Also used for dedicated lanes to define trolleybus left and right poles.</p>
 
 
 <h4 id="stop-type">Stop Type</h4>
@@ -431,7 +437,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 
 
-<h3 id="flags-1">Flags</h3>
+<h4 id="flags-1">Flags</h4>
 
 <p>Required and forbidden conditions for each direction which determine when the segment will appear.</p>
 
@@ -486,7 +492,7 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 
 
 
-<h3 id="flags-2">Flags</h3>
+<h4 id="flags-2">Flags</h4>
 
 <p>Required and forbidden conditions for each direction which determine when the node will appear.</p>
 <p><a href='#flags'>Read more about flags.</a></p>
@@ -539,11 +545,11 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id='node-flag-middle'>Middle</h4>
 <p>Active for nodes between 2 segments of the same network.</p>
 <h4 id='node-flag-bend'>Bend</h4>
-<p>Active for nodes where an asymmetric network changes direction.</p>
+<p>Active for nodes for sharp corners where a road changes direction suddenly and nodes where an asymmetric network changes direction.</p>
 <h4 id='node-flag-junction'>Junction</h4>
 <p>Active for nodes which are intersections and transitions between 2 different networks.</p>
 <h4 id='node-flag-moveable'>Moveable</h4>
-<p>Unknown.</p>
+<p>Possibly related to nodes which will be automatically moved when creating an intersection which splits a segment into two.</p>
 <h4 id='node-flag-untouchable'>Untouchable</h4>
 <p>Active for nodes of networks which are placed within buildings, and therefore can't be deleted or upgraded under normal circumstances.</p>
 <h4 id='node-flag-outside'>Outside</h4>
@@ -699,21 +705,21 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id='lane-flag-merge'>Merge</h4>
 <p>Likely active for lanes which continue to merge to a lower amount of lanes.</p>
 <h4 id='lane-flag-stop'>Stop</h4>
-<p>Active for lanes which are bus stops.</p>
+<p>Active for lanes which are bus stops. Used in combination with Stop2 for sightseeing bus stops.</p>
 <h4 id='lane-flag-stop2'>Stop2</h4>
-<p>Active for lanes which are tram stops.</p>
+<p>Active for lanes which are tram stops. Used in combination with Stop for sightseeing bus stops.</p>
 <h4 id='lane-flag-yieldstart'>YieldStart</h4>
 <p>Active for lanes of segments which have a player assigned stop sign at the start of the segment based on the direction it was built.</p>
 <h4 id='lane-flag-yieldend'>YieldEnd</h4>
 <p>Active for lanes of segments which have a player assigned stop sign at the end of the segment based on the direction it was built.</p>
 <h4 id='lane-flag-startonewayleft'>StartOneWayLeft</h4>
-<p>Unknown. Related to surrounding one-way roads.</p>
+<p>Likely active for lanes which begin after splitting off from the right side of a one-way road at a significant enough angle, the same angle required for the previous lane to get the Right flag.</p>
 <h4 id='lane-flag-startonewayright'>StartOneWayRight</h4>
-<p>Unknown. Related to surrounding one-way roads.</p>
+<p>Likely active for lanes which begin after splitting off from the left side of a one-way road at a significant enough angle, the same angle required for the previous lane to get the Left flag. Also used for "no right turn" signs.</p>
 <h4 id='lane-flag-endonewayleft'>EndOneWayLeft</h4>
-<p>Unknown. Related to surrounding one-way roads.</p>
+<p>Likely active for lanes of a one-way road which is about to merge with another one-way road from the left side at a significant enough angle, the same angle required for the other one-way road to get the Left flag. Also used for "no left turn" signs.</p>
 <h4 id='lane-flag-endonewayright'>EndOneWayRight</h4>
-<p>Unknown. Related to surrounding one-way roads.</p>
+<p>Likely active for lanes of a one-way road which is about to merge with another one-way road from the right side at a significant enough angle, the same angle required for the other one-way road to get the Right flag.</p>
 
 
 
@@ -739,12 +745,17 @@ Vanilla six-lane road segment mesh.
 
 <h3 id="uv-mapping">UV Mapping</h3>
 
-<p>Normally you only have control over the horizontal (U) UV mapping (horizontal/vertical is called UV when talking about the texture image itself) because the game will automatically tile it along the segment depending on how long the segment is.</p>
+<p>
+<div class="content-photo-box"><img src="https://i.imgur.com/V40Y2sG.jpg"><p>
+A road mesh, its uv mapping, and how it appears ingame using tiling or vertex color.
+</p></div>
+
+<p>Normally you only have control over the horizontal (U) UV mapping (horizontal/vertical is called UV when talking about the texture image itself) because the game will automatically tile it along the segment approximately every 20 meters depending on how long the segment is.</p>
 
 <p>You may have details for which you want to disable this automatic tiling, this can be done using vertex paint - by setting the green channel for those parts to 0, which means those parts would be 255,0,255 (magenta). This will make sure the texture is exactly as you UV map it, so it will stretch together with the segment.</p>
 
 <div class="content-info"><em>
-You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1274199764">the Network Tiling mod</a> to change how much the texture is tiled along the segments and nodes.
+You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1274199764">the Network Tiling mod</a> to change how much the texture is tiled along the segments and nodes. Tiled textures with alpha mapping will cast shadows which will not have the tiling.
 </em></div>
 
 <h3 id="wire-shader">Wire Shader</h3>
@@ -821,8 +832,11 @@ Just like any diffuse texture, defines the main color of the network.</p>
 
 
 
+<h2 id="save-update">Save & Update</h2>
 
+<p>Saving, loading, and resaving a network asset which has elevations (elevated, bridge, slope, tunnel) may rename the elevations. This can result in previously placed networks disappearing from a savegame, or even breaking the savegame.</p>
 
+<p><a href='https://gist.github.com/ronyx69/466ec13af77d6b44fcf50f7a8d2af152'>A script</a> can be used to rename the elevations based on the asset name. You should only run this script when the asset is finished, saved with the final name it should have, loaded again, but not yet placed in a save game. And when updating a network which was saved with this script, the script should be reapplied every time before it is resaved.</p>
 
 
 

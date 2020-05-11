@@ -1,0 +1,110 @@
+<html><head><link rel="shortcut icon" type="image/png" href="https://cslmodding.info/favicon.png"/><link rel="stylesheet" href="https://cslmodding.info/css/style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+</head><body id="top"><div class="menu" id="menu-file"></div><div class="toc"><h1><a href="#top">
+
+Custom Effect Loader
+
+</a></h1></div><div class="page">
+<div class="content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="about">About</h2>
+<p><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1886877404'>The Custom Effect Loader mod by boformer</a> can be used to add custom light effects to props and vehicles.</p>
+<p>This article assumes you are familiar with prop asset creation.</p>
+
+
+
+
+<h2 id="import-test">Effect</h2>
+
+
+<h3 id="xml">XML</h3>
+<p>After subscribing to the mod(or adding it locally) and enabling it, <a href='https://drive.google.com/open?id=1NeALtBEpJS0QNxc-Pb5XrHWBQkcruYKM'>download the example effect XML file</a> and paste it in your local asset folder located here:</p>
+<p><span class="path">C:\Users\USERNAME\AppData\Local\Colossal Order\Cities_Skylines\Addons</span></p>
+<p>See another more complicated example of an effects definition file <a href='https://gist.github.com/boformer/6cb54732245b14e214b26fe0b7d1530b'>here</a>.</p>
+
+
+<h3 id="effect-properties">Effect Properties</h3>
+<p>If you open the XML file using a text editor, you can adjust various properties.</p>
+
+<h4 id="name">Name</h4>
+<p>Name of the light effect which will show up in the asset editor. This must be globally unique so it's a good idea to prefix it with your username. This should not be changed for already used and published effects.</p>
+
+<h4 id="type">Type</h4>
+<p>The type of light: <span class="path">Spot</span>, <span class="path">Directional</span>, <span class="path">Point</span>, <span class="path">Area</span>.</p>
+
+<h4 id="intensity">Intensity</h4>
+<p>The brightness of the light, usually starts from 4 for street lights and up to 8 for floodlights.</p>
+
+<h4 id="range">Range</h4>
+<p>How far the light effect extends in meters.</p>
+
+<h4 id="spotangle">Spot Angle</h4>
+<p>The angle of how wide or narrow the light beam is for <span class="path">Spot</span> lights.</p>
+
+<h4 id="spotleaking">Spot Leaking</h4>
+<p>The fog/bloom effect around the light source, usually 0.1 to 0.5.</p>
+
+<h4 id="batchedlight">Batched Light</h4>
+<p>If this is set to true, the light is visible from any distance, must be false for vehicle lights.</p>
+
+<h4 id="fadestartdistance">Fade Start Distance</h4>
+<p>If batched light is set to false, this controls the distance at which the light effect starts to fade out, usually around 300.</p>
+
+<h4 id="fadeenddistance">Fade End Distance</h4>
+<p>If batched light is set to false, this controls the distance at which the light effect is no longer visible, usually around 500. Higher values may have no effect because of the limited prop render distance unless <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=1680642819'>a mod like ULOD</a> increases this distance.</p>
+
+<h4 id="offmin-offmax">Off Min & Off Max</h4>
+<p>Daylight values under which the lights turn off. For night-only lights usually 0.4, 0.7. If both values are the same, all instances of this light will turn off at the same time(more specifically daylight brightness), but if they are different, they will turn off at random times. <a href='https://docs.google.com/spreadsheets/d/1adrpJysA9yxkrRGrQ-I3VVs8QqqQvs4qu9Cq4wSCLqY/edit?usp=sharing'>Check this spreadsheet</a> to see how many hours during the day the light will be off using which values.</p>
+
+<h4 id="blinktype">Blink Type</h4>
+<p>If and how the light should blink: <span class="path">None</span>, <span class="path">Blink_050_050</span>, <span class="path">MildFade_0125_0125</span>, <span class="path">MediumFade_500_500</span>, <span class="path">StrongBlaze_0125_0125</span>, <span class="path">StrongFade_250_250</span>, <span class="path">Blink_025_025</span></p>
+
+<h4 id="rotationspeed">Rotation Speed</h4>
+<p>The speed at which the light will rotate around an axis, usually 10 to 50. Rotation works only if batched light is set to false.</p>
+
+<h4 id="rotationaxis">Rotation Axis X Y Z</h4>
+<p>Rotation axis vector around which the light will rotate.</p>
+
+
+
+
+<h2 id="publish">Publish</h2>
+<p>You can publish the asset as usual, but you must include your modified XML file in the content folder. Make sure the mod is enabled while you publish the asset, this will add a custom tag which can be used to find all custom effect loader assets in the steam workshop.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script>$(function(){$("#menu-file").load("https://cslmodding.info/menu.html");});</script>
+<script src='https://cslmodding.info/js/article.js'></script>
+<script src='https://cslmodding.info/js/headings.js'></script>
+<script src='https://cslmodding.info/js/toc.js'></script>
+<script src='https://cslmodding.info/js/title.js'></script>
+<script src='https://cslmodding.info/js/scroll.js'></script>
+</body></html>
