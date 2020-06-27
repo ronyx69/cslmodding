@@ -176,7 +176,7 @@ h1 {
 
 .grid {
 	background-color: #fff;
-	padding: 64px 32px;
+	padding: 64px 32px 32px 32px;
 	display: grid;
 	grid-template-columns: 50% 50%;
 	grid-gap: 0;
@@ -190,16 +190,27 @@ h1 {
 }
 .itemdesc {
 	color: #222526;
-	line-height: 64px;
+	line-height: 24px;
+	margin: 20px 0 36px 0;
 }
-.itemdesc a {
+.item a {
 	color: #222526;
 	float: left;
 	text-decoration: none;
 	transition: color 0.3s ease-out;
 }
-.itemdesc a:hover {
+.item .itemdesc {
+	transition: color 0.3s ease-out;
+}
+.item a:hover .itemdesc {
 	color: #599cb3;
+}
+.item img {
+	opacity: 1;
+	transition: opacity 0.3s ease-out;
+}
+.item a:hover img {
+	opacity: 0.8;
 }
 .stat {
 	float: right;
@@ -212,9 +223,9 @@ h1 {
 <div class='menu1'><a href='https://cslmodding.info/commissions'><img class='svg' src='logo.svg'><h1>Cities: Skylines Commissions</h1></a></div>
 
 <div class='menu2'><ul>
-	<li><a href='#contact'>Contact</a></li>
-	<li><a href='#todo'>To Do</a></li>
-	<li><a href='#pricing'>Pricing</a></li>
+	<li><a href='https://cslmodding.info/commissions/#contact'>Contact</a></li>
+	<li><a href='https://cslmodding.info/commissions/#todo'>To Do</a></li>
+	<li><a href='https://cslmodding.info/commissions/#pricing'>Pricing</a></li>
 </ul></div>
 
 </div>
@@ -231,53 +242,57 @@ h1 {
 
 <div class='grid'>
 
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span><span class='stat'>115 H</span></div></div>
+<div class='item'><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=2086973289'><img src='https://i.imgur.com/zQKlv76.jpg'>
+<div class='itemdesc'>Wako Department Store »
+<span class='stat'>350 EUR</span><span class='stat'>115 H</span></div></a></div>
 
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span><span class='stat'>115 H</span></div></div>
-
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span><span class='stat'>115 H</span></div></div>
-
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span><span class='stat'>115 H</span></div></div>
-
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span><span class='stat'>115 H</span></div></div>
+<div class='item'><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=2141508673'><img src='https://i.imgur.com/gQn0ujt.jpg'>
+<div class='itemdesc'>Vineyard »
+<span class='stat'>60 EUR</span><span class='stat'>20 H</span></div></a></div>
 
 </div>
 
 
-<div id='todo' class='desc'><div class='descdivfull'><h2>To Do List</h2><p>Choose a project from my to do list for a predefined lower price.</p></div></div>
+<div id='todo' class='desc'><div class='descdivfull'><h2>To Do List</h2><p>Choose a project from my to do list for a special price.<br><br>Each item links to more references.</p></div></div>
 
 
 <div class='grid'>
 
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span></div></div>
+<div class='item'><a href='https://www.google.com/maps/@34.4524825,132.3804668,158a,35y,347.19h,51.26t/data=!3m1!1e3?hl=en'><img src='https://i.imgur.com/nmXvEti.jpg'>
+<div class='itemdesc'>Yamato Transport Facility »
+<span class='stat'>40 EUR</span></div></a></div>
 
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span></div></div>
+<div class='item'><a href='https://upload.wikimedia.org/wikipedia/commons/b/bd/Toyota_QD200_201.JPG?1592036247462'><img src='https://i.imgur.com/WSFWqFO.jpg'>
+<div class='itemdesc'>Yamato Toyota Quick Delivery Van »
+<span class='stat'>50 EUR</span></div></a></div>
 
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span></div></div>
+<div class='item'><a href='https://www.beforward.jp/suzuki/every/bh273200/id/1852317/'><img src='https://i.imgur.com/WTR54Qe.jpg'>
+<div class='itemdesc'>2016-2018 Suzuki Every (Civilian and JP Post) »
+<span class='stat'>50 EUR</span></div></a></div>
 
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span></div></div>
+<div class='item'><a href='https://upload.wikimedia.org/wikipedia/commons/3/38/ISUZU_ELF%2C_6th_Gen%2C_Dobule-cab%2C_Widebody-type%2C_Grade-ST.jpg'><img src='https://i.imgur.com/1AmhOxW.jpg'>
+<div class='itemdesc'>6th Gen Isuzu Elf Double-cab (Industrial and Road Maintenance) »
+<span class='stat'>60 EUR</span></div></a></div>
 
-<div class='item'><img src='https://i.imgur.com/o0j7Q3B.jpg'>
-<div class='itemdesc'><a href='https://i.imgur.com/o0j7Q3B.jpg'>Wako Department Store »</a>
-<span class='stat'>350 EUR</span></div></div>
+<div class='item'><a href='https://www.wikiwand.com/en/Wuppertal_Schwebebahn'><img src='https://i.imgur.com/cFb2SzX.jpg'>
+<div class='itemdesc'>Wuppertal Suspension Railway (Networks, Vehicle, Stations) »
+<span class='stat'>150 EUR</span></div></a></div>
+
+<div class='item'><a href='https://www.wikiwand.com/en/Ch%C5%AB%C5%8D_Shinkansen'><img src='https://i.imgur.com/hLAZidk.jpg'>
+<div class='itemdesc'>Chuo Shinkansen Maglev (Networks, Vehicle, Stations) »
+<span class='stat'>80 EUR</span></div></a></div>
+
+<div class='item'><a href='https://www.wikiwand.com/en/Nankai_Cable_Line'><img src='https://i.imgur.com/OIYqsEZ.jpg'>
+<div class='itemdesc'>Koyasan Cable Line Funicular (Networks, Vehicle, Stations) »
+<span class='stat'>80 EUR</span></div></a></div>
+
+<div class='item'><a href='https://www.google.com/maps/@35.6931723,139.7016322,195a,35y,13.31h,14.26t/data=!3m1!1e3'><img src='https://i.imgur.com/sJx0ZZV.jpg'>
+<div class='itemdesc'>Vibrant Japanese Commercial with Ads »
+<span class='stat'>1 EUR / H</span></div></a></div>
+
+<div class='item'><a href='https://steamcommunity.com/workshop/filedetails/?id=767701501'><img src='https://i.imgur.com/xYl7JIH.jpg'>
+<div class='itemdesc'>Simple Decals »
+<span class='stat'>2 EUR / DECAL</span></div></a></div>
 
 </div>
 
@@ -299,5 +314,5 @@ h1 {
 <div style="clear:both"></div>
 </div>
 
-
+<script src='https://cslmodding.info/js/scroll.js'></script>
 </body></html>
