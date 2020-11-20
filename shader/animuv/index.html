@@ -20,7 +20,7 @@ Example of a <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940
 </p></div>
 <p>The AnimUV shader can be used to create scrolling or multi-frame animations. There are 2 AnimUV shaders - one for props and one for buildings and building sub-meshes.</p>
 <p>The building AnimUV shader doesn't require a mod.</p>
-<p>While previously created props still require <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299505'>the AnimUV Params mod</a>, a new method for saving shader parameters by boformer has removed the requirement for a mod. Vehicle sub meshes still require the mod.</p>
+<p>While vehicle sub-meshes and previously created props still require <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299505'>the AnimUV Params mod</a>, a new method for saving shader parameters by boformer has removed the requirement for a mod. Vehicle sub meshes still require the mod.</p>
 <p>This article assumes you are familiar with regular prop asset creation.</p>
 
 
@@ -73,18 +73,13 @@ Example of a <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940
 
 
 <h3 id="props">Props</h3>
-<p>The prop AnimUV shader works only with the AnimUV Params mod. But the mod is not necessary to create the asset and run <a href='https://gist.github.com/ronyx69/558a2adbe7557da62ea7a7153b86e74c'>the AnimUV Params prop scripts</a>, the mod is only required for loading the prop ingame.</p>
+<p><a href='https://gist.github.com/ronyx69/558a2adbe7557da62ea7a7153b86e74c'>The prop AnimUV shader scripts</a> don't require a mod anymore.</p>
 
 
-<h4 id="example-source-files">Example Source Files</h4>
-<p>You can download source files and scripts of <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299860'>the examples</a>.</p>
-<div class="content-download"><a href="https://drive.google.com/open?id=0B6Ccf1N5h5f7VHVRUUtTaG5Qc1k" target="null">
-Download
-</a></div>
 
 
 <h3 id="vehicle-sub-meshes">Vehicle sub-meshes</h3>
-<p>The prop AnimUV shader can also be applied to vehicle sub-meshes using <a href='https://gist.github.com/ronyx69/e69e5d0b0b4a28d6577a5afad1af3dcf'>these scripts</a>, but it requires the mesh to be imported as a prop first, then the game must be reloaded and then the vertex paint can be copied from the prop to the vehicle sub-mesh. This is similar to <a href='https://cslmodding.info/shader/rotors-propellers/#prop'>the process of creating rotors shader propellers for blimps</a>.</p>
+<p>The prop AnimUV shader can also be applied to vehicle sub-meshes using <a href='https://gist.github.com/ronyx69/e69e5d0b0b4a28d6577a5afad1af3dcf'>these scripts</a>, this use case still requires <a href='https://steamcommunity.com/sharedfiles/filedetails/?id=940299505'>the AnimUV Params mod</a>. The mesh must be imported as a prop first, then the game must be reloaded and then the vertex paint can be copied from the prop to the vehicle sub-mesh. This is similar to <a href='https://cslmodding.info/shader/rotors-propellers/#prop'>the process of creating rotors shader propellers for blimps</a>.</p>
 
 
 
