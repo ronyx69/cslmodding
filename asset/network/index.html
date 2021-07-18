@@ -71,6 +71,8 @@ Network <br>Asset <br>Creation
 
 <p>It's also the width of the area affected by flatten terrain, drawable/selectable area and affects how the road will snap to the grid.</p>
 
+<p>The half-width should be wide enough to cover the entire mesh of the network, otherwise the LOD may display incorrectly.</p>
+
 
 <h4 id="pavement-width">Pavement Width</h4>
 
@@ -293,6 +295,20 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 <h4 id="m_setcitizenflags">m_setCitizenFlags</h4>
 
 <p>Same as m_setVehicleFlags but for citizens.</p>
+
+
+
+<h4 id="m_usefixedheight">m_useFixedHeight</h4>
+
+<p>Used for networks which are specifically used inside buildings - such as station tracks or the harbor road. If enabled, makes sure the networks stay at the same level relative to the building, even on uneven terrain.</p>
+
+
+<h4 id="m_terrainStartOffset_m_terrainendoffset">m_terrainStartOffset & m_terrainEndOffset</h4>
+
+<p>Used to force lowered or raised terrain at the start or end nodes of a network. Used for slope networks - tunnel entrances.</p>
+
+
+
 
 
 
@@ -735,11 +751,11 @@ Example of 0 (top) and 16 (bottom) min corner offset.
 Vanilla six-lane road segment mesh.
 </p></div>
 
-<p>The mesh for segments and nodes usually is an extruded profile, but some also have railings or other details. The mesh itself is usually 64 meters long, and it will always stretch for the entire segment, so it's not recommended to rely on the segment mesh for anything else other than the extruded profile, and use lane props for such details instead.</p>
+<p>The mesh for segments and nodes usually is an extruded profile, but some also have railings or other details. The mesh itself is usually 64 meters long, and it will always stretch for the entire segment, so it's not recommended to rely on the segment mesh for anything else other than the extruded profile, and use lane props for other details (like fence beams) instead.</p>
 
 <p>The mesh is also subdivided multiple times, usually 16. The more subdivisions, the smoother it will look when bending.</p>
 
-<p>Node mesh also requires a cut through the middle, so the game can split it for use in intersections, it will also place the center vertex in the middle of the intersection.</p>
+<p>Node meshes used for intersections require a cut through the middle, so the game can split it, also the center vertex will be placed in the middle of the intersection.</p>
 
 
 
@@ -754,9 +770,22 @@ A road mesh, its uv mapping, and how it appears ingame using tiling or vertex co
 
 <p>You may have details for which you want to disable this automatic tiling, this can be done using vertex paint - by setting the green channel for those parts to 0, which means those parts would be 255,0,255 (magenta). This will make sure the texture is exactly as you UV map it, so it will stretch together with the segment.</p>
 
+
+
 <div class="content-info"><em>
 You can use <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1274199764">the Network Tiling mod</a> to change how much the texture is tiled along the segments and nodes. Tiled textures with alpha mapping will cast shadows which will not have the tiling.
 </em></div>
+
+
+
+
+<h4 id="lod-uv-mapping">LOD</h4>
+
+<p>For the LOD mesh, the UV mapping must be within the 0-1 area (main tile) of the UV map, no tiling is allowed. This is because ingame all the LOD textures are combined into a single texture called an atlas, so having incorrect uv mapping will end up putting the texture of some other random network on your LOD.</p>
+
+
+
+
 
 <h3 id="wire-shader">Wire Shader</h3>
 
@@ -769,6 +798,12 @@ The wire shader requires a specific kind of mesh - each "wire" should be a verti
 <p>It should be UV Mapped horizontally from -1 to 1 but the height of the uv mapping depends on the height of the mesh, for example - on the vanilla powerline mesh each wire is 4m high, so the UV mapping vertically goes from -2 to 2.</p>
 
 <p>The vertex paint green channel must be 0. The blue channel controls the amount of sway in the wind, 0 means no sway. The red channel controls the phase of the sway.</p>
+
+
+<h3 id="lod-mesh">LOD Mesh</h3>
+
+<p>The LOD mesh should not be outside the half-width, otherwise it might display incorrectly.</p>
+
 
 
 
@@ -831,6 +866,12 @@ Just like any diffuse texture, defines the main color of the network.</p>
 
 
 
+<h3 id="lod-textures">LOD Textures</h3>
+
+<p>Even if you don't need a diffuse texture (because the network uses only asphalt and/or pavement), you should still import a diffuse texture for the LOD, otherwise the LOD will import incorrectly.</p>
+
+
+
 
 <h2 id="save-update">Save & Update</h2>
 
@@ -842,6 +883,10 @@ Just like any diffuse texture, defines the main color of the network.</p>
 
 
 
+
+<h2 id="adaptive-roads">Adaptive Roads</h2>
+
+<p><a href='https://steamcommunity.com/sharedfiles/filedetails/?id=2414618415'>Adaptive Roads by kian.zarrin</a> is a mod which extends the capabilities and UI of the network editor</p>
 
 
 

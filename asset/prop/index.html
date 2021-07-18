@@ -183,7 +183,11 @@ Make sure texture quality is set to high in the game's graphics settings, otherw
 
 <div class="content-photo-box"><img src="https://i.imgur.com/YWwTFe5.jpg"><p>
 Example diffuse texture for a conveyor prop.
-</p></div><p>
+</p></div>
+
+<div class="content-photo-box"><img src="https://i.imgur.com/CQHjaAT.png"><p>Color guidelines.</p></div>
+
+<p>
 
 	The main color and texture of your asset.</p>
 
@@ -292,7 +296,7 @@ Also sometimes called a bump map, adds fake depth or form by affecting how the l
 
 <p>The game supports other formats as well, but there is no reason to use another one, it doesn't matter how much your texture is compressed or even if it's completely solid or complicated, the game will convert it to a DXT format, so the final size won't be affected by anything other than resolution.</p>
 
-<p>Make sure the texture is 8 bits/channel since a 16 bits/channel image can't be imported.</p>
+<p>Make sure the texture is 8 bits/channel because a 16 bits/channel image can't be imported. Do not use the "Smaller File (8-bit)" feature in the Photoshop Export As window, as that creates an indexed color image, not an 8 bits/channel one.</p>
 
 
 
@@ -505,7 +509,7 @@ Comparison between Default (left), Fence (middle) and Decal (right) prop shaders
 <ul>
 <li><a href='https://gist.github.com/ronyx69/bd84159b66ca9cb70763247ddc69fbac'>Default</a></li>
 
-<li><a href='https://gist.github.com/ronyx69/911f8a9deff79412d085f709e555e03f'>Fence</a> conforms to the ground. 
+<li><a href='https://gist.github.com/ronyx69/911f8a9deff79412d085f709e555e03f'>Fence</a> conforms to the ground. If you use the "high/low vegetation" props as the template when importing, the resulting props will have fence shader, but will also be height-adjustable using Move It!, which is unusual for props using the fence shader.</li>
 
 <li><a href='https://cslmodding.info/shader/decal/'>Decal</a> projects the texture onto the ground.</li>
 

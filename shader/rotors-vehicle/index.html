@@ -19,7 +19,26 @@ Rotors Shader (Vehicle Glass)
 Semi-transparent windows on a car.
 </p></div><p>Rotors shader was designed for spinning helicopter and blimp propellers, but it can also be used to create semi-transparent glass window sub-meshes for vehicles. The shader spins similarly to wheels and there is no known way to stop it from spinning, so a workaround defines each vertex of the mesh as a wheel which spins around itself.</p>
 
+
 <p>This article assumes you are familiar with <a href='https://cslmodding.info/shader/rotors/'>rotors shader prop or building asset creation</a> and regular vehicle asset creation using sub-meshes.</p>
+
+
+
+
+
+
+<h2 id="limitations">Limitations</h2>
+
+
+<h3 id="trailers">Trailers</h3>
+
+<p>This technique is currently not applicable for trailers, because they recalculate vertex colors when the trailer is added.</p>
+
+
+<h3 id="suspension">Suspension</h3>
+
+<p>The rotors shader will not move together with the vehicle suspension, so <a href='https://cslmodding.info/modtools/#m_leanmultiplier'>suspension lean and nod multipliers</a> should be set to 0.</p>
+
 
 
 
