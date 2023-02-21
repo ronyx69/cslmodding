@@ -1,614 +1,618 @@
-﻿<html><head><title>  ​​</title><style>
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
-	font-weight: 400;
-	margin: 0;
-	padding: 0;
-}
+<html><head><title>  ​​</title><style>
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin: 0; padding: 0; }
+ul { list-style-type: none; }
 body {
-	margin: 0;
-	background-color: #373737;
+	background-color: #252525;
+	color: #a0a0a0;
 	font-family: 'Segoe UI', sans-serif;
 	font-weight: 400;
-	letter-spacing: -1.0px;
+	font-size: 0.84vw;
+	line-height: 0.9vw;
+	letter-spacing: -0.03vw;
+	margin: 3px;
 }
-.row {
-	clear:both;
+k-row {
+	display: flex;
 }
-.key {
-	width: calc((100vw - (100vw - 100%))/13);
-	height: calc(100vw/13);
-	float: left;
-	background-color: #444444;
-	border: 1px solid #373737;
-	color: #bdbdbd;
-	padding: 0.3vw;
+k-box {
+	background-color: #363636;
+	margin: 1px;
+	padding: 0.25vw;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	box-sizing: border-box;
+	border: 1px solid #3b3b3b;
+	overflow: hidden;
+	min-height: calc(100vw/22);
+}
+k-title {
 	position: relative;
+	display: flex;
 }
-.action {
-	bottom: 0.3vw;
+k-key {
+	color: #bbbbbb;
+	font-size: 1.3vw;
+}
+k-alias {
+	font-size: 0.9vw;
+	color: #afa0bf;
+	margin: 0.06vw 0.3vw 0 0;
 	position: absolute;
+	right: 0;
 }
-h2 {
-	font-size: 1.6vw;
-	line-height: 1.3vw;
+k-alias.macro {
+	color: #999977;
+	font-style: italic;
 }
-h3 {
-	font-size: 0.85vw;
-	line-height: 1.0vw;
-	bottom: 0;
+k-hotkeys {
+	clear: both;
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-end;
+	margin-top: 0.4vw;
 	margin-bottom: -1px;
+	margin-right: -6px;
+	white-space: nowrap;
 }
-.ctrl { color: #1ad9ff; }
-.shift { color: #ffaa00; }
-.alt { color: #48d900; }
-.ctrl, .shift, .alt { letter-spacing: -2px; }
-a { 
-	display: block; 
-	color: #bdbdbd; 
-	clear: both; 
-	padding: 20px; 
+k-ctrl, k-shift, k-alt {
+	margin-right: 0.12vw;
+	display: inline;
 }
-</style><link rel='icon' type='image/png' href='fav.png' /></head><body>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>KEY</h2>
-	<div class='action'>
-		<h3>press</h3>
-		<h3><strong>hold</strong></h3>
-		<h3><span class='ctrl'>c</span> ctrl</h3>
-		<h3><span class='shift'>s</span> shift</h3>
-		<h3><span class='alt'>a</span> alt</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F2</h2>
-	<div class='action'>
-		<h3>highlight selected</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F3</h2>
-	<div class='action'>
-		<h3>wireframe</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F4</h2>
-	<div class='action'>
-		<h3>shaded wireframe</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F5</h2>
-	<div class='action'>
-		<h3>flat lighting</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F6</h2>
-	<div class='action'>
-		<h3>modeling toolkit</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F7</h2>
-	<div class='action'>
-		<h3>attribute editor</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F8</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F9</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F10</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F11</h2>
-	<div class='action'>
-		<h3>shaderfx refresh</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F12</h2>
-	<div class='action'>
-		<h3>shelf</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>HOME</h2>
-	<div class='action'>
-		<h3>hotkey editor</h3>
-		<h3><span class='ctrl'>c</span> script editor</h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>~</h2>
-	<div class='action'>
-		<h3>object selection</h3>
-		<h3><span class='alt'>a</span> deselect all</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>1</h2>
-	<div class='action'>
-		<h3>vertex selection</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> single viewport</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>2</h2>
-	<div class='action'>
-		<h3>edge selection</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> dual viewport</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>3</h2>
-	<div class='action'>
-		<h3>face selection</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> quad viewport</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>4</h2>
-	<div class='action'>
-		<h3>uv selection</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>5</h2>
-	<div class='action'>
-		<h3>uv shell selection</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>6</h2>
-	<div class='action'>
-		<h3>multi selection</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>7</h2>
-	<div class='action'>
-		<h3>toggle normals</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>8</h2>
-	<div class='action'>
-		<h3>toggle face centers</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>9</h2>
-	<div class='action'>
-		<h3>preserve uv</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>0</h2>
-	<div class='action'>
-		<h3>vertex color</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>-</h2>
-	<div class='action'>
-		<h3>manipulator bigger</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>+</h2>
-	<div class='action'>
-		<h3>manipulator smaller</h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>Q</h2>
-	<div class='action'>
-		<h3>select</h3>
-		<h3><span class='alt'>a</span> create uv shell</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> unfold uv</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> <span class='alt'>a</span> fill hole quads</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>W</h2>
-	<div class='action'>
-		<h3>move</h3>
-		<h3><span class='shift'>s</span> align uv horizontal</h3>
-		<h3><span class='alt'>a</span> space uv horizontal</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> unfold along v</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>E</h2>
-	<div class='action'>
-		<h3>rotate</h3>
-		<h3><span class='ctrl'>c</span> uv editor</h3>
-		<h3><span class='shift'>s</span> stack uv shells</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> stack & orient uv</h3>
-		<h3><span class='alt'>a</span> rotate 90</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>R</h2>
-	<div class='action'>
-		<h3>scale</h3>
-		<h3><span class='ctrl'>c</span> flip z</h3>
-		<h3><span class='shift'>s</span> flip x</h3>
-		<h3><span class='alt'>a</span> flip y</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> same texel density</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>T</h2>
-	<div class='action'>
-		<h3>lattice</h3>
-		<h3><span class='shift'>s</span> uv lattice</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>Y</h2>
-	<div class='action'>
-		<h3>multicut</h3>
-		<h3><span class='shift'>s</span> divide edge</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>U</h2>
-	<div class='action'>
-		<h3>constraint none</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>I</h2>
-	<div class='action'>
-		<h3>constraint edge</h3>
-		<h3><span class='ctrl'>c</span> invert selection</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>O</h2>
-	<div class='action'>
-		<h3>outliner</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>P</h2>
-	<div class='action'>
-		<h3><span class='shift'>s</span> unparent</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>[</h2>
-	<div class='action'>
-		<h3><span class='alt'>a</span> uv flip v</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> uv scale v 0.5</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> uv scale u 0.5</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>]</h2>
-	<div class='action'>
-		<h3><span class='alt'>a</span> uv flip u</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> uv scale v 2</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> uv scale u 2</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>TAB</h2>
-	<div class='action'>
-		<h3><strong>select multiple</strong></h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>A</h2>
-	<div class='action'>
-		<h3><span class='shift'>s</span> align uv vertical</h3>
-		<h3><span class='alt'>a</span> space uv vertical</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> unfold along u</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>S</h2>
-	<div class='action'>
-		<h3>separate</h3>
-		<h3><span class='shift'>s</span> combine</h3>
-		<h3><span class='alt'>a</span> merge verts/uv</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> merge to center</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>D</h2>
-	<div class='action'>
-		<h3>detach faces</h3>
-		<h3><span class='ctrl'>c</span> duplicate faces</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> duplicate faces o</h3>
-		<h3><span class='alt'>a</span> duplicate object</h3>
-		<h3><span class='alt'>a</span> <span class='shift'>s</span> duplicate object o</h3>
-		<h3><span class='shift'>s</span> duplicate object tf</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F</h2>
-	<div class='action'>
-		<h3>custom pivot</h3>
-		<h3><span class='ctrl'>c</span> world pivot</h3>
-		<h3><span class='shift'>s</span> reset pivot</h3>
-		<h3><span class='alt'>a</span> component pivot</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> center pivot</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>G</h2>
-	<div class='action'>
-		<h3>grid</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>H</h2>
-	<div class='action'>
-		<h3>toggle history</h3>
-		<h3><span class='ctrl'>c</span> delete history</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>J</h2>
-	<div class='action'>
-		<h3>constraint surface</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>K</h2>
-	<div class='action'>
-		<h3>ring</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>L</h2>
-	<div class='action'>
-		<h3>contiguous</h3>
-		<h3><span class='shift'>s</span> loop</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>;</h2>
-	<div class='action'>
-		<h3>harden edge</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>'</h2>
-	<div class='action'>
-		<h3>soften edge</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>BKSP</h2>
-	<div class='action'>
-		<h3>remove</h3>
-		<h3><span class='ctrl'>c</span> remove with verts</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>*</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>Z</h2>
-	<div class='action'>
-		<h3>frame selected</h3>
-		<h3><span class='alt'>a</span> default view</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> hide cams</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>X</h2>
-	<div class='action'>
-		<h3><strong>snap to grid</strong></h3>
-		<h3><span class='shift'>s</span> xray object</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> xray view</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>C</h2>
-	<div class='action'>
-		<h3><strong>snap to curve</strong></h3>
-		<h3><span class='shift'>s</span> connect</h3>
-		<h3><span class='shift'>s</span> <span class='alt'>a</span> connect comp</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> uv normal project</h3>
-		<h3><span class='alt'>a</span> collapse edges</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>V</h2>
-	<div class='action'>
-		<h3><strong>snap to points</strong></h3>
-		<h3><span class='shift'>s</span> target weld</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>B</h2>
-	<div class='action'>
-		<h3>bridge</h3>
-		<h3><span class='ctrl'>c</span> break vert / face</h3>
-		<h3><span class='alt'>a</span> background color</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>N</h2>
-	<div class='action'>
-		<h3>reverse normals</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>M</h2>
-	<div class='action'>
-		<h3>hypershade</h3>
-		<h3><span class='shift'>s</span> menu bar</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> editor bar</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2><</h2>
-	<div class='action'>
-		<h3>hide selected</h3>
-		<h3><span class='shift'>s</span> shrink selection</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> shrink loop</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>></h2>
-	<div class='action'>
-		<h3>unhide all</h3>
-		<h3><span class='shift'>s</span> grow selection</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> grow loop</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>?</h2>
-	<div class='action'>
-		<h3>isolate selected</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>LMB</h2>
-	<div class='action'>
-		<h3><span class='ctrl'>c</span> subtract</h3>
-		<h3><span class='shift'>s</span> add</h3>
-		<h3><span class='alt'>a</span> <strong>orbit</strong></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>MMB</h2>
-	<div class='action'>
-		<h3><strong>previous transform</strong></h3>
-		<h3><span class='alt'>a</span> <strong>pan</strong></h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> slide</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>RMB</h2>
-	<div class='action'>
-		<h3><span class='alt'>a</span> <strong>zoom</strong></h3>
-	</div>
-</div>
-
-</div>
-
-<a href='https://drive.google.com/open?id=1RVc6nPfc8iwBuJEMvQBo9dnDzxzaRVnM'>Drive Folder</a>
-
-</body></html>
+k-ctrl {
+	color: #1ad9ff;
+}
+k-shift {
+	color: #ffaa00;
+}
+k-alt {
+	color: #48d900;
+}
+</style><link rel='icon' type='image/png' href='icon.png'/></head><body><div id='sh'>
+
+<!-- :::::::::::::::::::::::::::::: -- SHEET STARTS -- :::::::::::::::::::::::::::::: -->
+
+===
+
+{
+KEY()
+[press]
+[[hold]]
+[C# ctrl]
+[A# alt]
+[S# shift]
+}
+
+{
+F2()
+[highlight selected]
+}
+
+{
+F3()
+[wireframe]
+}
+
+{
+F4()
+[shaded wireframe]
+}
+
+{
+F5()
+[flat lighting]
+}
+
+{
+F6(M6)
+[contiguous]
+[C# ring]
+[S# loop]
+}
+
+{
+F7(M7)
+[outliner]
+}
+
+{
+F8(M8)
+[unhide all]
+}
+
+{
+F9(M9)
+[face centers]
+[S# normals]
+[C# vertex colors]
+}
+
+{
+F10(M10)
+[shelf]
+}
+
+{
+F11(M11)
+[]
+}
+
+{
+F12()
+[]
+}
+
+{
+Delete(M12)
+[remove]
+[C# remove w/ verts]
+}
+
+---
+
+===
+
+{
+~()
+[object selection]
+[A# deselect]
+}
+
+{
+1()
+[vertex selection]
+[S# A# single viewport]
+}
+
+{
+2()
+[edge selection]
+[S# A# dual viewport]
+}
+
+{
+3()
+[face selection]
+[S# A# quad viewport]
+}
+
+{
+4()
+[uv selection]
+}
+
+{
+5()
+[uv shell selection]
+}
+
+{
+6()
+[multi selection]
+}
+
+{
+7()
+[]
+}
+
+{
+8()
+[]
+}
+
+{
+9()
+[]
+}
+
+{
+0()
+[]
+}
+
+{
+-()
+[manipulator smaller]
+}
+
+{
++()
+[manipulator bigger]
+}
+
+---
+
+===
+
+{
+Q()
+[select]
+[A# split into uv shell]
+[S# A# unfold uv]
+[C# S# A# fill hole quads]
+}
+
+{
+W()
+[move]
+[S# align uv horizontal]
+[A# space uv horizontal]
+[S# A# unfold v]
+}
+
+{
+E()
+[rotate]
+[S# stack uv shells]
+[S# A# stack & orient uv]
+[A# rotate y 90]
+}
+
+{
+R()
+[scale]
+[C# flip z]
+[S# flip x]
+[A# flip y]
+[S# A# same tex density]
+}
+
+{
+T()
+[lattice]
+[S# uv lattice]
+}
+
+{
+Y()
+[multicut]
+[S# divide edge]
+}
+
+{
+U()
+[constraint none]
+}
+
+{
+I()
+[constraint edge]
+[C# invert selection]
+}
+
+{
+O()
+[]
+}
+
+{
+P()
+[S# unparent]
+}
+
+{
+sqbrl(MDN)
+[soften]
+[S# scale u 0.5]
+[C# scale v 0.5]
+[A# rotate uv ccw]
+[C# S# flip v]
+[C# S# A# get tex density]
+}
+
+{
+sqbrr(MUP)
+[harden]
+[S# scale u 2]
+[C# scale v 2]
+[A# rotate uv cw]
+[C# S# flip u]
+[C# S# A# set tex density]
+}
+
+{
+Tab()
+[[select multiple]]
+}
+
+---
+
+===
+
+{
+A()
+[S# align uv vertical]
+[A# space uv vertical]
+[S# A# unfold u]
+}
+
+{
+S()
+[separate]
+[C# combine]
+[A# merge verts/uv]
+[S# A# merge to center]
+}
+
+{
+D()
+[detach faces]
+[C# duplicate faces]
+[A# duplicate object]
+}
+
+{
+F()
+[custom pivot]
+[C# world pivot]
+[S# reset pivot]
+[A# component pivot]
+[S# A# center pivot]
+}
+
+{
+G()
+[grid]
+[C# group]
+}
+
+{
+H()
+[toggle history]
+[C# delete history]
+}
+
+{
+J()
+[constraint surface]
+}
+
+{
+K()
+[]
+}
+
+{
+L()
+[]
+}
+
+{
+;(M4)
+[uv editor]
+[S# straighten uv]
+}
+
+{
+'(M5)
+[hide selected]
+}
+
+{
+Home()
+[hotkey editor]
+[C# script editor]
+}
+
+{
+End()
+[]
+}
+
+---
+
+===
+
+{
+Z()
+[frame selected]
+}
+
+{
+X()
+[[snap to grid]]
+[S# xray object]
+}
+
+{
+C()
+[[snap to curve]]
+[S# connect edges]
+[S# A# connect verts]
+[C# S# uv normal project]
+[A# collapse edges]
+}
+
+{
+V()
+[[snap to verts]]
+[S# target weld]
+}
+
+{
+B()
+[bridge]
+[C# break vert/face]
+[A# background color]
+}
+
+{
+N()
+[reverse normal]
+}
+
+{
+M()
+[hypershade]
+}
+
+{
+<(M1)
+[world/reset pivot]
+}
+
+{
+>(M2)
+[isolate]
+}
+
+{
+?(M3)
+[preserve uv]
+}
+
+{
+LMB()
+[select]
+[C# subtract]
+[S# add]
+[A# orbit]
+}
+
+{
+MMB()
+[prev transform]
+[A# pan]
+[C# S# slide]
+}
+
+{
+RMB()
+[A# zoom]
+}
+
+---
+
+===
+
+{}{}{}{}{}{}{}{}
+
+{
+M3(?)
+[preserve uv]
+}
+
+{
+M6(F6)
+[contiguous]
+[C# ring]
+[S# loop]
+}
+
+{
+M9(F9)
+[face centers]
+[S# normals]
+[C# vertex colors]
+}
+
+{
+M12(Delete)
+[remove]
+[C# remove w/ verts]
+}
+
+{
+MUP(sqbrl)
+[harden]
+[S# scale u 2]
+[C# scale v 2]
+[A# rotate uv cw]
+[C# S# flip u]
+[C# S# A# set tex density]
+}
+
+---
+
+===
+
+{}{}{}{}{}{}{}{}
+
+{
+M2(>)
+[]
+}
+
+{
+M5(')
+[hide selected]
+}
+
+{
+M8(F8)
+[unhide all]
+}
+
+{
+M11(F11)
+[]
+}
+
+{
+MDN(sqbrr)
+[soften]
+[S# scale u 0.5]
+[C# scale v 0.5]
+[A# rotate uv ccw]
+[C# S# flip v]
+[C# S# A# get tex density]
+}
+
+---
+
+===
+
+{}{}{}{}{}{}{}{}
+
+{
+M1(<)
+[]
+}
+
+{
+M4(;)
+[uv editor]
+[S# straighten uv]
+}
+
+{
+M7(F7)
+[outliner]
+}
+
+{
+M10(F10)
+[shelf]
+}
+
+{
+MBTM()
+[]
+}
+
+---
+
+<!-- :::::::::::::::::::::::::::::: -- SHEET ENDS -- :::::::::::::::::::::::::::::: -->
+
+</div><script type="text/javascript">var c=document.getElementById('sh').innerHTML;
+c=c.replaceAll('{}','<k-box style="opacity: 0.5"></k-box>');
+c=c.replaceAll('# ','#');
+c=c.replaceAll('[[','[<b>');
+c=c.replaceAll(']]','</b>]');
+c=c.replaceAll('===','<k-row>');
+c=c.replaceAll('{','<k-box><k-title><k-key>');
+c=c.replaceAll('(@','</k-key><k-alias class="macro">');
+c=c.replaceAll('(','</k-key><k-alias>');
+c=c.replaceAll(')','</k-alias></k-title><k-hotkeys>');
+c=c.replaceAll('[','<p>');
+c=c.replaceAll(']','</p>');
+c=c.replaceAll('C#','<k-ctrl>c</k-ctrl>');
+c=c.replaceAll('S#','<k-shift>s</k-shift>');
+c=c.replaceAll('A#','<k-alt>a</k-alt>');
+c=c.replaceAll('}','</k-hotkeys></k-box>');
+c=c.replaceAll('---','</k-row>');
+c=c.replaceAll('sqbrl','[');
+c=c.replaceAll('sqbrr',']');
+document.getElementById('sh').innerHTML=c;</script></body></html>

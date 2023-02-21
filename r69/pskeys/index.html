@@ -1,594 +1,588 @@
-﻿<html><head><title>  ​​</title><style>
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
-	font-weight: 400;
-	margin: 0;
-	padding: 0;
-}
+<html><head><title>  ​​</title><style>
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin: 0; padding: 0; }
+ul { list-style-type: none; }
 body {
-	margin: 0;
-	background-color: #212121;
+	background-color: #252525;
+	color: #a0a0a0;
 	font-family: 'Segoe UI', sans-serif;
 	font-weight: 400;
-	letter-spacing: -1.0px;
+	font-size: 0.84vw;
+	line-height: 0.9vw;
+	letter-spacing: -0.03vw;
+	margin: 3px;
 }
-.row {
-	clear:both;
+k-row {
+	display: flex;
 }
-.key {
-	width: calc((100vw - (100vw - 100%))/13);
-	height: calc(100vw/13);
-	float: left;
-	background-color: #323232;
-	border: 1px solid #212121;
-	color: #a6a6a6;
-	padding: 0.3vw;
+k-box {
+	background-color: #363636;
+	margin: 1px;
+	padding: 0.25vw;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	box-sizing: border-box;
+	border: 1px solid #3b3b3b;
+	overflow: hidden;
+	min-height: calc(100vw/22);
+}
+k-title {
 	position: relative;
+	display: flex;
 }
-.action {
-	bottom: 0.3vw;
+k-key {
+	color: #bbbbbb;
+	font-size: 1.3vw;
+}
+k-alias {
+	font-size: 0.9vw;
+	color: #afa0bf;
+	margin: 0.06vw 0.3vw 0 0;
 	position: absolute;
+	right: 0;
 }
-h2 {
-	font-size: 1.6vw;
-	line-height: 1.3vw;
+k-alias.macro {
+	color: #999977;
+	font-style: italic;
 }
-h3 {
-	font-size: 0.85vw;
-	line-height: 1.0vw;
-	bottom: 0;
+k-hotkeys {
+	clear: both;
+	display: flex;
+	flex-direction: column;
+	justify-items: flex-end;
+	margin-top: 0.4vw;
 	margin-bottom: -1px;
+	margin-right: -6px;
+	white-space: nowrap;
 }
-.ctrl { color: #1ad9ff; }
-.shift { color: #ffaa00; }
-.alt { color: #48d900; }
-.ctrl, .shift, .alt { letter-spacing: -2px; }
-a { 
-	display: block; 
-	color: #bdbdbd; 
-	clear: both; 
-	padding: 20px; 
+k-ctrl, k-shift, k-alt {
+	margin-right: 0.12vw;
+	display: inline;
 }
-</style><link rel='icon' type='image/png' href='fav.png' /></head><body>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>KEY</h2>
-	<div class='action'>
-		<h3>press</h3>
-		<h3><strong>hold</strong></h3>
-		<h3><span class='ctrl'>c</span> ctrl</h3>
-		<h3><span class='shift'>s</span> shift</h3>
-		<h3><span class='alt'>a</span> alt</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F2</h2>
-	<div class='action'>
-		<h3>navigator</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F3</h2>
-	<div class='action'>
-		<h3>character</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F4</h2>
-	<div class='action'>
-		<h3>layers</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F5</h2>
-	<div class='action'>
-		<h3>histogram</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F6</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F7</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F8</h2>
-	<div class='action'>
-		<h3>info</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F9</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F10</h2>
-	<div class='action'>
-		<h3><span class='alt'>a</span> copy style</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> 100% zoom</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F11</h2>
-	<div class='action'>
-		<h3>full screen</h3>
-		<h3><span class='alt'>a</span> paste style</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> fit on screen</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F12</h2>
-	<div class='action'>
-		<h3>collapse all groups</h3>
-		<h3><span class='alt'>a</span> clear style</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>HOME</h2>
-	<div class='action'>
-		<h3>zoom top left</h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>~</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>1</h2>
-	<div class='action'>
-		<h3>opacity 10%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>2</h2>
-	<div class='action'>
-		<h3>opacity 20%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>3</h2>
-	<div class='action'>
-		<h3>opacity 30%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>4</h2>
-	<div class='action'>
-		<h3>opacity 40%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>5</h2>
-	<div class='action'>
-		<h3>opacity 50%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>6</h2>
-	<div class='action'>
-		<h3>opacity 60%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>7</h2>
-	<div class='action'>
-		<h3>opacity 70%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>8</h2>
-	<div class='action'>
-		<h3>opacity 80%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>9</h2>
-	<div class='action'>
-		<h3>opacity 90%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>0</h2>
-	<div class='action'>
-		<h3>opacity 100%</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>-</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>+</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>Q</h2>
-	<div class='action'>
-		<h3>quick mask mode</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>W</h2>
-	<div class='action'>
-		<h3>quick selection</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>E</h2>
-	<div class='action'>
-		<h3>eraser</h3>
-		<h3><span class='ctrl'>c</span> merge layers</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> merge visible</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> <span class='alt'>a</span> flattened layer</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>R</h2>
-	<div class='action'>
-		<h3><h3><span class='ctrl'>c</span> rulers</h3></h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> select and mask</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>T</h2>
-	<div class='action'>
-		<h3>text</h3>
-		<h3><span class='ctrl'>c</span> transform</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>Y</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>U</h2>
-	<div class='action'>
-		<h3>shape</h3>
-		<h3><span class='ctrl'>c</span> hue / saturation</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> desaturate</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>I</h2>
-	<div class='action'>
-		<h3>eyedropper</h3>
-		<h3><span class='ctrl'>c</span> invert</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> invert selection</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> image size</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>O</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>P</h2>
-	<div class='action'>
-		<h3>pen</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> export png</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>[</h2>
-	<div class='action'>
-		<h3>brush bigger</h3>
-		<h3><span class='ctrl'>c</span> layer backward</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> layer to back</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>]</h2>
-	<div class='action'>
-		<h3>brush smaller</h3>
-		<h3><span class='ctrl'>c</span> layer forward</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> layer to front</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>TAB</h2>
-	<div class='action'>
-		<h3>hide menus</h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>A</h2>
-	<div class='action'>
-		<h3>direct selection</h3>
-		<h3><span class='ctrl'>c</span> select all</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> select all layers</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> camera raw</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>S</h2>
-	<div class='action'>
-		<h3>clone stamp</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> smart object</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>D</h2>
-	<div class='action'>
-		<h3>default colors</h3>
-		<h3><span class='ctrl'>c</span> deselect</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> reselect</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>F</h2>
-	<div class='action'>
-		<h3>screen modes</h3>
-		<h3><span class='ctrl'>c</span> flatten image</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> fade</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> <span class='alt'>a</span> dupl document</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> last filter</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>G</h2>
-	<div class='action'>
-		<h3>gradient</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> ungroup</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>H</h2>
-	<div class='action'>
-		<h3><span class='ctrl'>c</span> toggle extras</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>J</h2>
-	<div class='action'>
-		<h3>spot healing brush</h3>
-		<h3><span class='ctrl'>c</span> copy to new layer</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> cut to new layer</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>K</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>L</h2>
-	<div class='action'>
-		<h3>lasso</h3>
-		<h3><span class='ctrl'>c</span> levels</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> auto tone</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> <span class='alt'>a</span> auto contrast</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>;</h2>
-	<div class='action'>
-		<h3><span class='ctrl'>c</span> toggle guides</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> toggle snap</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>'</h2>
-	<div class='action'>
-		<h3><span class='ctrl'>c</span> pixel grid</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>BKSP</h2>
-	<div class='action'>
-		<h3><span class='ctrl'>c</span> fill bg color</h3>
-		<h3><span class='alt'>a</span> fill fg color</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>*</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-</div>
-
-
-
-
-<div class='row'>
-
-<div class='key'>
-	<h2>Z</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>X</h2>
-	<div class='action'>
-		<h3>switch colors</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>C</h2>
-	<div class='action'>
-		<h3>crop</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> copy merged</h3>
-		<h3><span class='ctrl'>c</span> <span class='alt'>a</span> canvas size</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> <span class='alt'>a</span> cont aware scale</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>V</h2>
-	<div class='action'>
-		<h3>move</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>B</h2>
-	<div class='action'>
-		<h3>brush</h3>
-		<h3><span class='ctrl'>c</span> color balance</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> auto color</h3>
-		<h3><span class='ctrl'>c</span> <span class='shift'>s</span> <span class='alt'>a</span> black & white</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>N</h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>M</h2>
-	<div class='action'>
-		<h3>marquee</h3>
-		<h3><span class='ctrl'>c</span> curves</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2><</h2>
-	<div class='action'>
-		<h3><span class='ctrl'>c</span> show/hide layers</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>></h2>
-	<div class='action'>
-		<h3></h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>?</h2>
-	<div class='action'>
-		<h3>lock layer</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>M1</h2>
-	<div class='action'>
-		<h3>clipping mask</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>M2</h2>
-	<div class='action'>
-		<h3>group</h3>
-	</div>
-</div>
-
-<div class='key'>
-	<h2>DPI</h2>
-	<div class='action'>
-		<h3>quick export png</strong></h3>
-	</div>
-</div>
-
-</div>
-
-<a href='https://drive.google.com/drive/folders/14nolr_kIfBIgoNH7657yI6BVEDGR7PVj?usp=sharing'>Drive Folder</a>
-
-</body></html>
+k-ctrl {
+	color: #1ad9ff;
+}
+k-shift {
+	color: #ffaa00;
+}
+k-alt {
+	color: #48d900;
+}
+</style><link rel='icon' type='image/png' href='icon.png'/></head><body><div id='sh'>
+
+<!-- :::::::::::::::::::::::::::::: -- SHEET STARTS -- :::::::::::::::::::::::::::::: -->
+
+===
+
+{
+KEY()
+[press]
+[[hold]]
+[C# ctrl]
+[A# alt]
+[S# shift]
+}
+
+{
+F2(M2)
+[guides]
+[C# pixel grid]
+[S# grid]
+[A# snapping]
+}
+
+{
+F3(M3)
+[image size]
+[C# canvas size]
+}
+
+{
+F4(M4)
+[group]
+}
+
+{
+F5(M5)
+[zoom fit]
+}
+
+{
+F6(M6)
+[collapse all]
+}
+
+{
+F7(M7)
+[ungroup]
+}
+
+{
+F8(M8)
+[zoom 100%]
+}
+
+{
+F9()
+[]
+}
+
+{
+F10(M10)
+[show/hide layers]
+}
+
+{
+F11(M11)
+[]
+}
+
+{
+F12()
+[]
+}
+
+{
+Delete(M12)
+[delete]
+}
+
+---
+
+===
+
+{
+~()
+[]
+}
+
+{
+1()
+[opacity 10%]
+}
+
+{
+2()
+[opacity 20%]
+}
+
+{
+3()
+[opacity 30%]
+}
+
+{
+4()
+[opacity 40%]
+}
+
+{
+5()
+[opacity 50%]
+}
+
+{
+6()
+[opacity 60%]
+}
+
+{
+7()
+[opacity 70%]
+}
+
+{
+8()
+[opacity 80%]
+}
+
+{
+9()
+[opacity 90%]
+}
+
+{
+0()
+[opacity 100%]
+}
+
+{
+-()
+[]
+}
+
+{
++()
+[]
+}
+
+---
+
+===
+
+{
+Q()
+[quick mask mode]
+}
+
+{
+W()
+[quick selection]
+}
+
+{
+E()
+[eraser]
+[C# merge layers]
+[C# S# merge visible]
+}
+
+{
+R()
+[C# rulers]
+[C# A# select and mask]
+}
+
+{
+T()
+[text]
+[C# transform]
+}
+
+{
+Y()
+[]
+}
+
+{
+U()
+[shape]
+[C# hue/saturation]
+[C# S# desaturate]
+}
+
+{
+I()
+[eyedropper]
+[C# invert]
+[C# S# invert selection]
+}
+
+{
+O()
+[]
+}
+
+{
+P()
+[pen]
+[C# S# export png]
+}
+
+{
+sqbrl(MDN)
+[brush bigger]
+[C# layer up]
+[C# S# layer top]
+[C# A# copy style]
+}
+
+{
+sqbrr(MUP)
+[brush smaller]
+[C# layer down]
+[C# S# layer bottom]
+[C# A# paste style]
+[C# S# A# clear style]
+}
+
+{
+Tab()
+[hide menus]
+}
+
+---
+
+===
+
+{
+A()
+[direct selection]
+[C# select all]
+[C# S# camera raw]
+}
+
+{
+S()
+[clone stamp]
+[C# A# smart object]
+}
+
+{
+D()
+[default colors]
+[C# deselect]
+}
+
+{
+F()
+[screen modes]
+[C# flatten image]
+[C# S# fade]
+[C# S# duplicate doc.]
+[C# A# last filter]
+}
+
+{
+G()
+[gradient]
+}
+
+{
+H()
+[toggle extras]
+}
+
+{
+J()
+[spot healing brush]
+[C# copy to new layer]
+[C# S# cut to new layer]
+}
+
+{
+K()
+[]
+}
+
+{
+L()
+[lasso]
+[C# levels]
+[C# S# auto tone]
+[C# S# A# auto contrast]
+}
+
+{
+;()
+[]
+}
+
+{
+'()
+[]
+}
+
+{
+Home()
+[zoom top left]
+}
+
+{
+End()
+[]
+}
+
+---
+
+===
+
+{
+Z()
+[]
+}
+
+{
+X()
+[switch colors]
+}
+
+{
+C()
+[crop]
+}
+
+{
+V()
+[move]
+}
+
+{
+B()
+[brush]
+[C# color balance]
+[C# S# auto color]
+[C# S# A# black & white]
+}
+
+{
+N()
+[]
+}
+
+{
+M()
+[marquee]
+[C# curves]
+}
+
+{
+<(C# M1)
+[C# clipping mask]
+}
+
+{
+>()
+[]
+}
+
+{
+?()
+[lock layer]
+}
+
+{
+LMB()
+[select]
+[space pan]
+}
+
+{
+MMB()
+[]
+}
+
+{
+RMB()
+[]
+}
+
+---
+
+===
+
+{}{}{}{}{}{}{}{}
+
+{
+M3(F3)
+[image size]
+[C# canvas size]
+}
+
+{
+M6(F6)
+[collapse all]
+}
+
+{
+M9(@Macro)
+[save copy tga up]
+}
+
+{
+M12(Delete)
+[delete]
+}
+
+{
+MUP(sqbrl)
+[brush bigger]
+[C# layer up]
+[C# S# layer top]
+[C# A# copy style]
+[C# S# A# clear style]
+}
+
+---
+
+===
+
+{}{}{}{}{}{}{}{}
+
+{
+M2(F2)
+[guides]
+[C# pixel grid]
+[S# grid]
+[A# snapping]
+}
+
+{
+M5(F5)
+[zoom fit]
+}
+
+{
+M8(F8)
+[zoom 100%]
+}
+
+{
+M11(F11)
+[]
+}
+
+{
+MDN(sqbrr)
+[brush smaller]
+[C# layer down]
+[C# S# layer bottom]
+[C# A# paste style]
+}
+
+---
+
+===
+
+{}{}{}{}{}{}{}{}
+
+{
+M1(C# <)
+[clipping mask]
+}
+
+{
+M4(F4)
+[group]
+}
+
+{
+M7(F7)
+[ungroup]
+}
+
+{
+M10(F10)
+[show/hide layers]
+}
+
+{
+MBTM()
+[]
+}
+
+---
+
+<!-- :::::::::::::::::::::::::::::: -- SHEET ENDS -- :::::::::::::::::::::::::::::: -->
+
+</div><script type="text/javascript">var c=document.getElementById('sh').innerHTML;
+c=c.replaceAll('{}','<k-box style="opacity: 0.5"></k-box>');
+c=c.replaceAll('# ','#');
+c=c.replaceAll('[[','[<b>');
+c=c.replaceAll(']]','</b>]');
+c=c.replaceAll('===','<k-row>');
+c=c.replaceAll('{','<k-box><k-title><k-key>');
+c=c.replaceAll('(@','</k-key><k-alias class="macro">');
+c=c.replaceAll('(','</k-key><k-alias>');
+c=c.replaceAll(')','</k-alias></k-title><k-hotkeys>');
+c=c.replaceAll('[','<p>');
+c=c.replaceAll(']','</p>');
+c=c.replaceAll('C#','<k-ctrl>c</k-ctrl>');
+c=c.replaceAll('S#','<k-shift>s</k-shift>');
+c=c.replaceAll('A#','<k-alt>a</k-alt>');
+c=c.replaceAll('}','</k-hotkeys></k-box>');
+c=c.replaceAll('---','</k-row>');
+c=c.replaceAll('sqbrl','[');
+c=c.replaceAll('sqbrr',']');
+document.getElementById('sh').innerHTML=c;</script></body></html>
