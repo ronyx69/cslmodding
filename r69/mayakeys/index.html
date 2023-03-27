@@ -247,6 +247,7 @@ E()
 [rotate]
 [S# stack uv shells]
 [S# A# stack & orient uv]
+[C# S# gather uv shells]
 [A# rotate y 90]
 }
 
@@ -490,7 +491,22 @@ RMB()
 
 ===
 
-{}{}{}{}{}{}{}{}
+{
+7()
+[C# A# uv average u]
+}
+
+{
+8()
+[C# A# uv max v]
+}
+
+{
+9()
+[C# A# uv average v]
+}
+
+{}{}{}{}{}
 
 {
 M3(?)
@@ -534,7 +550,22 @@ MUP(sqbrl)
 
 ===
 
-{}{}{}{}{}{}{}{}
+{
+4()
+[C# A# uv min u]
+}
+
+{
+5()
+[C# A# unstack shells]
+}
+
+{
+6()
+[C# A# uv max u]
+}
+
+{}{}{}{}{}
 
 {
 M2(>)
@@ -570,7 +601,22 @@ MDN(sqbrr)
 
 ===
 
-{}{}{}{}{}{}{}{}
+{
+1()
+[C# A# uv distribute u]
+}
+
+{
+2()
+[C# A# uv min v]
+}
+
+{
+3()
+[C# A# uv distribute v]
+}
+
+{}{}{}{}{}
 
 {
 M1(<)
