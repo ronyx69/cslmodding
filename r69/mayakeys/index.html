@@ -17,7 +17,7 @@ k-row {
 k-box {
 	background-color: #363636;
 	margin: 1px;
-	padding: 0.25vw;
+	padding: 0.2vw 0.25vw;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -51,7 +51,7 @@ k-hotkeys {
 	display: flex;
 	flex-direction: column;
 	justify-items: flex-end;
-	margin-top: 0.4vw;
+	margin-top: 0.38vw;
 	margin-bottom: -1px;
 	margin-right: -6px;
 	white-space: nowrap;
@@ -263,7 +263,7 @@ R()
 {
 T()
 [lattice]
-[S# uv lattice]
+[S# lattice options]
 }
 
 {
@@ -332,7 +332,7 @@ A()
 {
 S()
 [separate]
-[C# combine]
+[S# combine]
 [A# merge verts/uv]
 [S# A# merge to center]
 }
@@ -383,7 +383,10 @@ L()
 {
 ;(M4)
 [uv editor]
-[S# straighten uv]
+[C# uv planar z]
+[S# uv planar x]
+[A# uv planar y]
+[C# S# A# straighten uv]
 }
 
 {
@@ -453,11 +456,13 @@ M()
 {
 <(M1)
 [world/reset pivot]
+[S# shrink selection]
 }
 
 {
 >(M2)
 [isolate]
+[S# grow selection]
 }
 
 {
@@ -571,6 +576,7 @@ MUP(sqbrl)
 {
 M2(>)
 [isolate]
+[S# grow selection]
 }
 
 {
@@ -622,13 +628,16 @@ MDN(sqbrr)
 {
 M1(<)
 [world/reset pivot]
-
+[S# shrink selection]
 }
 
 {
 M4(;)
 [uv editor]
-[S# straighten uv]
+[C# uv planar z]
+[S# uv planar x]
+[A# uv planar y]
+[C# S# A# straighten uv]
 }
 
 {
