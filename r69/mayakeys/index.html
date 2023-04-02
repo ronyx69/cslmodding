@@ -106,31 +106,22 @@ F5()
 
 {
 F6(M6)
-[contiguous]
-[C# ring]
-[S# loop]
 }
 
 {
 F7(M7)
-[outliner]
 }
 
 {
 F8(M8)
-[unhide all]
 }
 
 {
 F9(M9)
-[face centers]
-[S# normals]
-[C# vertex colors]
 }
 
 {
 F10(M10)
-[shelf]
 }
 
 {
@@ -145,8 +136,6 @@ F12()
 
 {
 Delete(M12)
-[remove]
-[C# remove w/ verts]
 }
 
 ---
@@ -245,6 +234,7 @@ W()
 {
 E()
 [rotate]
+[C# extrude]
 [S# stack uv shells]
 [S# A# stack & orient uv]
 [C# S# gather uv shells]
@@ -264,6 +254,7 @@ R()
 T()
 [lattice]
 [S# lattice options]
+[C# transform]
 }
 
 {
@@ -295,22 +286,10 @@ P()
 
 {
 sqbrl(MDN)
-[soften]
-[S# scale u 0.5]
-[C# scale v 0.5]
-[A# rotate uv ccw]
-[C# S# flip v]
-[C# S# A# set tex density]
 }
 
 {
 sqbrr(MUP)
-[harden]
-[S# scale u 2]
-[C# scale v 2]
-[A# rotate uv cw]
-[C# S# flip u]
-[C# S# A# get tex density]
 }
 
 {
@@ -382,16 +361,10 @@ L()
 
 {
 ;(M4)
-[uv editor]
-[C# uv planar z]
-[S# uv planar x]
-[A# uv planar y]
-[C# S# A# straighten uv]
 }
 
 {
 '(M5)
-[hide selected]
 }
 
 {
@@ -446,6 +419,10 @@ B()
 {
 N()
 [reverse normal]
+[C# S# normals size]
+[S# 1st vert normal]
+[S# A# 1st vert nrm bend]
+[A# edit normals]
 }
 
 {
@@ -455,29 +432,22 @@ M()
 
 {
 <(M1)
-[world/reset pivot]
-[S# shrink selection]
 }
 
 {
 >(M2)
-[isolate]
-[S# grow selection]
 }
 
 {
 ?(M3)
-[preserve uv]
-[C# flatten z]
-[S# flatten x]
-[A# flatten y]
 }
 
 {
 LMB()
 [select]
 [C# subtract]
-[S# add]
+[S# invert]
+[C# S# add]
 [A# orbit]
 }
 
