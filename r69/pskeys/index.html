@@ -86,51 +86,38 @@ KEY()
 
 {
 F2(M2)
-[guides]
-[C# pixel grid]
-[S# grid]
-[A# snapping]
 }
 
 {
 F3(M3)
-[image size]
-[C# canvas size]
 }
 
 {
 F4(M4)
-[group]
 }
 
 {
 F5(M5)
-[zoom fit]
 }
 
 {
 F6(M6)
-[collapse all]
 }
 
 {
 F7(M7)
-[ungroup]
 }
 
 {
 F8(M8)
-[zoom 100%]
 }
 
 {
-F9()
-[]
+F9(M9)
 }
 
 {
 F10(M10)
-[show/hide layers]
 }
 
 {
@@ -282,19 +269,9 @@ P()
 
 {
 sqbrl(MDN)
-[brush bigger]
-[C# layer up]
-[C# S# layer top]
-[C# A# copy style]
 }
 
 {
-sqbrr(MUP)
-[brush smaller]
-[C# layer down]
-[C# S# layer bottom]
-[C# A# paste style]
-[C# S# A# clear style]
 }
 
 {
@@ -428,7 +405,6 @@ M()
 
 {
 <(C# M1)
-[C# clipping mask]
 }
 
 {
@@ -438,7 +414,6 @@ M()
 
 {
 ?()
-[lock layer]
 }
 
 {
@@ -467,16 +442,22 @@ RMB()
 M3(F3)
 [image size]
 [C# canvas size]
+[S# crop]
 }
 
 {
 M6(F6)
 [collapse all]
+[S# dust scratches]
+[A# noise]
 }
 
 {
-M9(@Macro)
-[save copy tga up]
+M9(F9(@Macro/        )
+[save copy tga]
+[C# minimum]
+[S# maximum]
+[A# high pass]
 }
 
 {
@@ -510,16 +491,24 @@ M2(F2)
 {
 M5(F5)
 [zoom fit]
+[C# blur]
+[S# gaussian blur]
+[A# surface blur]
+[C# S# motion blur]
 }
 
 {
 M8(F8)
 [zoom 100%]
+[C# sharpen]
+[S# smart sharpen]
+[A# render clouds]
 }
 
 {
 M11(F11)
-[]
+[lock layer]
+[S# unlock layer]
 }
 
 {
@@ -539,21 +528,30 @@ MDN(sqbrr)
 {
 M1(C# <)
 [clipping mask]
+[S# repeat filter]
+[A# fade filter]
 }
 
 {
 M4(F4)
 [group]
+[S# ungroup]
 }
 
 {
 M7(F7)
 [smart object]
+[S# brightness/contrast]
+[A# levels]
+[C# curves]
 }
 
 {
 M10(F10)
 [show/hide layers]
+[S# hue/saturation]
+[A# vibrance]
+[C# color balance]
 }
 
 {
