@@ -6,22 +6,21 @@ body {
 	color: #a0a0a0;
 	font-family: 'Segoe UI', sans-serif;
 	font-weight: 400;
-	font-size: 0.84vw;
-	line-height: 0.9vw;
-	letter-spacing: -0.03vw;
+	font-size: 0.85vw;
+	line-height: 0.97vw;
+	letter-spacing: -0.035vw;
 	margin: 3px;
 }
 k-row {
 	display: flex;
 }
 k-box {
-	background-color: #363636;
+	background-color: #303030;
 	margin: 1px;
-	padding: 0.2vw 0.25vw;
+	padding: 0.26vw 0.2vw;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	box-sizing: border-box;
 	border: 1px solid #3b3b3b;
 	overflow: hidden;
@@ -33,7 +32,8 @@ k-title {
 }
 k-key {
 	color: #bbbbbb;
-	font-size: 1.3vw;
+	font-size: 1.4vw;
+	margin-left: -1px;
 }
 k-alias {
 	font-size: 0.9vw;
@@ -50,9 +50,8 @@ k-hotkeys {
 	clear: both;
 	display: flex;
 	flex-direction: column;
-	justify-items: flex-end;
-	margin-top: 0.38vw;
-	margin-bottom: -1px;
+	margin-top: 0.32vw;
+	margin-bottom: 0px;
 	margin-right: -6px;
 	white-space: nowrap;
 }
@@ -61,28 +60,22 @@ k-ctrl, k-shift, k-alt {
 	display: inline;
 }
 k-ctrl {
-	color: #1ad9ff;
+	color: #40afff;
+	font-weight: 400!important;
 }
 k-shift {
-	color: #ffaa00;
+	color: #ff8555;
+	font-weight: 400!important;
 }
 k-alt {
-	color: #48d900;
+	color: #00d900;
+	font-weight: 400!important;
 }
 </style><link rel='icon' type='image/png' href='icon.png'/></head><body><div id='sh'>
 
 <!-- :::::::::::::::::::::::::::::: -- SHEET STARTS -- :::::::::::::::::::::::::::::: -->
 
 ===
-
-{
-KEY()
-[press]
-[[hold]]
-[C# ctrl]
-[A# alt]
-[S# shift]
-}
 
 {
 F2()
@@ -126,16 +119,10 @@ F10(M10)
 
 {
 F11(M11)
-[]
 }
 
 {
 F12()
-[]
-}
-
-{
-Delete(M12)
 }
 
 ---
@@ -144,71 +131,71 @@ Delete(M12)
 
 {
 ~()
-[object selection]
+[object select]
 [A# deselect]
 }
 
 {
 1()
-[vertex selection]
+[vertex select C# convert]
 [S# A# single viewport]
 }
 
 {
 2()
-[edge selection]
+[edge select C# convert]
 [S# A# dual viewport]
 }
 
 {
 3()
-[face selection]
+[face select C# convert]
 [S# A# quad viewport]
 }
 
 {
 4()
-[uv selection]
+[uv select C# convert]
+[S# uv cycle]
+[A# uv normalize]
 }
 
 {
 5()
-[uv shell selection]
+[uv shell select C# convert]
+[S# uv gather]
 }
 
 {
 6()
-[multi selection]
+[multi select]
 }
 
 {
 7()
-[face vert selection]
+[face vert select C# convert]
 }
 
 {
 8()
-[]
+[create: plane / S# sphere /]
+[/ A# cylinder / C# cube]
 }
 
 {
 9()
-[]
+[select: percentage /
+[/ S# -x / A# -y / C# -z /]
+[/ C# S# smooth / C# S# A# hard /]
+[/ C# A# ang / S# A# ang cont]
 }
 
 {
 0()
-[]
-}
-
-{
--()
-[manipulator smaller]
-}
-
-{
-+()
-[manipulator bigger]
+[select: camera /]
+[S# +x / A# +y / C# +z /]
+[/ C# S# inside / C# S# A# border /]
+[/ C# A# stray verts]
 }
 
 ---
@@ -218,36 +205,28 @@ Delete(M12)
 {
 Q()
 [select]
-[A# split into uv shell]
-[S# A# unfold uv]
-[C# S# A# fill hole quads]
+[distribute: S# x / A# y / C# z]
+[fill hole: C# S# / C# S# A# +quads]
 }
 
 {
 W()
 [move]
-[S# align uv horizontal]
-[A# space uv horizontal]
-[S# A# unfold v]
+[flatten: S# x / A# y / C# z /]
+[A# C# yz / C# S# zx / S# A# xy]
 }
 
 {
 E()
 [rotate]
-[C# extrude]
-[S# stack uv shells]
-[S# A# stack & orient uv]
-[C# S# gather uv shells]
-[A# rotate y 90]
+[rotate 90: S# x / A# y / C# z]
+[corner: S# C# 45 / S# A# -45]
 }
 
 {
 R()
 [scale]
-[C# flip z]
-[S# flip x]
-[A# flip y]
-[S# A# same tex density]
+[flip: S# x / A# y / C# z]
 }
 
 {
@@ -261,35 +240,177 @@ T()
 Y()
 [multicut]
 [S# divide edge]
+[A# target weld]
+[C# redo]
 }
 
 {
 U()
 [constraint none]
+[align min: S# x / A# y / C# z]
 }
 
 {
 I()
 [constraint edge]
-[C# invert selection]
+[align avg: S# x / A# y / C# z]
 }
 
 {
 O()
-[]
+[circularize]
+[align max: S# x / A# y / C# z]
 }
 
 {
 P()
+[poke]
 [S# unparent]
 }
 
+NRM{
+_-()
+[normal: S# -x / A# -y / C# -z]
+[C# S# normals size--]
+}
+
+---
+
+===
+
 {
-sqbrl(MDN)
+A()
+[merge]
+[S# merge to center]
+[A# collapse]
+[C# select all]
 }
 
 {
-sqbrr(MUP)
+S()
+[break]
+[A# auto smooth]
+[save: C# / C# S# as]
+[C# S# A# smooth subdiv]
+}
+
+{
+D()
+[detach]
+[S# separate]
+[C# duplicate]
+[A# instance]
+}
+
+PVT{
+F()
+[pivot: custom / S# center /
+[/ A# component / C# world]
+}
+
+{
+G()
+[grid]
+[A# reset grid]
+[C# group]
+}
+
+{
+H()
+[clear history]
+}
+
+{
+J()
+[constraint surface]
+[stack: S# x / A# y / C# z]
+}
+
+{
+K()
+[edge flow]
+[C# triangulate]
+[S# quadrangulate]
+[A# spin triangle edge]
+}
+
+{
+L()
+[relative custom move:]
+[all / S# x / A# y / C# z]
+}
+
+{
+Home()
+[hotkey editor]
+}
+
+NRM{
++=()
+[normal: S# +x / A# +y / C# +z]
+[C# S# normals size++]
+}
+
+---
+
+===
+
+{
+Z()
+[frame selected]
+[S# undo camera]
+[C# undo]
+}
+
+{
+X()
+[[snap to grid]]
+[S# xray]
+}
+
+{
+C()
+[combine]
+[S# connect]
+[A# connect to 1st vert]
+[C# S# A# reset cameras]
+}
+
+{
+V()
+[[snap to verts]]
+[slice: S# yz / A# zx / C# xy /]
+[/ q: A# C# yz / C# S# zx / S# A# xy /]
+[/ C# S# A# custom]
+}
+
+{
+B()
+[bridge]
+[S# bevel]
+[A# background color]
+[C# extrude]
+[C# S# wedge]
+}
+
+NRM{
+N()
+[normal: flip / S# 1stvtx /]
+[/ S# A# 1stvtx bend /]
+[/ A# edit / C# size /]
+[/ C# S# unlock / C# A# lock]
+}
+
+{
+M()
+[hypershade]
+}
+
+{}{}
+
+{
+End()
+[script editor]
 }
 
 {
@@ -301,209 +422,26 @@ Tab()
 
 ===
 
-{
-A()
-[S# align uv vertical]
-[A# space uv vertical]
-[S# A# unfold u]
-}
+{}{}{}{}
 
-{
-S()
-[separate]
-[S# combine]
-[A# merge verts/uv]
-[S# A# merge to center]
-}
-
-{
-D()
-[detach faces]
-[C# duplicate faces]
-[A# duplicate object]
-}
-
-{
-F()
-[custom pivot]
-[C# world pivot]
-[S# reset pivot]
-[A# component pivot]
-[S# A# center pivot]
-}
-
-{
-G()
-[grid]
-[C# group]
-}
-
-{
-H()
-[toggle history]
-[C# delete history]
-}
-
-{
-J()
-[constraint surface]
-}
-
-{
-K()
-[]
-}
-
-{
-L()
-[]
-}
-
-{
-;(M4)
-}
-
-{
-'(M5)
-}
-
-{
-Home()
-[hotkey editor]
-[C# script editor]
-}
-
-{
-End()
-[]
-}
-
----
-
-===
-
-{
-Z()
-[frame selected]
-}
-
-{
-X()
-[[snap to grid]]
-[S# xray object]
-}
-
-{
-C()
-[[snap to curve]]
-[S# connect edges]
-[S# A# connect verts]
-[C# S# uv normal project]
-[A# collapse edges]
-}
-
-{
-V()
-[[snap to verts]]
-[S# target weld]
-}
-
-{
-B()
-[bridge]
-[C# break vert/face]
-[S# bevel edge]
-[A# background color]
-}
-
-{
-N()
-[reverse normal]
-[C# S# normals size]
-[S# 1st vert normal]
-[S# A# 1st vert nrm bend]
-[A# edit normals]
-}
-
-{
-M()
-[hypershade]
-}
-
-{
-<(M1)
-}
-
-{
->(M2)
-}
-
-{
-?(M3)
-}
-
-{
-LMB()
-[select]
-[C# subtract]
-[S# invert]
-[C# S# add]
-[A# orbit]
-}
-
-{
-MMB()
-[prev transform]
-[A# pan]
-[C# S# slide]
-}
-
-{
-RMB()
-[A# zoom]
-}
-
----
-
-===
-
-{
-7()
-[C# A# uv average u]
-}
-
-{
-8()
-[C# A# uv max v]
-}
-
-{
-9()
-[C# A# uv average v]
-}
-
-{}{}{}{}{}
-
-{
+UV{
 M3(?)
-[preserve uv]
-[C# flatten z]
-[S# flatten x]
-[A# flatten y]
+[uv preserve]
+[unfold: S# u / A# v / S# A# uv]
+[uv stack: C# / C# A# &orient]
+[C# S# uv straighten]
+[C# S# A# uv unstack]
 }
 
 {
 M6(F6)
 [contiguous]
-[C# ring]
-[S# loop]
+[loop: S# / A# 2 / C# 3 / S# A# 4]
 }
 
 {
 M9(F9)
-[face centers]
-[S# normals]
-[C# vertex colors]
+[ring: 1 / S# 2 / A# 3 / C# 4]
 }
 
 {
@@ -513,65 +451,74 @@ M12(Delete)
 }
 
 {
-MUP(sqbrl)
-[harden]
-[S# scale u 2]
-[C# scale v 2]
-[A# rotate uv cw]
-[C# S# flip u]
-[C# S# A# get tex density]
+LMB()
+[select]
+[C# subtract]
+[S# invert]
+[C# S# add]
+[[A# orbit]]
+}
+
+{
+MMB()
+[[prev transform]]
+[[A# pan]]
+[[C# S# slide]]
+}
+
+{
+RMB()
+[[A# zoom]]
 }
 
 ---
 
 ===
 
-{
-4()
-[C# A# uv min u]
-}
-
-{
-5()
-[C# A# unstack shells]
-}
-
-{
-6()
-[C# A# uv max u]
-}
-
-{}{}{}{}{}
+{}{}{}{}
 
 {
 M2(>)
 [isolate]
+[C# lock objects]
 [S# grow selection]
 }
 
-{
+VIS{
 M5(')
 [hide selected]
 }
 
-{
+VIS{
 M8(F8)
 [unhide all]
 }
 
 {
 M11(F11)
-[]
 }
 
 {
-MDN(sqbrr)
-[soften]
-[S# scale u 0.5]
-[C# scale v 0.5]
-[A# rotate uv ccw]
-[C# S# flip v]
-[C# S# A# set tex density]
+MUP˄(sqbrr)
+[harden]
+[uv scale: S# u 2 / A# v 2]
+[u: C# flip / S# A# avg]
+[C# S# uv max v]
+[C# A# uv move up 0.125]
+[C# S# A# uv get texel density]
+}
+
+
+UV{
+MSR˃(PgUp)
+[C# uv rotate cw]
+[C# S# uv max u]
+[C# A# uv move right 0.125]
+}
+
+{
+-()
+[manipulator smaller]
 }
 
 ---
@@ -579,50 +526,64 @@ MDN(sqbrr)
 ===
 
 {
-1()
-[C# A# uv distribute u]
+KEY(Alias)
+[S# shift / A# alt / C# ctrl]
+[S# x / A# y / C# z]
+[S# u / A# v]
 }
 
-{
-2()
-[C# A# uv min v]
-}
-
-{
-3()
-[C# A# uv distribute v]
-}
-
-{}{}{}{}{}
+{}{}{}
 
 {
 M1(<)
 [world/reset pivot]
 [S# shrink selection]
+[xform: C# freeze / A# reset]
+[C# S# A# freeze/reset/history]
 }
 
-{
+UV{
 M4(;)
 [uv editor]
-[C# uv planar z]
-[S# uv planar x]
-[A# uv planar y]
-[C# S# A# straighten uv]
+[uv project: S# x / A# y / C# z /]
+[/ C# S# normal / C# A# cam /]
+[/ S# A# cylinder / S# A# C# auto]
 }
 
 {
 M7(F7)
 [outliner]
+[S# shelf]
 }
 
 {
 M10(F10)
-[shelf]
+[face centers & normals]
+[A# hidden triangles]
+[C# invert selection]
+[C# S# A# reset poly display]
 }
 
 {
-MBTM()
-[]
+MDN˅(sqbrl)
+[soften]
+[uv scale: S# u 0.5 / A# v 0.5]
+[v: C# flip / S# A# avg]
+[C# S# uv min v]
+[C# A# uv move down 0.125]
+[C# S# A# uv set texel density]
+}
+
+UV{
+MSL˂(PgDn)
+[C# uv rotate ccw]
+[C# S# uv min u]
+[C# A# uv move left 0.125]
+}
+
+{
++()
+[manipulator bigger]
 }
 
 ---
@@ -635,6 +596,10 @@ c=c.replaceAll('# ','#');
 c=c.replaceAll('[[','[<b>');
 c=c.replaceAll(']]','</b>]');
 c=c.replaceAll('===','<k-row>');
+c=c.replaceAll('UV{','<k-box style="border-color:#365e4b;"><k-title><k-key>');
+c=c.replaceAll('NRM{','<k-box style="border-color:#4c4c87;"><k-title><k-key>');
+c=c.replaceAll('PVT{','<k-box style="border-color:#814b40;"><k-title><k-key>');
+c=c.replaceAll('VIS{','<k-box style="border-color:#5f5f36;"><k-title><k-key>');
 c=c.replaceAll('{','<k-box><k-title><k-key>');
 c=c.replaceAll('(@','</k-key><k-alias class="macro">');
 c=c.replaceAll('(','</k-key><k-alias>');

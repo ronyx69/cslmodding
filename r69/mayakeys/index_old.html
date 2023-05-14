@@ -17,7 +17,7 @@ k-row {
 k-box {
 	background-color: #363636;
 	margin: 1px;
-	padding: 0.25vw;
+	padding: 0.2vw 0.25vw;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -51,7 +51,7 @@ k-hotkeys {
 	display: flex;
 	flex-direction: column;
 	justify-items: flex-end;
-	margin-top: 0.4vw;
+	margin-top: 0.38vw;
 	margin-bottom: -1px;
 	margin-right: -6px;
 	white-space: nowrap;
@@ -85,19 +85,23 @@ KEY()
 }
 
 {
-F2(M2)
+F2()
+[highlight selected]
 }
 
 {
-F3(M3)
+F3()
+[wireframe]
 }
 
 {
-F4(M4)
+F4()
+[shaded wireframe]
 }
 
 {
-F5(M5)
+F5()
+[flat lighting]
 }
 
 {
@@ -140,67 +144,71 @@ Delete(M12)
 
 {
 ~()
-[]
+[object selection]
+[A# deselect]
 }
 
 {
 1()
-[opacity 10%]
+[vertex selection]
+[S# A# single viewport]
 }
 
 {
 2()
-[opacity 20%]
+[edge selection]
+[S# A# dual viewport]
 }
 
 {
 3()
-[opacity 30%]
+[face selection]
+[S# A# quad viewport]
 }
 
 {
 4()
-[opacity 40%]
+[uv selection]
 }
 
 {
 5()
-[opacity 50%]
+[uv shell selection]
 }
 
 {
 6()
-[opacity 60%]
+[multi selection]
 }
 
 {
 7()
-[opacity 70%]
+[face vert selection]
 }
 
 {
 8()
-[opacity 80%]
+[]
 }
 
 {
 9()
-[opacity 90%]
+[]
 }
 
 {
 0()
-[opacity 100%]
+[]
 }
 
 {
 -()
-[]
+[manipulator smaller]
 }
 
 {
 +()
-[]
+[manipulator bigger]
 }
 
 ---
@@ -209,50 +217,61 @@ Delete(M12)
 
 {
 Q()
-[quick mask mode]
+[select]
+[A# split into uv shell]
+[S# A# unfold uv]
+[C# S# A# fill hole quads]
 }
 
 {
 W()
-[quick selection]
+[move]
+[S# align uv horizontal]
+[A# space uv horizontal]
+[S# A# unfold v]
 }
 
 {
 E()
-[eraser]
-[C# merge layers]
-[C# S# merge visible]
+[rotate]
+[C# extrude]
+[S# stack uv shells]
+[S# A# stack & orient uv]
+[C# S# gather uv shells]
+[A# rotate y 90]
 }
 
 {
 R()
-[C# rulers]
-[C# A# select and mask]
+[scale]
+[C# flip z]
+[S# flip x]
+[A# flip y]
+[S# A# same tex density]
 }
 
 {
 T()
-[text]
+[lattice]
+[S# lattice options]
 [C# transform]
 }
 
 {
 Y()
-[]
+[multicut]
+[S# divide edge]
 }
 
 {
 U()
-[shape]
-[C# hue/saturation]
-[C# S# desaturate]
+[constraint none]
 }
 
 {
 I()
-[eyedropper]
-[C# invert]
-[C# S# invert selection]
+[constraint edge]
+[C# invert selection]
 }
 
 {
@@ -262,8 +281,7 @@ O()
 
 {
 P()
-[pen]
-[C# S# export png]
+[S# unparent]
 }
 
 {
@@ -271,11 +289,12 @@ sqbrl(MDN)
 }
 
 {
+sqbrr(MUP)
 }
 
 {
 Tab()
-[hide menus]
+[[select multiple]]
 }
 
 ---
@@ -284,46 +303,50 @@ Tab()
 
 {
 A()
-[direct selection]
-[C# select all]
-[C# S# camera raw]
+[S# align uv vertical]
+[A# space uv vertical]
+[S# A# unfold u]
 }
 
 {
 S()
-[clone stamp]
+[separate]
+[S# combine]
+[A# merge verts/uv]
+[S# A# merge to center]
 }
 
 {
 D()
-[default colors]
-[C# deselect]
+[detach faces]
+[C# duplicate faces]
+[A# duplicate object]
 }
 
 {
 F()
-[screen modes]
-[C# flatten image]
-[C# S# fade]
-[C# S# duplicate doc.]
-[C# A# last filter]
+[custom pivot]
+[C# world pivot]
+[S# reset pivot]
+[A# component pivot]
+[S# A# center pivot]
 }
 
 {
 G()
-[gradient]
+[grid]
+[C# group]
 }
 
 {
 H()
-[toggle extras]
+[toggle history]
+[C# delete history]
 }
 
 {
 J()
-[spot healing brush]
-[C# copy to new layer]
-[C# S# cut to new layer]
+[constraint surface]
 }
 
 {
@@ -333,25 +356,21 @@ K()
 
 {
 L()
-[lasso]
-[C# levels]
-[C# S# auto tone]
-[C# S# A# auto contrast]
-}
-
-{
-;()
 []
 }
 
 {
-'()
-[]
+;(M4)
+}
+
+{
+'(M5)
 }
 
 {
 Home()
-[zoom top left]
+[hotkey editor]
+[C# script editor]
 }
 
 {
@@ -365,197 +384,240 @@ End()
 
 {
 Z()
-[]
+[frame selected]
 }
 
 {
 X()
-[switch colors]
+[[snap to grid]]
+[S# xray object]
 }
 
 {
 C()
-[crop]
+[[snap to curve]]
+[S# connect edges]
+[S# A# connect verts]
+[C# S# uv normal project]
+[A# collapse edges]
 }
 
 {
 V()
-[move]
+[[snap to verts]]
+[S# target weld]
 }
 
 {
 B()
-[brush]
-[C# color balance]
-[C# S# auto color]
-[C# S# A# black & white]
+[bridge]
+[C# break vert/face]
+[S# bevel edge]
+[A# background color]
 }
 
 {
 N()
-[]
+[reverse normal]
+[C# S# normals size]
+[S# 1st vert normal]
+[S# A# 1st vert nrm bend]
+[A# edit normals]
 }
 
 {
 M()
-[marquee]
-[C# curves]
+[hypershade]
 }
 
 {
-<(C# M1)
+<(M1)
 }
 
 {
->()
-[]
+>(M2)
 }
 
 {
-?()
+?(M3)
 }
 
 {
 LMB()
 [select]
-[space pan]
+[C# subtract]
+[S# invert]
+[C# S# add]
+[A# orbit]
 }
 
 {
 MMB()
-[]
+[prev transform]
+[A# pan]
+[C# S# slide]
 }
 
 {
 RMB()
-[]
+[A# zoom]
 }
 
 ---
 
 ===
 
-{}{}{}{}{}{}{}{}
+{
+7()
+[C# A# uv average u]
+}
 
 {
-M3(F3)
-[image size]
-[C# canvas size]
-[S# crop]
+8()
+[C# A# uv max v]
+}
+
+{
+9()
+[C# A# uv average v]
+}
+
+{}{}{}{}{}
+
+{
+M3(?)
+[preserve uv]
+[C# flatten z]
+[S# flatten x]
+[A# flatten y]
 }
 
 {
 M6(F6)
-[collapse all]
-[S# dust scratches]
-[A# noise]
+[contiguous]
+[C# ring]
+[S# loop]
 }
 
 {
-M9(F9(@Macro/        )
-[save copy tga]
-[C# minimum]
-[S# maximum]
-[A# high pass]
+M9(F9)
+[face centers]
+[S# normals]
+[C# vertex colors]
 }
 
 {
 M12(Delete)
-[delete]
-[S# delete & deselect]
-[A# fill fg color]
-[C# fill bg color]
+[remove]
+[C# remove w/ verts]
 }
 
 {
 MUP(sqbrl)
-[brush bigger]
-[C# layer up]
-[C# S# layer top]
-[C# A# copy style]
-[C# S# A# clear style]
+[harden]
+[S# scale u 2]
+[C# scale v 2]
+[A# rotate uv cw]
+[C# S# flip u]
+[C# S# A# get tex density]
 }
 
 ---
 
 ===
 
-{}{}{}{}{}{}{}{}
-
 {
-M2(F2)
-[guides]
-[C# pixel grid]
-[S# grid]
-[A# snapping]
+4()
+[C# A# uv min u]
 }
 
 {
-M5(F5)
-[zoom fit]
-[C# blur]
-[S# gaussian blur]
-[A# surface blur]
-[C# S# motion blur]
+5()
+[C# A# unstack shells]
+}
+
+{
+6()
+[C# A# uv max u]
+}
+
+{}{}{}{}{}
+
+{
+M2(>)
+[isolate]
+[S# grow selection]
+}
+
+{
+M5(')
+[hide selected]
 }
 
 {
 M8(F8)
-[zoom 100%]
-[C# sharpen]
-[S# smart sharpen]
-[A# render clouds]
+[unhide all]
 }
 
 {
 M11(F11)
-[new layer]
-[C# lock layer]
-[S# unlock layer]
-[A# save png]
+[]
 }
 
 {
 MDN(sqbrr)
-[brush smaller]
-[C# layer down]
-[C# S# layer bottom]
-[C# A# paste style]
+[soften]
+[S# scale u 0.5]
+[C# scale v 0.5]
+[A# rotate uv ccw]
+[C# S# flip v]
+[C# S# A# set tex density]
 }
 
 ---
 
 ===
 
-{}{}{}{}{}{}{}{}
-
 {
-M1(C# <)
-[clipping mask]
-[S# repeat filter]
-[A# fade filter]
+1()
+[C# A# uv distribute u]
 }
 
 {
-M4(F4)
-[group]
-[S# ungroup]
+2()
+[C# A# uv min v]
+}
+
+{
+3()
+[C# A# uv distribute v]
+}
+
+{}{}{}{}{}
+
+{
+M1(<)
+[world/reset pivot]
+[S# shrink selection]
+}
+
+{
+M4(;)
+[uv editor]
+[C# uv planar z]
+[S# uv planar x]
+[A# uv planar y]
+[C# S# A# straighten uv]
 }
 
 {
 M7(F7)
-[smart object]
-[S# brightness/contrast]
-[A# levels]
-[C# curves]
+[outliner]
 }
 
 {
 M10(F10)
-[show/hide layers]
-[S# hue/saturation]
-[A# vibrance]
-[C# color balance]
+[shelf]
 }
 
 {
