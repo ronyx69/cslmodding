@@ -185,17 +185,14 @@ F12()
 {
 9()
 [select: percentage /
-[/ S# -x / A# -y / C# -z /]
-[/ C# S# smooth / C# S# A# hard /]
-[/ C# A# ang / S# A# ang cont]
+[/ S# -x / A# -y / C# -z]
 }
 
 {
 0()
 [select: camera /]
 [S# +x / A# +y / C# +z /]
-[/ C# S# inside / C# S# A# border /]
-[/ C# A# stray verts]
+[/ C# S# A# stray verts]
 }
 
 ---
@@ -425,7 +422,7 @@ Tab()
 {}{}{}{}
 
 UV{
-M3(?)
+M3(/ ?)
 [uv preserve]
 [unfold: S# u / A# v / S# A# uv]
 [uv stack: C# / C# A# &orient]
@@ -478,20 +475,24 @@ RMB()
 {}{}{}{}
 
 {
-M2(>)
+M2(. >)
 [isolate]
 [C# lock objects]
 [S# grow selection]
+[sel same angle: A# cont /]
+[/ S# A# all]
 }
 
-VIS{
-M5(')
+{
+M5(' ")
 [hide selected]
+[sel: A# hard / S# A# smooth]
 }
 
-VIS{
+{
 M8(F8)
 [unhide all]
+[sel: A# border / S# A# inside]
 }
 
 {
@@ -535,7 +536,7 @@ KEY(Alias)
 {}{}{}
 
 {
-M1(<)
+M1(, <)
 [world/reset pivot]
 [S# shrink selection]
 [xform: C# freeze / A# reset]
@@ -543,7 +544,7 @@ M1(<)
 }
 
 UV{
-M4(;)
+M4(; :)
 [uv editor]
 [uv project: S# x / A# y / C# z /]
 [/ C# S# normal / C# A# cam /]
